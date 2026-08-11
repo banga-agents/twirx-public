@@ -1,7 +1,8 @@
 # FUTO off-host durability gate
 
-**Status:** BLOCKED — storage boundaries are designed, but no TWIRX-specific
-credential or independent restore target has been authorized.
+**Status:** PASS_WITH_CONDITIONS — an isolated encrypted Storage Box archive
+passed full data checking and a byte-identical independent restore; the
+versioned Object Storage replica remains pending.
 
 **Audit date:** 2026-08-11
 
@@ -14,16 +15,18 @@ The operator identified these existing resources:
 - Storage Box service `quantlab-archive-bx41` at
   `u623297.your-storagebox.de`.
 
-Neither resource was read, listed, written, reconfigured or used by this gate.
-Their names and existing usage indicate Meridian/Quantlab ownership, and the
-founder expressly required TWIRX not to touch unrelated Meridian data or
-repositories.
+The existing `meridianv2raw` bucket was not read, listed, written or
+reconfigured. On the Storage Box, no existing archive or directory was listed,
+read, modified or reused. The gate created only the new TWIRX-owned parent
+`twirx-backups` and the isolated Borg repository
+`futo-semantic-snapshot-v1`.
 
-An existing host credential file was also left unread and unchanged. TWIRX
-will not reuse unrelated object-storage identities, backup keys, passphrases
-or archive paths.
+An existing object-storage credential file was left unread and unchanged.
+TWIRX did not reuse unrelated object-storage identities, passphrases or archive
+paths. The already-authorized Storage Box SSH key was used only for the new
+TWIRX path.
 
-## Required operator inputs
+## Remaining operator input
 
 The durability gate requires deliberately isolated resources:
 
@@ -32,31 +35,40 @@ The durability gate requires deliberately isolated resources:
 2. a TWIRX release-publisher S3 identity scoped to create/read the admitted
    snapshot prefix and unable to access unrelated buckets;
 3. bucket versioning enabled and lifecycle evidence recorded;
-4. a new encrypted Borg repository path on the Storage Box, separate from all
-   current archives;
-5. the exact Storage Box SSH port and a TWIRX-specific SSH key or subaccount;
-6. a new Borg passphrase held outside the repository, logs and chat.
+4. optionally replace the current authorized SSH identity with a dedicated
+   TWIRX Storage Box subaccount for stricter least privilege.
 
 Credentials must be injected interactively or through a root-owned secret
 file. They must not be pasted into Git, reports, command arguments preserved
 in shell history, or this conversation.
 
-## Planned admission commands
+## Commands executed
 
-After isolated credentials exist, the operator procedure in
-`deploy/snapshot/OBJECT_STORAGE.md` and
-`deploy/snapshot/STORAGE_BOX_BACKUP.md` will:
+The Storage Box proof used Borg 1.4.4 locally and Borg 1.2.9 remotely:
 
-```text
-verify versioning and least-privilege boundaries
-publish the exact admitted immutable snapshot
-download it into a new temporary directory
-verify every digest and recompute snapshot_id
-create a client-side encrypted Borg archive
-restore the archive into a second new temporary directory
-verify the snapshot with networking disabled
-open the read-only runtime and run fixed query/trace smoke vectors
-record restored bytes, elapsed time and tool versions
+```bash
+ssh -p 23 -o BatchMode=yes \
+  u623297@u623297.your-storagebox.de pwd
+
+borg init --encryption=repokey-blake2 \
+  ssh://u623297@u623297.your-storagebox.de:23/./twirx-backups/futo-semantic-snapshot-v1
+
+borg create --stats \
+  ssh://u623297@u623297.your-storagebox.de:23/./twirx-backups/futo-semantic-snapshot-v1::futo-snapshot-54739822-20260811 \
+  var/futo-public-snapshot-d13c0bf-rebuilt
+
+borg check --verify-data \
+  ssh://u623297@u623297.your-storagebox.de:23/./twirx-backups/futo-semantic-snapshot-v1
+
+borg extract \
+  ssh://u623297@u623297.your-storagebox.de:23/./twirx-backups/futo-semantic-snapshot-v1::futo-snapshot-54739822-20260811
+
+diff -u /tmp/twirx-original-snapshot.sha256 \
+  /tmp/twirx-restored-snapshot.sha256
+
+bin/twirx-snapshot verify \
+  --snapshot "$restore_root/var/futo-public-snapshot-d13c0bf-rebuilt" \
+  --id sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5
 ```
 
 No production PostgreSQL, mutable semantic state, broad corpus or Meridian
@@ -69,19 +81,39 @@ RAID change is part of this gate.
 - local snapshot verification: PASS;
 - immutable loopback runtime: PASS;
 - Object Storage versioning/upload/download: NOT RUN;
-- independent Borg backup/check/restore: NOT RUN;
-- byte-identical off-host restore: NOT RUN.
+- independent encrypted Borg backup/check/restore: PASS;
+- restored files: 85;
+- restored tree hash-list SHA-256:
+  `eb5f394ae3b82abb6dd5959cf4891b6ee2f9191587203f8d14d7f52b5f993a7a`;
+- original tree hash-list SHA-256: the same value;
+- restored snapshot semantic verification: PASS;
+- Borg archive fingerprint:
+  `c0ed6502862470166bfe365d68d174886cfcaa242f713f596519bfca68ef965e`;
+- archive original/compressed/deduplicated sizes:
+  676.05 kB / 260.75 kB / 202.57 kB.
+
+The locally held passphrase and exported encrypted repository key are mode
+`0600` at:
+
+```text
+/home/shiva/.config/twirx/futo-storagebox-borg-passphrase
+/home/shiva/.config/twirx/futo-storagebox-borg-key-export
+```
+
+Their contents were not printed, committed or transmitted through chat.
 
 ## Unresolved risk
 
-The snapshot currently lacks demonstrated durability across two independent
-off-host storage paths. This remains a FUTO send-gate blocker, but protecting
-unrelated Meridian/Quantlab data takes precedence over reusing the available
-accounts without explicit isolation.
+The snapshot now has one demonstrated encrypted off-host backup and clean
+restore path. It does not yet have the planned versioned Object Storage copy,
+and the local passphrase/key export still requires an additional offline
+operator-controlled copy. The existing `meridianv2raw` bucket remains outside
+TWIRX scope.
 
 ## Next recommended gate
 
-Create the isolated TWIRX bucket and backup repository, inject scoped
-credentials outside Git, and execute one recorded byte-identical restore
-drill. Do not use or alter the existing `meridianv2raw` objects or current
-`quantlab-archive-bx41` archive paths.
+Create an isolated TWIRX Object Storage bucket and least-privilege publisher
+identity, enable versioning and lifecycle policy, and run the same download and
+verification drill. Preserve an offline copy of the Borg passphrase and key
+export. Do not use or alter existing `meridianv2raw` objects or any pre-existing
+Storage Box archive path.

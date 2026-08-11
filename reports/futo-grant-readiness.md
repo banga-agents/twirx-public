@@ -11,8 +11,8 @@ operational limitations must remain disclosed**
 **Fresh public repository:**
 `https://github.com/banga-agents/twirx-public`
 
-**Current public release commit at audit time:**
-`3d2a3878817c50678c03309e8ae7a4376c6343b1`
+**Validated public source release:**
+`ba5d2d6868df7a4ee785e267d4a89f2d3f74453f`
 
 **Immutable snapshot:**
 `sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5`
@@ -35,12 +35,13 @@ immutable snapshot through TLS, all 500 selected Atlas identities can be
 inspected, a real cross-origin query and genuine historical delta are
 available, and complete local validation passes.
 
-This recommendation is conditional rather than unconditional because no
-isolated off-host restore has yet been proved, the live Mintlify deployment
+This recommendation is conditional rather than unconditional because the
+versioned Object Storage replica remains pending, the live Mintlify deployment
 does not yet expose the release-specific FUTO page, and GitHub-hosted CI cannot
-start while the account is locked for billing. These conditions do not erase
-the public mechanism or local evidence. They must be disclosed in the grant
-package and resolved as operational follow-up work.
+start while the account is locked for billing. An isolated encrypted Storage
+Box archive has passed full data checking and a byte-identical restore. The
+remaining conditions do not erase the public mechanism or local evidence; they
+must be disclosed and resolved as operational follow-up work.
 
 The existing `meridianv2raw` bucket and `quantlab-archive-bx41` Storage Box
 contents were deliberately left untouched. Reusing unrelated infrastructure
@@ -64,7 +65,8 @@ execution is not claimed.
 | Cross-origin query | **PASS PUBLIC** | Four rows across TWIRX and World Bank, five fixtures excluded and zero network requests at the public endpoint. |
 | Atlas-500 explorer | **PASS PUBLIC** | All 500 selected origin identities are searchable and inspectable; exact packet-bearing state is displayed separately. |
 | `lab.twirx.org` HTTPS and read-only Lab | **PASS** | Both authoritative nameservers resolve the host; TLS, API, browser, headers, input/method rejection, raw-proof denial and zero-origin-call behavior pass. Runtime remains literal loopback. |
-| Object Storage and independent restore | **CONDITION OPEN** | Existing Meridian and Quantlab resources were untouched. A dedicated TWIRX bucket/identity and new encrypted repository path are still required. |
+| Independent encrypted restore | **PASS** | A new isolated Borg repository on the Storage Box passed `--verify-data`, byte-identical 85-file restore and exact snapshot verification. Existing archive content was neither listed nor touched. |
+| Versioned Object Storage release | **CONDITION OPEN** | The existing `meridianv2raw` bucket and credentials remain untouched; a dedicated TWIRX bucket and least-privilege identity are still required. |
 | Website source and reviewer path | **PASS DEPLOYED** | Sixteen generated pages pass all checks and are active in immutable release `20260811T161000Z-2c85b56`; all routes and public safety denials pass. |
 | Mintlify documentation | **CONDITION OPEN** | Release documentation exists in source; `https://docs.twirx.org/start/futo-release` currently returns `404`, so external synchronization is not claimed. |
 | Real versus fixture counters separated | **PASS** | Fifteen public packets and five controlled fixture packets are separate; fixtures are excluded by default. |
@@ -72,7 +74,7 @@ execution is not claimed.
 | Ambitious 90-day Atlas program | **PASS IN SOURCE** | The program attempts deterministic dossiers and bounded profiles across all 500 selected origins and reports every outcome; evidence-bearing claims remain exact. |
 | Secret/privacy/public-readiness scan | **PASS** | Public export and fresh public clone have zero Gitleaks and TruffleHog findings and exclude raw archive bodies. |
 | Hosted GitHub CI | **EXTERNAL STARTUP FAILURE** | No runner or step started. Exact GitHub annotation: account locked due to billing issue. No workflow correction is warranted. |
-| Final PASS/PASS_WITH_CONDITIONS report | **PASS_WITH_CONDITIONS** | The public proof is reviewable now; off-host restore, live Mintlify sync and hosted-CI startup remain explicitly disclosed. |
+| Final PASS/PASS_WITH_CONDITIONS report | **PASS_WITH_CONDITIONS** | The public proof and independent encrypted restore are reviewable now; Object Storage, live Mintlify sync and hosted-CI startup remain explicitly disclosed. |
 
 ## Exact public claim boundary
 
@@ -173,8 +175,8 @@ Results:
 
 ## Hosted CI evidence
 
-Latest run URL:
-`https://github.com/banga-agents/twirx-public/actions/runs/31509333061`
+Public-release run URL:
+`https://github.com/banga-agents/twirx-public/actions/runs/31511957334`
 
 Job result:
 
@@ -209,9 +211,9 @@ runner assignment before workflow execution.
 
 ## Unresolved risks
 
-1. No isolated off-host object release and encrypted independent restore has
-   passed. The Lab remains replaceable from its locally verified snapshot, but
-   independent durability is not yet demonstrated.
+1. The encrypted Storage Box restore passes, but the second versioned Object
+   Storage release is not yet configured. The local Borg passphrase and key
+   export also require an additional operator-controlled offline copy.
 2. Mintlify's external deployment is not bound to the current draft revision;
    the release documentation remains available in the public source tree.
 3. GitHub-hosted CI cannot start while the account is locked for billing.
@@ -249,9 +251,9 @@ runner assignment before workflow execution.
 
 ## Deviations
 
-- Off-host publication/restore is deferred because only existing unrelated
-  storage resources were identified; no isolated TWIRX credentials were
-  provided.
+- The planned Object Storage replica is deferred because the only identified
+  bucket is unrelated `meridianv2raw`; it remains untouched. The separate
+  encrypted Storage Box restore is complete.
 - Mintlify source is synchronized, but the external production deployment has
   not published the release-specific route.
 - Hosted CI did not execute because of an account-level GitHub billing lock.
@@ -259,7 +261,7 @@ runner assignment before workflow execution.
 
 ## Next recommended gate
 
-Create a dedicated TWIRX Object Storage identity and new encrypted Borg
-repository path, execute a byte-identical restore drill, and synchronize the
-live Mintlify release. Advance this report from PASS_WITH_CONDITIONS to PASS
-only after those operational proofs are recorded.
+Create a dedicated TWIRX Object Storage identity and versioned bucket, preserve
+the Borg recovery material through a second offline channel, and synchronize
+the live Mintlify release. Advance this report from PASS_WITH_CONDITIONS to
+PASS only after those operational proofs are recorded.

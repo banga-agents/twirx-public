@@ -42,7 +42,7 @@
       "name": "Public Proof Release",
       "state": "in_progress",
       "result": "A fresh sanitized public source repository, public website, FUTO reviewer path and HTTPS read-only Query Lab now exist.",
-      "limitation": "Off-host restore proof and live documentation synchronization remain."
+      "limitation": "Encrypted Storage Box restore passes; the versioned Object Storage replica and live documentation synchronization remain."
     }
   ],
   "future_not_current": [

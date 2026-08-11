@@ -293,7 +293,8 @@ live status. The immutable public Query Lab is live at
 [`lab.twirx.org`](https://lab.twirx.org/), performs zero origin calls and
 accepts no arbitrary URL. A fresh sanitized public repository is available at
 [`banga-agents/twirx-public`](https://github.com/banga-agents/twirx-public).
-Durable off-host restore evidence remains open. Production PostgreSQL remains
+An isolated encrypted Storage Box archive has passed byte-identical restore;
+the planned versioned Object Storage replica remains open. Production PostgreSQL remains
 prohibited on the shared Meridian host. See
 [`reports/futo-grant-readiness.md`](reports/futo-grant-readiness.md) and
 [`spec/data-plane/`](spec/data-plane/).
