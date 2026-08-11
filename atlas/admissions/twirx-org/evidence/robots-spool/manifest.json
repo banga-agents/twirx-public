@@ -1,0 +1,31 @@
+{
+  "format": "tw.egress-manifest/0.1",
+  "work_order_id": "futo-twirx-robots",
+  "work_order_digest": "sha256:9ecb18dd0d36ccae59cb195529cd9591191e16be34d05d4612a7d03a455dcd9f",
+  "artifacts": [
+    {
+      "path": "cas/sha256/43/55/435522b81da2dd98cbce642602e283b7b0e69905f4d69931b8001ea231f6f83b",
+      "digest": "sha256:435522b81da2dd98cbce642602e283b7b0e69905f4d69931b8001ea231f6f83b"
+    },
+    {
+      "path": "evidence/body.ref",
+      "digest": "sha256:27849463f3966a43e76ca9ced00ef9ce898a8561ea69d24a774af5c29a3c20f0"
+    },
+    {
+      "path": "evidence/observation.cbor",
+      "digest": "sha256:279da8a22975a0debaec359c0d4c9412c5f6fe9635c2bb7f07ee4ad6a699d89d"
+    },
+    {
+      "path": "evidence/observation.json",
+      "digest": "sha256:346491bcac4af623b45208bed46005f93fc684c1e05094a0f2a256596634be5c"
+    },
+    {
+      "path": "result.json",
+      "digest": "sha256:6ae9656632533166c0093dfb61937e14a558c7716b0dafa8ba8f5d4bd795c34c"
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:9ecb18dd0d36ccae59cb195529cd9591191e16be34d05d4612a7d03a455dcd9f"
+    }
+  ]
+}

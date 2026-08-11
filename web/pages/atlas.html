@@ -1,0 +1,114 @@
+{{define "content"}}
+{{$a := .Data.atlas}}
+{{$r := .Data.futo_release}}
+<div class="page">
+  {{template "pagehead" .}}
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#counts">What the counts mean</a></li>
+          <li><a href="#decisions">Completed decisions</a></li>
+          <li><a href="#dimensions">Origin state</a></li>
+          <li><a href="#selection">Genesis 500</a></li>
+          <li><a href="#admission">Admission boundary</a></li>
+        </ol>
+      </div>
+    </aside>
+    <article class="doc">
+      <section aria-labelledby="counts">
+        <h2 id="counts">Selection is not implementation</h2>
+        <p class="lede">
+          The Atlas contains 500 selected public-origin identities. It does not claim 500
+          working adapters, 500 reviewed access policies or 500 live sources. Each public
+          counter advances only when evidence exists for that specific dimension.
+        </p>
+        <dl class="counters wide">
+          <div class="counter"><dt>Selected identities</dt><dd>{{commas $r.actual.atlas_identities}}<small>quota-selected</small></dd></div>
+          <div class="counter"><dt>Completed policy decisions</dt><dd>{{$r.actual.completed_policy_decisions}}<small>human-reviewed</small></dd></div>
+          <div class="counter"><dt>Public origins with packets</dt><dd>{{$r.actual.public_origins_with_packets}}<small>snapshot evidence</small></dd></div>
+          <div class="counter"><dt>Public-source packets</dt><dd>{{$r.actual.public_packets}}<small>fixtures excluded</small></dd></div>
+        </dl>
+        <p class="note">Selection digest: <code class="digest">{{$a.selection.digest}}</code></p>
+        <p><a class="btn" href="https://lab.twirx.org/#atlas-title">Explore all 500 identities in the Query Lab</a></p>
+      </section>
+
+      <section aria-labelledby="decisions">
+        <h2 id="decisions">Three completed policy decisions</h2>
+        <p>
+          These decisions were approved by the Genesis steward at
+          <code>2026-08-11T12:15:50Z</code>. Their work orders are route-bound and
+          budget-bound; none authorizes arbitrary retrieval.
+        </p>
+        <div class="tablewrap wide">
+          <table>
+            <caption>Current completed policy decisions</caption>
+            <thead><tr><th scope="col">Origin</th><th scope="col">Decision</th><th scope="col">Effect</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><code>twirx-org</code></th><td><code>permit_live</code></td><td>Exact publisher-authored public project artifacts only.</td></tr>
+              <tr><th scope="row"><code>api-worldbank-org</code></th><td><code>permit_with_constraints</code></td><td>Documented Indicators API routes under the approved parameters and budgets only.</td></tr>
+              <tr><th scope="row"><code>rfc-editor-org</code></th><td><code>profile_only</code></td><td>Approved archive profiling scope only; no general live retrieval authority.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout callout--key">
+          <p class="callout__title">Canonical-origin correction preserved</p>
+          <p>The RFC Editor record uses <code>https://www.rfc-editor.org</code>. The approved migration does not broaden its retrieval scope.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="dimensions">
+        <h2 id="dimensions">An origin has several independent states</h2>
+        <p>
+          TWIRX does not compress authorization, technical readiness and publisher trust into
+          a single maturity number. That prevents “technically possible” from silently becoming
+          “permitted” or “publisher-approved.”
+        </p>
+        <div class="cards cards--3 wide">
+          <div class="card"><h3>Catalog</h3><p><code>candidate</code> or <code>cataloged</code>. Identity and inclusion only.</p></div>
+          <div class="card"><h3>Policy</h3><p>Review state plus an explicit permit, constrained, profile-only, catalog-only, deny or uncertain decision.</p></div>
+          <div class="card"><h3>Technical</h3><p>Unprofiled through live, based on actual technical evidence.</p></div>
+          <div class="card"><h3>Publisher</h3><p>Unclaimed, domain-verified, publisher-approved or publisher-signed.</p></div>
+          <div class="card"><h3>Health</h3><p>Unknown, healthy, degraded, stale, suspended or revoked.</p></div>
+          <div class="card"><h3>Trust</h3><p>Adapter trust and mapping trust remain separate from every state above.</p></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="selection">
+        <h2 id="selection">The Genesis 500 selection</h2>
+        <p>
+          Candidates span nine public-knowledge families under quotas fixed in advance.
+          Selection establishes a measurable universe for future review; it grants no network,
+          compilation or semantic authority.
+        </p>
+        <div class="tablewrap wide">
+          <table>
+            <caption>Genesis selection by domain family</caption>
+            <thead><tr><th scope="col">Family</th><th scope="col" class="num">Identities</th><th scope="col" class="num">Share</th></tr></thead>
+            <tbody>
+              {{range $a.selection.families}}
+              <tr><th scope="row">{{.family}}</th><td class="num">{{.count}}</td><td class="num">{{pct .count $a.selection.total}}</td></tr>
+              {{end}}
+              <tr><th scope="row"><strong>Total</strong></th><td class="num"><strong>{{commas $a.selection.total}}</strong></td><td class="num">100.0%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="admission">
+        <h2 id="admission">Admission remains fail-closed</h2>
+        <ol class="spine spine--tight">
+          <li><b>Selection proposes an identity</b><span>It does not grant network access.</span></li>
+          <li><b>A deterministic dossier collects evidence</b><span>It does not approve itself.</span></li>
+          <li><b>A human records the policy decision</b><span>Uncertain and pending are not treated as permits.</span></li>
+          <li><b>A route-bound work order constrains retrieval</b><span>No caller supplies an arbitrary URL.</span></li>
+          <li><b>Evidence is stored before parsing</b><span>Only then may deterministic compilation begin.</span></li>
+        </ol>
+        <p class="note">The scheduler remains disabled for broad ingestion. Current work is limited to the explicitly approved scopes above.</p>
+        <p>The funded Atlas-500 gate completes a dossier and explicit human policy outcome for every selected identity, then attempts bounded profiling for every eligible origin. Denied, uncertain and unsuccessful results stay visible; they are not erased to improve a headline count.</p>
+      </section>
+    </article>
+  </div>
+</div>
+{{end}}

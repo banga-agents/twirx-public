@@ -1,0 +1,4 @@
+# Retained archive representations are exact evidence bytes, not source text.
+# Never normalize line endings or generate misleading content diffs for them.
+atlas/archive-acquisitions/**/representation.body -diff -text
+atlas/archive-acquisitions/**/*.warc.gz binary

@@ -1,0 +1,41 @@
+{
+  "_source": "TWIRX_FUTO_GRANT_READINESS_PACK/FUTO_BUDGET_AND_MILESTONES.md and funding/ledger.csv. This $30,000 milestone request supersedes earlier website campaign figures for the FUTO release; received, committed and spent amounts remain ledger-derived.",
+  "campaign_id": "futo-semantic-highway-90-day-2026-08",
+  "status": "seeking_milestone_grant",
+  "status_date": "2026-08-11",
+  "currency": "USD",
+  "request": {
+    "amount": 30000,
+    "term_days": 90,
+    "first_milestone_amount": 6000,
+    "first_milestone_days": 30
+  },
+  "received": 0,
+  "committed": 0,
+  "spent": 0,
+  "available": 0,
+  "in_kind": 0,
+  "first_milestone_budget": [
+    {"use": "Full-time maintainer engineering capacity", "amount": 3200},
+    {"use": "Coding-agent and API access", "amount": 1200},
+    {"use": "Demo infrastructure and storage", "amount": 600},
+    {"use": "Website, documentation and accessibility", "amount": 400},
+    {"use": "Security and operational tooling", "amount": 300},
+    {"use": "Administration and contingency", "amount": 300}
+  ],
+  "rights_not_granted": [
+    "Protocol ownership",
+    "Equity or financial return",
+    "Governance votes or private vetoes",
+    "Semantic ranking or canon admission",
+    "Exclusive rights to sponsored public work",
+    "A protocol token"
+  ],
+  "channels": {
+    "grants": "Open through rick@twirx.org.",
+    "wallet": "No project contribution address is published yet.",
+    "github_sponsors": "Not enabled yet.",
+    "in_kind": "Infrastructure, security review, documentation review and aligned introductions are welcome and recorded separately."
+  },
+  "privacy_boundary": "Project money is transparent. Private home addresses, immigration records, medical information, personal account statements and sensitive personal receipts are not public treasury evidence."
+}

@@ -1,0 +1,66 @@
+{
+  "_source": "atlas/genesis-500/selection.json, atlas/registry.json, atlas/policies.json, reports/futo-policy-decision-proposals.md, and snapshot sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5.",
+  "status_date": "2026-08-11",
+  "selection": {
+    "format": "tw.atlas-selection/0.2",
+    "digest": "sha256:209c3629ad58c60ea4477436332ec4847b3f0ecaf7b091046923c95c87f53fc5",
+    "total": 500,
+    "claim": "Selected public-origin identities; not 500 working, reviewed, observed, compiled or live origins.",
+    "families": [
+      { "family": "Government, law, and public data", "count": 100 },
+      { "family": "Science, research, and scholarly infrastructure", "count": 80 },
+      { "family": "Standards, technical documentation, and open source", "count": 60 },
+      { "family": "Economics, markets, and public disclosure", "count": 60 },
+      { "family": "Journalism and public-interest publishing", "count": 50 },
+      { "family": "Health and public health", "count": 50 },
+      { "family": "Climate, environment, and Earth systems", "count": 50 },
+      { "family": "Education, reference, and culture", "count": 30 },
+      { "family": "Humanitarian, civic, and global development", "count": 20 }
+    ]
+  },
+  "state_dimensions": {
+    "catalog.state": ["candidate", "cataloged"],
+    "policy.review_state": ["pending", "completed"],
+    "policy.decision": ["permit_live", "permit_with_constraints", "profile_only", "catalog_only", "deny", "uncertain"],
+    "technical.stage": ["unprofiled", "profiled", "observed", "native_schema", "compiled", "semantically_linked", "live"],
+    "publisher.status": ["unclaimed", "domain_verified", "publisher_approved", "publisher_signed"],
+    "health.status": ["unknown", "healthy", "degraded", "stale", "suspended", "revoked"],
+    "separate_trust_dimensions": ["adapter trust", "mapping trust"]
+  },
+  "completed_policy_decisions": [
+    {
+      "origin_id": "twirx-org",
+      "canonical_origin": "https://twirx.org",
+      "decision": "permit_live",
+      "reviewed_at": "2026-08-11T12:15:50Z",
+      "scope": "Exact publisher-authored public project artifacts only."
+    },
+    {
+      "origin_id": "api-worldbank-org",
+      "canonical_origin": "https://api.worldbank.org",
+      "decision": "permit_with_constraints",
+      "reviewed_at": "2026-08-11T12:15:50Z",
+      "scope": "Documented Indicators API routes under approved parameters and budgets only."
+    },
+    {
+      "origin_id": "rfc-editor-org",
+      "canonical_origin": "https://www.rfc-editor.org",
+      "decision": "profile_only",
+      "reviewed_at": "2026-08-11T12:15:50Z",
+      "scope": "Approved archive profiling work order only; no general live retrieval authority."
+    }
+  ],
+  "released_snapshot_counts": {
+    "public_origins_with_packets": 3,
+    "public_packets": 15,
+    "fixture_origins_with_packets": 1,
+    "fixture_packets": 5,
+    "materialized_views": 2,
+    "origin_deltas": 1
+  },
+  "scheduler": {
+    "broad_ingestion_enabled": false,
+    "arbitrary_url_enabled": false,
+    "note": "Only explicitly approved, route-bound and budget-bound work orders are authorized."
+  }
+}

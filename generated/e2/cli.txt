@@ -1,0 +1,30 @@
+TWIRX E2 generated CLI operations
+
+project.getStatus — Get TWIRX project status
+  origin: twirx-project
+  effect: read
+  input: none
+
+project.getEngineeringGateReport — Get engineering gate report status
+  origin: twirx-project
+  effect: read
+  input: none
+
+project.listUnresolvedRisks — List published unresolved risks
+  origin: twirx-project
+  effect: read
+  input: none
+
+fixture.getOffer — Get controlled fixture offer
+  origin: controlled-origin-lab
+  effect: read
+  input:
+    product_id (string, required)
+
+development.getIndicator — Get an admitted development indicator
+  origin: world-bank-indicators
+  effect: read
+  input:
+    country (string, required)
+    indicator (string, required)
+    year (integer, required)

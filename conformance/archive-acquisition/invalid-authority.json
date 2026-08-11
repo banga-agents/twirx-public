@@ -1,0 +1,43 @@
+{
+  "format": "tw.archive-acquisition-manifest/0.1",
+  "work_order_id": "rfc-editor-archive",
+  "work_order_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "index_host": "index.commoncrawl.org",
+  "data_host": "archive-proxy.example",
+  "index_requests": 1,
+  "range_requests": 1,
+  "network_requests_made": 2,
+  "artifacts": [
+    {
+      "path": "captures/capture-000/manifest.json",
+      "digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "size": 1
+    },
+    {
+      "path": "raw/index-000.jsonl",
+      "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "size": 1
+    },
+    {
+      "path": "raw/range-000.warc.gz",
+      "digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "size": 1
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "size": 1
+    }
+  ],
+  "captures": [
+    {
+      "collection_id": "CC-MAIN-2025-30",
+      "route": "https://www.rfc-editor.org/",
+      "capture_timestamp": "20250708102138",
+      "spool_path": "captures/capture-000",
+      "spool_manifest_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "representation_digest": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "representation_size": 1
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+---
+title: "Observation envelope"
+description: "The deterministic CBOR record binding retrieval metadata to content-addressed evidence."
+---
+
+**Status:** Genesis normative wire format.
+
+The observation envelope is a fixed-length CBOR array. A fixed array avoids map-key ordering ambiguity and keeps the independent verifier small.
+
+```cddl
+observation-envelope = [
+  version: 1,
+  request-url: tstr .size (1..8192),
+  final-url: tstr .size (1..8192),
+  method: "GET",
+  status: 100..599,
+  media-type: tstr .size (1..256),
+  retrieved-at: tstr .size (20..30),
+  body-sha256: bstr .size 32,
+  body-size: 0..2097152,
+  policy-id: tstr .size (1..256),
+  observer-id: tstr .size (1..256)
+]
+```
+
+The authoritative schema is `schemas/cddl/observation.cddl`.
+
+## Determinism
+
+- CDDL string `.size` bounds count encoded bytes, following
+  [RFC 8610 section 3.8.1](https://www.rfc-editor.org/rfc/rfc8610#section-3.8.1).
+- Every text field is non-empty, valid UTF-8, and contains no U+0000.
+- Indefinite lengths are forbidden.
+- Unsigned integers use their shortest legal encoding.
+- Trailing bytes are forbidden.
+- The array contains exactly eleven fields.
+- The body digest is exactly 32 bytes.
+- `retrieved-at` is canonical RFC3339Nano UTC: it uses `Z`, contains at most
+  nine fractional digits, and has no trailing fractional zeroes.
+- The evidence body is at most 2,097,152 bytes (2 MiB).
+
+These rules are validated by both implementations against
+`conformance/observation/vectors.json`. Acceptance by either implementation
+alone does not establish conformance.
+
+## Evidence binding
+
+The response body is stored at:
+
+```text
+<CAS>/sha256/<first-two>/<next-two>/<full-hex-digest>
+```
+
+Verification recomputes the digest and size before extraction.
+
+Observation bundle metadata and references are published through bounded
+temporary files in the destination directory followed by an atomic rename.
+An interrupted write must not expose a partial artifact at its final path.
+
+## Known Genesis limitation
+
+The envelope records request and final URL but not the full redirect chain or selected response headers. Later versions may add a separate immutable transport-evidence artifact rather than mutating version 1.

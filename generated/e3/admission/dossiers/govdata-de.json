@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "govdata-de",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://govdata.de",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:5559215091d80909f4b87ee4259be51275d9094faf343ad5dda750e880bc24e4",
+  "policy_evidence_digest": "sha256:42946ff3c5c8a7034233fc7c8f46c5f426628dd460dd357f89d361248d7e27cd",
+  "decision_digest": "sha256:c7e42f2986409af3adb0c3ecc7aa68b94c0616f3627b4af1a09eaf01e6955fbe",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

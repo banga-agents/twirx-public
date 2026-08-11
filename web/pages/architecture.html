@@ -1,0 +1,166 @@
+{{define "content"}}
+{{$r := .Data.futo_release}}
+<div class="page">
+  {{template "pagehead" .}}
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#thesis">System thesis</a></li>
+          <li><a href="#flow">End-to-end flow</a></li>
+          <li><a href="#trust">Trust boundaries</a></li>
+          <li><a href="#paths">Compilation and query paths</a></li>
+          <li><a href="#snapshot">Current deployment model</a></li>
+          <li><a href="#neutral">Protocol neutrality</a></li>
+          <li><a href="#deferred">Deliberately deferred</a></li>
+        </ol>
+      </div>
+    </aside>
+    <article class="doc">
+      <section aria-labelledby="thesis">
+        <h2 id="thesis">Interpret the Web once; reuse the result with proof</h2>
+        <p class="lede">
+          TWIRX is a Semantic Data Plane for public web representations. It continuously
+          separates what an origin represented from how that representation is interpreted,
+          then publishes reusable typed state that agents can query and trace.
+        </p>
+        <p>
+          It is not a search engine, browser wrapper or universal truth oracle. Search and
+          browsers may help discover representations. TWIRX’s distinct job is to compile
+          admitted representations into versioned semantic state without discarding their
+          source-native meaning.
+        </p>
+      </section>
+
+      <section aria-labelledby="flow">
+        <h2 id="flow">The end-to-end flow</h2>
+        <ol class="spine">
+          <li><b>Atlas and policy</b><span>Identify an origin, record interfaces, effects and access constraints, and require an explicit decision before retrieval.</span></li>
+          <li><b>Observation</b><span>A route-bound worker retrieves bounded bytes. Evidence is stored before parsing.</span></li>
+          <li><b>Native extraction</b><span>Preserve the source term, exact lexical value and locator.</span></li>
+          <li><b>Semantic compilation</b><span>Create typed packets whose mappings, context, versions and proof links remain explicit.</span></li>
+          <li><b>Immutable log and snapshot</b><span>Publish packets, views and deltas under a canonical manifest digest.</span></li>
+          <li><b>Query fabric</b><span>Resolve typed queries against admitted materialized state, retaining disagreements and unresolved results.</span></li>
+          <li><b>Agent interfaces</b><span>Expose a compact query, trace, explain, compare and subscribe surface rather than one tool per origin.</span></li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="trust">
+        <h2 id="trust">Authority only moves through admission</h2>
+        <div class="split wide">
+          <div>
+            <h3>Untrusted inputs may propose</h3>
+            <ul>
+              <li>Origin responses and archive captures</li>
+              <li>Adapters and mapping candidates</li>
+              <li>Browser or model output in future gates</li>
+              <li>Publisher capability declarations before verification</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Only admitted artifacts may serve</h3>
+            <ul>
+              <li>Explicit policy decision and bounded work order</li>
+              <li>Validated observation and evidence digest</li>
+              <li>Reviewed adapter, mapping and semantic closure</li>
+              <li>Canonical manifest published last</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout callout--key">
+          <p class="callout__title">No component promotes itself</p>
+          <p>An origin, parser, adapter, model, browser, payment signal or verifier can produce or reject a candidate. None can grant itself policy approval, publisher authority, semantic canon status or execution authority.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="paths">
+        <h2 id="paths">Compilation is separated from query execution</h2>
+        <div class="split wide">
+          <div>
+            <h3>Compilation path</h3>
+            <p class="note">Rare, reviewed and potentially expensive.</p>
+            <ul>
+              <li>Policy and route admission</li>
+              <li>Bounded retrieval or archive acquisition</li>
+              <li>Native structure and schema analysis</li>
+              <li>Mapping review and packet generation</li>
+              <li>Delta and view construction</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Query path</h3>
+            <p class="note">Frequent, deterministic and read-only.</p>
+            <ul>
+              <li>Typed semantic request</li>
+              <li>Materialized-state lookup</li>
+              <li>Trust, freshness and source filtering</li>
+              <li>Conflict-preserving merge</li>
+              <li>Proof-linked result</li>
+            </ul>
+          </div>
+        </div>
+        <p>
+          The recorded cross-origin query returns {{$r.queries.cross_origin.rows}} rows from
+          TWIRX and World Bank materialized state with {{$r.queries.cross_origin.network_requests}}
+          origin calls. That is a small proof of this separation, not yet a broad production benchmark.
+        </p>
+      </section>
+
+      <section aria-labelledby="snapshot">
+        <h2 id="snapshot">Current deployment model: immutable snapshots</h2>
+        <p>
+          The current shared VPS is treated as a replaceable edge, not the authoritative
+          mutable data plane. Canonical state is compiled off-host into a deterministic
+          snapshot, verified by its manifest digest, and activated atomically by a read-only
+          runtime.
+        </p>
+<pre><code>approved evidence
+  → local deterministic compiler
+  → packets + deltas + views + proof index
+  → canonical manifest
+  → snapshot_id = SHA-256(manifest)
+  → read-only query runtime</code></pre>
+        <div class="tablewrap wide">
+          <table>
+            <caption>Current released snapshot</caption>
+            <tbody>
+              <tr><th scope="row">Snapshot ID</th><td><code class="digest">{{$r.release.snapshot_id}}</code></td></tr>
+              <tr><th scope="row">Public-source packets</th><td>{{$r.actual.public_packets}} across {{$r.actual.public_origins_with_packets}} origins</td></tr>
+              <tr><th scope="row">Materialized views</th><td>{{$r.actual.materialized_views}}</td></tr>
+              <tr><th scope="row">Deltas</th><td>{{$r.actual.deltas}} real origin delta</td></tr>
+              <tr><th scope="row">Runtime writes</th><td>None to semantic state</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="neutral">
+        <h2 id="neutral">The protocol is language-neutral</h2>
+        <p>
+          Normative behavior lives in specifications, schemas and conformance vectors—not in
+          one implementation language. The current trusted implementation uses Go; independent
+          bounded verification uses restricted C. Those are implementations of the protocol,
+          not the protocol’s authority.
+        </p>
+        <p>
+          Deterministic CBOR/CDDL artifacts, shared positive and adversarial vectors, and
+          explicit error behavior keep independently written implementations comparable.
+        </p>
+      </section>
+
+      <section aria-labelledby="deferred">
+        <h2 id="deferred">Deliberately deferred</h2>
+        <div class="cards cards--3 wide">
+          <div class="card"><h3>Continuous production state</h3><p>No authoritative PostgreSQL is deployed on the current shared host. Durable independent infrastructure and restore evidence come first.</p></div>
+          <div class="card"><h3>Browser discovery</h3><p>No browser runs in the trusted execution path. Future discovery requires separate isolation.</p></div>
+          <div class="card"><h3>Model induction</h3><p>No model creates canon or execution authority. A future model may rank candidates only after an adjudicated corpus exists.</p></div>
+          <div class="card"><h3>Actions and payments</h3><p>Commercial metadata may be described; no production purchase, payment, booking or write action is authorized.</p></div>
+          <div class="card"><h3>Arbitrary URLs</h3><p>Public callers cannot supply destinations. Retrieval requires an admitted origin and route-bound work order.</p></div>
+          <div class="card"><h3>Federation</h3><p>Signed packages and multi-node registries remain future work after the single-node proof is durable.</p></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</div>
+{{end}}

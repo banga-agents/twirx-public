@@ -1,0 +1,76 @@
+---
+title: "FUTO release proof"
+description: "Exact evidence, honest limits, live-review path, and funding milestone for the FUTO release candidate."
+---
+
+> **Authority:** Release evidence summary · **Status:** Candidate · **Applies to:** FUTO readiness release · **Verified against:** snapshot `sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5` · **Source:** `reports/futo-grant-readiness.md`
+
+## What TWIRX demonstrates
+
+TWIRX observes a bounded origin representation, preserves source-native terms
+and lexical values, compiles proof-bearing packets, materializes read-only
+state, and answers typed queries without contacting an origin at query time.
+
+The current immutable snapshot contains:
+
+| Evidence | Exact count |
+|---|---:|
+| Selected Atlas identities | 500 |
+| Completed human policy decisions | 3 |
+| Real archive profiles | 1 |
+| Public origins with packets | 3 |
+| Public-source packets | 15 |
+| Controlled fixture packets | 5 |
+| Genuine origin deltas | 1 |
+| Materialized views | 2 |
+| Proof artifacts | 75 |
+
+Five hundred selected identities are a bounded roadmap universe. They are not
+five hundred compiled adapters or live origins.
+
+## First real archive change
+
+Two exact Common Crawl captures of the RFC Editor homepage produced two
+source-native packets. The native `html:title` lexical value changed between
+the selected 2025 and 2026 captures, so TWIRX emitted one `origin` delta.
+
+It did not emit a semantic delta or canon delta because neither semantic
+interpretation nor ontology changed. The archive evidence is historical,
+observed by Common Crawl, and is not a current RFC Editor statement.
+
+## Query proof
+
+The snapshot resolves:
+
+- a four-row cross-origin query spanning TWIRX and World Bank recorded state;
+- a two-row RFC Editor archive-history query;
+- zero origin-network requests for both queries;
+- five controlled fixture packets excluded by default.
+
+The runtime is immutable and read-only. It cannot refresh origins, accept a
+URL, execute a browser or model, authenticate, purchase, or write semantic
+state.
+
+## Performance scope
+
+A 5,000-request loopback stress run against the exact 20-packet snapshot had
+5,000 successes, zero failures, zero origin calls, approximately 8,204 requests
+per second and p95 latency of 1,123 microseconds. This is a small-snapshot,
+single-host measurement, not a public or production capacity claim.
+
+## Publication boundary
+
+The public source profile publishes TWIRX-authored acquisition metadata,
+digests, packets, deltas and reproduction commands. Exact third-party homepage
+HTML and WARC bytes remain private pending a separate rights basis. This does
+not alter the derived evidence.
+
+## Funding milestone
+
+TWIRX is requesting USD 30,000 for a 90-day milestone grant. The first USD
+6,000 funds 30 days of focused, full-time maintainer engineering and completes
+the public release, off-host durability, reviewer experience and first small
+real corpus.
+
+The authoritative send gate is `reports/futo-grant-readiness.md`. The grant
+email must not be sent until it reports `PASS` or `PASS WITH CONDITIONS`.

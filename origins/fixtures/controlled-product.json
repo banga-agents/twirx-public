@@ -1,0 +1,9 @@
+{
+  "product_id": "demo-1",
+  "name": "Solar Lantern",
+  "offer": {
+    "current_price": "19.90",
+    "currency": "usd"
+  },
+  "availability": "IN_STOCK"
+}

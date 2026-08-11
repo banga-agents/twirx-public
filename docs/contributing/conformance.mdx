@@ -1,0 +1,27 @@
+---
+title: "Conformance"
+description: "How independent implementations agree without one becoming normative."
+---
+
+A conformance vector should contain:
+
+- immutable input artifact;
+- expected acceptance or rejection;
+- expected structured result where applicable;
+- security property exercised;
+- specification section;
+- version and digest.
+
+The Gate 1 corpus covers valid envelopes, non-canonical integers, indefinite encodings, trailing bytes, invalid UTF-8, NUL text, digest and size mismatch, required and optional field behavior, origin mismatch, JSON Pointer escapes, duplicate JSON keys, trailing JSON values, unpaired surrogate escapes, empty resolved strings, and adversarial provider text.
+
+Both Go and C consume `conformance/observation/vectors.json`. Extraction
+behavior is declared in `conformance/extraction/vectors.json`. Fuzz targets
+seed from the committed corpus so a regression vector also becomes mutation
+input.
+
+When behavior changes, update the machine-readable manifest, its immutable
+input artifact, the normative prose, and every independent consumer in the
+same change. Do not replace an existing vector's meaning; add a new vector or
+version the corpus.
+
+An implementation disagreement is a protocol event. Resolve it by clarifying the specification and adding a regression vector, not by declaring the preferred implementation correct without analysis.

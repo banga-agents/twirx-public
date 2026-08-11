@@ -1,0 +1,163 @@
+{{define "content"}}
+{{$r := .Data.futo_release}}
+<div class="page">
+  <div class="hero">
+    <p class="eyebrow">Open semantic infrastructure for agents</p>
+    <h1>Give agents a trustworthy interface to the open Web.</h1>
+    <p class="hero__sub">
+      TWIRX turns public web representations into reusable, typed state while preserving
+      the source-native words, evidence and derivation behind every result. Agents can query
+      what sources represented without re-browsing and reinterpreting the same interfaces.
+    </p>
+    <p class="actions">
+      <a class="btn btn--primary" href="/demo/">Inspect the working proof</a>
+      <a class="btn" href="/futo/">FUTO reviewer path</a>
+      <a class="btn" href="/proof/">Verify the evidence</a>
+      <a class="btn" href="/funding/">Fund the 90-day build</a>
+    </p>
+  </div>
+
+  <figure class="trace wide" aria-labelledby="highway-cap">
+    <ol>
+      <li><span class="trace__label">Observe</span><span class="trace__value">Source bytes</span><span class="trace__meta">immutable evidence</span></li>
+      <li><span class="trace__label">Preserve</span><span class="trace__value">Native statement</span><span class="trace__meta">term + lexical value</span></li>
+      <li><span class="trace__label">Compile</span><span class="trace__value">Semantic packet</span><span class="trace__meta">typed + proof-linked</span></li>
+      <li><span class="trace__label">Materialize</span><span class="trace__value">Reusable state</span><span class="trace__meta">versioned snapshot</span></li>
+      <li><span class="trace__label">Query</span><span class="trace__value">Agent result</span><span class="trace__meta">one bounded interface</span></li>
+      <li class="trace__last"><span class="trace__label">Verify</span><span class="trace__value">Complete trace</span><span class="trace__meta">source → result</span></li>
+    </ol>
+    <figcaption id="highway-cap">
+      The Web is interpreted once into reusable semantic state; every later query retains a
+      path back to what the origin actually represented.
+    </figcaption>
+  </figure>
+
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#problem">What TWIRX changes</a></li>
+          <li><a href="#proof">What works now</a></li>
+          <li><a href="#delta">A real source change</a></li>
+          <li><a href="#users">Who it serves</a></li>
+          <li><a href="#scope">Current boundary</a></li>
+          <li><a href="#fund">Fund the public release</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+      <section aria-labelledby="problem">
+        <h2 id="problem">The Web is rich in knowledge, but agents repeatedly start from pages</h2>
+        <p class="lede">
+          Today, an agent often searches, downloads a human interface, runs a browser and asks
+          a model to infer structure again. That work is expensive, difficult to reproduce and
+          easy to detach from its source.
+        </p>
+        <div class="split wide">
+          <div>
+            <h3>Without TWIRX</h3>
+            <ol>
+              <li>Find a page or provider-specific API.</li>
+              <li>Interpret its vocabulary and structure again.</li>
+              <li>Lose source wording as data is normalized.</li>
+              <li>Repeat the work for the next agent and query.</li>
+            </ol>
+          </div>
+          <div>
+            <h3>With TWIRX</h3>
+            <ol>
+              <li>Observe an approved public representation once.</li>
+              <li>Preserve its native statement and exact evidence.</li>
+              <li>Compile proof-bearing, reusable semantic state.</li>
+              <li>Query, compare and trace through one typed fabric.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="proof">
+        <h2 id="proof">A small, real Semantic Highway exists now</h2>
+        <p>
+          The released local snapshot is deliberately small. It proves the complete route from
+          evidence to packets, materialized views, cross-origin queries and semantic deltas
+          without pretending that every selected Atlas origin already has a working adapter.
+        </p>
+        <dl class="counters wide">
+          <div class="counter"><dt>Atlas identities</dt><dd>{{commas $r.actual.atlas_identities}}<small>selected, not all compiled</small></dd></div>
+          <div class="counter"><dt>Policy decisions</dt><dd>{{$r.actual.completed_policy_decisions}}<small>explicit human review</small></dd></div>
+          <div class="counter"><dt>Public-source packets</dt><dd>{{$r.actual.public_packets}}<small>{{$r.actual.public_origins_with_packets}} origins</small></dd></div>
+          <div class="counter"><dt>Real origin deltas</dt><dd>{{$r.actual.deltas}}<small>two archive periods</small></dd></div>
+          <div class="counter"><dt>Materialized views</dt><dd>{{$r.actual.materialized_views}}<small>immutable snapshot</small></dd></div>
+          <div class="counter"><dt>Runtime origin calls</dt><dd>{{$r.actual.runtime_origin_network_requests}}<small>snapshot query path</small></dd></div>
+        </dl>
+        <p>
+          A separate {{commas $r.controlled_scale.packets}}-packet run is capacity evidence
+          using controlled fixtures. It is never added to the public-source count.
+        </p>
+        <p><a class="btn" href="/demo/#query">Inspect the cross-origin query</a> <a class="btn" href="https://lab.twirx.org/#atlas-title">Explore all 500 identities</a> <a class="btn" href="/proof/">Read the complete proof</a></p>
+      </section>
+
+      <section aria-labelledby="delta">
+        <h2 id="delta">It can distinguish a source change from an interpretation change</h2>
+        <p>
+          Two sealed Common Crawl records show the RFC Editor homepage title changing between
+          2025 and 2026. TWIRX preserves both lexical values and emits an <em>origin delta</em>.
+          It does not invent a semantic delta or canon delta when neither occurred.
+        </p>
+        <div class="split wide">
+          {{range $i, $c := $r.archive.captures}}
+          <div>
+            <h3>{{if eq $i 0}}Earlier representation{{else}}Later representation{{end}}</h3>
+            <p class="note">{{$c.collection}} · {{$c.observed_at}}</p>
+            <pre><code>{{$c.native_lexical}}</code></pre>
+            <p><code>{{$c.native_locator}}</code></p>
+          </div>
+          {{end}}
+        </div>
+        <p><a href="/demo/#delta">Inspect packet identities, delta identity and provenance</a>.</p>
+      </section>
+
+      <section aria-labelledby="users">
+        <h2 id="users">One public layer, three direct beneficiaries</h2>
+        <div class="cards cards--3 wide">
+          <div class="card"><h3>Agents</h3><p>Discover and query typed capabilities without loading hundreds of provider-specific tools or trusting an opaque summary.</p></div>
+          <div class="card"><h3>Publishers</h3><p>Retain native vocabulary, attribution, access policy, correction and revocation while becoming agent-readable.</p><p><a href="/publish/">Publisher path</a></p></div>
+          <div class="card"><h3>The public Web</h3><p>Gain an independently implementable semantic layer that is not owned by a browser vendor, model company or private registry.</p></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="scope">
+        <h2 id="scope">Current boundary</h2>
+        <div class="callout callout--limit">
+          <p class="callout__title">Genesis Preview</p>
+          <p>{{$r.current_scope}}</p>
+        </div>
+        <p>
+          The snapshot, query runtime and proof above are implemented and validated locally.
+          The public Query Lab is not yet deployed, and the site does not present this static
+          evidence view as a live API. Known limitations remain visible on
+          <a href="/proof/">Proof</a> and <a href="/security/">Security</a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="fund">
+        <h2 id="fund">Fund the next 90 days</h2>
+        <p class="lede">
+          TWIRX is requesting <strong>${{commas $r.grant.request_usd}}</strong> for
+          <strong>{{$r.grant.term_days}} days</strong>. The first
+          <strong>${{commas $r.grant.first_milestone_usd}}</strong> milestone completes the
+          public release and funds {{$r.grant.first_milestone_days}} days of focused,
+          full-time maintainer engineering execution.
+        </p>
+        <p>
+          Funding buys labor, infrastructure and reliability. It does not buy protocol
+          ownership, semantic ranking, canon admission or governance authority.
+        </p>
+        <p class="actions"><a class="btn btn--primary" href="/futo/">Review the FUTO case</a> <a class="btn" href="/funding/">Budget and milestones</a> <a class="btn" href="mailto:rick@twirx.org">Contact the maintainer</a></p>
+      </section>
+    </article>
+  </div>
+</div>
+{{end}}

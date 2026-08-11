@@ -1,0 +1,5020 @@
+{
+  "format": "tw.atlas-selection/0.2",
+  "version": "2026-08-10",
+  "status": "candidate_selection",
+  "canonical_scheme": "https",
+  "statement": "Candidate selection only. Selection does not assert reachability, access permission, publisher identity, authority, completed policy review, profiling, observation, compilation, semantic admission, health, or live availability.",
+  "family_quotas": {
+    "government_law_public_data": 100,
+    "science_research_scholarly_infrastructure": 80,
+    "standards_technical_docs_open_source": 60,
+    "economics_markets_public_disclosure": 60,
+    "journalism_public_interest": 50,
+    "health_public_health": 50,
+    "climate_environment_earth_systems": 50,
+    "education_reference_culture": 30,
+    "humanitarian_civic_global_development": 20
+  },
+  "candidates": [
+    {
+      "id": "data-gov",
+      "canonical_origin": "https://data.gov",
+      "canonical_host": "data.gov",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "census-gov",
+      "canonical_origin": "https://census.gov",
+      "canonical_host": "census.gov",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bls-gov",
+      "canonical_origin": "https://bls.gov",
+      "canonical_host": "bls.gov",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bea-gov",
+      "canonical_origin": "https://bea.gov",
+      "canonical_host": "bea.gov",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "regulations-gov",
+      "canonical_origin": "https://regulations.gov",
+      "canonical_host": "regulations.gov",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "congress-gov",
+      "canonical_origin": "https://congress.gov",
+      "canonical_host": "congress.gov",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "govinfo-gov",
+      "canonical_origin": "https://govinfo.gov",
+      "canonical_host": "govinfo.gov",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "usaspending-gov",
+      "canonical_origin": "https://usaspending.gov",
+      "canonical_host": "usaspending.gov",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-uk",
+      "canonical_origin": "https://data.gov.uk",
+      "canonical_host": "data.gov.uk",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ons-gov-uk",
+      "canonical_origin": "https://ons.gov.uk",
+      "canonical_host": "ons.gov.uk",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "legislation-gov-uk",
+      "canonical_origin": "https://legislation.gov.uk",
+      "canonical_host": "legislation.gov.uk",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-europa-eu",
+      "canonical_origin": "https://data.europa.eu",
+      "canonical_host": "data.europa.eu",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eur-lex-europa-eu",
+      "canonical_origin": "https://eur-lex.europa.eu",
+      "canonical_host": "eur-lex.europa.eu",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "op-europa-eu",
+      "canonical_origin": "https://op.europa.eu",
+      "canonical_host": "op.europa.eu",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gouv-fr",
+      "canonical_origin": "https://data.gouv.fr",
+      "canonical_host": "data.gouv.fr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "insee-fr",
+      "canonical_origin": "https://insee.fr",
+      "canonical_host": "insee.fr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "legifrance-gouv-fr",
+      "canonical_origin": "https://legifrance.gouv.fr",
+      "canonical_host": "legifrance.gouv.fr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "govdata-de",
+      "canonical_origin": "https://govdata.de",
+      "canonical_host": "govdata.de",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "destatis-de",
+      "canonical_origin": "https://destatis.de",
+      "canonical_host": "destatis.de",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "gesetze-im-internet-de",
+      "canonical_origin": "https://gesetze-im-internet.de",
+      "canonical_host": "gesetze-im-internet.de",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dati-gov-it",
+      "canonical_origin": "https://dati.gov.it",
+      "canonical_host": "dati.gov.it",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "istat-it",
+      "canonical_origin": "https://istat.it",
+      "canonical_host": "istat.it",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "normattiva-it",
+      "canonical_origin": "https://normattiva.it",
+      "canonical_host": "normattiva.it",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "datos-gob-es",
+      "canonical_origin": "https://datos.gob.es",
+      "canonical_host": "datos.gob.es",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ine-es",
+      "canonical_origin": "https://ine.es",
+      "canonical_host": "ine.es",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "boe-es",
+      "canonical_origin": "https://boe.es",
+      "canonical_host": "boe.es",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dados-gov-pt",
+      "canonical_origin": "https://dados.gov.pt",
+      "canonical_host": "dados.gov.pt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ine-pt",
+      "canonical_origin": "https://ine.pt",
+      "canonical_host": "ine.pt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "diariodarepublica-pt",
+      "canonical_origin": "https://diariodarepublica.pt",
+      "canonical_host": "diariodarepublica.pt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-overheid-nl",
+      "canonical_origin": "https://data.overheid.nl",
+      "canonical_host": "data.overheid.nl",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cbs-nl",
+      "canonical_origin": "https://cbs.nl",
+      "canonical_host": "cbs.nl",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "overheid-nl",
+      "canonical_origin": "https://overheid.nl",
+      "canonical_host": "overheid.nl",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-be",
+      "canonical_origin": "https://data.gov.be",
+      "canonical_host": "data.gov.be",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "statbel-fgov-be",
+      "canonical_origin": "https://statbel.fgov.be",
+      "canonical_host": "statbel.fgov.be",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "opendata-swiss",
+      "canonical_origin": "https://opendata.swiss",
+      "canonical_host": "opendata.swiss",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bfs-admin-ch",
+      "canonical_origin": "https://bfs.admin.ch",
+      "canonical_host": "bfs.admin.ch",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "fedlex-admin-ch",
+      "canonical_origin": "https://fedlex.admin.ch",
+      "canonical_host": "fedlex.admin.ch",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gv-at",
+      "canonical_origin": "https://data.gv.at",
+      "canonical_host": "data.gv.at",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "statistik-at",
+      "canonical_origin": "https://statistik.at",
+      "canonical_host": "statistik.at",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ris-bka-gv-at",
+      "canonical_origin": "https://ris.bka.gv.at",
+      "canonical_host": "ris.bka.gv.at",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-cz",
+      "canonical_origin": "https://data.gov.cz",
+      "canonical_host": "data.gov.cz",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "czso-cz",
+      "canonical_origin": "https://czso.cz",
+      "canonical_host": "czso.cz",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "e-sbirka-cz",
+      "canonical_origin": "https://e-sbirka.cz",
+      "canonical_host": "e-sbirka.cz",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dane-gov-pl",
+      "canonical_origin": "https://dane.gov.pl",
+      "canonical_host": "dane.gov.pl",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "stat-gov-pl",
+      "canonical_origin": "https://stat.gov.pl",
+      "canonical_host": "stat.gov.pl",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "isap-sejm-gov-pl",
+      "canonical_origin": "https://isap.sejm.gov.pl",
+      "canonical_host": "isap.sejm.gov.pl",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "oppnadata-se",
+      "canonical_origin": "https://oppnadata.se",
+      "canonical_host": "oppnadata.se",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "scb-se",
+      "canonical_origin": "https://scb.se",
+      "canonical_host": "scb.se",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "riksdagen-se",
+      "canonical_origin": "https://riksdagen.se",
+      "canonical_host": "riksdagen.se",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-norge-no",
+      "canonical_origin": "https://data.norge.no",
+      "canonical_host": "data.norge.no",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ssb-no",
+      "canonical_origin": "https://ssb.no",
+      "canonical_host": "ssb.no",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "lovdata-no",
+      "canonical_origin": "https://lovdata.no",
+      "canonical_host": "lovdata.no",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dst-dk",
+      "canonical_origin": "https://dst.dk",
+      "canonical_host": "dst.dk",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "retsinformation-dk",
+      "canonical_origin": "https://retsinformation.dk",
+      "canonical_host": "retsinformation.dk",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "avoindata-fi",
+      "canonical_origin": "https://avoindata.fi",
+      "canonical_host": "avoindata.fi",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "stat-fi",
+      "canonical_origin": "https://stat.fi",
+      "canonical_host": "stat.fi",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "finlex-fi",
+      "canonical_origin": "https://finlex.fi",
+      "canonical_host": "finlex.fi",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-ie",
+      "canonical_origin": "https://data.gov.ie",
+      "canonical_host": "data.gov.ie",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cso-ie",
+      "canonical_origin": "https://cso.ie",
+      "canonical_host": "cso.ie",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "irishstatutebook-ie",
+      "canonical_origin": "https://irishstatutebook.ie",
+      "canonical_host": "irishstatutebook.ie",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-gr",
+      "canonical_origin": "https://data.gov.gr",
+      "canonical_host": "data.gov.gr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "statistics-gr",
+      "canonical_origin": "https://statistics.gr",
+      "canonical_host": "statistics.gr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "et-gr",
+      "canonical_origin": "https://et.gr",
+      "canonical_host": "et.gr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-ro",
+      "canonical_origin": "https://data.gov.ro",
+      "canonical_host": "data.gov.ro",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "insse-ro",
+      "canonical_origin": "https://insse.ro",
+      "canonical_host": "insse.ro",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "legislatie-just-ro",
+      "canonical_origin": "https://legislatie.just.ro",
+      "canonical_host": "legislatie.just.ro",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "opendata-gov-hu",
+      "canonical_origin": "https://opendata.gov.hu",
+      "canonical_host": "opendata.gov.hu",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ksh-hu",
+      "canonical_origin": "https://ksh.hu",
+      "canonical_host": "ksh.hu",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "njt-hu",
+      "canonical_origin": "https://njt.hu",
+      "canonical_host": "njt.hu",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-lt",
+      "canonical_origin": "https://data.gov.lt",
+      "canonical_host": "data.gov.lt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "osp-stat-gov-lt",
+      "canonical_origin": "https://osp.stat.gov.lt",
+      "canonical_host": "osp.stat.gov.lt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "e-seimas-lrs-lt",
+      "canonical_origin": "https://e-seimas.lrs.lt",
+      "canonical_host": "e-seimas.lrs.lt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-lv",
+      "canonical_origin": "https://data.gov.lv",
+      "canonical_host": "data.gov.lv",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "stat-gov-lv",
+      "canonical_origin": "https://stat.gov.lv",
+      "canonical_host": "stat.gov.lv",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "likumi-lv",
+      "canonical_origin": "https://likumi.lv",
+      "canonical_host": "likumi.lv",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "avaandmed-eesti-ee",
+      "canonical_origin": "https://avaandmed.eesti.ee",
+      "canonical_host": "avaandmed.eesti.ee",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "stat-ee",
+      "canonical_origin": "https://stat.ee",
+      "canonical_host": "stat.ee",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "riigiteataja-ee",
+      "canonical_origin": "https://riigiteataja.ee",
+      "canonical_host": "riigiteataja.ee",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "podatki-gov-si",
+      "canonical_origin": "https://podatki.gov.si",
+      "canonical_host": "podatki.gov.si",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "stat-si",
+      "canonical_origin": "https://stat.si",
+      "canonical_host": "stat.si",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "pisrs-si",
+      "canonical_origin": "https://pisrs.si",
+      "canonical_host": "pisrs.si",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-sk",
+      "canonical_origin": "https://data.gov.sk",
+      "canonical_host": "data.gov.sk",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "statistics-sk",
+      "canonical_origin": "https://statistics.sk",
+      "canonical_host": "statistics.sk",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "slov-lex-sk",
+      "canonical_origin": "https://slov-lex.sk",
+      "canonical_host": "slov-lex.sk",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-hr",
+      "canonical_origin": "https://data.gov.hr",
+      "canonical_host": "data.gov.hr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dzs-hr",
+      "canonical_origin": "https://dzs.hr",
+      "canonical_host": "dzs.hr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "narodne-novine-nn-hr",
+      "canonical_origin": "https://narodne-novine.nn.hr",
+      "canonical_host": "narodne-novine.nn.hr",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-egov-bg",
+      "canonical_origin": "https://data.egov.bg",
+      "canonical_host": "data.egov.bg",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nsi-bg",
+      "canonical_origin": "https://nsi.bg",
+      "canonical_host": "nsi.bg",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dv-parliament-bg",
+      "canonical_origin": "https://dv.parliament.bg",
+      "canonical_host": "dv.parliament.bg",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-cy",
+      "canonical_origin": "https://data.gov.cy",
+      "canonical_host": "data.gov.cy",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cystat-gov-cy",
+      "canonical_origin": "https://cystat.gov.cy",
+      "canonical_host": "cystat.gov.cy",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-mt",
+      "canonical_origin": "https://data.gov.mt",
+      "canonical_host": "data.gov.mt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nso-gov-mt",
+      "canonical_origin": "https://nso.gov.mt",
+      "canonical_host": "nso.gov.mt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "legislation-mt",
+      "canonical_origin": "https://legislation.mt",
+      "canonical_host": "legislation.mt",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-gov-au",
+      "canonical_origin": "https://data.gov.au",
+      "canonical_host": "data.gov.au",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "abs-gov-au",
+      "canonical_origin": "https://abs.gov.au",
+      "canonical_host": "abs.gov.au",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "legislation-gov-au",
+      "canonical_origin": "https://legislation.gov.au",
+      "canonical_host": "legislation.gov.au",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-govt-nz",
+      "canonical_origin": "https://data.govt.nz",
+      "canonical_host": "data.govt.nz",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "stats-govt-nz",
+      "canonical_origin": "https://stats.govt.nz",
+      "canonical_host": "stats.govt.nz",
+      "domain_family": "government_law_public_data",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "crossref-org",
+      "canonical_origin": "https://crossref.org",
+      "canonical_host": "crossref.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "orcid-org",
+      "canonical_origin": "https://orcid.org",
+      "canonical_host": "orcid.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "openalex-org",
+      "canonical_origin": "https://openalex.org",
+      "canonical_host": "openalex.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "arxiv-org",
+      "canonical_origin": "https://arxiv.org",
+      "canonical_host": "arxiv.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ncbi-nlm-nih-gov",
+      "canonical_origin": "https://ncbi.nlm.nih.gov",
+      "canonical_host": "ncbi.nlm.nih.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "europepmc-org",
+      "canonical_origin": "https://europepmc.org",
+      "canonical_host": "europepmc.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cern-ch",
+      "canonical_origin": "https://cern.ch",
+      "canonical_host": "cern.ch",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "zenodo-org",
+      "canonical_origin": "https://zenodo.org",
+      "canonical_host": "zenodo.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nasa-gov",
+      "canonical_origin": "https://nasa.gov",
+      "canonical_host": "nasa.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-nasa-gov",
+      "canonical_origin": "https://data.nasa.gov",
+      "canonical_host": "data.nasa.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nsf-gov",
+      "canonical_origin": "https://nsf.gov",
+      "canonical_host": "nsf.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nih-gov",
+      "canonical_origin": "https://nih.gov",
+      "canonical_host": "nih.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "usgs-gov",
+      "canonical_origin": "https://usgs.gov",
+      "canonical_host": "usgs.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "osti-gov",
+      "canonical_origin": "https://osti.gov",
+      "canonical_host": "osti.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "science-gov",
+      "canonical_origin": "https://science.gov",
+      "canonical_host": "science.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dataone-org",
+      "canonical_origin": "https://dataone.org",
+      "canonical_host": "dataone.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "datadryad-org",
+      "canonical_origin": "https://datadryad.org",
+      "canonical_host": "datadryad.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "figshare-com",
+      "canonical_origin": "https://figshare.com",
+      "canonical_host": "figshare.com",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dataverse-harvard-edu",
+      "canonical_origin": "https://dataverse.harvard.edu",
+      "canonical_host": "dataverse.harvard.edu",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "gbif-org",
+      "canonical_origin": "https://gbif.org",
+      "canonical_host": "gbif.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "biodiversitylibrary-org",
+      "canonical_origin": "https://biodiversitylibrary.org",
+      "canonical_host": "biodiversitylibrary.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ebi-ac-uk",
+      "canonical_origin": "https://ebi.ac.uk",
+      "canonical_host": "ebi.ac.uk",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "embl-org",
+      "canonical_origin": "https://embl.org",
+      "canonical_host": "embl.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ensembl-org",
+      "canonical_origin": "https://ensembl.org",
+      "canonical_host": "ensembl.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "uniprot-org",
+      "canonical_origin": "https://uniprot.org",
+      "canonical_host": "uniprot.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rcsb-org",
+      "canonical_origin": "https://rcsb.org",
+      "canonical_host": "rcsb.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "wwpdb-org",
+      "canonical_origin": "https://wwpdb.org",
+      "canonical_host": "wwpdb.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "pubchem-ncbi-nlm-nih-gov",
+      "canonical_origin": "https://pubchem.ncbi.nlm.nih.gov",
+      "canonical_host": "pubchem.ncbi.nlm.nih.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "clinicaltrials-gov",
+      "canonical_origin": "https://clinicaltrials.gov",
+      "canonical_host": "clinicaltrials.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "biorxiv-org",
+      "canonical_origin": "https://biorxiv.org",
+      "canonical_host": "biorxiv.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "medrxiv-org",
+      "canonical_origin": "https://medrxiv.org",
+      "canonical_host": "medrxiv.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "semanticscholar-org",
+      "canonical_origin": "https://semanticscholar.org",
+      "canonical_host": "semanticscholar.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "core-ac-uk",
+      "canonical_origin": "https://core.ac.uk",
+      "canonical_host": "core.ac.uk",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "doaj-org",
+      "canonical_origin": "https://doaj.org",
+      "canonical_host": "doaj.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "openaire-eu",
+      "canonical_origin": "https://openaire.eu",
+      "canonical_host": "openaire.eu",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "researchdata-edu-au",
+      "canonical_origin": "https://researchdata.edu.au",
+      "canonical_host": "researchdata.edu.au",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-csiro-au",
+      "canonical_origin": "https://data.csiro.au",
+      "canonical_host": "data.csiro.au",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "sciencebase-gov",
+      "canonical_origin": "https://sciencebase.gov",
+      "canonical_host": "sciencebase.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "pangaea-de",
+      "canonical_origin": "https://pangaea.de",
+      "canonical_host": "pangaea.de",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "earthchem-org",
+      "canonical_origin": "https://earthchem.org",
+      "canonical_host": "earthchem.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "iris-edu",
+      "canonical_origin": "https://iris.edu",
+      "canonical_host": "iris.edu",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "seanoe-org",
+      "canonical_origin": "https://seanoe.org",
+      "canonical_host": "seanoe.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "datacite-org",
+      "canonical_origin": "https://datacite.org",
+      "canonical_host": "datacite.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "re3data-org",
+      "canonical_origin": "https://re3data.org",
+      "canonical_host": "re3data.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "lens-org",
+      "canonical_origin": "https://lens.org",
+      "canonical_host": "lens.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "hal-science",
+      "canonical_origin": "https://hal.science",
+      "canonical_host": "hal.science",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "jstage-jst-go-jp",
+      "canonical_origin": "https://jstage.jst.go.jp",
+      "canonical_host": "jstage.jst.go.jp",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ci-nii-ac-jp",
+      "canonical_origin": "https://ci.nii.ac.jp",
+      "canonical_host": "ci.nii.ac.jp",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "scielo-org",
+      "canonical_origin": "https://scielo.org",
+      "canonical_host": "scielo.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "redalyc-org",
+      "canonical_origin": "https://redalyc.org",
+      "canonical_host": "redalyc.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "lareferencia-info",
+      "canonical_origin": "https://lareferencia.info",
+      "canonical_host": "lareferencia.info",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ajol-info",
+      "canonical_origin": "https://ajol.info",
+      "canonical_host": "ajol.info",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "inspirehep-net",
+      "canonical_origin": "https://inspirehep.net",
+      "canonical_host": "inspirehep.net",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "simbad-u-strasbg-fr",
+      "canonical_origin": "https://simbad.u-strasbg.fr",
+      "canonical_host": "simbad.u-strasbg.fr",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "vizier-cds-unistra-fr",
+      "canonical_origin": "https://vizier.cds.unistra.fr",
+      "canonical_host": "vizier.cds.unistra.fr",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ui-adsabs-harvard-edu",
+      "canonical_origin": "https://ui.adsabs.harvard.edu",
+      "canonical_host": "ui.adsabs.harvard.edu",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eso-org",
+      "canonical_origin": "https://eso.org",
+      "canonical_host": "eso.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ligo-org",
+      "canonical_origin": "https://ligo.org",
+      "canonical_host": "ligo.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "oeis-org",
+      "canonical_origin": "https://oeis.org",
+      "canonical_host": "oeis.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "lmfdb-org",
+      "canonical_origin": "https://lmfdb.org",
+      "canonical_host": "lmfdb.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "zbmath-org",
+      "canonical_origin": "https://zbmath.org",
+      "canonical_host": "zbmath.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "encodeproject-org",
+      "canonical_origin": "https://encodeproject.org",
+      "canonical_host": "encodeproject.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "interpro-ebi-ac-uk",
+      "canonical_origin": "https://interpro.ebi.ac.uk",
+      "canonical_host": "interpro.ebi.ac.uk",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "reactome-org",
+      "canonical_origin": "https://reactome.org",
+      "canonical_host": "reactome.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "geneontology-org",
+      "canonical_origin": "https://geneontology.org",
+      "canonical_host": "geneontology.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "catalogueoflife-org",
+      "canonical_origin": "https://catalogueoflife.org",
+      "canonical_host": "catalogueoflife.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "genome-gov",
+      "canonical_origin": "https://genome.gov",
+      "canonical_host": "genome.gov",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "research-fi",
+      "canonical_origin": "https://research.fi",
+      "canonical_host": "research.fi",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "swepub-kb-se",
+      "canonical_origin": "https://swepub.kb.se",
+      "canonical_host": "swepub.kb.se",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "gesis-org",
+      "canonical_origin": "https://gesis.org",
+      "canonical_host": "gesis.org",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ukdataservice-ac-uk",
+      "canonical_origin": "https://ukdataservice.ac.uk",
+      "canonical_host": "ukdataservice.ac.uk",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cnrs-fr",
+      "canonical_origin": "https://cnrs.fr",
+      "canonical_host": "cnrs.fr",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mpg-de",
+      "canonical_origin": "https://mpg.de",
+      "canonical_host": "mpg.de",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "riken-jp",
+      "canonical_origin": "https://riken.jp",
+      "canonical_host": "riken.jp",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "csiro-au",
+      "canonical_origin": "https://csiro.au",
+      "canonical_host": "csiro.au",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "csic-es",
+      "canonical_origin": "https://csic.es",
+      "canonical_host": "csic.es",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "conicet-gov-ar",
+      "canonical_origin": "https://conicet.gov.ar",
+      "canonical_host": "conicet.gov.ar",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cnpq-br",
+      "canonical_origin": "https://cnpq.br",
+      "canonical_host": "cnpq.br",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nrf-ac-za",
+      "canonical_origin": "https://nrf.ac.za",
+      "canonical_host": "nrf.ac.za",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "jst-go-jp",
+      "canonical_origin": "https://jst.go.jp",
+      "canonical_host": "jst.go.jp",
+      "domain_family": "science_research_scholarly_infrastructure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "w3-org",
+      "canonical_origin": "https://w3.org",
+      "canonical_host": "w3.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rfc-editor-org",
+      "canonical_origin": "https://www.rfc-editor.org",
+      "canonical_host": "www.rfc-editor.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ietf-org",
+      "canonical_origin": "https://ietf.org",
+      "canonical_host": "ietf.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "iana-org",
+      "canonical_origin": "https://iana.org",
+      "canonical_host": "iana.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "iso-org",
+      "canonical_origin": "https://iso.org",
+      "canonical_host": "iso.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "iec-ch",
+      "canonical_origin": "https://iec.ch",
+      "canonical_host": "iec.ch",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "oasis-open-org",
+      "canonical_origin": "https://oasis-open.org",
+      "canonical_host": "oasis-open.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ecma-international-org",
+      "canonical_origin": "https://ecma-international.org",
+      "canonical_host": "ecma-international.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "omg-org",
+      "canonical_origin": "https://omg.org",
+      "canonical_host": "omg.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "opengroup-org",
+      "canonical_origin": "https://opengroup.org",
+      "canonical_host": "opengroup.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "unicode-org",
+      "canonical_origin": "https://unicode.org",
+      "canonical_host": "unicode.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "schema-org",
+      "canonical_origin": "https://schema.org",
+      "canonical_host": "schema.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "json-schema-org",
+      "canonical_origin": "https://json-schema.org",
+      "canonical_host": "json-schema.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "openapis-org",
+      "canonical_origin": "https://openapis.org",
+      "canonical_host": "openapis.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "linuxfoundation-org",
+      "canonical_origin": "https://linuxfoundation.org",
+      "canonical_host": "linuxfoundation.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kernel-org",
+      "canonical_origin": "https://kernel.org",
+      "canonical_host": "kernel.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "gnu-org",
+      "canonical_origin": "https://gnu.org",
+      "canonical_host": "gnu.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "opensource-org",
+      "canonical_origin": "https://opensource.org",
+      "canonical_host": "opensource.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "spdx-dev",
+      "canonical_origin": "https://spdx.dev",
+      "canonical_host": "spdx.dev",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cyclonedx-org",
+      "canonical_origin": "https://cyclonedx.org",
+      "canonical_host": "cyclonedx.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "owasp-org",
+      "canonical_origin": "https://owasp.org",
+      "canonical_host": "owasp.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nist-gov",
+      "canonical_origin": "https://nist.gov",
+      "canonical_host": "nist.gov",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "docs-python-org",
+      "canonical_origin": "https://docs.python.org",
+      "canonical_host": "docs.python.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "go-dev",
+      "canonical_origin": "https://go.dev",
+      "canonical_host": "go.dev",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rust-lang-org",
+      "canonical_origin": "https://rust-lang.org",
+      "canonical_host": "rust-lang.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nodejs-org",
+      "canonical_origin": "https://nodejs.org",
+      "canonical_host": "nodejs.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "php-net",
+      "canonical_origin": "https://php.net",
+      "canonical_host": "php.net",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ruby-lang-org",
+      "canonical_origin": "https://ruby-lang.org",
+      "canonical_host": "ruby-lang.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "perl-org",
+      "canonical_origin": "https://perl.org",
+      "canonical_host": "perl.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "openjdk-org",
+      "canonical_origin": "https://openjdk.org",
+      "canonical_host": "openjdk.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kotlinlang-org",
+      "canonical_origin": "https://kotlinlang.org",
+      "canonical_host": "kotlinlang.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "swift-org",
+      "canonical_origin": "https://swift.org",
+      "canonical_host": "swift.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dart-dev",
+      "canonical_origin": "https://dart.dev",
+      "canonical_host": "dart.dev",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "developer-mozilla-org",
+      "canonical_origin": "https://developer.mozilla.org",
+      "canonical_host": "developer.mozilla.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "docs-github-com",
+      "canonical_origin": "https://docs.github.com",
+      "canonical_host": "docs.github.com",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "git-scm-com",
+      "canonical_origin": "https://git-scm.com",
+      "canonical_host": "git-scm.com",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "twirx-org",
+      "canonical_origin": "https://twirx.org",
+      "canonical_host": "twirx.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "docs-docker-com",
+      "canonical_origin": "https://docs.docker.com",
+      "canonical_host": "docs.docker.com",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kubernetes-io",
+      "canonical_origin": "https://kubernetes.io",
+      "canonical_host": "kubernetes.io",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "helm-sh",
+      "canonical_origin": "https://helm.sh",
+      "canonical_host": "helm.sh",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "terraform-io",
+      "canonical_origin": "https://terraform.io",
+      "canonical_host": "terraform.io",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ansible-com",
+      "canonical_origin": "https://ansible.com",
+      "canonical_host": "ansible.com",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "postgresql-org",
+      "canonical_origin": "https://postgresql.org",
+      "canonical_host": "postgresql.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mysql-com",
+      "canonical_origin": "https://mysql.com",
+      "canonical_host": "mysql.com",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mariadb-org",
+      "canonical_origin": "https://mariadb.org",
+      "canonical_host": "mariadb.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "sqlite-org",
+      "canonical_origin": "https://sqlite.org",
+      "canonical_host": "sqlite.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "apache-org",
+      "canonical_origin": "https://apache.org",
+      "canonical_host": "apache.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eclipse-org",
+      "canonical_origin": "https://eclipse.org",
+      "canonical_host": "eclipse.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "debian-org",
+      "canonical_origin": "https://debian.org",
+      "canonical_host": "debian.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ubuntu-com",
+      "canonical_origin": "https://ubuntu.com",
+      "canonical_host": "ubuntu.com",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "freebsd-org",
+      "canonical_origin": "https://freebsd.org",
+      "canonical_host": "freebsd.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "openbsd-org",
+      "canonical_origin": "https://openbsd.org",
+      "canonical_host": "openbsd.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "netbsd-org",
+      "canonical_origin": "https://netbsd.org",
+      "canonical_host": "netbsd.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "llvm-org",
+      "canonical_origin": "https://llvm.org",
+      "canonical_host": "llvm.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "gcc-gnu-org",
+      "canonical_origin": "https://gcc.gnu.org",
+      "canonical_host": "gcc.gnu.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cmake-org",
+      "canonical_origin": "https://cmake.org",
+      "canonical_host": "cmake.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mesonbuild-com",
+      "canonical_origin": "https://mesonbuild.com",
+      "canonical_host": "mesonbuild.com",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bazel-build",
+      "canonical_origin": "https://bazel.build",
+      "canonical_host": "bazel.build",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "semver-org",
+      "canonical_origin": "https://semver.org",
+      "canonical_host": "semver.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "commonmark-org",
+      "canonical_origin": "https://commonmark.org",
+      "canonical_host": "commonmark.org",
+      "domain_family": "standards_technical_docs_open_source",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "worldbank-org",
+      "canonical_origin": "https://worldbank.org",
+      "canonical_host": "worldbank.org",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "api-worldbank-org",
+      "canonical_origin": "https://api.worldbank.org",
+      "canonical_host": "api.worldbank.org",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "imf-org",
+      "canonical_origin": "https://imf.org",
+      "canonical_host": "imf.org",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "oecd-org",
+      "canonical_origin": "https://oecd.org",
+      "canonical_host": "oecd.org",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bis-org",
+      "canonical_origin": "https://bis.org",
+      "canonical_host": "bis.org",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ecb-europa-eu",
+      "canonical_origin": "https://ecb.europa.eu",
+      "canonical_host": "ecb.europa.eu",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eurostat-ec-europa-eu",
+      "canonical_origin": "https://eurostat.ec.europa.eu",
+      "canonical_host": "eurostat.ec.europa.eu",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "federalreserve-gov",
+      "canonical_origin": "https://federalreserve.gov",
+      "canonical_host": "federalreserve.gov",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "fred-stlouisfed-org",
+      "canonical_origin": "https://fred.stlouisfed.org",
+      "canonical_host": "fred.stlouisfed.org",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "sec-gov",
+      "canonical_origin": "https://sec.gov",
+      "canonical_host": "sec.gov",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "investor-gov",
+      "canonical_origin": "https://investor.gov",
+      "canonical_host": "investor.gov",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "treasury-gov",
+      "canonical_origin": "https://treasury.gov",
+      "canonical_host": "treasury.gov",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cbo-gov",
+      "canonical_origin": "https://cbo.gov",
+      "canonical_host": "cbo.gov",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "jec-senate-gov",
+      "canonical_origin": "https://jec.senate.gov",
+      "canonical_host": "jec.senate.gov",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "finra-org",
+      "canonical_origin": "https://finra.org",
+      "canonical_host": "finra.org",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "esma-europa-eu",
+      "canonical_origin": "https://esma.europa.eu",
+      "canonical_host": "esma.europa.eu",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eba-europa-eu",
+      "canonical_origin": "https://eba.europa.eu",
+      "canonical_host": "eba.europa.eu",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eiopa-europa-eu",
+      "canonical_origin": "https://eiopa.europa.eu",
+      "canonical_host": "eiopa.europa.eu",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bankofengland-co-uk",
+      "canonical_origin": "https://bankofengland.co.uk",
+      "canonical_host": "bankofengland.co.uk",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bundesbank-de",
+      "canonical_origin": "https://bundesbank.de",
+      "canonical_host": "bundesbank.de",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "banque-france-fr",
+      "canonical_origin": "https://banque-france.fr",
+      "canonical_host": "banque-france.fr",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bancaditalia-it",
+      "canonical_origin": "https://bancaditalia.it",
+      "canonical_host": "bancaditalia.it",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bde-es",
+      "canonical_origin": "https://bde.es",
+      "canonical_host": "bde.es",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bportugal-pt",
+      "canonical_origin": "https://bportugal.pt",
+      "canonical_host": "bportugal.pt",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dnb-nl",
+      "canonical_origin": "https://dnb.nl",
+      "canonical_host": "dnb.nl",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nbb-be",
+      "canonical_origin": "https://nbb.be",
+      "canonical_host": "nbb.be",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "snb-ch",
+      "canonical_origin": "https://snb.ch",
+      "canonical_host": "snb.ch",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "oenb-at",
+      "canonical_origin": "https://oenb.at",
+      "canonical_host": "oenb.at",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "riksbank-se",
+      "canonical_origin": "https://riksbank.se",
+      "canonical_host": "riksbank.se",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "norges-bank-no",
+      "canonical_origin": "https://norges-bank.no",
+      "canonical_host": "norges-bank.no",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nationalbanken-dk",
+      "canonical_origin": "https://nationalbanken.dk",
+      "canonical_host": "nationalbanken.dk",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "suomenpankki-fi",
+      "canonical_origin": "https://suomenpankki.fi",
+      "canonical_host": "suomenpankki.fi",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "centralbank-ie",
+      "canonical_origin": "https://centralbank.ie",
+      "canonical_host": "centralbank.ie",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bankofgreece-gr",
+      "canonical_origin": "https://bankofgreece.gr",
+      "canonical_host": "bankofgreece.gr",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bnr-ro",
+      "canonical_origin": "https://bnr.ro",
+      "canonical_host": "bnr.ro",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mnb-hu",
+      "canonical_origin": "https://mnb.hu",
+      "canonical_host": "mnb.hu",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "lb-lt",
+      "canonical_origin": "https://lb.lt",
+      "canonical_host": "lb.lt",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bank-lv",
+      "canonical_origin": "https://bank.lv",
+      "canonical_host": "bank.lv",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eestipank-ee",
+      "canonical_origin": "https://eestipank.ee",
+      "canonical_host": "eestipank.ee",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bsi-si",
+      "canonical_origin": "https://bsi.si",
+      "canonical_host": "bsi.si",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nbs-sk",
+      "canonical_origin": "https://nbs.sk",
+      "canonical_host": "nbs.sk",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "hnb-hr",
+      "canonical_origin": "https://hnb.hr",
+      "canonical_host": "hnb.hr",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bnb-bg",
+      "canonical_origin": "https://bnb.bg",
+      "canonical_host": "bnb.bg",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "centralbank-cy",
+      "canonical_origin": "https://centralbank.cy",
+      "canonical_host": "centralbank.cy",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "centralbankmalta-org",
+      "canonical_origin": "https://centralbankmalta.org",
+      "canonical_host": "centralbankmalta.org",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rba-gov-au",
+      "canonical_origin": "https://rba.gov.au",
+      "canonical_host": "rba.gov.au",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rbnz-govt-nz",
+      "canonical_origin": "https://rbnz.govt.nz",
+      "canonical_host": "rbnz.govt.nz",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bankofcanada-ca",
+      "canonical_origin": "https://bankofcanada.ca",
+      "canonical_host": "bankofcanada.ca",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "banxico-org-mx",
+      "canonical_origin": "https://banxico.org.mx",
+      "canonical_host": "banxico.org.mx",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bcb-gov-br",
+      "canonical_origin": "https://bcb.gov.br",
+      "canonical_host": "bcb.gov.br",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bcentral-cl",
+      "canonical_origin": "https://bcentral.cl",
+      "canonical_host": "bcentral.cl",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bcra-gob-ar",
+      "canonical_origin": "https://bcra.gob.ar",
+      "canonical_host": "bcra.gob.ar",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "banrep-gov-co",
+      "canonical_origin": "https://banrep.gov.co",
+      "canonical_host": "banrep.gov.co",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bcrp-gob-pe",
+      "canonical_origin": "https://bcrp.gob.pe",
+      "canonical_host": "bcrp.gob.pe",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "boj-or-jp",
+      "canonical_origin": "https://boj.or.jp",
+      "canonical_host": "boj.or.jp",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "pbc-gov-cn",
+      "canonical_origin": "https://pbc.gov.cn",
+      "canonical_host": "pbc.gov.cn",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rbi-org-in",
+      "canonical_origin": "https://rbi.org.in",
+      "canonical_host": "rbi.org.in",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bok-or-kr",
+      "canonical_origin": "https://bok.or.kr",
+      "canonical_host": "bok.or.kr",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mas-gov-sg",
+      "canonical_origin": "https://mas.gov.sg",
+      "canonical_host": "mas.gov.sg",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "hkma-gov-hk",
+      "canonical_origin": "https://hkma.gov.hk",
+      "canonical_host": "hkma.gov.hk",
+      "domain_family": "economics_markets_public_disclosure",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "reuters-com",
+      "canonical_origin": "https://reuters.com",
+      "canonical_host": "reuters.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "apnews-com",
+      "canonical_origin": "https://apnews.com",
+      "canonical_host": "apnews.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bbc-com",
+      "canonical_origin": "https://bbc.com",
+      "canonical_host": "bbc.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "npr-org",
+      "canonical_origin": "https://npr.org",
+      "canonical_host": "npr.org",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "pbs-org",
+      "canonical_origin": "https://pbs.org",
+      "canonical_host": "pbs.org",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "propublica-org",
+      "canonical_origin": "https://propublica.org",
+      "canonical_host": "propublica.org",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "icij-org",
+      "canonical_origin": "https://icij.org",
+      "canonical_host": "icij.org",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "theguardian-com",
+      "canonical_origin": "https://theguardian.com",
+      "canonical_host": "theguardian.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dw-com",
+      "canonical_origin": "https://dw.com",
+      "canonical_host": "dw.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "france24-com",
+      "canonical_origin": "https://france24.com",
+      "canonical_host": "france24.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rfi-fr",
+      "canonical_origin": "https://rfi.fr",
+      "canonical_host": "rfi.fr",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "swissinfo-ch",
+      "canonical_origin": "https://swissinfo.ch",
+      "canonical_host": "swissinfo.ch",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "euronews-com",
+      "canonical_origin": "https://euronews.com",
+      "canonical_host": "euronews.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "aljazeera-com",
+      "canonical_origin": "https://aljazeera.com",
+      "canonical_host": "aljazeera.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "africanews-com",
+      "canonical_origin": "https://africanews.com",
+      "canonical_host": "africanews.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "allafrica-com",
+      "canonical_origin": "https://allafrica.com",
+      "canonical_host": "allafrica.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nation-africa",
+      "canonical_origin": "https://nation.africa",
+      "canonical_host": "nation.africa",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "premiumtimesng-com",
+      "canonical_origin": "https://premiumtimesng.com",
+      "canonical_host": "premiumtimesng.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mg-co-za",
+      "canonical_origin": "https://mg.co.za",
+      "canonical_host": "mg.co.za",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "abc-net-au",
+      "canonical_origin": "https://abc.net.au",
+      "canonical_host": "abc.net.au",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "sbs-com-au",
+      "canonical_origin": "https://sbs.com.au",
+      "canonical_host": "sbs.com.au",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rnz-co-nz",
+      "canonical_origin": "https://rnz.co.nz",
+      "canonical_host": "rnz.co.nz",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cbc-ca",
+      "canonical_origin": "https://cbc.ca",
+      "canonical_host": "cbc.ca",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "latimes-com",
+      "canonical_origin": "https://latimes.com",
+      "canonical_host": "latimes.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nytimes-com",
+      "canonical_origin": "https://nytimes.com",
+      "canonical_host": "nytimes.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "washingtonpost-com",
+      "canonical_origin": "https://washingtonpost.com",
+      "canonical_host": "washingtonpost.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "politico-com",
+      "canonical_origin": "https://politico.com",
+      "canonical_host": "politico.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "theconversation-com",
+      "canonical_origin": "https://theconversation.com",
+      "canonical_host": "theconversation.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "restofworld-org",
+      "canonical_origin": "https://restofworld.org",
+      "canonical_host": "restofworld.org",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "globalvoices-org",
+      "canonical_origin": "https://globalvoices.org",
+      "canonical_host": "globalvoices.org",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bellingcat-com",
+      "canonical_origin": "https://bellingcat.com",
+      "canonical_host": "bellingcat.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "occrp-org",
+      "canonical_origin": "https://occrp.org",
+      "canonical_host": "occrp.org",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "journalismfund-eu",
+      "canonical_origin": "https://journalismfund.eu",
+      "canonical_host": "journalismfund.eu",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "elpais-com",
+      "canonical_origin": "https://elpais.com",
+      "canonical_host": "elpais.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "lemonde-fr",
+      "canonical_origin": "https://lemonde.fr",
+      "canonical_host": "lemonde.fr",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "spiegel-de",
+      "canonical_origin": "https://spiegel.de",
+      "canonical_host": "spiegel.de",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "corriere-it",
+      "canonical_origin": "https://corriere.it",
+      "canonical_host": "corriere.it",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "publico-pt",
+      "canonical_origin": "https://publico.pt",
+      "canonical_host": "publico.pt",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "volkskrant-nl",
+      "canonical_origin": "https://volkskrant.nl",
+      "canonical_host": "volkskrant.nl",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "derstandard-at",
+      "canonical_origin": "https://derstandard.at",
+      "canonical_host": "derstandard.at",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "wyborcza-pl",
+      "canonical_origin": "https://wyborcza.pl",
+      "canonical_host": "wyborcza.pl",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dnevnik-si",
+      "canonical_origin": "https://dnevnik.si",
+      "canonical_host": "dnevnik.si",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "aktualne-cz",
+      "canonical_origin": "https://aktualne.cz",
+      "canonical_host": "aktualne.cz",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "telex-hu",
+      "canonical_origin": "https://telex.hu",
+      "canonical_host": "telex.hu",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "g4media-ro",
+      "canonical_origin": "https://g4media.ro",
+      "canonical_host": "g4media.ro",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "novinite-com",
+      "canonical_origin": "https://novinite.com",
+      "canonical_host": "novinite.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kathimerini-gr",
+      "canonical_origin": "https://kathimerini.gr",
+      "canonical_host": "kathimerini.gr",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "timesofmalta-com",
+      "canonical_origin": "https://timesofmalta.com",
+      "canonical_host": "timesofmalta.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kyivindependent-com",
+      "canonical_origin": "https://kyivindependent.com",
+      "canonical_host": "kyivindependent.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rappler-com",
+      "canonical_origin": "https://rappler.com",
+      "canonical_host": "rappler.com",
+      "domain_family": "journalism_public_interest",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "who-int",
+      "canonical_origin": "https://who.int",
+      "canonical_host": "who.int",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cdc-gov",
+      "canonical_origin": "https://cdc.gov",
+      "canonical_host": "cdc.gov",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ecdc-europa-eu",
+      "canonical_origin": "https://ecdc.europa.eu",
+      "canonical_host": "ecdc.europa.eu",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "healthdata-org",
+      "canonical_origin": "https://healthdata.org",
+      "canonical_host": "healthdata.org",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ourworldindata-org",
+      "canonical_origin": "https://ourworldindata.org",
+      "canonical_host": "ourworldindata.org",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "health-gov",
+      "canonical_origin": "https://health.gov",
+      "canonical_host": "health.gov",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "fda-gov",
+      "canonical_origin": "https://fda.gov",
+      "canonical_host": "fda.gov",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "medlineplus-gov",
+      "canonical_origin": "https://medlineplus.gov",
+      "canonical_host": "medlineplus.gov",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cms-gov",
+      "canonical_origin": "https://cms.gov",
+      "canonical_host": "cms.gov",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "hhs-gov",
+      "canonical_origin": "https://hhs.gov",
+      "canonical_host": "hhs.gov",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ukhsa-blog-gov-uk",
+      "canonical_origin": "https://ukhsa.blog.gov.uk",
+      "canonical_host": "ukhsa.blog.gov.uk",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nhs-uk",
+      "canonical_origin": "https://nhs.uk",
+      "canonical_host": "nhs.uk",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nice-org-uk",
+      "canonical_origin": "https://nice.org.uk",
+      "canonical_host": "nice.org.uk",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "santepubliquefrance-fr",
+      "canonical_origin": "https://santepubliquefrance.fr",
+      "canonical_host": "santepubliquefrance.fr",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "anses-fr",
+      "canonical_origin": "https://anses.fr",
+      "canonical_host": "anses.fr",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rki-de",
+      "canonical_origin": "https://rki.de",
+      "canonical_host": "rki.de",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "pei-de",
+      "canonical_origin": "https://pei.de",
+      "canonical_host": "pei.de",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "salute-gov-it",
+      "canonical_origin": "https://salute.gov.it",
+      "canonical_host": "salute.gov.it",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "aifa-gov-it",
+      "canonical_origin": "https://aifa.gov.it",
+      "canonical_host": "aifa.gov.it",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "sanidad-gob-es",
+      "canonical_origin": "https://sanidad.gob.es",
+      "canonical_host": "sanidad.gob.es",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "aemps-gob-es",
+      "canonical_origin": "https://aemps.gob.es",
+      "canonical_host": "aemps.gob.es",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "sns24-gov-pt",
+      "canonical_origin": "https://sns24.gov.pt",
+      "canonical_host": "sns24.gov.pt",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "infarmed-pt",
+      "canonical_origin": "https://infarmed.pt",
+      "canonical_host": "infarmed.pt",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rivm-nl",
+      "canonical_origin": "https://rivm.nl",
+      "canonical_host": "rivm.nl",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "zorginstituutnederland-nl",
+      "canonical_origin": "https://zorginstituutnederland.nl",
+      "canonical_host": "zorginstituutnederland.nl",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "sciensano-be",
+      "canonical_origin": "https://sciensano.be",
+      "canonical_host": "sciensano.be",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bag-admin-ch",
+      "canonical_origin": "https://bag.admin.ch",
+      "canonical_host": "bag.admin.ch",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ages-at",
+      "canonical_origin": "https://ages.at",
+      "canonical_host": "ages.at",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "szu-cz",
+      "canonical_origin": "https://szu.cz",
+      "canonical_host": "szu.cz",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "folkhalsomyndigheten-se",
+      "canonical_origin": "https://folkhalsomyndigheten.se",
+      "canonical_host": "folkhalsomyndigheten.se",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "fhi-no",
+      "canonical_origin": "https://fhi.no",
+      "canonical_host": "fhi.no",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "sst-dk",
+      "canonical_origin": "https://sst.dk",
+      "canonical_host": "sst.dk",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "thl-fi",
+      "canonical_origin": "https://thl.fi",
+      "canonical_host": "thl.fi",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "hse-ie",
+      "canonical_origin": "https://hse.ie",
+      "canonical_host": "hse.ie",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eody-gov-gr",
+      "canonical_origin": "https://eody.gov.gr",
+      "canonical_host": "eody.gov.gr",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "insp-gov-ro",
+      "canonical_origin": "https://insp.gov.ro",
+      "canonical_host": "insp.gov.ro",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nnk-gov-hu",
+      "canonical_origin": "https://nnk.gov.hu",
+      "canonical_host": "nnk.gov.hu",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "hi-lt",
+      "canonical_origin": "https://hi.lt",
+      "canonical_host": "hi.lt",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "spkc-gov-lv",
+      "canonical_origin": "https://spkc.gov.lv",
+      "canonical_host": "spkc.gov.lv",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "terviseamet-ee",
+      "canonical_origin": "https://terviseamet.ee",
+      "canonical_host": "terviseamet.ee",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nijz-si",
+      "canonical_origin": "https://nijz.si",
+      "canonical_host": "nijz.si",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "uvzsr-sk",
+      "canonical_origin": "https://uvzsr.sk",
+      "canonical_host": "uvzsr.sk",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "hzjz-hr",
+      "canonical_origin": "https://hzjz.hr",
+      "canonical_host": "hzjz.hr",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mh-government-bg",
+      "canonical_origin": "https://mh.government.bg",
+      "canonical_host": "mh.government.bg",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "health-gov-cy",
+      "canonical_origin": "https://health.gov.cy",
+      "canonical_host": "health.gov.cy",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "health-gov-mt",
+      "canonical_origin": "https://health.gov.mt",
+      "canonical_host": "health.gov.mt",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "health-gov-au",
+      "canonical_origin": "https://health.gov.au",
+      "canonical_host": "health.gov.au",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "health-govt-nz",
+      "canonical_origin": "https://health.govt.nz",
+      "canonical_host": "health.govt.nz",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "africacdc-org",
+      "canonical_origin": "https://africacdc.org",
+      "canonical_host": "africacdc.org",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "paho-org",
+      "canonical_origin": "https://paho.org",
+      "canonical_host": "paho.org",
+      "domain_family": "health_public_health",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "climate-gov",
+      "canonical_origin": "https://climate.gov",
+      "canonical_host": "climate.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "noaa-gov",
+      "canonical_origin": "https://noaa.gov",
+      "canonical_host": "noaa.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ncei-noaa-gov",
+      "canonical_origin": "https://ncei.noaa.gov",
+      "canonical_host": "ncei.noaa.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "weather-gov",
+      "canonical_origin": "https://weather.gov",
+      "canonical_host": "weather.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "earthdata-nasa-gov",
+      "canonical_origin": "https://earthdata.nasa.gov",
+      "canonical_host": "earthdata.nasa.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "climate-nasa-gov",
+      "canonical_origin": "https://climate.nasa.gov",
+      "canonical_host": "climate.nasa.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "waterdata-usgs-gov",
+      "canonical_origin": "https://waterdata.usgs.gov",
+      "canonical_host": "waterdata.usgs.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "epa-gov",
+      "canonical_origin": "https://epa.gov",
+      "canonical_host": "epa.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eia-gov",
+      "canonical_origin": "https://eia.gov",
+      "canonical_host": "eia.gov",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "copernicus-eu",
+      "canonical_origin": "https://copernicus.eu",
+      "canonical_host": "copernicus.eu",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "climate-copernicus-eu",
+      "canonical_origin": "https://climate.copernicus.eu",
+      "canonical_host": "climate.copernicus.eu",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ecmwf-int",
+      "canonical_origin": "https://ecmwf.int",
+      "canonical_host": "ecmwf.int",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eumetsat-int",
+      "canonical_origin": "https://eumetsat.int",
+      "canonical_host": "eumetsat.int",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "esa-int",
+      "canonical_origin": "https://esa.int",
+      "canonical_host": "esa.int",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "eea-europa-eu",
+      "canonical_origin": "https://eea.europa.eu",
+      "canonical_host": "eea.europa.eu",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ipcc-ch",
+      "canonical_origin": "https://ipcc.ch",
+      "canonical_host": "ipcc.ch",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "unfccc-int",
+      "canonical_origin": "https://unfccc.int",
+      "canonical_host": "unfccc.int",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "wmo-int",
+      "canonical_origin": "https://wmo.int",
+      "canonical_host": "wmo.int",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "globalcarbonproject-org",
+      "canonical_origin": "https://globalcarbonproject.org",
+      "canonical_host": "globalcarbonproject.org",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "climatewatchdata-org",
+      "canonical_origin": "https://climatewatchdata.org",
+      "canonical_host": "climatewatchdata.org",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "wri-org",
+      "canonical_origin": "https://wri.org",
+      "canonical_host": "wri.org",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "openaq-org",
+      "canonical_origin": "https://openaq.org",
+      "canonical_host": "openaq.org",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "aqicn-org",
+      "canonical_origin": "https://aqicn.org",
+      "canonical_host": "aqicn.org",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "metoffice-gov-uk",
+      "canonical_origin": "https://metoffice.gov.uk",
+      "canonical_host": "metoffice.gov.uk",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dwd-de",
+      "canonical_origin": "https://dwd.de",
+      "canonical_host": "dwd.de",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteofrance-com",
+      "canonical_origin": "https://meteofrance.com",
+      "canonical_host": "meteofrance.com",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "aemet-es",
+      "canonical_origin": "https://aemet.es",
+      "canonical_host": "aemet.es",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ipma-pt",
+      "canonical_origin": "https://ipma.pt",
+      "canonical_host": "ipma.pt",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "knmi-nl",
+      "canonical_origin": "https://knmi.nl",
+      "canonical_host": "knmi.nl",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteo-be",
+      "canonical_origin": "https://meteo.be",
+      "canonical_host": "meteo.be",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteoswiss-admin-ch",
+      "canonical_origin": "https://meteoswiss.admin.ch",
+      "canonical_host": "meteoswiss.admin.ch",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "zamg-ac-at",
+      "canonical_origin": "https://zamg.ac.at",
+      "canonical_host": "zamg.ac.at",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "smhi-se",
+      "canonical_origin": "https://smhi.se",
+      "canonical_host": "smhi.se",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "met-no",
+      "canonical_origin": "https://met.no",
+      "canonical_host": "met.no",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dmi-dk",
+      "canonical_origin": "https://dmi.dk",
+      "canonical_host": "dmi.dk",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "en-ilmatieteenlaitos-fi",
+      "canonical_origin": "https://en.ilmatieteenlaitos.fi",
+      "canonical_host": "en.ilmatieteenlaitos.fi",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "met-ie",
+      "canonical_origin": "https://met.ie",
+      "canonical_host": "met.ie",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "emy-gr",
+      "canonical_origin": "https://emy.gr",
+      "canonical_host": "emy.gr",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteoromania-ro",
+      "canonical_origin": "https://meteoromania.ro",
+      "canonical_host": "meteoromania.ro",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "met-hu",
+      "canonical_origin": "https://met.hu",
+      "canonical_host": "met.hu",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteo-lt",
+      "canonical_origin": "https://meteo.lt",
+      "canonical_host": "meteo.lt",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteo-lv",
+      "canonical_origin": "https://meteo.lv",
+      "canonical_host": "meteo.lv",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ilmateenistus-ee",
+      "canonical_origin": "https://ilmateenistus.ee",
+      "canonical_host": "ilmateenistus.ee",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteo-si",
+      "canonical_origin": "https://meteo.si",
+      "canonical_host": "meteo.si",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "shmu-sk",
+      "canonical_origin": "https://shmu.sk",
+      "canonical_host": "shmu.sk",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteo-hr",
+      "canonical_origin": "https://meteo.hr",
+      "canonical_host": "meteo.hr",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "meteo-bg",
+      "canonical_origin": "https://meteo.bg",
+      "canonical_host": "meteo.bg",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bom-gov-au",
+      "canonical_origin": "https://bom.gov.au",
+      "canonical_host": "bom.gov.au",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "niwa-co-nz",
+      "canonical_origin": "https://niwa.co.nz",
+      "canonical_host": "niwa.co.nz",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "environment-govt-nz",
+      "canonical_origin": "https://environment.govt.nz",
+      "canonical_host": "environment.govt.nz",
+      "domain_family": "climate_environment_earth_systems",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "unesco-org",
+      "canonical_origin": "https://unesco.org",
+      "canonical_host": "unesco.org",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "loc-gov",
+      "canonical_origin": "https://loc.gov",
+      "canonical_host": "loc.gov",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "europeana-eu",
+      "canonical_origin": "https://europeana.eu",
+      "canonical_host": "europeana.eu",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "si-edu",
+      "canonical_origin": "https://si.edu",
+      "canonical_host": "si.edu",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "britishmuseum-org",
+      "canonical_origin": "https://britishmuseum.org",
+      "canonical_host": "britishmuseum.org",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bl-uk",
+      "canonical_origin": "https://bl.uk",
+      "canonical_host": "bl.uk",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nationalarchives-gov-uk",
+      "canonical_origin": "https://nationalarchives.gov.uk",
+      "canonical_host": "nationalarchives.gov.uk",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "bnf-fr",
+      "canonical_origin": "https://bnf.fr",
+      "canonical_host": "bnf.fr",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "culture-gouv-fr",
+      "canonical_origin": "https://culture.gouv.fr",
+      "canonical_host": "culture.gouv.fr",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "deutsche-digitale-bibliothek-de",
+      "canonical_origin": "https://deutsche-digitale-bibliothek.de",
+      "canonical_host": "deutsche-digitale-bibliothek.de",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "dnb-de",
+      "canonical_origin": "https://dnb.de",
+      "canonical_host": "dnb.de",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "rijksmuseum-nl",
+      "canonical_origin": "https://rijksmuseum.nl",
+      "canonical_host": "rijksmuseum.nl",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kb-nl",
+      "canonical_origin": "https://kb.nl",
+      "canonical_host": "kb.nl",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "museodelprado-es",
+      "canonical_origin": "https://museodelprado.es",
+      "canonical_host": "museodelprado.es",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "cultura-gob-es",
+      "canonical_origin": "https://cultura.gob.es",
+      "canonical_host": "cultura.gob.es",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "gulbenkian-pt",
+      "canonical_origin": "https://gulbenkian.pt",
+      "canonical_host": "gulbenkian.pt",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "onb-ac-at",
+      "canonical_origin": "https://onb.ac.at",
+      "canonical_host": "onb.ac.at",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kb-se",
+      "canonical_origin": "https://kb.se",
+      "canonical_host": "kb.se",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nb-no",
+      "canonical_origin": "https://nb.no",
+      "canonical_host": "nb.no",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kb-dk",
+      "canonical_origin": "https://kb.dk",
+      "canonical_host": "kb.dk",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "kansalliskirjasto-fi",
+      "canonical_origin": "https://kansalliskirjasto.fi",
+      "canonical_host": "kansalliskirjasto.fi",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "nli-ie",
+      "canonical_origin": "https://nli.ie",
+      "canonical_host": "nli.ie",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "benaki-org",
+      "canonical_origin": "https://benaki.org",
+      "canonical_host": "benaki.org",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "polona-pl",
+      "canonical_origin": "https://polona.pl",
+      "canonical_host": "polona.pl",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "digitalniknihovna-cz",
+      "canonical_origin": "https://digitalniknihovna.cz",
+      "canonical_host": "digitalniknihovna.cz",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mek-oszk-hu",
+      "canonical_origin": "https://mek.oszk.hu",
+      "canonical_host": "mek.oszk.hu",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "digar-ee",
+      "canonical_origin": "https://digar.ee",
+      "canonical_host": "digar.ee",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "trove-nla-gov-au",
+      "canonical_origin": "https://trove.nla.gov.au",
+      "canonical_host": "trove.nla.gov.au",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "natlib-govt-nz",
+      "canonical_origin": "https://natlib.govt.nz",
+      "canonical_host": "natlib.govt.nz",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "wikidata-org",
+      "canonical_origin": "https://wikidata.org",
+      "canonical_host": "wikidata.org",
+      "domain_family": "education_reference_culture",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "unocha-org",
+      "canonical_origin": "https://unocha.org",
+      "canonical_host": "unocha.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "reliefweb-int",
+      "canonical_origin": "https://reliefweb.int",
+      "canonical_host": "reliefweb.int",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "data-humdata-org",
+      "canonical_origin": "https://data.humdata.org",
+      "canonical_host": "data.humdata.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "unicef-org",
+      "canonical_origin": "https://unicef.org",
+      "canonical_host": "unicef.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "unhcr-org",
+      "canonical_origin": "https://unhcr.org",
+      "canonical_host": "unhcr.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "wfp-org",
+      "canonical_origin": "https://wfp.org",
+      "canonical_host": "wfp.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "fao-org",
+      "canonical_origin": "https://fao.org",
+      "canonical_host": "fao.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "undp-org",
+      "canonical_origin": "https://undp.org",
+      "canonical_host": "undp.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "icrc-org",
+      "canonical_origin": "https://icrc.org",
+      "canonical_host": "icrc.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "ifrc-org",
+      "canonical_origin": "https://ifrc.org",
+      "canonical_host": "ifrc.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "msf-org",
+      "canonical_origin": "https://msf.org",
+      "canonical_host": "msf.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "iom-int",
+      "canonical_origin": "https://iom.int",
+      "canonical_host": "iom.int",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "worldvision-org",
+      "canonical_origin": "https://worldvision.org",
+      "canonical_host": "worldvision.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "savethechildren-net",
+      "canonical_origin": "https://savethechildren.net",
+      "canonical_host": "savethechildren.net",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "care-org",
+      "canonical_origin": "https://care.org",
+      "canonical_host": "care.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "oxfam-org",
+      "canonical_origin": "https://oxfam.org",
+      "canonical_host": "oxfam.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "mercycorps-org",
+      "canonical_origin": "https://mercycorps.org",
+      "canonical_host": "mercycorps.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "acaps-org",
+      "canonical_origin": "https://acaps.org",
+      "canonical_host": "acaps.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "humanitarianresponse-info",
+      "canonical_origin": "https://humanitarianresponse.info",
+      "canonical_host": "humanitarianresponse.info",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    },
+    {
+      "id": "globalgiving-org",
+      "canonical_origin": "https://globalgiving.org",
+      "canonical_host": "globalgiving.org",
+      "domain_family": "humanitarian_civic_global_development",
+      "catalog": {"state": "candidate"},
+      "publisher_hint": null,
+      "jurisdiction_hint": null,
+      "language_hints": []
+    }
+  ]
+}

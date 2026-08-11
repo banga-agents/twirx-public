@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/atlas-frontier-plan-0.1.json",
+  "title": "TWIRX Atlas dry-run frontier plan 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "generated_at", "mode", "network_access", "decisions", "jobs"],
+  "properties": {
+    "format": {"const": "tw.atlas-frontier-plan/0.1"},
+    "generated_at": {"type": "string", "minLength": 20, "maxLength": 40},
+    "mode": {"const": "dry_run"},
+    "network_access": {"const": "disabled"},
+    "decisions": {"type": "array", "minItems": 500, "maxItems": 500, "items": {"$ref": "#/$defs/decision"}},
+    "jobs": {"type": "array", "maxItems": 500, "items": {"$ref": "#/$defs/job"}}
+  },
+  "$defs": {
+    "originID": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 255},
+    "nullableTime": {"type": ["string", "null"], "maxLength": 40},
+    "decision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["origin_id", "action", "reason", "due_at"],
+      "properties": {
+        "origin_id": {"$ref": "#/$defs/originID"},
+        "action": {"enum": ["schedule", "defer", "blocked"]},
+        "reason": {"enum": ["due", "not_due", "cooldown", "catalog_review_pending", "policy_review_pending", "policy_not_live_permitted", "scheduler_disabled"]},
+        "due_at": {"$ref": "#/$defs/nullableTime"}
+      }
+    },
+    "job": {
+      "type": "object", "additionalProperties": false,
+      "required": ["origin_id", "priority", "refresh_class", "due_at", "request_budget", "storage_budget_bytes"],
+      "properties": {
+        "origin_id": {"$ref": "#/$defs/originID"}, "priority": {"type": "integer", "minimum": 1},
+        "refresh_class": {"enum": ["hot", "warm", "cool", "archival"]},
+        "due_at": {"type": "string", "minLength": 20, "maxLength": 40},
+        "request_budget": {"type": "integer", "minimum": 1, "maximum": 1440},
+        "storage_budget_bytes": {"type": "integer", "minimum": 1, "maximum": 104857600}
+      }
+    }
+  }
+}

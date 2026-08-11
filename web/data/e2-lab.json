@@ -1,0 +1,75 @@
+{
+  "_source": "reports/gate-e2-live-provenance-lab.md, reports/e2-performance.md, reports/e2-load.md, reports/e2-browser-comparison.md, contracts/e2/contracts.json. All at implementation commit 88431ffcaf3d3f37a85eaed3dddbf7129ba00b27, evidence date 2026-08-10.",
+  "status": "implemented_locally",
+  "status_statement": "Local implementation acceptance passed. The typed read-only operation and bindings exist, but the public Lab is not deployed. Fresh-origin execution remains constrained by explicit policy, route-bound work orders, and the production egress boundary.",
+
+  "catalog": [
+    { "origin_id": "twirx-project", "title": "TWIRX project status", "kind": "Publisher-authored", "operations": ["project.getStatus", "project.getEngineeringGateReport", "project.listUnresolvedRisks"] },
+    { "origin_id": "controlled-origin-lab", "title": "Controlled fixture origin", "kind": "Controlled fixture", "operations": ["fixture.getOffer"] },
+    { "origin_id": "world-bank-indicators", "title": "World Bank Indicators API", "kind": "Live external official API", "operations": ["development.getIndicator"] }
+  ],
+
+  "operations_generated_from_one_source": 5,
+  "bindings_generated": ["CLI reference", "JSON Schema", "OpenAPI 3.1", "MCP tool definitions"],
+  "contract_source": "contracts/e2/contracts.json",
+
+  "conformance": [
+    { "label": "Named Go test passes", "value": "154", "detail": "0 failed", "scope": "Full E1+E2 suite, one recorded host", "source": "reports/gate-e2-live-provenance-lab.md" },
+    { "label": "Go fuzz targets", "value": "7", "detail": "passed", "scope": "3 new E2 targets plus the 4 carried from E1", "source": "reports/gate-e2-live-provenance-lab.md" },
+    { "label": "C libFuzzer executions", "value": "10,000", "detail": "5,000 + 5,000, two harnesses, 0 crashes", "scope": "E1 observation harness plus a second E2 harness", "source": "reports/gate-e2-live-provenance-lab.md" },
+    { "label": "Shared E2 bundle/artifact cases", "value": "13", "detail": "accept valid; reject corrupt, missing-manifest, symlinked, trailing-byte", "scope": "Go and restricted C, same committed vectors", "source": "reports/gate-e2-live-provenance-lab.md" },
+    { "label": "Concurrent identical publications", "value": "16", "detail": "passed under the race detector", "scope": "One host", "source": "reports/gate-e2-live-provenance-lab.md" },
+    { "label": "Catalog entries", "value": "3", "detail": "including one live external official API", "scope": "TWIRX itself, a fixture, World Bank Indicators", "source": "contracts/e2/contracts.json" }
+  ],
+
+  "adr_003": {
+    "problem": "The original work order asked for a canonical result that binds both its own digest and the digest of a manifest that hashes that result — a cryptographic cycle.",
+    "resolution": "content artifacts → result-core bytes → result digest → final manifest → bundle ID → API publication record",
+    "detail": "The result-core contains no self-digest. The bundle ID is the SHA-256 of the exact canonical manifest bytes. CLI, API, MCP, and UI wrappers expose both detached identifiers. Shared vectors explicitly reject missing, cyclic, substituted, malformed, symlinked, and trailing-byte manifests."
+  },
+
+  "sample_results": [
+    { "origin": "twirx-project", "operation": "project.getStatus", "fields_resolved": 4, "result_digest": "sha256:5b072d53786500d8ba16fb354d66f91f3444a2e19d0d83d6ec73c3b81dc6e495", "mode": "fresh" },
+    { "origin": "world-bank-indicators", "operation": "development.getIndicator", "fields_resolved": 4, "result_digest": "sha256:7dd49166746e839f8a604b9757e87537dfda077ba3f31a9a42618089dec8d7e5", "mode": "fresh", "input": "country=CHL, indicator=SP.POP.TOTL, year=2024" }
+  ],
+
+  "browser_comparison": {
+    "status": "One controlled 156-byte local fixture only. Explicitly not a generalized or universal claim.",
+    "method": "Chromium 150.0.7871.114, fresh profile, background features disabled, every non-loopback host mapped to NOTFOUND, compared against the promoted offline typed adapter for the same fixture.",
+    "command": "scripts/compare-e2-browser.py",
+    "rows": [
+      { "measure": "Wall time", "browser": "2.586759 s", "typed": "0.062731 s", "ratio": "~41.2×" },
+      { "measure": "Peak child resident memory", "browser": "240,764 KiB", "typed": "22,908 KiB", "ratio": "~10.5×" },
+      { "measure": "Agent-input representation", "browser": "320 bytes of dumped DOM", "typed": "191 bytes of compact typed values", "ratio": "~1.7×" },
+      { "measure": "Network requests", "browser": "1 allowed loopback plus blocked background attempts", "typed": "0", "ratio": "—" },
+      { "measure": "Evidence-bearing fields", "browser": "0", "typed": "5", "ratio": "—" }
+    ],
+    "note": "Chromium still attempted built-in requests to three Google hosts even in this fixture-only run; the resolver rule blocked them. The full typed result including proof references is 3,674 bytes — larger than the dumped source, because it intentionally carries native and semantic views, transformations, mappings, and digest bindings. The 191-byte figure is the compact value view an agent would actually consume."
+  },
+
+  "load": {
+    "host": "AMD Ryzen 7 6800U, loopback, same host as client, no network origin latency",
+    "nominal": { "requests": 20, "concurrency": 8, "successes": 20, "rate_limited": 0, "average_seconds": 0.025419, "p95_seconds": 0.059545, "average_response_bytes": 2679 },
+    "overload": { "burst": 20, "successes": 20, "rate_limited": 30, "status_code": 429 }
+  },
+
+  "security": {
+    "fresh_fetch_policy": "Rejects non-public addresses; constrains the initial URL and every redirect to the reviewed catalog hostname; bounds response bytes, redirects, and a strict representation-header allowlist.",
+    "excluded_from_trusted_path": "Cookies, authorization headers, arbitrary headers, credentialed browser requests, browser execution, model calls, shell execution, plugins, cgo, and Go's unsafe package.",
+    "secret_scan": "Gitleaks 8.30.1: zero items in 21 reachable commits and the full working tree. TruffleHog 3.96.0: zero verified items, one unverified heuristic hit — the intentional embedded-credential rejection fixture in internal/safefetch/safefetch_test.go.",
+    "caddy_validation": "The proposed Lab Caddy config was piped over SSH to the VPS's installed Caddy binary and validated without activating it. No Lab file, service unit, Caddy site, DNS record, or firewall rule was activated by this validation."
+  },
+
+  "unresolved_risks": [
+    "The Lab has not been deployed or tested through public Caddy/TLS. Public invocation, service-unit verification, firewall validation, and a lab.twirx.org surface check do not exist yet.",
+    "Application URL and DNS controls are not network isolation. A separate least-privilege worker/egress boundary, private-range and metadata blocking, network-layer redirect tests, quotas, monitoring, and incident/revocation procedures are still needed before public fresh-origin execution.",
+    "In-memory rate limits reset on restart and are not distributed. There is no cache, origin-health probe, or circuit breaker; health is honestly reported as not_probed.",
+    "An external provider can change content, schema, policy, or availability at any time. The committed replay fixture is evidence of one representation, not a claim of provider permanence.",
+    "Restricted C validates canonical structure and digest relationships but does not independently execute JSON extraction and semantic transformation. A second adapter implementation remains future work.",
+    "A sufficiently privileged local filesystem attacker can replace implementation and evidence together. Regular-file checks and rehashing narrow substitution but do not defeat host compromise.",
+    "The E2 corpus covers publisher JSON, a controlled fixture, and one official JSON API. JSON-LD, Atom/RSS/XML, structured HTML, and real multi-origin coverage remain E3 work.",
+    "Performance and load evidence comes from one local host and small fixtures, and excludes public TLS, VPS contention, distributed load, and general origin latency.",
+    "Hosted GitHub CI still has no executed runner evidence.",
+    "The private GitHub repository still has immutable old PR metadata; a fresh sanitized public repository or a confirmed provider purge remains necessary before changing visibility."
+  ]
+}

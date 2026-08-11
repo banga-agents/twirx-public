@@ -1,0 +1,284 @@
+{
+  "components": {
+    "schemas": {
+      "DevelopmentGetIndicatorInput": {
+        "$id": "urn:twirx:operation:development.getIndicator:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns one World Bank Indicators API value for bounded country, indicator, and year inputs.",
+        "properties": {
+          "country": {
+            "description": "Admitted ISO 3166-1 alpha-3 country code.",
+            "enum": [
+              "CHL",
+              "USA",
+              "VNM"
+            ],
+            "maxLength": 3,
+            "type": "string"
+          },
+          "indicator": {
+            "description": "Admitted World Bank indicator code.",
+            "enum": [
+              "NY.GDP.MKTP.CD",
+              "SP.POP.TOTL"
+            ],
+            "maxLength": 32,
+            "type": "string"
+          },
+          "year": {
+            "description": "Admitted observation year.",
+            "enum": [
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "country",
+          "indicator",
+          "year"
+        ],
+        "title": "Get an admitted development indicator",
+        "type": "object"
+      },
+      "DevelopmentGetIndicatorRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/DevelopmentGetIndicatorInput"
+          },
+          "mode": {
+            "const": "replay",
+            "default": "replay",
+            "description": "The deployable HTTP Lab is replay-only."
+          },
+          "operation_id": {
+            "const": "development.getIndicator"
+          },
+          "origin_id": {
+            "const": "world-bank-indicators"
+          }
+        },
+        "required": [
+          "origin_id",
+          "operation_id",
+          "input"
+        ],
+        "type": "object"
+      },
+      "FixtureGetOfferInput": {
+        "$id": "urn:twirx:operation:fixture.getOffer:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns a typed offer from the controlled local JSON fixture.",
+        "properties": {
+          "product_id": {
+            "description": "Admitted controlled fixture product identifier.",
+            "enum": [
+              "demo-1"
+            ],
+            "maxLength": 16,
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_id"
+        ],
+        "title": "Get controlled fixture offer",
+        "type": "object"
+      },
+      "FixtureGetOfferRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/FixtureGetOfferInput"
+          },
+          "mode": {
+            "const": "replay",
+            "default": "replay",
+            "description": "The deployable HTTP Lab is replay-only."
+          },
+          "operation_id": {
+            "const": "fixture.getOffer"
+          },
+          "origin_id": {
+            "const": "controlled-origin-lab"
+          }
+        },
+        "required": [
+          "origin_id",
+          "operation_id",
+          "input"
+        ],
+        "type": "object"
+      },
+      "ProjectGetEngineeringGateReportInput": {
+        "$id": "urn:twirx:operation:project.getEngineeringGateReport:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns the current gate evidence statement without converting it into an objective truth claim.",
+        "properties": {},
+        "required": [],
+        "title": "Get engineering gate report status",
+        "type": "object"
+      },
+      "ProjectGetEngineeringGateReportRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/ProjectGetEngineeringGateReportInput"
+          },
+          "mode": {
+            "const": "replay",
+            "default": "replay",
+            "description": "The deployable HTTP Lab is replay-only."
+          },
+          "operation_id": {
+            "const": "project.getEngineeringGateReport"
+          },
+          "origin_id": {
+            "const": "twirx-project"
+          }
+        },
+        "required": [
+          "origin_id",
+          "operation_id",
+          "input"
+        ],
+        "type": "object"
+      },
+      "ProjectGetStatusInput": {
+        "$id": "urn:twirx:operation:project.getStatus:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns the publisher-authored project phase and admitted engineering gate.",
+        "properties": {},
+        "required": [],
+        "title": "Get TWIRX project status",
+        "type": "object"
+      },
+      "ProjectGetStatusRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/ProjectGetStatusInput"
+          },
+          "mode": {
+            "const": "replay",
+            "default": "replay",
+            "description": "The deployable HTTP Lab is replay-only."
+          },
+          "operation_id": {
+            "const": "project.getStatus"
+          },
+          "origin_id": {
+            "const": "twirx-project"
+          }
+        },
+        "required": [
+          "origin_id",
+          "operation_id",
+          "input"
+        ],
+        "type": "object"
+      },
+      "ProjectListUnresolvedRisksInput": {
+        "$id": "urn:twirx:operation:project.listUnresolvedRisks:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns the complete publisher-authored unresolved-risk list from the observed project status artifact.",
+        "properties": {},
+        "required": [],
+        "title": "List published unresolved risks",
+        "type": "object"
+      },
+      "ProjectListUnresolvedRisksRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/ProjectListUnresolvedRisksInput"
+          },
+          "mode": {
+            "const": "replay",
+            "default": "replay",
+            "description": "The deployable HTTP Lab is replay-only."
+          },
+          "operation_id": {
+            "const": "project.listUnresolvedRisks"
+          },
+          "origin_id": {
+            "const": "twirx-project"
+          }
+        },
+        "required": [
+          "origin_id",
+          "operation_id",
+          "input"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "Catalog-only, read-only replay invocation with downloadable provenance bundles. Fresh-origin execution is not exposed by this HTTP surface.",
+    "title": "TWIRX Live Provenance Lab",
+    "version": "0.1.0-e2"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v1/invoke": {
+      "post": {
+        "operationId": "invoke",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ProjectGetStatusRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ProjectGetEngineeringGateReportRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ProjectListUnresolvedRisksRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/FixtureGetOfferRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/DevelopmentGetIndicatorRequest"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Canonical typed result and provenance view"
+          },
+          "400": {
+            "description": "Bounded typed request rejected"
+          },
+          "429": {
+            "description": "Rate or concurrency limit reached"
+          }
+        },
+        "summary": "Invoke one admitted replay operation"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://lab.twirx.org"
+    }
+  ]
+}

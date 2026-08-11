@@ -1,0 +1,286 @@
+{{define "content"}}
+<div class="page">
+  {{template "pagehead" .}}
+
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#native">Native meaning first</a></li>
+          <li><a href="#example">A worked example</a></li>
+          <li><a href="#claims">Mappings are claims</a></li>
+          <li><a href="#closure">Semantic closure</a></li>
+          <li><a href="#modules">Kernel and modules</a></li>
+          <li><a href="#uncertainty">Uncertainty is a state</a></li>
+          <li><a href="#oracle">Why this is not an oracle</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+
+      <section aria-labelledby="native">
+        <h2 id="native">Native meaning first {{chip "implemented"}}</h2>
+
+        <p class="lede">
+          Most extraction systems perform a lossy act early and never admit it: they replace
+          the provider's vocabulary with their own and discard the original. Afterwards there
+          is no way to tell a correct normalisation from a wrong one, because the evidence
+          that would settle it is gone.
+        </p>
+
+        <p>
+          TWIRX keeps both. Every field carries the provider's own term, the provider's own
+          lexical value, and the exact locator where it appeared — beside, not beneath, the
+          shared semantic interpretation. Normalisation is an additional view. It is never
+          an erasure.
+        </p>
+
+        <p>
+          This matters most in the cases where normalisation is subtly wrong. A currency that
+          was inferred rather than stated, a status vocabulary that does not quite align with
+          the shared one, a number whose units were assumed: in each case the native value is
+          the thing that lets a reviewer notice. Discarding it converts a recoverable error
+          into a permanent one.
+        </p>
+      </section>
+
+      <section aria-labelledby="example">
+        <h2 id="example">A worked example</h2>
+
+        <p>
+          This is a real field from the Gate E1 demonstration, taken from
+          <a href="{{repo .Site "examples/demo-result.json"}}">examples/demo-result.json<span class="ext" aria-hidden="true">↗</span></a>.
+          The origin said <code>usd</code>. The agent-facing value is <code>USD</code>. Everything
+          between those two facts is recorded.
+        </p>
+
+<pre><code>{
+  "id": "price_currency",
+  "status": "resolved",
+
+  "native": {                                  <span class="dim">← what the provider said</span>
+    "term": "origin:testorigin/currency",
+    "locator": "/offer/currency",
+    "lexical_value": "usd"
+  },
+
+  "semantic": {                                <span class="dim">← our interpretation of it</span>
+    "term": "commerce:OfferPrice.currency",
+    "value": { "type": "currency_code", "lexical": "USD" }
+  },
+
+  "provenance": {                              <span class="dim">← how one became the other</span>
+    "final_url": "http://127.0.0.1:18080/product/sku-001",
+    "retrieved_at": "2026-08-10T05:07:03.9995434Z",
+    "body_digest": "sha256:e194e7df…",
+    "observation_hash": "sha256:98025ae3…",
+    "adapter_id": "origin:testorigin/product-offer",
+    "adapter_digest": "sha256:86995ebf…",
+    "extraction_method": "json_pointer",
+    "locator": "/offer/currency",
+    "transform_chain": ["trim", "uppercase"],
+    "mapping_relation": "equivalent_in_context"
+  }
+}</code></pre>
+
+        <p>
+          Nothing here is impressive on its own. What is unusual is that the record is
+          <em>complete</em>: an auditor can fetch the body by its digest, confirm it still
+          hashes to the same value, find <code>/offer/currency</code> inside it, apply
+          <code>trim</code> then <code>uppercase</code>, and arrive at <code>USD</code> —
+          without trusting the system that produced the result, and without the origin
+          being online.
+        </p>
+
+        <div class="callout callout--key">
+          <p class="callout__title">The transform chain is part of the claim</p>
+          <p>
+            <code>uppercase</code> in Gate E1 operates on ASCII only, by decision, because
+            stable cross-language Unicode case conversion requires a versioned Unicode data
+            contract that does not exist yet. A future Unicode-aware transform will be a
+            <em>different, versioned</em> transform rather than a silent change in behaviour.
+            That is recorded in <a href="{{repo .Site "decisions/001-genesis-validation-profile.md"}}">ADR 001<span class="ext" aria-hidden="true">↗</span></a>.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="claims">
+        <h2 id="claims">Mappings are claims, not equivalences {{chip "implemented"}}</h2>
+
+        <p class="lede">
+          A mapping from a provider's term to a shared term is an assertion someone made,
+          in a context, at a version. TWIRX records it as such — including when the
+          assertion is weak.
+        </p>
+
+        <p>
+          The same demonstration contains a second field that makes the point better than
+          any argument. The origin's <code>availability</code> value is <code>in_stock</code>.
+          It is mapped to <code>commerce:Offer.availability</code>, but the recorded relation
+          is not equivalence:
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Two fields, two different strengths of claim</caption>
+            <thead>
+              <tr>
+                <th scope="col">Field</th>
+                <th scope="col">Native</th>
+                <th scope="col">Semantic</th>
+                <th scope="col">Recorded relation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><code>price_currency</code></th>
+                <td><code>usd</code></td>
+                <td><code>USD</code></td>
+                <td><code>equivalent_in_context</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>availability</code></th>
+                <td><code>in_stock</code></td>
+                <td><code>in_stock</code></td>
+                <td><code>related</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          <code>related</code> is the system saying: <em>this provider's availability
+          vocabulary is not the same vocabulary as ours, and we are not going to pretend
+          otherwise.</em> An agent that requires exact availability semantics can see that
+          the claim is weak and decide what to do. A system that had normalised silently
+          would have handed over the same string with none of that information attached.
+        </p>
+
+        <p>
+          Even <code>equivalent_in_context</code> carries a qualifier in its name. Equivalence
+          without context is the assumption that breaks first when two vocabularies meet.
+        </p>
+      </section>
+
+      <section aria-labelledby="closure">
+        <h2 id="closure">Semantic closure {{chip "implemented"}}</h2>
+
+        <p>
+          A result is only interpretable against the exact set of semantic modules that were
+          in force when it was produced. Gate E1 records that set, and a digest of it, on every
+          result:
+        </p>
+
+<pre><code>"semantic_closure": [
+  "mapping:testorigin-commerce@0.1.0",
+  "origin:testorigin@2026-08-10",
+  "tw:commerce@0.1.0",
+  "tw:kernel@0.1.0"
+],
+"semantic_closure_hash": "sha256:9ef146c9…"</code></pre>
+
+        <p>
+          If a mapping module is later corrected, results produced under the old closure do
+          not silently change meaning — they remain attributable to the version that produced
+          them. This is what makes semantic drift detectable instead of invisible.
+        </p>
+      </section>
+
+      <section aria-labelledby="modules">
+        <h2 id="modules">A small kernel and unbounded extension {{chip "specified"}}</h2>
+
+        <p class="lede">
+          Openness means anyone may publish an extension. Trust means not every extension
+          becomes canonical automatically. Those two commitments only coexist if the
+          canonical core stays small.
+        </p>
+
+        <div class="cards wide">
+          <div class="card">
+            <h3>Kernel {{chip "specified"}}</h3>
+            <p>A deliberately tiny set of stable primitives that everything else is defined against. Changing it is a constitutional act.</p>
+          </div>
+          <div class="card">
+            <h3>Domain modules {{chip "specified"}}</h3>
+            <p>Immutable, versioned vocabularies for a subject area — commerce, transport, public records. Superseded, never edited in place.</p>
+          </div>
+          <div class="card">
+            <h3>Origin-native modules {{chip "specified"}}</h3>
+            <p>A provider's own vocabulary, described in its own terms. This is what makes native meaning representable rather than merely retained as a string.</p>
+          </div>
+          <div class="card">
+            <h3>Mapping modules {{chip "specified"}}</h3>
+            <p>Explicit, versioned bridges between an origin-native module and a domain module, carrying the relation strength and the context of the claim.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--limit">
+          <p class="callout__title">Status</p>
+          <p>
+            Gate E1 exercises this structure concretely — the demonstration result above names
+            four modules and hashes their closure — but the module system itself is a written
+            direction. There is no semantic module compiler, no registry, and no admission
+            process for modules yet. Treat the four boxes above as a design commitment, not
+            as software.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="uncertainty">
+        <h2 id="uncertainty">Uncertainty is a state, not a gap {{chip "implemented"}}</h2>
+
+        <p>
+          Missing, unresolved, invalid, stale, contradictory, and degraded are different
+          conditions, and collapsing them into <code>null</code> destroys the difference.
+          Gate E1 already enforces the two cases it can:
+        </p>
+
+        <ol class="spine spine--tight">
+          <li><b>A required field that cannot be extracted fails closed</b><span>No result is published. Producing nothing is correct; producing a plausible value is not.</span></li>
+          <li><b>An optional field that is absent becomes an explicit unresolved result</b><span>It carries provenance and omits the lexical member entirely. There is no fabricated value to mistake for data.</span></li>
+          <li><b>A resolved empty string stays distinct from unresolved</b><span>"The provider said nothing here" and "the provider said the empty string" are different statements about the world.</span></li>
+        </ol>
+
+        <p>
+          Contradiction between sources, staleness, and degradation are named in the charter
+          as distinct visible states {{chip "planned"}}. Representing them properly requires
+          more than one source, which is a later gate.
+        </p>
+      </section>
+
+      <section aria-labelledby="oracle">
+        <h2 id="oracle">Why this is not a centralised truth oracle</h2>
+
+        <p class="lede">
+          A system that assigns meaning to the whole web is one decision away from being the
+          authority on what the web means. The design refuses that role structurally, not as
+          a matter of policy.
+        </p>
+
+        <ul>
+          <li>The provider's own statement is preserved, so the shared vocabulary never becomes the only record.</li>
+          <li>Mappings are versioned claims with a stated relation strength, so disagreement can be expressed rather than resolved by fiat.</li>
+          <li>Modules are immutable and superseded, so a correction is visible as a change rather than applied retroactively.</li>
+          <li>Extension is open to anyone, so a vocabulary the canon refuses can still exist and compete.</li>
+          <li>When sources disagree, the disagreement is meant to remain visible — not be averaged into a confident answer.</li>
+        </ul>
+
+        <p>
+          The project's position is that a confidence score is not an epistemology. TWIRX can
+          prove what an origin returned and how a value was derived from it. It cannot prove
+          the origin was right, and it is designed so that no one can later claim it did.
+        </p>
+
+        <p class="note">
+          Related: the <a href="/architecture/">architecture</a> for where semantics sits
+          between evidence and execution, and <a href="/governance/">governance</a> for how
+          a module would ever become canonical.
+        </p>
+      </section>
+
+    </article>
+  </div>
+</div>
+{{end}}

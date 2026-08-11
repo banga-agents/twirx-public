@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/atlas-policy-set-0.2.json",
+  "title": "TWIRX Atlas orthogonal policy set 0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "version", "statement", "policies"],
+  "properties": {
+    "format": {"const": "tw.atlas-policy-set/0.2"},
+    "version": {"type": "string", "minLength": 1, "maxLength": 128},
+    "statement": {"type": "string", "minLength": 1, "maxLength": 16384},
+    "policies": {"type": "array", "maxItems": 500, "items": {"$ref": "#/$defs/policy"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "maxLength": 16384},
+    "nullableText": {"type": ["string", "null"], "maxLength": 16384},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "nullableDigest": {"anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+    "robots": {
+      "type": "object", "additionalProperties": false,
+      "required": ["state", "url", "observed_at", "artifact_digest", "product_token"],
+      "properties": {
+        "state": {"enum": ["successful", "unavailable", "unreachable", "redirect_limit", "not_observed"]},
+        "url": {"type": "string", "pattern": "^https://[a-z0-9.-]+/robots\\.txt$", "maxLength": 274},
+        "observed_at": {"$ref": "#/$defs/nullableText"},
+        "artifact_digest": {"$ref": "#/$defs/nullableDigest"},
+        "product_token": {"const": "TWIRXBot"}
+      }
+    },
+    "policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "origin_id", "canonical_origin", "review_state", "decision", "reviewed_at", "reviewer", "robots", "terms_state", "terms_reference", "attribution", "authentication", "rate_policy", "retention_policy", "risk_state", "reviewer_notes", "evidence_refs"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 255},
+        "origin_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 255},
+        "canonical_origin": {"type": "string", "pattern": "^https://[a-z0-9.-]+$", "maxLength": 261},
+        "review_state": {"enum": ["pending", "completed"]},
+        "decision": {"enum": ["permit_live", "permit_with_constraints", "profile_only", "catalog_only", "deny", "uncertain"]},
+        "reviewed_at": {"$ref": "#/$defs/nullableText"}, "reviewer": {"$ref": "#/$defs/nullableText"},
+        "robots": {"$ref": "#/$defs/robots"},
+        "terms_state": {"enum": ["accepted", "denied", "not_found", "pending"]},
+        "terms_reference": {"$ref": "#/$defs/text"}, "attribution": {"$ref": "#/$defs/text"},
+        "authentication": {"$ref": "#/$defs/text"}, "rate_policy": {"$ref": "#/$defs/text"},
+        "retention_policy": {"$ref": "#/$defs/text"},
+        "risk_state": {"enum": ["accepted", "denied", "pending"]},
+        "reviewer_notes": {"$ref": "#/$defs/text"},
+        "evidence_refs": {"type": "array", "minItems": 1, "maxItems": 4096, "items": {"$ref": "#/$defs/text"}}
+      }
+    }
+  }
+}

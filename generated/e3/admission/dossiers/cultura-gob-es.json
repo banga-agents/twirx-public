@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "cultura-gob-es",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://cultura.gob.es",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:a3a72b9e842b906aebe1682d90df7f085cc860026e0d3e1e2da1d4cd62a9260d",
+  "policy_evidence_digest": "sha256:a7d16844b19d060e7c6d7182a6b804bfb101ed1effe90d8538cb989596cec6eb",
+  "decision_digest": "sha256:33bfac77d50edb74052297b56cbdb5944a0b7c8ee090b237588a0b8fbe92536c",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

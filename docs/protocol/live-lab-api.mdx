@@ -1,0 +1,49 @@
+---
+title: "Live Provenance Lab API"
+description: "Catalog, typed invocation, result, provenance, bundle, and discovery endpoints."
+---
+
+> **Authority:** Explanatory API reference · **Status:** Implemented candidate · **Applies to:** E2 · **Verified against:** current checkout · **Source:** `internal/labapi`, `generated/e2/openapi.json`
+
+The same-origin HTTP API is read-only and catalog-only:
+
+```text
+GET  /api/v1/status
+GET  /api/v1/origins
+GET  /api/v1/origins/{origin_id}
+GET  /api/v1/origins/{origin_id}/schema
+GET  /api/v1/origins/{origin_id}/operations
+POST /api/v1/invoke
+GET  /api/v1/results/{result_id}
+GET  /api/v1/results/{result_id}/provenance
+GET  /api/v1/results/{result_id}/bundle
+GET  /.well-known/twirx
+```
+
+```json
+{
+  "origin_id": "world-bank-indicators",
+  "operation_id": "development.getIndicator",
+  "mode": "replay",
+  "input": {
+    "country": "CHL",
+    "indicator": "SP.POP.TOTL",
+    "year": 2024
+  }
+}
+```
+
+Unknown properties, duplicate keys, wrong JSON types, values outside contract
+allowlists, and origin-operation mismatches are rejected. The server resolves
+the reviewed replay artifact; no request field can supply or override a URL.
+The deployable HTTP surface reports `execution_mode: replay_only` and rejects
+`mode: fresh`. Fresh observations remain available only to explicit local CLI
+workflows until the separately admitted egress-worker boundary is activated.
+
+JSON Schema, OpenAPI, MCP tool definitions, and the CLI reference are generated
+from `contracts/e2/contracts.json`. The public OpenAPI document is `/openapi.json`.
+Catalog records expose admission state, source class, attribution, executable
+mode availability, and an explicit `not_probed` health state. The replay-only
+HTTP surface reports `fresh_enabled: false` even when a reviewed local CLI
+entry has a fresh route. E2 does not promote a successful historical
+invocation into a current origin-availability claim.

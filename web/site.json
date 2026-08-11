@@ -1,0 +1,171 @@
+{
+  "name": "TWIRX",
+  "mission": "Typed Web Commons",
+  "base_url": "https://twirx.org",
+  "canonical_host": "twirx.org",
+  "repo_url": "https://github.com/banga-agents/twirx-public",
+  "docs_url": "https://docs.twirx.org",
+  "scripts_allowed_on": ["proof/explorer"],
+  "script_budget_gzip_bytes": 8192,
+  "status_note": "Read-only Genesis Preview. Approved evidence only; no arbitrary URLs.",
+  "footer_lead": "TWIRX is the Genesis implementation of the Typed Web Commons. Open protocol work for a verifiable, plural, and secure agentic web. No token. No protocol ownership sold.",
+  "pages": [
+    {
+      "slug": "",
+      "file": "index.html",
+      "nav": "",
+      "title": "TWIRX — A semantic highway for the Web",
+      "description": "TWIRX turns public web representations into reusable typed state with source-native values and verifiable provenance, so agents can query what a source represented without interpreting the same page again."
+    },
+    {
+      "slug": "demo",
+      "file": "demo.html",
+      "nav": "Demo",
+      "kicker": "Working proof",
+      "heading": "Query source-derived state. Trace every result.",
+      "standfirst": "This reviewer demonstration uses the first real two-period archive observation and the immutable Semantic Snapshot. It shows exactly what is implemented locally and makes no claim that the public Lab is already deployed.",
+      "title": "Demo — query and trace the TWIRX Semantic Snapshot",
+      "description": "Inspect TWIRX's real RFC Editor archive delta, cross-origin materialized query, proof identities, and bounded local performance evidence."
+    },
+    {
+      "slug": "proof",
+      "file": "proof.html",
+      "nav": "Proof",
+      "kicker": "Evidence record",
+      "heading": "From source bytes to a reusable, proof-bearing query result.",
+      "standfirst": "E1 establishes the evidence kernel. Later gates add typed operations, Atlas admission, immutable semantic packets, a real historical delta, materialized views, and a read-only query runtime. Every figure remains tied to a report or snapshot.",
+      "title": "Proof — E1, E2, and E3 evidence | TWIRX",
+      "description": "The complete TWIRX evidence record: the E1 source-statement spine, typed operations, Atlas admission, immutable semantic packets, a real archive delta, materialized views, and a read-only local query runtime."
+    },
+    {
+      "slug": "atlas",
+      "file": "atlas.html",
+      "nav": "Atlas",
+      "kicker": "Origin Atlas",
+      "heading": "500 selected origins. Three completed policy decisions. No inflated coverage claim.",
+      "standfirst": "The Atlas separates selection, policy, technical stage, publisher status, health, adapter trust and mapping trust. A selected identity is not a working adapter; only evidence-backed state contributes to public counters.",
+      "title": "Atlas — the 500-origin control plane | TWIRX",
+      "description": "The digest-verifiable Genesis Atlas: 500 selected identities, three completed human policy decisions, orthogonal origin state, and exact separation between selected, reviewed, observed, compiled and live."
+    },
+    {
+      "slug": "proof/explorer",
+      "file": "explorer.html",
+      "nav": "",
+      "kicker": "Provenance explorer",
+      "heading": "Follow one value from origin bytes to typed result",
+      "standfirst": "Every panel on this page is generated from committed repository artefacts and re-verified at build time. Nothing here was typed in by hand, and the site refuses to build if the digest chain does not hold.",
+      "title": "Provenance explorer — one field, end to end | TWIRX",
+      "description": "An interactive trace of a single field through origin bytes, observation, content-addressed evidence, independent Go and C verification, native statement, declared transformation, and typed semantic result."
+    },
+    {
+      "slug": "architecture",
+      "file": "architecture.html",
+      "nav": "",
+      "kicker": "Architecture",
+      "heading": "A compiler and trust architecture, not a browser wrapper",
+      "standfirst": "TWIRX separates observation, evidence, semantics, operational typing, execution, and authority so that no untrusted origin, adapter, model, or browser can silently become canonical truth.",
+      "title": "Architecture — planes, trust boundaries, and the slow/fast path | TWIRX",
+      "description": "The nine architectural planes of TWIRX, the E1 trust boundary, what each component is trusted to do, and the separation between the compilation path and the execution path."
+    },
+    {
+      "slug": "publish",
+      "file": "publish.html",
+      "nav": "",
+      "kicker": "For publishers",
+      "heading": "Make your public information agent-readable without surrendering control.",
+      "standfirst": "TWIRX is designed to let publishers declare native terms, typed capabilities, attribution, access policy, refresh expectations, correction and revocation — with reverse engineering as a fallback, not the destination.",
+      "title": "Publish with TWIRX — publisher-controlled agent interfaces",
+      "description": "How publishers can prepare for TWIRX: preserve native vocabulary, declare read-only capabilities, retain attribution, and control correction and revocation."
+    },
+    {
+      "slug": "economics",
+      "file": "economics.html",
+      "nav": "",
+      "kicker": "Sustainability",
+      "heading": "Open protocol. Paid reliability. No pay-to-rank.",
+      "standfirst": "TWIRX can fund public infrastructure through hosted operation, sponsored open adapters, publisher-readiness work and private deployments without selling semantic authority or protocol governance.",
+      "title": "Economics — sustaining the open Semantic Data Plane",
+      "description": "TWIRX's sustainability model: sponsored open origins, hosted access, publisher readiness and private deployments, with no token or pay-to-rank."
+    },
+    {
+      "slug": "roadmap",
+      "file": "roadmap.html",
+      "nav": "Roadmap",
+      "kicker": "90-day plan",
+      "heading": "Convert the verified kernel into a public, useful Semantic Highway.",
+      "standfirst": "The requested 90-day grant funds the public proof, complete Atlas-500 dossier and policy processing, bounded profiling across every eligible origin, and a continuously expanding Semantic Highway Alpha.",
+      "title": "Roadmap — TWIRX's 90-day FUTO milestone plan",
+      "description": "The milestone-bound 90-day TWIRX plan: public proof, complete Atlas-500 processing, a growing real corpus, and a continuously operating Semantic Highway Alpha."
+    },
+    {
+      "slug": "semantics",
+      "file": "semantics.html",
+      "nav": "",
+      "kicker": "Semantics",
+      "heading": "Shared meaning without semantic erasure",
+      "standfirst": "TWIRX does not replace a provider's vocabulary with a universal one. It preserves the native statement and adds a versioned interpretation whose context, evidence, and module closure remain visible.",
+      "title": "Semantics — native meaning, mappings as claims, governed canon | TWIRX",
+      "description": "How TWIRX keeps a provider's own term beside the shared semantic view, treats mappings as versioned claims, and separates open semantic extension from governed canonical admission."
+    },
+    {
+      "slug": "security",
+      "file": "security.html",
+      "nav": "",
+      "kicker": "Security",
+      "heading": "Designed for hostile inputs, honest about current limits",
+      "standfirst": "TWIRX assumes an attacker may control the URL, DNS result, redirect, headers, body, JSON, adapter proposal, model input, or a contributor account. Every claim below states the boundary it applies to.",
+      "title": "Security — adversary model, current controls, and the gaps | TWIRX",
+      "description": "The TWIRX adversary model, the controls E1 actually implements, the residual risks that remain open, the production-deployment gate, and how to report a vulnerability."
+    },
+    {
+      "slug": "governance",
+      "file": "governance.html",
+      "nav": "",
+      "kicker": "Governance",
+      "heading": "Public protocol, practical Genesis stewardship",
+      "standfirst": "TWIRX is founder-led during Genesis because accountability requires a real decision-maker. That stewardship is constrained by a public charter and a published authority order.",
+      "title": "Governance — charter, authority order, and admission | TWIRX",
+      "description": "How TWIRX is governed during Genesis: the twelve founding laws, the decision classes and their required records, what funding cannot buy, and the conditions for distributing stewardship."
+    },
+    {
+      "slug": "funding",
+      "file": "funding.html",
+      "nav": "Funding",
+      "kicker": "Funding",
+      "heading": "$30,000 for a 90-day Public Alpha.",
+      "standfirst": "The first $6,000 milestone completes the public release and funds 30 days of focused, full-time engineering execution. The 90-day program processes the complete Atlas-500 universe and grows every admitted layer as far as measured capacity allows.",
+      "title": "Funding — the TWIRX $30,000 FUTO milestone request",
+      "description": "TWIRX is requesting $30,000 for 90 days, beginning with a $6,000 public-release and full-time engineering milestone."
+    },
+    {
+      "slug": "progress",
+      "file": "progress.html",
+      "nav": "",
+      "kicker": "Progress",
+      "heading": "Progress is admitted through gates, not declared through ambition",
+      "standfirst": "The current release connects the verified evidence kernel to a small immutable Semantic Snapshot, real archive evidence, a cross-origin query and one genuine origin delta. The remaining public-release blockers are stated explicitly.",
+      "title": "Progress — the gate sequence and current state | TWIRX",
+      "description": "The TWIRX gate sequence from the founding architecture through the Semantic Data Plane Alpha, with the current state, evidence links, and admission condition for each gate."
+    },
+    {
+      "slug": "manifesto",
+      "file": "manifesto.html",
+      "nav": "Manifesto",
+      "kicker": "Public declaration",
+      "heading": "The Web must remain open to every intelligence",
+      "standfirst": "A machine-readable Web will exist. The decisive question is whether it will be enclosed or shared, opaque or evidentiary, centralized or plural, persuasive or accountable.",
+      "title": "Manifesto — the public declaration | TWIRX",
+      "description": "The TWIRX public declaration, and how the declaration, manifesto, charter, and specifications divide the work of stating a commitment, a value, a law, and a technical contract."
+    },
+    {
+      "slug": "futo",
+      "file": "futo.html",
+      "nav": "",
+      "kicker": "FUTO reviewer path",
+      "heading": "TWIRX is an open Semantic Data Plane for the Web.",
+      "standfirst": "This page is the shortest path through the working proof, exact current scope, grant milestones, source, documentation and contact information.",
+      "title": "TWIRX for FUTO — working proof and grant request",
+      "description": "A concise FUTO reviewer path through TWIRX's working Semantic Snapshot proof, real archive delta, grant milestones, source, documentation and contact."
+    }
+  ]
+}

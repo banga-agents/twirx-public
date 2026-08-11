@@ -1,0 +1,236 @@
+{
+  "id": "controlled-origin-lab-fixture",
+  "scope": "test_fixture",
+  "canonical_origin": "https://lab.twirx.org",
+  "registrable_domain": "twirx.org",
+  "execution_catalog_ids": [
+    "controlled-origin-lab"
+  ],
+  "catalog": {
+    "state": "cataloged",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "Genesis steward",
+    "evidence_refs": [
+      "conformance/README.md",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "policy": {
+    "review_state": "pending",
+    "decision": "uncertain",
+    "reviewed_at": null,
+    "reviewer": null,
+    "policy_id": null,
+    "policy_set_digest": null,
+    "robots_digest": null,
+    "attribution": "Controlled TWIRX conformance fixture; not a third-party factual source.",
+    "authentication": "not_applicable",
+    "rate_policy": "Execution is limited to the explicit local-fixture mode admitted by the E2 catalog.",
+    "retention_policy": "Fixture bytes are committed conformance evidence.",
+    "terms_reference": "conformance/README.md",
+    "risk_state": "pending",
+    "reviewer_notes": "This test fixture has no authority to contribute to Genesis-500 public-origin state counters."
+  },
+  "technical": {
+    "stage": "semantically_linked",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 local evidence suite",
+    "evidence_refs": [
+      "adapters/testorigin-product/adapter.json",
+      "conformance/e2/vectors.tsv",
+      "origins/fixtures/controlled-product.json",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "publisher": {
+    "name": "TWIRX",
+    "kind": "controlled-test-fixture",
+    "status": "publisher_approved",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "Genesis steward",
+    "evidence_refs": [
+      "conformance/README.md",
+      "reports/gate-e2-live-provenance-lab.md"
+    ],
+    "manifest_url": null
+  },
+  "health": {
+    "status": "unknown",
+    "checked_at": null,
+    "evidence_refs": []
+  },
+  "adapter_trust": {
+    "status": "conformant",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 Go and restricted-C conformance suite",
+    "evidence_refs": [
+      "conformance/e2/vectors.tsv",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "mapping_trust": {
+    "status": "reviewed",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 local evidence suite",
+    "evidence_refs": [
+      "canon/mappings/testorigin-commerce/module.json",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "jurisdiction": "not_applicable",
+  "languages": [
+    "en"
+  ],
+  "domain_families": [],
+  "authority_class": "controlled-test-fixture",
+  "discovery": {
+    "sources": [
+      "adapters/testorigin-product/adapter.json",
+      "origins/catalog.json",
+      "origins/fixtures/controlled-product.json"
+    ],
+    "profiled_at": "2026-08-10T00:00:00Z",
+    "robots_url": null,
+    "sitemap_urls": [],
+    "feed_urls": [],
+    "api_descriptions": [],
+    "structured_data": [],
+    "public_endpoints": []
+  },
+  "runtime": {
+    "last_seen": null,
+    "last_observed": "2026-08-10T00:00:00Z",
+    "refresh_class": "disabled",
+    "request_budget": 0,
+    "storage_budget_bytes": 0,
+    "scheduler": {
+      "state": "disabled",
+      "last_attempt": null,
+      "cooldown_until": null,
+      "consecutive_failures": 0,
+      "public_value": 0,
+      "semantic_novelty": 0,
+      "demonstrated_demand": 0,
+      "change_probability": 0,
+      "health_need": 0,
+      "estimated_request_cost": 0
+    }
+  },
+  "semantics": {
+    "native_module": "origin:testorigin@2026-08-10",
+    "adapter_id": "origin:testorigin/product-offer@0.1.0",
+    "conformance_ref": "conformance/e2/vectors.tsv",
+    "contract_set_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814",
+    "mapping_modules": [
+      "mapping:testorigin-commerce@0.1.0",
+      "tw:commerce@0.1.0",
+      "tw:kernel@0.1.0"
+    ],
+    "concept_ids": [
+      "commerce:Offer",
+      "commerce:Offer.availability",
+      "commerce:OfferPrice.amount",
+      "commerce:OfferPrice.currency",
+      "commerce:Product.identifier",
+      "commerce:Product.name"
+    ],
+    "operation_ids": [
+      "fixture.getOffer"
+    ],
+    "semantic_closure_digests": [
+      "sha256:5a00297653f7af81894b980669343f8dfc1d1af8713172945dd619451cbefd82"
+    ]
+  },
+  "evidence": {
+    "observation_ids": [],
+    "artifacts": [
+      {
+        "path": "adapters/testorigin-product/adapter.json",
+        "digest": "sha256:86995ebf29b33eb6e23e871de86fdc4112bba3d5101b21781e9f750482c03117"
+      },
+      {
+        "path": "canon/mappings/testorigin-commerce/module.json",
+        "digest": "sha256:f9cee13dae63d7e7be63ebaf9db062a15b9ee335bb8b18d4ea2d9bfcfc0b2af2"
+      },
+      {
+        "path": "conformance/e2/vectors.tsv",
+        "digest": "sha256:aa898a71692d3cfde34987a5d88d902d1b97acd1738472e49b16dcf2dc87e1cb"
+      },
+      {
+        "path": "contracts/e2/contracts.json",
+        "digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+      },
+      {
+        "path": "origins/catalog.json",
+        "digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+      },
+      {
+        "path": "origins/fixtures/controlled-product.json",
+        "digest": "sha256:27545ef2ea28993d9b0ab4882c1924d3f9ccdf683386be8ba5b677ac42c2a538"
+      }
+    ]
+  },
+  "interfaces": [
+    {
+      "id": "e2-rest",
+      "kind": "rest",
+      "declaration_status": "observed",
+      "endpoint_or_locator": "origins/catalog.json#controlled-origin-lab",
+      "authentication": "none in the controlled fixture route",
+      "health": "unknown",
+      "execution_status": "admitted_public_read",
+      "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+    }
+  ],
+  "capabilities": [
+    {
+      "native_id": "fixture.getOffer",
+      "native_label": "Get controlled fixture offer",
+      "semantic_operation_candidates": [
+        "fixture.getOffer"
+      ],
+      "input_shape_ref": "contracts/e2/contracts.json#fixture.getOffer/input",
+      "output_shape_ref": "contracts/e2/contracts.json#fixture.getOffer/output",
+      "effect_class": "public_read",
+      "status": "admitted",
+      "interface_refs": [
+        "e2-rest"
+      ],
+      "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+    }
+  ],
+  "access": {
+    "class": "unknown",
+    "assessment_status": "not_assessed",
+    "license_or_terms_refs": [],
+    "attribution": "not_assessed",
+    "rate_policy": "not_assessed",
+    "payment_protocol_candidates": [],
+    "price_discovery_status": "not_assessed",
+    "evidence_digest": null,
+    "offer_candidates": []
+  },
+  "economics": {
+    "funding_class": "unknown",
+    "requests": 0,
+    "transferred_bytes": 0,
+    "evidence_bytes": 0,
+    "cpu_milliseconds": 0,
+    "human_review_seconds": 0,
+    "infrastructure_cost_estimate": null
+  },
+  "publisher_readiness": {
+    "signals": [
+      {
+        "kind": "api",
+        "presence": "present",
+        "source": "origins/catalog.json#controlled-origin-lab",
+        "observation_class": "observed",
+        "observed_at": "2026-08-10T00:00:00Z",
+        "freshness": "committed E2 fixture snapshot",
+        "standard_status": "not_applicable",
+        "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "format": "tw.admission-policy-evidence/0.1",
+  "policy": {
+    "id": "api-worldbank-org",
+    "origin_id": "api-worldbank-org",
+    "canonical_origin": "https://api.worldbank.org",
+    "review_state": "completed",
+    "decision": "permit_with_constraints",
+    "reviewed_at": "2026-08-11T12:15:50Z",
+    "reviewer": "Richi (Genesis steward)",
+    "robots": {
+      "state": "unavailable",
+      "url": "https://api.worldbank.org/robots.txt",
+      "observed_at": "2026-08-11T12:19:58.145385159Z",
+      "artifact_digest": "sha256:49f835ed198ad83d45094bd5754dfdb08e96fa662878847d1b5487a5655d7225",
+      "product_token": "TWIRXBot"
+    },
+    "terms_state": "accepted",
+    "terms_reference": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+    "attribution": "Preserve World Bank attribution and represent provider content without promoting it to objective truth.",
+    "authentication": "none_required",
+    "rate_policy": "Use only the bounded E2 country, indicator and year route; identify TWIRX, cache responses, obey published limits and do not broadly crawl.",
+    "retention_policy": "Retain bounded observations and immutable proof artifacts required for replay, attribution and audit.",
+    "risk_state": "accepted",
+    "reviewer_notes": "The documented public API route is approved with explicit bounds. The robots resource returned 404 and is recorded as unavailable rather than treated as access authorization.",
+    "evidence_refs": [
+      "evidence/founder-review.txt",
+      "evidence/review-scope.txt",
+      "evidence/robots-spool/cas/sha256/34/94/3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9",
+      "evidence/robots-spool/evidence/body.ref",
+      "evidence/robots-spool/evidence/observation.cbor",
+      "evidence/robots-spool/evidence/observation.json",
+      "evidence/robots-spool/manifest.json",
+      "evidence/robots-spool/result.json",
+      "evidence/robots-spool/work-order.json"
+    ]
+  },
+  "artifacts": [
+    {"path": "evidence/founder-review.txt", "digest": "sha256:9c9970ad852df01abd5237056623f36f5208ede367f9ccc647cc8bc7c05f701a"},
+    {"path": "evidence/review-scope.txt", "digest": "sha256:77b7c62de43ad8265f5a760732f945a658dc29710e0a427379a2f93df2756e96"},
+    {"path": "evidence/robots-spool/cas/sha256/34/94/3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9", "digest": "sha256:3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9"},
+    {"path": "evidence/robots-spool/evidence/body.ref", "digest": "sha256:cb214df69d9079fa3ee77b4272ed204159c562b5ecae8074dc157f586683dbe2"},
+    {"path": "evidence/robots-spool/evidence/observation.cbor", "digest": "sha256:49f835ed198ad83d45094bd5754dfdb08e96fa662878847d1b5487a5655d7225"},
+    {"path": "evidence/robots-spool/evidence/observation.json", "digest": "sha256:c4b5ade068b6144b09a8cdcae6048f1e67750a0c5d1ac25acf6cf9c2ad6700cd"},
+    {"path": "evidence/robots-spool/manifest.json", "digest": "sha256:0ca90526eebf2849828e2457855d035ef8626a3243433c6e2b8130071c203125"},
+    {"path": "evidence/robots-spool/result.json", "digest": "sha256:305841e4f6d0561d835a34b4a7eb1e8b4742e93910438cef3f96cd304bd12f5b"},
+    {"path": "evidence/robots-spool/work-order.json", "digest": "sha256:24833ca69e256e3983940b41dd89dc3085cd7a045bffaec21da418ab32c33e03"}
+  ]
+}

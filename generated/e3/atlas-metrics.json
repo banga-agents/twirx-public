@@ -1,0 +1,202 @@
+{
+  "format": "tw.atlas-metrics/0.3",
+  "generated_at": null,
+  "commit": null,
+  "selection_digest": "sha256:a87ea65056f3bd76594674b953e1b9c60ad50313d5a9955da42f5a89eb5f5729",
+  "statement": "Counts are derived from validated repository artifacts across orthogonal state dimensions. Pending policy review is never counted as completed. Controlled fixtures are separately counted and excluded from every Genesis-500 public-origin state, coverage, and semantic counter.",
+  "atlas": {
+    "selected_candidates": 500,
+    "canonical_registry_records": 4,
+    "genesis_public_records": 3,
+    "test_fixture_records": 1,
+    "policy_records": 3,
+    "catalog_state": {
+      "candidate": 497,
+      "cataloged": 3
+    },
+    "policy_review_state": {
+      "completed": 3,
+      "pending": 497
+    },
+    "policy_decision": {
+      "catalog_only": 0,
+      "deny": 0,
+      "permit_live": 1,
+      "permit_with_constraints": 1,
+      "profile_only": 1,
+      "uncertain": 497
+    },
+    "technical_stage": {
+      "compiled": 0,
+      "live": 0,
+      "native_schema": 0,
+      "observed": 0,
+      "profiled": 0,
+      "semantically_linked": 2,
+      "unprofiled": 498
+    },
+    "technical_at_or_beyond": {
+      "compiled": 2,
+      "live": 0,
+      "native_schema": 2,
+      "observed": 2,
+      "profiled": 2,
+      "semantically_linked": 2,
+      "unprofiled": 500
+    },
+    "publisher_status": {
+      "domain_verified": 0,
+      "publisher_approved": 1,
+      "publisher_signed": 0,
+      "unclaimed": 499
+    },
+    "health_status": {
+      "degraded": 0,
+      "healthy": 0,
+      "revoked": 0,
+      "stale": 0,
+      "suspended": 0,
+      "unknown": 500
+    },
+    "adapter_trust": {
+      "candidate": 0,
+      "conformant": 2,
+      "none": 498,
+      "reviewed": 0,
+      "revoked": 0
+    },
+    "mapping_trust": {
+      "candidate": 0,
+      "disputed": 0,
+      "none": 498,
+      "reviewed": 2,
+      "revoked": 0
+    }
+  },
+  "selection": {
+    "total": 500,
+    "domain_families": {
+      "climate_environment_earth_systems": 50,
+      "economics_markets_public_disclosure": 60,
+      "education_reference_culture": 30,
+      "government_law_public_data": 100,
+      "health_public_health": 50,
+      "humanitarian_civic_global_development": 20,
+      "journalism_public_interest": 50,
+      "science_research_scholarly_infrastructure": 80,
+      "standards_technical_docs_open_source": 60
+    }
+  },
+  "coverage": {
+    "countries_or_territories": 1,
+    "languages": 1,
+    "domain_families": {
+      "economics_markets_public_disclosure": 1,
+      "standards_technical_docs_open_source": 2
+    },
+    "authority_classes": {
+      "provider-operated-official-api": 1,
+      "public-standards-publisher": 1,
+      "publisher-authored-project-surface": 1
+    }
+  },
+  "capabilities": {
+    "interface_kinds": {
+      "atom": 0,
+      "browser": 0,
+      "graphql": 0,
+      "jsonld": 0,
+      "mcp": 1,
+      "microdata": 0,
+      "openapi": 1,
+      "rest": 2,
+      "rss": 0,
+      "search_discovery": 0,
+      "semantic_html": 0,
+      "twirx_native": 1,
+      "webmcp": 0
+    },
+    "capability_candidates": 4,
+    "capability_status": {
+      "admitted": 4,
+      "candidate": 0,
+      "observed": 0,
+      "reviewed": 0
+    },
+    "effect_classes": {
+      "authenticated_read": 0,
+      "destructive": 0,
+      "financial": 0,
+      "legal_or_material": 0,
+      "public_read": 4,
+      "reversible_write": 0,
+      "stateful_commitment": 0,
+      "unknown": 0
+    },
+    "admitted_public_read_operations": 4,
+    "access_classes": {
+      "authenticated": 0,
+      "metered": 0,
+      "paid_per_use": 0,
+      "public_free": 0,
+      "quote_required": 0,
+      "restricted": 0,
+      "subscription": 0,
+      "unknown": 500
+    },
+    "price_discovery_status": {
+      "candidate": 0,
+      "not_assessed": 500,
+      "not_found": 0,
+      "reviewed": 0,
+      "source_stated": 0
+    },
+    "commercial_offer_candidates": 0,
+    "publisher_native_declarations": 1,
+    "machine_readable_payment_declarations": 0,
+    "readiness_signals_present": {
+      "agent_skill": 0,
+      "alternate_machine_representation": 0,
+      "api": 2,
+      "atom": 0,
+      "commercial_offer": 0,
+      "graphql": 0,
+      "jsonld": 0,
+      "mcp": 1,
+      "oauth_protected_resource": 0,
+      "openapi": 1,
+      "payment_requirement": 0,
+      "rss": 0,
+      "twirx_native": 1,
+      "webmcp": 0
+    },
+    "requests": 0,
+    "transferred_bytes": 0,
+    "evidence_bytes": 0,
+    "cpu_milliseconds": 0,
+    "human_review_seconds": 0,
+    "infrastructure_cost_microunits": {}
+  },
+  "semantics": {
+    "canonical_concepts": 17,
+    "native_terms": 2,
+    "reviewed_mappings": 3,
+    "disputed_mappings": 0,
+    "equivalent_operation_sets": 0
+  },
+  "runtime": {
+    "invocations_24h": 0,
+    "success_rate_24h": null,
+    "provenance_completeness": null,
+    "go_c_agreement": null,
+    "p50_internal_overhead_ms": null,
+    "p95_internal_overhead_ms": null
+  },
+  "learning": {
+    "field_or_operation_observations": 0,
+    "adjudicated_mappings": 0,
+    "hard_negatives": 0,
+    "held_out_origins": 0,
+    "wsim_seed_ready": false
+  }
+}

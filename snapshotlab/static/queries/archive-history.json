@@ -1,0 +1,31 @@
+{
+  "select": [
+    "html:title"
+  ],
+  "subject_concept": "",
+  "subject_ids": [
+    "rfc-editor:homepage"
+  ],
+  "origin_ids": [
+    "rfc-editor-org"
+  ],
+  "minimum_distinct_origins": 1,
+  "authority_classes": [
+    "common_crawl_archive_observation"
+  ],
+  "lanes": [
+    "observed_native"
+  ],
+  "mapping_statuses": [
+    "none"
+  ],
+  "time_mode": "history",
+  "time_from": "",
+  "time_until": "",
+  "maximum_age_seconds": null,
+  "stale_behavior": "return_explicit_stale",
+  "preference": "highest_proof",
+  "maximum_results": 10,
+  "maximum_proof_bytes": 4194304,
+  "proof_level": "packet"
+}

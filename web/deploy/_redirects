@@ -1,0 +1,7 @@
+# www is a redirect, never a second canonical origin.
+# The 301! form forces the redirect even when a file would otherwise match.
+https://www.twirx.org/*    https://twirx.org/:splat    301!
+http://www.twirx.org/*     https://twirx.org/:splat    301!
+
+# The host's own default domain must not become an indexable duplicate.
+https://:project.netlify.app/*    https://twirx.org/:splat    301!

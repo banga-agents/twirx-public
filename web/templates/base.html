@@ -1,0 +1,105 @@
+{{define "base" -}}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.Page.Title}}</title>
+<meta name="description" content="{{.Page.Description}}">
+<link rel="canonical" href="{{.Site.BaseURL}}{{.Page.URL}}">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{.Site.Name}} — {{.Site.Mission}}">
+<meta property="og:title" content="{{.Page.Title}}">
+<meta property="og:description" content="{{.Page.Description}}">
+<meta property="og:url" content="{{.Site.BaseURL}}{{.Page.URL}}">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="index,follow">
+<meta name="color-scheme" content="light dark">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="statusbar">
+  <div class="statusbar__inner">
+    <p class="statusbar__states">
+      {{range .Data.project_status.status_rail}}<span class="state">{{.}}</span>{{end}}
+    </p>
+    <p class="statusbar__note">{{.Site.StatusNote}}</p>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="brand" href="/">
+      <span class="brand__name">{{.Site.Name}}</span>
+      <span class="brand__mission">{{.Site.Mission}}</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        {{$cur := .Page.Slug -}}
+        {{range .Nav}}<li><a href="{{.URL}}"{{if eq .Slug $cur}} aria-current="page"{{end}}>{{.Nav}}</a></li>
+        {{end}}
+        <li><a href="{{.Site.DocsURL}}" class="nav__out">Docs<span class="ext" aria-hidden="true">↗</span><span class="sr">, opens the technical documentation</span></a></li>
+        <li><a href="{{.Site.RepoURL}}" class="nav__out">Source<span class="ext" aria-hidden="true">↗</span><span class="sr">, opens the repository on GitHub</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{{template "content" .}}
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__lead">{{.Site.FooterLead}}</p>
+    <nav class="footer__nav" aria-label="Footer">
+      <div>
+        <h2>Site</h2>
+        <ul>
+          {{range .Nav}}<li><a href="{{.URL}}">{{.Nav}}</a></li>
+          {{end}}
+          <li><a href="/architecture/">Architecture</a></li>
+          <li><a href="/semantics/">Semantics</a></li>
+          <li><a href="/publish/">For publishers</a></li>
+          <li><a href="/futo/">FUTO reviewer path</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Documents</h2>
+        <ul>
+          <li><a href="{{repo .Site "MANIFESTO.md"}}">Manifesto<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="{{repo .Site "CHARTER.md"}}">Charter<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="{{repo .Site "SECURITY.md"}}">Security policy<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="{{repo .Site "THREAT_MODEL.md"}}">Threat model<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="/security/">Security overview</a></li>
+          <li><a href="/governance/">Governance</a></li>
+          <li><a href="{{repo .Site "CONTRIBUTING.md"}}">Contributing<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="{{repo .Site "LICENSE"}}">Licence<span class="ext" aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Evidence</h2>
+        <ul>
+          <li><a href="{{repo .Site "reports/gate-1-genesis.md"}}">Gate 1 report<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="{{repo .Site "conformance"}}">Conformance vectors<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="{{repo .Site "funding/ledger.csv"}}">Public ledger<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="/data/project-status.json">Status (JSON)</a></li>
+          <li><a href="/data/funding-status.json">Funding (JSON)</a></li>
+          <li><a href="/data/implementation-matrix.json">Matrix (JSON)</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="footer__meta">
+      Status date {{.Data.project_status.status_date}}.
+      This site is a static build with no analytics, cookies, external fonts, or third-party requests. One small first-party module powers the provenance explorer; all other pages work without JavaScript.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
+{{- end}}

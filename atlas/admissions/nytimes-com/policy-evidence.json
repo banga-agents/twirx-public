@@ -1,0 +1,41 @@
+{
+  "format": "tw.admission-policy-evidence/0.1",
+  "policy": {
+    "id": "nytimes-com",
+    "origin_id": "nytimes-com",
+    "canonical_origin": "https://nytimes.com",
+    "review_state": "pending",
+    "decision": "uncertain",
+    "reviewed_at": null,
+    "reviewer": null,
+    "robots": {
+      "state": "not_observed",
+      "url": "https://nytimes.com/robots.txt",
+      "observed_at": null,
+      "artifact_digest": null,
+      "product_token": "TWIRXBot"
+    },
+    "terms_state": "pending",
+    "terms_reference": "pending human review",
+    "attribution": "pending human review",
+    "authentication": "pending human review",
+    "rate_policy": "pending human review",
+    "retention_policy": "pending human review",
+    "risk_state": "pending",
+    "reviewer_notes": "No policy decision or live retrieval authority is claimed.",
+    "evidence_refs": [
+      "evidence/commercial-candidate.txt",
+      "evidence/review-scope.txt"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "evidence/commercial-candidate.txt",
+      "digest": "sha256:a605b114195cecff4ae09bd5f530aa7dada8d6d8fc4220e475e19b40882fe740"
+    },
+    {
+      "path": "evidence/review-scope.txt",
+      "digest": "sha256:0d88c8e323e2f17855622bdf4d3b0304a53ed3e2bd59bad71522056bd9b17d05"
+    }
+  ]
+}

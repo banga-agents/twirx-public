@@ -1,0 +1,4 @@
+d /var/lib/twirx-egress 0750 root twirx-egress -
+d /var/lib/twirx-egress/work-orders 0750 root twirx-egress -
+d /var/lib/twirx-egress/spool 0750 twirx-egress twirx-egress -
+d /var/lib/twirx-egress/state 0750 twirx-egress twirx-egress -

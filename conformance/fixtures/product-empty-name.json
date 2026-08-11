@@ -1,0 +1,8 @@
+{
+  "product_id": "sku-empty-name",
+  "name": "",
+  "offer": {
+    "current_price": "19.99",
+    "currency": "usd"
+  }
+}

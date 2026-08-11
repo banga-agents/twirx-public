@@ -1,0 +1,157 @@
+{
+  "protocolVersion": "2025-11-25",
+  "tools": [
+    {
+      "name": "project.getStatus",
+      "title": "Get TWIRX project status",
+      "description": "Returns the publisher-authored project phase and admitted engineering gate.",
+      "inputSchema": {
+        "$id": "urn:twirx:operation:project.getStatus:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns the publisher-authored project phase and admitted engineering gate.",
+        "properties": {},
+        "required": [],
+        "title": "Get TWIRX project status",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "project.getEngineeringGateReport",
+      "title": "Get engineering gate report status",
+      "description": "Returns the current gate evidence statement without converting it into an objective truth claim.",
+      "inputSchema": {
+        "$id": "urn:twirx:operation:project.getEngineeringGateReport:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns the current gate evidence statement without converting it into an objective truth claim.",
+        "properties": {},
+        "required": [],
+        "title": "Get engineering gate report status",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "project.listUnresolvedRisks",
+      "title": "List published unresolved risks",
+      "description": "Returns the complete publisher-authored unresolved-risk list from the observed project status artifact.",
+      "inputSchema": {
+        "$id": "urn:twirx:operation:project.listUnresolvedRisks:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns the complete publisher-authored unresolved-risk list from the observed project status artifact.",
+        "properties": {},
+        "required": [],
+        "title": "List published unresolved risks",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "fixture.getOffer",
+      "title": "Get controlled fixture offer",
+      "description": "Returns a typed offer from the controlled local JSON fixture.",
+      "inputSchema": {
+        "$id": "urn:twirx:operation:fixture.getOffer:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns a typed offer from the controlled local JSON fixture.",
+        "properties": {
+          "product_id": {
+            "description": "Admitted controlled fixture product identifier.",
+            "enum": [
+              "demo-1"
+            ],
+            "maxLength": 16,
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_id"
+        ],
+        "title": "Get controlled fixture offer",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "development.getIndicator",
+      "title": "Get an admitted development indicator",
+      "description": "Returns one World Bank Indicators API value for bounded country, indicator, and year inputs.",
+      "inputSchema": {
+        "$id": "urn:twirx:operation:development.getIndicator:1",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Returns one World Bank Indicators API value for bounded country, indicator, and year inputs.",
+        "properties": {
+          "country": {
+            "description": "Admitted ISO 3166-1 alpha-3 country code.",
+            "enum": [
+              "CHL",
+              "USA",
+              "VNM"
+            ],
+            "maxLength": 3,
+            "type": "string"
+          },
+          "indicator": {
+            "description": "Admitted World Bank indicator code.",
+            "enum": [
+              "NY.GDP.MKTP.CD",
+              "SP.POP.TOTL"
+            ],
+            "maxLength": 32,
+            "type": "string"
+          },
+          "year": {
+            "description": "Admitted observation year.",
+            "enum": [
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "type": "integer"
+          }
+        },
+        "required": [
+          "country",
+          "indicator",
+          "year"
+        ],
+        "title": "Get an admitted development indicator",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ]
+}

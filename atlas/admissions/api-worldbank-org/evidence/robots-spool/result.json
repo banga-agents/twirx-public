@@ -1,0 +1,17 @@
+{
+  "format": "tw.egress-result/0.1",
+  "work_order_id": "futo-world-bank-robots",
+  "work_order_digest": "sha256:24833ca69e256e3983940b41dd89dc3085cd7a045bffaec21da418ab32c33e03",
+  "origin_id": "api-worldbank-org",
+  "purpose": "robots",
+  "request_url": "https://api.worldbank.org/robots.txt",
+  "final_url": "https://api.worldbank.org/robots.txt",
+  "retrieved_at": "2026-08-11T12:19:58.145385159Z",
+  "http_status": 404,
+  "media_type": "application/json",
+  "redirect_count": 0,
+  "observation_digest": "sha256:49f835ed198ad83d45094bd5754dfdb08e96fa662878847d1b5487a5655d7225",
+  "body_digest": "sha256:3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9",
+  "body_size": 54,
+  "duration_ms": 2054
+}

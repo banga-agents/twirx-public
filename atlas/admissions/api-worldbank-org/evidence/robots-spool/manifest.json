@@ -1,0 +1,31 @@
+{
+  "format": "tw.egress-manifest/0.1",
+  "work_order_id": "futo-world-bank-robots",
+  "work_order_digest": "sha256:24833ca69e256e3983940b41dd89dc3085cd7a045bffaec21da418ab32c33e03",
+  "artifacts": [
+    {
+      "path": "cas/sha256/34/94/3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9",
+      "digest": "sha256:3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9"
+    },
+    {
+      "path": "evidence/body.ref",
+      "digest": "sha256:cb214df69d9079fa3ee77b4272ed204159c562b5ecae8074dc157f586683dbe2"
+    },
+    {
+      "path": "evidence/observation.cbor",
+      "digest": "sha256:49f835ed198ad83d45094bd5754dfdb08e96fa662878847d1b5487a5655d7225"
+    },
+    {
+      "path": "evidence/observation.json",
+      "digest": "sha256:c4b5ade068b6144b09a8cdcae6048f1e67750a0c5d1ac25acf6cf9c2ad6700cd"
+    },
+    {
+      "path": "result.json",
+      "digest": "sha256:305841e4f6d0561d835a34b4a7eb1e8b4742e93910438cef3f96cd304bd12f5b"
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:24833ca69e256e3983940b41dd89dc3085cd7a045bffaec21da418ab32c33e03"
+    }
+  ]
+}

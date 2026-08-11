@@ -1,0 +1,25 @@
+{
+  "format": "tw.admission-decision/0.1",
+  "origin_id": "twirx-org",
+  "review_state": "completed",
+  "admit_to_registry": true,
+  "reviewer_type": "human",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "catalog_reviewed_at": "2026-08-10T16:01:26Z",
+  "catalog_reviewer": "Genesis steward",
+  "policy_review_state": "completed",
+  "policy_decision": "permit_live",
+  "policy_reviewed_at": "2026-08-11T12:15:50Z",
+  "policy_reviewer": "Richi (Genesis steward)",
+  "rationale": "The founder controls twirx.org and approves bounded read-only access to exact public project artifacts. The completed robots evidence permits the declared public routes and does not broaden the approved scope.",
+  "constraints": [
+    "No authenticated, browser, model, payment or write action is authorized.",
+    "Personal data, private repository content and unpublished reports are excluded.",
+    "Preserve project attribution, native wording and complete derivation.",
+    "The Atlas scheduler remains disabled for the FUTO release."
+  ],
+  "evidence_refs": [
+    "decisions/005-twirx-origin-admission.md",
+    "reports/futo-policy-decision-proposals.md"
+  ]
+}

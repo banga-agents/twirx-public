@@ -1,0 +1,33 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "reuters-com",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://reuters.com",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "subscription",
+  "commercial_offer_candidates": 1,
+  "record_digest": "sha256:81ddeaa032d1dae440be2f98ddd34dcb2fb6117d4b74c02a5c45bd874ffe7ddc",
+  "policy_evidence_digest": "sha256:f8f39cd9d51200f1190b2835d36740921dec1edd66a6a6aa19acd66e4b8a4af5",
+  "decision_digest": "sha256:78351d1f58ef4bf78c26aa400c360d8b5a28b766112ee6a4dd3a9e1b773e300c",
+  "approval_reference": "",
+  "constraints": [
+    "Commercial and access metadata is provisional and grants no execution or payment authority.",
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

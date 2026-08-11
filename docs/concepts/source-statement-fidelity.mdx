@@ -1,0 +1,46 @@
+---
+title: "Source-statement fidelity"
+description: "The precise truth contract of the Typed Web protocol."
+---
+
+## What the protocol proves
+
+Typed Web aims to prove a derivation:
+
+```text
+Result = Map(Transform(Extract(Observation, Locator)))
+```
+
+A result identifies:
+
+- request and final URL;
+- retrieval time;
+- response body digest and size;
+- observation-envelope digest;
+- adapter identifier, version, and digest;
+- extraction method and locator;
+- transformation chain;
+- mapping relation;
+- semantic module closure.
+
+## What the protocol does not prove
+
+It does not prove that:
+
+- the provider's statement is objectively correct;
+- the provider controls the real-world entity it describes;
+- a signed statement is honest;
+- a high-confidence mapping is authoritative;
+- a chain commitment makes external content true.
+
+## Why the distinction matters
+
+An agent can safely report:
+
+> Origin X represented value Y at time T; adapter A extracted it from locator L and mapped it to concept C.
+
+The agent must not silently strengthen that into:
+
+> Y is an unquestionable fact about the world.
+
+Conflicting providers can coexist as separately sourced statements. A later research or decision system may compare authority, freshness, corroboration, and evidence without the interface layer erasing disagreement.

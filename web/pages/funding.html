@@ -1,0 +1,127 @@
+{{define "content"}}
+{{$r := .Data.futo_release}}
+{{$f := .Data.funding_status}}
+<div class="page">
+  {{template "pagehead" .}}
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#request">The request</a></li>
+          <li><a href="#first">First milestone</a></li>
+          <li><a href="#ninety">90-day result</a></li>
+          <li><a href="#principles">Funding principles</a></li>
+          <li><a href="#contribute">How to help</a></li>
+          <li><a href="#records">Public records</a></li>
+        </ol>
+      </div>
+    </aside>
+    <article class="doc">
+      <section aria-labelledby="request">
+        <h2 id="request">A milestone grant for open agent infrastructure</h2>
+        <p class="lede">
+          TWIRX is requesting <strong>${{commas $r.grant.request_usd}}</strong> for a
+          <strong>{{$r.grant.term_days}}-day</strong> engineering program. The request begins
+          with a <strong>${{commas $r.grant.first_milestone_usd}}</strong>,
+          <strong>{{$r.grant.first_milestone_days}}-day</strong> release and continuity milestone.
+        </p>
+        <div class="facts wide">
+          <div class="fact"><dt>Total request</dt><dd>${{commas $r.grant.request_usd}}<small>{{$r.grant.term_days}} days</small></dd></div>
+          <div class="fact"><dt>First milestone</dt><dd>${{commas $r.grant.first_milestone_usd}}<small>{{$r.grant.first_milestone_days}} days</small></dd></div>
+          <div class="fact"><dt>Received</dt><dd>${{commas $f.received}}<small>recorded project funds</small></dd></div>
+          <div class="fact"><dt>Protocol rights sold</dt><dd>0<small>funding buys no authority</small></dd></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="first">
+        <h2 id="first">First milestone — public release and full-time execution</h2>
+        <p>{{$r.grant.first_milestone}}</p>
+        <div class="tablewrap wide">
+          <table>
+            <caption>${{commas $r.grant.first_milestone_usd}} first-milestone allocation</caption>
+            <thead><tr><th scope="col">Use</th><th scope="col" class="num">Amount</th></tr></thead>
+            <tbody>
+              {{range $r.grant.budget}}<tr><th scope="row">{{.use}}</th><td class="num">${{commas .amount}}</td></tr>{{end}}
+              <tr><th scope="row"><strong>Total</strong></th><td class="num"><strong>${{commas $r.grant.first_milestone_usd}}</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          This allocation purchases a defined month of focused engineering capacity. It is
+          reported as maintainer compensation for project delivery, not as personal bills or
+          an inflated infrastructure expense.
+        </p>
+      </section>
+
+      <section aria-labelledby="ninety">
+        <h2 id="ninety">What 90 days produces</h2>
+        <div class="cards wide">
+          <div class="card"><h3>Public proof</h3><p>A clean public repository, read-only Query Lab, reproducible snapshots, downloadable proof and exact performance labels.</p></div>
+          <div class="card"><h3>Real semantic corpus</h3><p>Policy-reviewed observations, native schemas, semantic packets, materialized cross-origin views and a genuine change stream.</p></div>
+          <div class="card"><h3>Publisher path</h3><p>Tools and documentation for publishers to declare vocabulary, capabilities, access policy, correction and revocation.</p></div>
+          <div class="card"><h3>Durable operation</h3><p>Independent infrastructure, restore-tested evidence, security work, public metrics and a credible path to ongoing services.</p></div>
+        </div>
+        <p><a class="btn" href="/roadmap/">Review the milestone plan</a> <a class="btn" href="/futo/">Open the FUTO reviewer path</a></p>
+      </section>
+
+      <section aria-labelledby="principles">
+        <h2 id="principles">What funding can—and cannot—buy</h2>
+        <div class="split wide">
+          <div>
+            <h3>It funds</h3>
+            <ul>
+              <li>Full-time maintainer engineering capacity</li>
+              <li>Infrastructure, storage and security</li>
+              <li>Open adapters and publisher integration</li>
+              <li>Documentation, accessibility and independent review</li>
+            </ul>
+          </div>
+          <div>
+            <h3>It never purchases</h3>
+            <ul>
+              <li>Protocol ownership or governance authority</li>
+              <li>Semantic ranking or canon admission</li>
+              <li>Exclusive access to sponsored public work</li>
+              <li>A token, equity interest or private standard</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="contribute">
+        <h2 id="contribute">How to help now</h2>
+        <p>
+          Grant and institutional conversations are open at
+          <a href="mailto:rick@twirx.org">rick@twirx.org</a>. Technical review,
+          publisher introductions, infrastructure sponsorship and support for a specific open
+          origin are also useful.
+        </p>
+        <div class="callout callout--stop">
+          <p class="callout__title">No wallet address is published on this page</p>
+          <p>
+            Until an address appears in the authoritative project wallet declaration, treat
+            any address presented elsewhere as unauthorised. Never send recovery words,
+            credentials or sensitive personal records to the project.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="records">
+        <h2 id="records">Treasury records</h2>
+        <p>
+          Project inflows, commitments and expenses are recorded in the public ledger without
+          exposing a maintainer’s home address, immigration records, medical information,
+          personal account statements or other private-life evidence.
+        </p>
+        <ul class="register register--plain">
+          <li><a href="/data/funding-status.json">Machine-readable funding status</a></li>
+          <li><a href="{{repo .Site "funding/ledger.csv"}}">Project ledger<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="{{repo .Site "TREASURY.md"}}">Treasury policy<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="/economics/">Long-term sustainability model</a></li>
+        </ul>
+      </section>
+    </article>
+  </div>
+</div>
+{{end}}

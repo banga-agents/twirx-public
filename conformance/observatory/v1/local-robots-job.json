@@ -1,0 +1,10 @@
+{
+  "format": "tw.observatory-job/0.1",
+  "mode": "local_fixture",
+  "origin_id": "controlled-origin-fixture",
+  "artifact_kind": "robots",
+  "url": "http://127.0.0.1:18081/robots.txt",
+  "product_token": "TWIRXBot",
+  "target_path": "/private/report",
+  "max_body_bytes": 512000
+}

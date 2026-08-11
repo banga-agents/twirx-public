@@ -1,0 +1,101 @@
+{
+  "format": "tw.adapter/0.1",
+  "id": "origin:testorigin/product-offer",
+  "version": "0.1.0",
+  "description": "Manual Genesis adapter for the controlled product fixture.",
+  "origin": {
+    "scheme": "http",
+    "host": "127.0.0.1",
+    "port": "*",
+    "path_prefix": "/product/"
+  },
+  "operation": {
+    "id": "commerce:getOffer",
+    "effect": "read",
+    "idempotent": true
+  },
+  "resource_type": "commerce:Offer",
+  "semantic_modules": [
+    {
+      "id": "tw:kernel",
+      "version": "0.1.0"
+    },
+    {
+      "id": "tw:commerce",
+      "version": "0.1.0"
+    },
+    {
+      "id": "origin:testorigin",
+      "version": "2026-08-10"
+    },
+    {
+      "id": "mapping:testorigin-commerce",
+      "version": "0.1.0"
+    }
+  ],
+  "fields": [
+    {
+      "id": "product_id",
+      "native_term": "origin:testorigin/product_id",
+      "semantic_term": "commerce:Product.identifier",
+      "json_pointer": "/product_id",
+      "value_type": "string",
+      "required": true,
+      "transforms": [
+        "trim"
+      ],
+      "mapping_relation": "equivalent_in_context"
+    },
+    {
+      "id": "product_name",
+      "native_term": "origin:testorigin/name",
+      "semantic_term": "commerce:Product.name",
+      "json_pointer": "/name",
+      "value_type": "string",
+      "required": true,
+      "transforms": [
+        "trim"
+      ],
+      "mapping_relation": "equivalent_in_context"
+    },
+    {
+      "id": "price_amount",
+      "native_term": "origin:testorigin/current_price",
+      "semantic_term": "commerce:OfferPrice.amount",
+      "json_pointer": "/offer/current_price",
+      "value_type": "decimal",
+      "required": true,
+      "transforms": [
+        "trim",
+        "decimal_string"
+      ],
+      "mapping_relation": "equivalent_in_context"
+    },
+    {
+      "id": "price_currency",
+      "native_term": "origin:testorigin/currency",
+      "semantic_term": "commerce:OfferPrice.currency",
+      "json_pointer": "/offer/currency",
+      "value_type": "currency_code",
+      "required": true,
+      "transforms": [
+        "trim",
+        "uppercase"
+      ],
+      "mapping_relation": "equivalent_in_context"
+    },
+    {
+      "id": "availability",
+      "native_term": "origin:testorigin/availability",
+      "semantic_term": "commerce:Offer.availability",
+      "json_pointer": "/availability",
+      "value_type": "string",
+      "required": false,
+      "transforms": [
+        "trim",
+        "lowercase"
+      ],
+      "mapping_relation": "related"
+    }
+  ]
+}

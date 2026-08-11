@@ -1,0 +1,123 @@
+{
+  "_source": "reports/futo-f3-real-archive-evidence.md and reports/futo-grant-readiness.md. Counts are from immutable snapshot sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5. Controlled capacity evidence is reported separately and is never added to the public-source packet count.",
+  "status_date": "2026-08-11",
+  "release": {
+    "snapshot_id": "sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5",
+    "snapshot_source_revision": "d13c0bfaf4aed19b9db541b3fd7ebc97e251ebc3",
+    "validation_revision": "bdee40c52bbd2be137cfadc577bac6098c799968",
+    "website_release_commit": "ded2b190f722e1e0ab661817926a692994ebd9a1",
+    "draft_pr": 17,
+    "runtime_mode": "immutable_materialized_snapshot_only",
+    "public_lab_status": "not_deployed"
+  },
+  "actual": {
+    "atlas_identities": 500,
+    "completed_policy_decisions": 3,
+    "archive_profiles": 1,
+    "public_origins_with_packets": 3,
+    "fixture_origins_with_packets": 1,
+    "operations": 6,
+    "packets": 20,
+    "public_packets": 15,
+    "fixture_packets": 5,
+    "deltas": 1,
+    "materialized_views": 2,
+    "proof_artifacts": 75,
+    "runtime_origin_network_requests": 0
+  },
+  "archive": {
+    "origin_id": "rfc-editor-org",
+    "canonical_origin": "https://www.rfc-editor.org",
+    "evidence_class": "archive_observation",
+    "freshness": "historical",
+    "current_publisher_statement": false,
+    "acquisition_manifest": "sha256:a28259dfbb3f3e0fa70002fc4c8769ad0e78503a53100481da41d63ecff6b198",
+    "captures": [
+      {
+        "collection": "CC-MAIN-2025-30",
+        "observed_at": "2025-07-08T10:21:38Z",
+        "native_term": "html:title",
+        "native_locator": "html/head/title[1]/text()",
+        "native_lexical": " &raquo; RFC Editor",
+        "packet_digest": "sha256:984057b744839253deff9c944d9fee394a072805af77120671f06b84d9bec2ca"
+      },
+      {
+        "collection": "CC-MAIN-2026-25",
+        "observed_at": "2026-06-07T20:53:41Z",
+        "native_term": "html:title",
+        "native_locator": "html/head/title[1]/text()",
+        "native_lexical": "RFC Editor",
+        "packet_digest": "sha256:a5c7a0bf8d1b39574d70b65460c7891e0e99fe3f22b884f91d90637224875cf4"
+      }
+    ],
+    "delta_class": "origin",
+    "delta_change": "modified",
+    "delta_digest": "sha256:efd6c4341375dc17cd366973c903c7cfaf5129d3805761c8a52a16410f406033",
+    "semantic_delta_emitted": false,
+    "canon_delta_emitted": false
+  },
+  "queries": {
+    "archive_history": {
+      "status": "resolved",
+      "rows": 2,
+      "query_digest": "sha256:fb2fcb83f5ccaaaec1d5724d0a966ea4388221615cc608b68f6026e91dee8f72",
+      "result_digest": "sha256:bba1a9d1fc8656223eaba0882aa1639775fe4ec58f6db469787cfbaf31992386",
+      "network_requests": 0,
+      "excluded_fixtures": 5
+    },
+    "cross_origin": {
+      "status": "resolved",
+      "origins": ["twirx-org", "api-worldbank-org"],
+      "rows": 4,
+      "query_digest": "sha256:9ba2b73f4c43134a104cb89c65031b555d3a99dc4247c7f2a0cb22561e6458e7",
+      "result_digest": "sha256:2cab9d47d16796091d032db80937fcfe5aba00f6619c82032f77d8acae3d2037",
+      "network_requests": 0,
+      "excluded_fixtures": 5
+    }
+  },
+  "stress": {
+    "scope": "One local host, immutable 20-packet snapshot, historical query, literal loopback",
+    "requests": 5000,
+    "concurrency": 8,
+    "successes": 5000,
+    "failures": 0,
+    "origin_network_requests": 0,
+    "requests_per_second": 8204,
+    "p50_microseconds": 691,
+    "p95_microseconds": 1123,
+    "p99_microseconds": 1351
+  },
+  "controlled_scale": {
+    "packets": 25018,
+    "classification": "controlled fixture capacity evidence",
+    "public_source_claim": false,
+    "note": "This result exercises the real immutable snapshot path but is fixture-dominated. It does not prove 25,018 public facts or 500 working origins."
+  },
+  "validation": {
+    "complete_offline_suite": "passed",
+    "go_fuzz_targets": 22,
+    "data_plane_c_vectors_total": 56,
+    "data_plane_c_vectors_accepted": 16,
+    "data_plane_c_vectors_rejected": 40,
+    "c_fuzzer_campaigns": 3,
+    "c_fuzzer_runs_each": 5000,
+    "race_detector": "passed",
+    "vet": "passed"
+  },
+  "grant": {
+    "request_usd": 30000,
+    "term_days": 90,
+    "first_milestone_usd": 6000,
+    "first_milestone_days": 30,
+    "first_milestone": "Complete the public release and fund 30 days of focused, full-time maintainer engineering execution.",
+    "budget": [
+      {"use": "Full-time maintainer engineering capacity", "amount": 3200},
+      {"use": "Coding-agent and API access", "amount": 1200},
+      {"use": "Demo infrastructure and storage", "amount": 600},
+      {"use": "Website, documentation and accessibility", "amount": 400},
+      {"use": "Security and operational tooling", "amount": 300},
+      {"use": "Administration and contingency", "amount": 300}
+    ]
+  },
+  "current_scope": "Read-only, approved origins and immutable snapshots only. No arbitrary URL, browser execution, model authority, authentication, payment or write action."
+}

@@ -1,0 +1,39 @@
+---
+title: "Local-first architecture"
+description: "The VPS changes capacity and isolation, not protocol semantics."
+---
+
+All essential Genesis functions run locally:
+
+- observation;
+- content-addressed storage;
+- deterministic encoding;
+- Go and C verification;
+- adapter execution;
+- provenance inspection;
+- conformance testing.
+
+Normal tests do not require public internet access. The controlled origin provides reproducible fixtures, and recorded evidence supports offline replay.
+
+## Migration principle
+
+Moving to a VPS must not alter:
+
+- artifact formats;
+- digest identities;
+- adapter semantics;
+- ontology versions;
+- provenance structure;
+- conformance behavior.
+
+The VPS adds:
+
+- separate networks;
+- isolated workers;
+- durable object storage;
+- database-backed metadata;
+- monitoring;
+- backups;
+- quotas and circuit breakers.
+
+It must not become a hidden dependency required to implement the protocol.

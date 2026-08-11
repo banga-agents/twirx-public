@@ -1,0 +1,56 @@
+{
+  "format": "tw.adapter/0.1",
+  "id": "origin:testorigin/json-pointer-escapes",
+  "version": "0.1.0",
+  "description": "Conformance adapter for RFC 6901 escape handling.",
+  "origin": {
+    "scheme": "http",
+    "host": "127.0.0.1",
+    "port": "*",
+    "path_prefix": "/pointer/"
+  },
+  "operation": {
+    "id": "test:resolvePointers",
+    "effect": "read",
+    "idempotent": true
+  },
+  "resource_type": "test:PointerFixture",
+  "semantic_modules": [
+    {
+      "id": "tw:kernel",
+      "version": "0.1.0"
+    }
+  ],
+  "fields": [
+    {
+      "id": "escaped_slash",
+      "native_term": "origin:testorigin/a-slash-b",
+      "semantic_term": "test:escapedSlash",
+      "json_pointer": "/a~1b",
+      "value_type": "string",
+      "required": true,
+      "transforms": [],
+      "mapping_relation": "equivalent_in_context"
+    },
+    {
+      "id": "escaped_tilde",
+      "native_term": "origin:testorigin/m-tilde-n",
+      "semantic_term": "test:escapedTilde",
+      "json_pointer": "/m~0n",
+      "value_type": "string",
+      "required": true,
+      "transforms": [],
+      "mapping_relation": "equivalent_in_context"
+    },
+    {
+      "id": "array_one",
+      "native_term": "origin:testorigin/array-one",
+      "semantic_term": "test:arrayOne",
+      "json_pointer": "/array/1",
+      "value_type": "string",
+      "required": true,
+      "transforms": [],
+      "mapping_relation": "equivalent_in_context"
+    }
+  ]
+}

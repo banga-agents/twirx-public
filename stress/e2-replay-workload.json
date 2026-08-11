@@ -1,0 +1,44 @@
+{
+  "format": "tw.lab-stress-workload/0.1",
+  "scenarios": [
+    {
+      "id": "controlled-offer",
+      "origin_id": "controlled-origin-lab",
+      "operation_id": "fixture.getOffer",
+      "input": {"product_id": "demo-1"},
+      "weight": 60
+    },
+    {
+      "id": "project-status",
+      "origin_id": "twirx-project",
+      "operation_id": "project.getStatus",
+      "input": {},
+      "weight": 10
+    },
+    {
+      "id": "project-gate-report",
+      "origin_id": "twirx-project",
+      "operation_id": "project.getEngineeringGateReport",
+      "input": {},
+      "weight": 10
+    },
+    {
+      "id": "project-risk-register",
+      "origin_id": "twirx-project",
+      "operation_id": "project.listUnresolvedRisks",
+      "input": {},
+      "weight": 10
+    },
+    {
+      "id": "world-bank-indicator",
+      "origin_id": "world-bank-indicators",
+      "operation_id": "development.getIndicator",
+      "input": {
+        "country": "CHL",
+        "indicator": "SP.POP.TOTL",
+        "year": 2024
+      },
+      "weight": 10
+    }
+  ]
+}

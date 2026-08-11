@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "who-int",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://who.int",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:04f1150f78bb236cd13fb5759258da63ef17b6ee06cda612637bec02f1abab93",
+  "policy_evidence_digest": "sha256:0086249fd307009e9e577df1475d8600efd84c7f46099c01ab79137a482d53b7",
+  "decision_digest": "sha256:90577aaaa2156f22bf938ec01038d9504d4aa04b7b7ae45c78c2ab060fba05d6",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

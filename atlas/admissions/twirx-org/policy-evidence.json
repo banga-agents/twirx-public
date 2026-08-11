@@ -1,0 +1,49 @@
+{
+  "format": "tw.admission-policy-evidence/0.1",
+  "policy": {
+    "id": "twirx-org",
+    "origin_id": "twirx-org",
+    "canonical_origin": "https://twirx.org",
+    "review_state": "completed",
+    "decision": "permit_live",
+    "reviewed_at": "2026-08-11T12:15:50Z",
+    "reviewer": "Richi (Genesis steward)",
+    "robots": {
+      "state": "successful",
+      "url": "https://twirx.org/robots.txt",
+      "observed_at": "2026-08-11T12:19:50.788778592Z",
+      "artifact_digest": "sha256:279da8a22975a0debaec359c0d4c9412c5f6fe9635c2bb7f07ee4ad6a699d89d",
+      "product_token": "TWIRXBot"
+    },
+    "terms_state": "accepted",
+    "terms_reference": "CHARTER.md",
+    "attribution": "Preserve TWIRX project attribution and source-native wording when reusing published project metadata.",
+    "authentication": "none_required",
+    "rate_policy": "Only exact publisher-authored public project routes are permitted; the Atlas scheduler remains disabled for the FUTO release.",
+    "retention_policy": "Retain bounded public evidence and immutable proof artifacts; exclude private repository content, personal data and unpublished reports.",
+    "risk_state": "accepted",
+    "reviewer_notes": "Founder-controlled public origin approved for bounded public-read access. Robots permits all routes and advertises the public sitemap; the decision does not enable scheduled retrieval.",
+    "evidence_refs": [
+      "evidence/founder-review.txt",
+      "evidence/review-scope.txt",
+      "evidence/robots-spool/cas/sha256/43/55/435522b81da2dd98cbce642602e283b7b0e69905f4d69931b8001ea231f6f83b",
+      "evidence/robots-spool/evidence/body.ref",
+      "evidence/robots-spool/evidence/observation.cbor",
+      "evidence/robots-spool/evidence/observation.json",
+      "evidence/robots-spool/manifest.json",
+      "evidence/robots-spool/result.json",
+      "evidence/robots-spool/work-order.json"
+    ]
+  },
+  "artifacts": [
+    {"path": "evidence/founder-review.txt", "digest": "sha256:267098636994732956ee7fea6fa38dd941439bc7b9f1096e8e37ab2a1a673305"},
+    {"path": "evidence/review-scope.txt", "digest": "sha256:77b7c62de43ad8265f5a760732f945a658dc29710e0a427379a2f93df2756e96"},
+    {"path": "evidence/robots-spool/cas/sha256/43/55/435522b81da2dd98cbce642602e283b7b0e69905f4d69931b8001ea231f6f83b", "digest": "sha256:435522b81da2dd98cbce642602e283b7b0e69905f4d69931b8001ea231f6f83b"},
+    {"path": "evidence/robots-spool/evidence/body.ref", "digest": "sha256:27849463f3966a43e76ca9ced00ef9ce898a8561ea69d24a774af5c29a3c20f0"},
+    {"path": "evidence/robots-spool/evidence/observation.cbor", "digest": "sha256:279da8a22975a0debaec359c0d4c9412c5f6fe9635c2bb7f07ee4ad6a699d89d"},
+    {"path": "evidence/robots-spool/evidence/observation.json", "digest": "sha256:346491bcac4af623b45208bed46005f93fc684c1e05094a0f2a256596634be5c"},
+    {"path": "evidence/robots-spool/manifest.json", "digest": "sha256:8363affcf4e1e13395003bea9f3b6cb19a6ef147a29e509a1468bf00071048fa"},
+    {"path": "evidence/robots-spool/result.json", "digest": "sha256:6ae9656632533166c0093dfb61937e14a558c7716b0dafa8ba8f5d4bd795c34c"},
+    {"path": "evidence/robots-spool/work-order.json", "digest": "sha256:9ecb18dd0d36ccae59cb195529cd9591191e16be34d05d4612a7d03a455dcd9f"}
+  ]
+}

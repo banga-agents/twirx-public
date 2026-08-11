@@ -1,0 +1,118 @@
+{
+  "format": "tw.robots-conformance/0.1",
+  "product_token": "TWIRXBot",
+  "cases": [
+    {
+      "name": "no-groups-default-allow",
+      "robots": "# empty\n",
+      "path_query": "/public",
+      "allowed": true,
+      "matched_pattern": ""
+    },
+    {
+      "name": "wildcard-fallback",
+      "robots": "User-agent: *\nDisallow: /private\n",
+      "path_query": "/private/report",
+      "allowed": false,
+      "matched_pattern": "/private"
+    },
+    {
+      "name": "exact-agent-overrides-wildcard",
+      "robots": "User-agent: *\nDisallow: /\nUser-agent: twirxbot\nAllow: /public\n",
+      "path_query": "/public/report",
+      "allowed": true,
+      "matched_pattern": "/public"
+    },
+    {
+      "name": "exact-empty-group-does-not-fall-back",
+      "robots": "User-agent: *\nDisallow: /\nUser-agent: TWIRXBot\n",
+      "path_query": "/anything",
+      "allowed": true,
+      "matched_pattern": ""
+    },
+    {
+      "name": "matching-groups-merge",
+      "robots": "User-agent: TWIRXBot\nDisallow: /one\nUser-agent: twirxbot\nDisallow: /two\n",
+      "path_query": "/two/value",
+      "allowed": false,
+      "matched_pattern": "/two"
+    },
+    {
+      "name": "longest-match-wins",
+      "robots": "User-agent: TWIRXBot\nAllow: /example/page/\nDisallow: /example/page/disallowed.gif\n",
+      "path_query": "/example/page/disallowed.gif",
+      "allowed": false,
+      "matched_pattern": "/example/page/disallowed.gif"
+    },
+    {
+      "name": "equivalent-allow-wins",
+      "robots": "User-agent: TWIRXBot\nDisallow: /same\nAllow: /same\n",
+      "path_query": "/same/value",
+      "allowed": true,
+      "matched_pattern": "/same"
+    },
+    {
+      "name": "path-match-is-case-sensitive",
+      "robots": "User-agent: TWIRXBot\nDisallow: /Case\n",
+      "path_query": "/case",
+      "allowed": true,
+      "matched_pattern": ""
+    },
+    {
+      "name": "wildcard-and-end-anchor",
+      "robots": "User-agent: *\nDisallow: *.gif$\n",
+      "path_query": "/media/image.gif",
+      "allowed": false,
+      "matched_pattern": "*.gif$"
+    },
+    {
+      "name": "end-anchor-rejects-suffix",
+      "robots": "User-agent: *\nDisallow: /exact$\n",
+      "path_query": "/exact/more",
+      "allowed": true,
+      "matched_pattern": ""
+    },
+    {
+      "name": "unreserved-percent-decoding",
+      "robots": "User-agent: *\nDisallow: /foo/bar/baz\n",
+      "path_query": "/foo/bar/%62%61%7A",
+      "allowed": false,
+      "matched_pattern": "/foo/bar/baz"
+    },
+    {
+      "name": "unicode-octets-normalize",
+      "robots": "User-agent: *\nDisallow: /資料\n",
+      "path_query": "/資料/report",
+      "allowed": false,
+      "matched_pattern": "/資料"
+    },
+    {
+      "name": "other-record-does-not-terminate-group",
+      "robots": "User-agent: *\nSitemap: https://example.test/sitemap.xml\nDisallow: /blocked\n",
+      "path_query": "/blocked",
+      "allowed": false,
+      "matched_pattern": "/blocked"
+    },
+    {
+      "name": "rules-before-group-ignored",
+      "robots": "Disallow: /ignored\nUser-agent: OtherBot\nDisallow: /other\n",
+      "path_query": "/ignored",
+      "allowed": true,
+      "matched_pattern": ""
+    },
+    {
+      "name": "parseable-rules-survive-malformed-line",
+      "robots": "User-agent: *\nthis is malformed\nDisallow: /blocked\n",
+      "path_query": "/blocked",
+      "allowed": false,
+      "matched_pattern": "/blocked"
+    },
+    {
+      "name": "robots-path-is-implicitly-allowed",
+      "robots": "User-agent: *\nDisallow: /\n",
+      "path_query": "/robots.txt",
+      "allowed": true,
+      "matched_pattern": ""
+    }
+  ]
+}

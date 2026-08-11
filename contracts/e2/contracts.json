@@ -1,0 +1,120 @@
+{
+  "format": "tw.contract-set/0.1",
+  "core": "twir-core/0.1",
+  "module_id": "twirx:public-alpha",
+  "module_version": "0.1.0",
+  "operations": [
+    {
+      "id": "project.getStatus",
+      "version": "1",
+      "origin_id": "twirx-project",
+      "origin_version": "2026-08-10",
+      "title": "Get TWIRX project status",
+      "description": "Returns the publisher-authored project phase and admitted engineering gate.",
+      "resource": "project:Status",
+      "effect": "read",
+      "evidence_requirement": "observation-v1+transport-v2+field-provenance",
+      "native_reference": "origin:twirx/project-status",
+      "semantic_reference": "project:Status",
+      "semantic_closure": ["origin:twirx@2026-08-10", "project:core@0.1.0", "tw:kernel@0.1.0"],
+      "input": [],
+      "output": [
+        {"id":"phase","description":"Publisher-declared project phase.","type":"string","required":true,"native_term":"origin:twirx/phase","native_locator":"/phase","semantic_term":"project:Status.phase","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"maturity","description":"Publisher-declared maturity.","type":"string","required":true,"native_term":"origin:twirx/maturity","native_locator":"/maturity","semantic_term":"project:Status.maturity","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"engineering_gate","description":"Most recent admitted engineering gate.","type":"string","required":true,"native_term":"origin:twirx/gate.id","native_locator":"/gate/id","semantic_term":"project:Status.engineeringGate","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"gate_status","description":"Publisher-declared implementation status.","type":"string","required":true,"native_term":"origin:twirx/gate.status","native_locator":"/gate/status","semantic_term":"project:Status.gateStatus","transforms":[],"mapping":"equivalent_in_context"}
+      ],
+      "errors": [{"code":"origin_unavailable","description":"The admitted publisher origin could not be observed."},{"code":"required_evidence_missing","description":"A required source statement or evidence artifact is unavailable."}]
+    },
+    {
+      "id": "project.getEngineeringGateReport",
+      "version": "1",
+      "origin_id": "twirx-project",
+      "origin_version": "2026-08-10",
+      "title": "Get engineering gate report status",
+      "description": "Returns the current gate evidence statement without converting it into an objective truth claim.",
+      "resource": "project:EngineeringGateReport",
+      "effect": "read",
+      "evidence_requirement": "observation-v1+transport-v2+field-provenance",
+      "native_reference": "origin:twirx/project-status",
+      "semantic_reference": "project:EngineeringGateReport",
+      "semantic_closure": ["origin:twirx@2026-08-10", "project:core@0.1.0", "tw:kernel@0.1.0"],
+      "input": [],
+      "output": [
+        {"id":"gate_id","description":"Publisher gate identifier.","type":"string","required":true,"native_term":"origin:twirx/gate.id","native_locator":"/gate/id","semantic_term":"project:EngineeringGate.id","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"evidence_status","description":"Publisher statement about executed evidence.","type":"string","required":true,"native_term":"origin:twirx/gate.evidence_status","native_locator":"/gate/evidence_status","semantic_term":"project:EngineeringGate.evidenceStatus","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"hosted_ci_status","description":"Recorded hosted CI status.","type":"string","required":true,"native_term":"origin:twirx/remote_ci.status","native_locator":"/remote_ci/status","semantic_term":"project:EngineeringGate.hostedCI","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"report_path","description":"Repository-relative evidence report path.","type":"string","required":true,"native_term":"origin:twirx/gate.report_path","native_locator":"/gate/report_path","semantic_term":"project:EngineeringGate.reportPath","transforms":[],"mapping":"equivalent_in_context"}
+      ],
+      "errors": [{"code":"origin_unavailable","description":"The admitted publisher origin could not be observed."},{"code":"required_evidence_missing","description":"A required source statement or evidence artifact is unavailable."}]
+    },
+    {
+      "id": "project.listUnresolvedRisks",
+      "version": "1",
+      "origin_id": "twirx-project",
+      "origin_version": "2026-08-10",
+      "title": "List published unresolved risks",
+      "description": "Returns the complete publisher-authored unresolved-risk list from the observed project status artifact.",
+      "resource": "project:RiskRegister",
+      "effect": "read",
+      "evidence_requirement": "observation-v1+transport-v2+field-provenance",
+      "native_reference": "origin:twirx/project-status",
+      "semantic_reference": "project:RiskRegister",
+      "semantic_closure": ["origin:twirx@2026-08-10", "project:core@0.1.0", "tw:kernel@0.1.0"],
+      "input": [],
+      "output": [
+        {"id":"risks","description":"Publisher-authored unresolved risk statements.","type":"list:string","required":true,"native_term":"origin:twirx/unresolved_risks","native_locator":"/unresolved_risks","semantic_term":"project:RiskRegister.items","transforms":[],"mapping":"source_list"}
+      ],
+      "errors": [{"code":"origin_unavailable","description":"The admitted publisher origin could not be observed."},{"code":"required_evidence_missing","description":"The risk list is unavailable."}]
+    },
+    {
+      "id": "fixture.getOffer",
+      "version": "1",
+      "origin_id": "controlled-origin-lab",
+      "origin_version": "1",
+      "title": "Get controlled fixture offer",
+      "description": "Returns a typed offer from the controlled local JSON fixture.",
+      "resource": "commerce:Offer",
+      "effect": "read",
+      "evidence_requirement": "observation-v1+transport-v2+field-provenance",
+      "native_reference": "origin:testorigin/product",
+      "semantic_reference": "commerce:Offer",
+      "semantic_closure": ["mapping:testorigin-commerce@0.1.0", "origin:testorigin@2026-08-10", "tw:commerce@0.1.0", "tw:kernel@0.1.0"],
+      "input": [{"id":"product_id","description":"Admitted controlled fixture product identifier.","type":"string","required":true,"allowed":["demo-1"],"max_length":16}],
+      "output": [
+        {"id":"product_id","description":"Origin product identifier.","type":"string","required":true,"native_term":"origin:testorigin/product_id","native_locator":"/product_id","semantic_term":"commerce:Product.identifier","transforms":["trim"],"mapping":"equivalent_in_context"},
+        {"id":"product_name","description":"Origin product name.","type":"string","required":true,"native_term":"origin:testorigin/name","native_locator":"/name","semantic_term":"commerce:Product.name","transforms":["trim"],"mapping":"equivalent_in_context"},
+        {"id":"price_amount","description":"Origin price lexical value.","type":"decimal","required":true,"native_term":"origin:testorigin/current_price","native_locator":"/offer/current_price","semantic_term":"commerce:OfferPrice.amount","transforms":["trim","decimal_string"],"mapping":"equivalent_in_context"},
+        {"id":"price_currency","description":"Origin currency lexical value.","type":"currency_code","required":true,"native_term":"origin:testorigin/currency","native_locator":"/offer/currency","semantic_term":"commerce:OfferPrice.currency","transforms":["trim","uppercase"],"mapping":"equivalent_in_context"},
+        {"id":"availability","description":"Optional origin availability.","type":"string","required":false,"native_term":"origin:testorigin/availability","native_locator":"/availability","semantic_term":"commerce:Offer.availability","transforms":["trim","lowercase"],"mapping":"related"}
+      ],
+      "errors": [{"code":"invalid_input","description":"The product identifier is outside the admitted fixture values."},{"code":"required_evidence_missing","description":"A required source statement is unavailable."}]
+    },
+    {
+      "id": "development.getIndicator",
+      "version": "1",
+      "origin_id": "world-bank-indicators",
+      "origin_version": "v2",
+      "title": "Get an admitted development indicator",
+      "description": "Returns one World Bank Indicators API value for bounded country, indicator, and year inputs.",
+      "resource": "development:IndicatorObservation",
+      "effect": "read",
+      "evidence_requirement": "observation-v1+transport-v2+field-provenance",
+      "native_reference": "origin:worldbank/indicator-response-v2",
+      "semantic_reference": "development:IndicatorObservation",
+      "semantic_closure": ["development:core@0.1.0", "origin:worldbank@v2", "tw:kernel@0.1.0"],
+      "input": [
+        {"id":"country","description":"Admitted ISO 3166-1 alpha-3 country code.","type":"string","required":true,"allowed":["CHL","USA","VNM"],"max_length":3},
+        {"id":"indicator","description":"Admitted World Bank indicator code.","type":"string","required":true,"allowed":["NY.GDP.MKTP.CD","SP.POP.TOTL"],"max_length":32},
+        {"id":"year","description":"Admitted observation year.","type":"integer","required":true,"allowed":["2020","2021","2022","2023","2024","2025"],"max_length":4}
+      ],
+      "output": [
+        {"id":"indicator_id","description":"World Bank indicator identifier.","type":"string","required":true,"native_term":"origin:worldbank/indicator.id","native_locator":"/1/0/indicator/id","semantic_term":"development:Indicator.identifier","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"country_code","description":"World Bank response country code.","type":"string","required":true,"native_term":"origin:worldbank/countryiso3code","native_locator":"/1/0/countryiso3code","semantic_term":"development:IndicatorObservation.countryCode","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"year","description":"World Bank response date field.","type":"integer","required":true,"native_term":"origin:worldbank/date","native_locator":"/1/0/date","semantic_term":"development:IndicatorObservation.year","transforms":[],"mapping":"equivalent_in_context"},
+        {"id":"value","description":"World Bank response indicator value.","type":"decimal","required":false,"native_term":"origin:worldbank/value","native_locator":"/1/0/value","semantic_term":"development:IndicatorObservation.value","transforms":["decimal_string"],"mapping":"equivalent_in_context"}
+      ],
+      "errors": [{"code":"invalid_input","description":"An input is outside the reviewed country, indicator, or year set."},{"code":"origin_unavailable","description":"The admitted official API could not be observed."},{"code":"required_evidence_missing","description":"A required response field is unavailable."}]
+    }
+  ]
+}

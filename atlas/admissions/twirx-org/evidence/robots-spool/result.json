@@ -1,0 +1,17 @@
+{
+  "format": "tw.egress-result/0.1",
+  "work_order_id": "futo-twirx-robots",
+  "work_order_digest": "sha256:9ecb18dd0d36ccae59cb195529cd9591191e16be34d05d4612a7d03a455dcd9f",
+  "origin_id": "twirx-org",
+  "purpose": "robots",
+  "request_url": "https://twirx.org/robots.txt",
+  "final_url": "https://twirx.org/robots.txt",
+  "retrieved_at": "2026-08-11T12:19:50.788778592Z",
+  "http_status": 200,
+  "media_type": "text/plain",
+  "redirect_count": 0,
+  "observation_digest": "sha256:279da8a22975a0debaec359c0d4c9412c5f6fe9635c2bb7f07ee4ad6a699d89d",
+  "body_digest": "sha256:435522b81da2dd98cbce642602e283b7b0e69905f4d69931b8001ea231f6f83b",
+  "body_size": 335,
+  "duration_ms": 1026
+}

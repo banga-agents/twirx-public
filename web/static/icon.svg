@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="TWIRX">
+  <title>TWIRX</title>
+  <rect width="32" height="32" fill="#14507d"/>
+  <!-- Three bound layers: evidence, statement, typed value. -->
+  <g stroke="#fdfcfa" stroke-width="2.4" fill="none" stroke-linecap="square">
+    <path d="M7 9h18"/>
+    <path d="M7 16h18"/>
+    <path d="M7 23h18"/>
+  </g>
+  <circle cx="16" cy="16" r="3.6" fill="#14507d" stroke="#fdfcfa" stroke-width="2.4"/>
+</svg>

@@ -1,0 +1,67 @@
+{
+  "format": "tw.archive-acquisition-manifest/0.1",
+  "work_order_id": "rfc-editor-futo-history",
+  "work_order_digest": "sha256:c96281801f9e95e603fb950a77b98ac3cf9ad0bf29920259a1e062b59dfd3724",
+  "index_host": "index.commoncrawl.org",
+  "data_host": "data.commoncrawl.org",
+  "index_requests": 2,
+  "range_requests": 2,
+  "network_requests_made": 4,
+  "artifacts": [
+    {
+      "path": "captures/capture-000/manifest.json",
+      "digest": "sha256:088f78ff24b01ba04b1efcac0cf3ab811ee4c8b6c1d7fde0a8018ad4b77b2053",
+      "size": 1424
+    },
+    {
+      "path": "captures/capture-001/manifest.json",
+      "digest": "sha256:8adb5a3ddb1da6a908959b9ffb2df9bbd14dff335b129283fe718cbb939d1330",
+      "size": 1425
+    },
+    {
+      "path": "raw/index-000.jsonl",
+      "digest": "sha256:faa5129c2b60f7f663aa3e56f2d85cbd493fdbab768f84c026278ab750d2bb34",
+      "size": 422
+    },
+    {
+      "path": "raw/index-001.jsonl",
+      "digest": "sha256:b1b61c2e874e059ab3db72eb9bf5b580795a147f1d862e02b9dc3f82764d99ba",
+      "size": 422
+    },
+    {
+      "path": "raw/range-000.warc.gz",
+      "digest": "sha256:f676dd68d75fd9e054bdc15755f9e68a51c70a5606c2f54ba91ab7d912c4bee0",
+      "size": 15237
+    },
+    {
+      "path": "raw/range-001.warc.gz",
+      "digest": "sha256:620bdca6552900d9e4cc547568759e5de165521c0207cf82f19778edc0904908",
+      "size": 36598
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:c96281801f9e95e603fb950a77b98ac3cf9ad0bf29920259a1e062b59dfd3724",
+      "size": 1887
+    }
+  ],
+  "captures": [
+    {
+      "collection_id": "CC-MAIN-2025-30",
+      "route": "https://www.rfc-editor.org/",
+      "capture_timestamp": "20250708102138",
+      "spool_path": "captures/capture-000",
+      "spool_manifest_digest": "sha256:088f78ff24b01ba04b1efcac0cf3ab811ee4c8b6c1d7fde0a8018ad4b77b2053",
+      "representation_digest": "sha256:fe8b7109b112b755ca1f869eb36ec585159afe86a7f6fe4504a32538cab57152",
+      "representation_size": 69089
+    },
+    {
+      "collection_id": "CC-MAIN-2026-25",
+      "route": "https://www.rfc-editor.org/",
+      "capture_timestamp": "20260607205341",
+      "spool_path": "captures/capture-001",
+      "spool_manifest_digest": "sha256:8adb5a3ddb1da6a908959b9ffb2df9bbd14dff335b129283fe718cbb939d1330",
+      "representation_digest": "sha256:6b591e959e45e918dac2fc9ab829ef0ac5a75b1908c864b0432324a7b02c5f89",
+      "representation_size": 174086
+    }
+  ]
+}

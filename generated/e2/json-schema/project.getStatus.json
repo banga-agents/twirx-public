@@ -1,0 +1,10 @@
+{
+  "$id": "urn:twirx:operation:project.getStatus:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Returns the publisher-authored project phase and admitted engineering gate.",
+  "properties": {},
+  "required": [],
+  "title": "Get TWIRX project status",
+  "type": "object"
+}

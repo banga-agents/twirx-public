@@ -1,0 +1,12 @@
+Reviewed by Richi (Genesis steward) at 2026-08-11T12:15:50Z.
+
+Decision: profile_only for the exact RFC Editor homepage records in
+CC-MAIN-2025-30 and CC-MAIN-2026-25. The canonical origin is migrated to
+https://www.rfc-editor.org. Evidence is historical, not a current publisher
+statement. No live content crawl, authentication, personal-data extraction,
+scheduler, browser, model, payment, action or canon promotion is authorized.
+
+Terms and risk basis: public-interest standards material, exact bounded WARC
+records, preserved attribution and the scope in
+reports/futo-policy-decision-proposals.md. The robots evidence disallows three
+RFC subtrees; none is the approved homepage route.

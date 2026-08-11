@@ -1,0 +1,4 @@
+E3.2 policy review scope
+origin: https://nytimes.com
+review: robots, terms, attribution, authentication, rate, retention, access economics, and origin-specific risk
+current state: pending human review; no live retrieval or canonical admission is authorized

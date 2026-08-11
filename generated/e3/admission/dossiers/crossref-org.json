@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "crossref-org",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://crossref.org",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:1c9633715c8bbb43757b75bbe7b8e1d47ee18b307fc4cef9c31da69f27e9c807",
+  "policy_evidence_digest": "sha256:5124fff89e199c34f454a91aa7453f56f57f22a6e6ee34bd20d687e8d412bf02",
+  "decision_digest": "sha256:11a587edf0c9dc5c9c5edea209ec6cc15abbdac7273a32e66dd7ad338f8359c6",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

@@ -1,0 +1,46 @@
+---
+title: "Run the E2 Live Provenance Lab"
+description: "Invoke a canonical read operation, inspect field provenance, and verify the proof bundle offline."
+---
+
+> **Authority:** Explanatory · **Status:** Implemented candidate · **Applies to:** E2 · **Verified against:** current checkout · **Source:** `contracts/e2/contracts.json`, `scripts/demo-e2.sh`
+
+The E2 Lab accepts an admitted `origin_id`, `operation_id`, and bounded typed
+input. It never accepts a destination URL.
+
+```bash
+make build
+make demo-e2
+```
+
+The deterministic demonstration invokes `fixture.getOffer` through the CLI,
+verifies the same canonical bundle in Go and restricted C, performs a real
+local MCP `tools/call`, and verifies the proof again after all origin access is
+stopped.
+
+```bash
+bin/twirx-lab invoke \
+  --root . \
+  --results var/e2/results \
+  --origin controlled-origin-lab \
+  --operation fixture.getOffer \
+  --mode replay \
+  --input product_id=demo-1
+```
+
+The output keeps source-native and semantic values side by side. For example,
+the native currency `usd` remains visible before the declared `uppercase`
+transformation produces semantic lexical value `USD`.
+
+Run the local HTTP Lab:
+
+```bash
+bin/twirx-lab serve \
+  --root . \
+  --results var/e2/results \
+  --static lab/static \
+  --listen 127.0.0.1:8090
+```
+
+The command refuses a non-loopback bind. A production public edge belongs to
+Caddy and the hardened systemd service in `lab/deploy/`.

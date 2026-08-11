@@ -1,0 +1,18 @@
+---
+title: "Language sovereignty"
+description: "Specifications and conformance define the protocol, not one implementation community."
+---
+
+The Genesis control path is implemented in Go and the first independent verifier is implemented in restricted C. Neither implementation is the protocol.
+
+Normative authority belongs to:
+
+- specifications;
+- canonical encodings;
+- validation rules;
+- public conformance vectors;
+- security invariants.
+
+A conforming implementation may use C, Go, Rust, SPARK, Java, Zig, a formally verified system, or another language.
+
+Independent implementations are not duplication for its own sake. They expose ambiguity. When two implementations disagree, the project must resolve the specification rather than silently declaring the reference implementation correct.

@@ -1,0 +1,35 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "twirx-org",
+  "admission_review_state": "completed",
+  "canonical_admission": true,
+  "canonical_origin": "https://twirx.org",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "completed",
+  "policy_decision": "permit_live",
+  "technical_stage": "semantically_linked",
+  "publisher_status": "publisher_approved",
+  "health_status": "unknown",
+  "adapter_trust": "conformant",
+  "mapping_trust": "reviewed",
+  "interfaces": 4,
+  "capability_candidates": 3,
+  "admitted_public_read_operations": 3,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:2357bd7c129afdc0c05e903d46f0854f1325dc6a1a4183b9328109e3ccaf47af",
+  "policy_evidence_digest": "sha256:eab81fab353c9f08710d068a5b616795204a15d721f9f74516d8d1348182ab14",
+  "decision_digest": "sha256:04c5ab4ea3cb4e46e20c7905ab33f6933ba0a8d7aaa9c3e838407ff8acaea43a",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "constraints": [
+    "No authenticated, browser, model, payment or write action is authorized.",
+    "Personal data, private repository content and unpublished reports are excluded.",
+    "Preserve project attribution, native wording and complete derivation.",
+    "The Atlas scheduler remains disabled for the FUTO release."
+  ],
+  "evidence_refs": [
+    "decisions/005-twirx-origin-admission.md",
+    "reports/futo-policy-decision-proposals.md"
+  ]
+}

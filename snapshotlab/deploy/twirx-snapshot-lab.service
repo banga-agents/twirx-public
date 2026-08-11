@@ -1,0 +1,52 @@
+[Unit]
+Description=TWIRX immutable Semantic Snapshot Query Lab
+Documentation=https://docs.twirx.org
+After=network.target
+
+[Service]
+Type=simple
+User=twirx-snapshot
+Group=twirx-snapshot
+WorkingDirectory=/srv/twirx-snapshot/current
+ExecStart=/srv/twirx-snapshot/current/bin/twirx-snapshot serve --snapshot /srv/twirx-snapshot/current/snapshot --id sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5 --listen 127.0.0.1:8092
+Restart=on-failure
+RestartSec=3s
+TimeoutStopSec=10s
+UMask=0027
+
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectProc=invisible
+ProtectSystem=strict
+ProcSubset=pid
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged @mount
+CapabilityBoundingSet=
+AmbientCapabilities=
+IPAddressDeny=any
+IPAddressAllow=localhost
+TasksMax=32
+MemoryMax=256M
+MemorySwapMax=0
+CPUQuota=25%
+IOWeight=10
+Nice=10
+LimitNOFILE=1024
+
+[Install]
+WantedBy=multi-user.target

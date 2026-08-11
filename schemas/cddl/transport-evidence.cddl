@@ -1,0 +1,20 @@
+transport-evidence = [
+  version: "tw.transport/0.2",
+  request-url: tstr .size (1..8192),
+  final-url: tstr .size (1..8192),
+  policy-id: tstr .size (1..256),
+  redirects: [*20 redirect-hop],
+  selected-response-headers: [*32 selected-header],
+  extensions: []
+]
+
+redirect-hop = [
+  from-url: tstr .size (1..8192),
+  status: 300..399,
+  to-url: tstr .size (1..8192)
+]
+
+selected-header = [
+  name: "content-encoding" / "content-language" / "content-location" / "content-type",
+  value: tstr .size (1..8192)
+]

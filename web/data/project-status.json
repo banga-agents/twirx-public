@@ -1,0 +1,207 @@
+{
+  "_source": "E1 figures are from reports/gate-1-genesis.md at commit 40210f3cf73004d454733d8b09048c2c5391b4d4, amended by d6ed40eacade30e5942c3f7160a396b8cb4299bf. Current release state is extended by data/futo-release.json and reports/futo-f3-real-archive-evidence.md; those sources control later-gate figures.",
+  "project": "TWIRX",
+  "mission": "Typed Web Commons",
+  "phase": "genesis",
+  "maturity": "pre-alpha",
+  "status_date": "2026-08-11",
+
+  "status_rail": [
+    "Genesis Preview",
+    "E1 admitted",
+    "Semantic Snapshot implemented",
+    "500 Atlas identities",
+    "Read-only",
+    "No arbitrary URLs",
+    "Hosted CI: not executed"
+  ],
+
+  "namespaces": {
+    "_decision": "decisions/002-engineering-and-public-gate-namespaces.md — accepted 2026-08-10.",
+    "engineering": "E0, E1, E2 … — engineering gates, admitted on executed evidence.",
+    "public": "P0, P1, P2 … — public-foundation milestones.",
+    "former_numbering": "E1 was previously called 'Gate 1' and P1 was previously called 'Gate 2'. Historical reports keep their original numbering and are mapped explicitly rather than silently renumbered."
+  },
+
+  "gate": {
+    "id": "E1",
+    "number": 1,
+    "name": "Source-Statement Evidence Spine",
+    "former_id": "Gate 1",
+    "status": "implemented",
+    "evidence_status": "Local acceptance passed. Hosted CI has not executed.",
+    "pull_request": 1,
+    "baseline_commit": "6df221bde6f2f7e0535df178104e8b1a93c11bb8",
+    "implementation_commit": "1d17d5b541176fdb6b742caa48f0f55a14dfa206",
+    "evidence_commit": "40210f3cf73004d454733d8b09048c2c5391b4d4",
+    "merge_commit": "ac4f9948ad21b319b11f9caeee9bd4e472c39780",
+    "report_path": "reports/gate-1-genesis.md"
+  },
+
+  "profile": {
+    "read_only": true,
+    "local_first": true,
+    "browser_in_execution_path": false,
+    "model_in_execution_path": false,
+    "network_required_after_observation": false,
+    "third_party_go_runtime_dependencies": 0,
+    "public_arbitrary_url_service": false,
+    "production_multi_tenant": false
+  },
+
+  "validation": {
+    "go_named_test_events_passed": 94,
+    "go_tested_packages": 7,
+    "observation_vectors_total": 16,
+    "observation_vectors_accepted": 2,
+    "observation_vectors_rejected": 14,
+    "observation_vectors_rejected_envelope": 12,
+    "observation_vectors_rejected_evidence": 2,
+    "observation_vectors_run_in_c": 16,
+    "corrupted_cas_checks": 2,
+    "extraction_vectors_total": 11,
+    "extraction_vectors_accepted": 5,
+    "extraction_vectors_rejected": 6,
+    "network_policy_tests": 8,
+    "offline_e2e_tests": 1,
+    "documentation_navigation_checks": 1,
+    "failures": 0,
+    "go_fuzz_targets_passed": 4,
+    "c_libfuzzer_executions": 5000,
+    "race_detector": "passed",
+    "go_vet": "passed",
+    "gofmt": "passed",
+    "shellcheck": "passed",
+    "clang_static_analysis": "passed",
+    "secret_scan": "no match outside generated directories and Git metadata",
+    "asan_ubsan_findings": 0,
+    "stopped_origin_demo": "passed"
+  },
+
+  "fuzz_smoke_executions": {
+    "_note": "Host- and scheduling-dependent. The gate is the absence of a panic or failing invariant, not a throughput claim.",
+    "observation_parser": 138620,
+    "json_pointer": 55183,
+    "manifest_decoder": 83640,
+    "bounded_extraction": 72160
+  },
+
+  "coverage_note": "Statement coverage from `go test -cover ./...`. Command packages report 0% because they have no direct Go tests; their current path is exercised by the shell end-to-end test and demo.",
+  "coverage": [
+    { "package": "internal/adapter", "percent": 71.3 },
+    { "package": "internal/atomicfile", "percent": 56.8 },
+    { "package": "internal/cas", "percent": 63.0 },
+    { "package": "internal/cborlite", "percent": 61.3 },
+    { "package": "internal/jsonbounded", "percent": 76.5 },
+    { "package": "internal/observation", "percent": 56.1 },
+    { "package": "internal/safefetch", "percent": 76.7 }
+  ],
+
+  "benchmark": {
+    "name": "BenchmarkResolveJSONPointer-16",
+    "ns_per_op": 271.7,
+    "bytes_per_op": 128,
+    "allocs_per_op": 8,
+    "host": "AMD Ryzen 7 6800U, Linux/amd64, 16 logical workers",
+    "scope_warning": "A narrow extraction primitive measured on one recorded host. It is not an end-to-end throughput figure and it is not evidence that TWIRX is faster than browser execution."
+  },
+
+  "proof_metrics": [
+    {
+      "label": "Named Go test events",
+      "value": "94",
+      "detail": "0 failed",
+      "scope": "Seven tested packages, one recorded host",
+      "source": "reports/gate-1-genesis.md"
+    },
+    {
+      "label": "Shared Go/C observation vectors",
+      "value": "16",
+      "detail": "2 accepted, 14 rejected, in both implementations",
+      "scope": "Committed vectors; identical inputs and expectations",
+      "source": "conformance/observation/vectors.json"
+    },
+    {
+      "label": "Extraction vectors",
+      "value": "11",
+      "detail": "5 accepted, 6 rejected",
+      "scope": "Controlled fixtures only; not arbitrary websites",
+      "source": "conformance/extraction/vectors.json"
+    },
+    {
+      "label": "Independent implementations",
+      "value": "2",
+      "detail": "Go and restricted C",
+      "scope": "Of the observation envelope and evidence check only; the adapter runtime still has one",
+      "source": "reports/gate-1-genesis.md"
+    },
+    {
+      "label": "Sanitizer-instrumented C libFuzzer runs",
+      "value": "5,000",
+      "detail": "0 ASan/UBSan findings",
+      "scope": "Parser-only harness, one recorded host; a smoke run, not a campaign",
+      "source": "reports/gate-1-genesis.md"
+    },
+    {
+      "label": "Published unresolved risks",
+      "value": "7",
+      "detail": "the complete recorded set",
+      "scope": "Every risk in the E1 report, including the inconvenient ones",
+      "source": "reports/gate-1-genesis.md"
+    },
+    {
+      "label": "Third-party runtime dependencies",
+      "value": "0",
+      "detail": "Go standard library only; no go.sum",
+      "scope": "Protocol implementation; the website build is also dependency-free",
+      "source": "reports/gate-1-genesis.md"
+    },
+    {
+      "label": "Hosted CI executions",
+      "value": "0",
+      "detail": "check-suite startup failed before any job existed",
+      "scope": "No hosted CI execution is claimed anywhere on this site",
+      "source": "reports/gate-1-genesis.md"
+    }
+  ],
+
+  "remote_ci": {
+    "status": "not-executed",
+    "statement": "Engineering Gate E1 passed the complete local validation suite recorded in the Gate E1 evidence report. GitHub-hosted Actions failed during check-suite startup before creating any job; no hosted CI execution is claimed.",
+    "summary": "GitHub-hosted Actions failed during check-suite startup before creating any job, so no intended CI command reached a runner.",
+    "detail": "The `ci` workflow is reported active with zero associated runs. Repository events are recorded against a separate deleted workflow with an empty name and no jobs. A byte-identical rename to ci.yaml, actionlint validation, disabling and re-enabling the workflow, and closing and reopening the pull request all reproduced the same startup failure.",
+    "remaining_cause": "External to the workflow document: GitHub Actions availability, budget, or account eligibility for hosted runners on this private repository.",
+    "consequence": "Local Gate 1 evidence is currently the only executed validation evidence."
+  },
+
+  "toolchain": {
+    "host": "Linux 7.1.3-arch1-1, x86_64",
+    "go": "go1.26.5-X:nodwarf5 linux/amd64",
+    "gcc": "16.1.1 20260625",
+    "clang": "22.1.8",
+    "python": "3.14.6",
+    "bash": "5.3.15(1)-release",
+    "make": "GNU Make 4.4.1",
+    "shellcheck": "0.11.0",
+    "git": "2.55.0"
+  },
+
+  "unresolved_risks": [
+    "URL and resolved-address checks are application-layer controls. Production deployment still needs separate worker and control networks, DNS and egress enforcement, metadata isolation, and quotas.",
+    "Observation v1 records the request and final URL but not the redirect chain or selected transport headers. A later immutable transport-evidence artifact is needed without mutating v1.",
+    "The adapter runtime has no independent second implementation. Its manifest and result formats remain pre-stable and unsigned.",
+    "Atomic publication is per file, not a transaction spanning every file in an observation bundle. Destination directories and CAS roots are assumed to be trusted configuration, and filesystem durability semantics vary.",
+    "The corpus is intentionally small and the fuzz durations in normal tests are smoke tests. Longer scheduled fuzzing and external review remain necessary.",
+    "Direct command-package coverage is absent even though the shell workflow exercises their current happy path. CLI error-path tests should be added at the next maintenance gate.",
+    "Local filesystem compromise can replace implementation and evidence together. Signed releases and external transparency are out of Gate 1."
+  ],
+
+  "not_proven": [
+    "That provider content, a semantic mapping, or a retrieval timestamp is objectively true.",
+    "Publisher identity or authority.",
+    "Arbitrary websites, HTML, JavaScript, browser execution, model output, writes, payments, registry operation, or multi-tenant service.",
+    "Production DNS-rebinding resistance, egress isolation, or safe public arbitrary-URL deployment.",
+    "Signatures, release provenance, external transparency, or protection against a host compromise that replaces code and evidence.",
+    "The absence of parser defects. Finite tests and short fuzz runs cannot establish it."
+  ]
+}

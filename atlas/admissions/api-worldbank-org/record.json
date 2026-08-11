@@ -1,0 +1,233 @@
+{
+  "id": "api-worldbank-org",
+  "scope": "genesis_public",
+  "canonical_origin": "https://api.worldbank.org",
+  "registrable_domain": "worldbank.org",
+  "execution_catalog_ids": [
+    "world-bank-indicators"
+  ],
+  "catalog": {
+    "state": "cataloged",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "Genesis steward",
+    "evidence_refs": [
+      "origins/README.md",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "policy": {
+    "review_state": "completed",
+    "decision": "permit_with_constraints",
+    "reviewed_at": "2026-08-11T12:15:50Z",
+    "reviewer": "Richi (Genesis steward)",
+    "policy_id": "api-worldbank-org",
+    "policy_set_digest": null,
+    "robots_digest": "sha256:49f835ed198ad83d45094bd5754dfdb08e96fa662878847d1b5487a5655d7225",
+    "attribution": "Preserve World Bank attribution and represent provider content without promoting it to objective truth.",
+    "authentication": "none_required",
+    "rate_policy": "Use only the bounded E2 country, indicator and year route; identify TWIRX, cache responses, obey published limits and do not broadly crawl.",
+    "retention_policy": "Retain bounded observations and immutable proof artifacts required for replay, attribution and audit.",
+    "terms_reference": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+    "risk_state": "accepted",
+    "reviewer_notes": "The documented public API route is approved with explicit bounds. The robots resource returned 404 and is recorded as unavailable rather than treated as access authorization."
+  },
+  "technical": {
+    "stage": "semantically_linked",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 local evidence suite",
+    "evidence_refs": [
+      "conformance/e2/vectors.tsv",
+      "contracts/e2/contracts.json",
+      "origins/fixtures/world-bank-chl-population-2024.json",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "publisher": {
+    "name": "World Bank",
+    "kind": "international-public-institution",
+    "status": "unclaimed",
+    "reviewed_at": null,
+    "reviewer": null,
+    "evidence_refs": [],
+    "manifest_url": null
+  },
+  "health": {
+    "status": "unknown",
+    "checked_at": null,
+    "evidence_refs": []
+  },
+  "adapter_trust": {
+    "status": "conformant",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 Go and restricted-C conformance suite",
+    "evidence_refs": [
+      "conformance/e2/vectors.tsv",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "mapping_trust": {
+    "status": "reviewed",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 local evidence suite",
+    "evidence_refs": [
+      "contracts/e2/contracts.json",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "jurisdiction": "not_established",
+  "languages": [
+    "en"
+  ],
+  "domain_families": [
+    "economics_markets_public_disclosure"
+  ],
+  "authority_class": "provider-operated-official-api",
+  "discovery": {
+    "sources": [
+      "contracts/e2/contracts.json",
+      "origins/catalog.json",
+      "origins/fixtures/world-bank-chl-population-2024.json"
+    ],
+    "profiled_at": "2026-08-10T00:00:00Z",
+    "robots_url": "https://api.worldbank.org/robots.txt",
+    "sitemap_urls": [],
+    "feed_urls": [],
+    "api_descriptions": [
+      "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"
+    ],
+    "structured_data": [],
+    "public_endpoints": [
+      "https://api.worldbank.org/v2/country/{country}/indicator/{indicator}"
+    ]
+  },
+  "runtime": {
+    "last_seen": null,
+    "last_observed": "2026-08-10T00:00:00Z",
+    "refresh_class": "disabled",
+    "request_budget": 0,
+    "storage_budget_bytes": 0,
+    "scheduler": {
+      "state": "disabled",
+      "last_attempt": null,
+      "cooldown_until": null,
+      "consecutive_failures": 0,
+      "public_value": 0,
+      "semantic_novelty": 0,
+      "demonstrated_demand": 0,
+      "change_probability": 0,
+      "health_need": 0,
+      "estimated_request_cost": 0
+    }
+  },
+  "semantics": {
+    "native_module": "origin:worldbank@v2",
+    "adapter_id": "tw.e2/generated-adapter/world-bank-indicators@v2",
+    "conformance_ref": "conformance/e2/vectors.tsv",
+    "contract_set_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814",
+    "mapping_modules": [
+      "development:core@0.1.0",
+      "tw:kernel@0.1.0"
+    ],
+    "concept_ids": [
+      "development:Indicator.identifier",
+      "development:IndicatorObservation",
+      "development:IndicatorObservation.countryCode",
+      "development:IndicatorObservation.value",
+      "development:IndicatorObservation.year"
+    ],
+    "operation_ids": [
+      "development.getIndicator"
+    ],
+    "semantic_closure_digests": [
+      "sha256:1320271ebd08f496759a9d0ded8a329e13fc670a389f3c97cd3db5089b9393e3"
+    ]
+  },
+  "evidence": {
+    "observation_ids": [],
+    "artifacts": [
+      {
+        "path": "conformance/e2/vectors.tsv",
+        "digest": "sha256:aa898a71692d3cfde34987a5d88d902d1b97acd1738472e49b16dcf2dc87e1cb"
+      },
+      {
+        "path": "contracts/e2/contracts.json",
+        "digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+      },
+      {
+        "path": "generated/e2/public-proof.json",
+        "digest": "sha256:a3d80c8616196296c162315c977a7b8d0869f790ade51b8f769a7cf5adb29197"
+      },
+      {
+        "path": "origins/catalog.json",
+        "digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+      },
+      {
+        "path": "origins/fixtures/world-bank-chl-population-2024.json",
+        "digest": "sha256:a8f4c80e5937fd206c84ba11290a8a6c137677d488c6042fe7ae1e47f88ca93d"
+      }
+    ]
+  },
+  "interfaces": [
+    {
+      "id": "e2-rest",
+      "kind": "rest",
+      "declaration_status": "observed",
+      "endpoint_or_locator": "origins/catalog.json#world-bank-indicators",
+      "authentication": "none in the admitted E2 public-read route",
+      "health": "unknown",
+      "execution_status": "admitted_public_read",
+      "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+    }
+  ],
+  "capabilities": [
+    {
+      "native_id": "development.getIndicator",
+      "native_label": "Get development indicator",
+      "semantic_operation_candidates": [
+        "development.getIndicator"
+      ],
+      "input_shape_ref": "contracts/e2/contracts.json#development.getIndicator/input",
+      "output_shape_ref": "contracts/e2/contracts.json#development.getIndicator/output",
+      "effect_class": "public_read",
+      "status": "admitted",
+      "interface_refs": [
+        "e2-rest"
+      ],
+      "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+    }
+  ],
+  "access": {
+    "class": "unknown",
+    "assessment_status": "not_assessed",
+    "license_or_terms_refs": [],
+    "attribution": "not_assessed",
+    "rate_policy": "not_assessed",
+    "payment_protocol_candidates": [],
+    "price_discovery_status": "not_assessed",
+    "evidence_digest": null,
+    "offer_candidates": []
+  },
+  "economics": {
+    "funding_class": "unknown",
+    "requests": 0,
+    "transferred_bytes": 0,
+    "evidence_bytes": 0,
+    "cpu_milliseconds": 0,
+    "human_review_seconds": 0,
+    "infrastructure_cost_estimate": null
+  },
+  "publisher_readiness": {
+    "signals": [
+      {
+        "kind": "api",
+        "presence": "present",
+        "source": "origins/catalog.json#world-bank-indicators",
+        "observation_class": "observed",
+        "observed_at": "2026-08-10T00:00:00Z",
+        "freshness": "committed E2 snapshot",
+        "standard_status": "not_applicable",
+        "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+      }
+    ]
+  }
+}

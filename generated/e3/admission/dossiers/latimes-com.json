@@ -1,0 +1,33 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "latimes-com",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://latimes.com",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "subscription",
+  "commercial_offer_candidates": 1,
+  "record_digest": "sha256:5addacfde1c7f6a1b5b8566c05ae04302307927efdf8fbee2a5bdbb27d9850b3",
+  "policy_evidence_digest": "sha256:165dab5ca79e4e4cd09ec5f1e3fd046c2c8488fd250dd3b912fc4ae47c625faf",
+  "decision_digest": "sha256:b8ba21444baa4a96d133fda0296b56badebfc13f7e03c6dfdb192fbc09b3462d",
+  "approval_reference": "",
+  "constraints": [
+    "Commercial and access metadata is provisional and grants no execution or payment authority.",
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

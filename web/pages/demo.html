@@ -1,0 +1,142 @@
+{{define "content"}}
+{{$r := .Data.futo_release}}
+<div class="page">
+  {{template "pagehead" .}}
+
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#query">Cross-origin query</a></li>
+          <li><a href="#delta">Real source change</a></li>
+          <li><a href="#trace">Proof trace</a></li>
+          <li><a href="#performance">Measured runtime</a></li>
+          <li><a href="#scope">Current boundary</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+      <div class="callout callout--key">
+        <p class="callout__title">Working local release</p>
+        <p>
+          The immutable snapshot, queries, packet traces and delta below were executed and
+          verified locally. The public <code>lab.twirx.org</code> service is not deployed yet,
+          so this page does not disguise a static evidence view as a live API.
+        </p>
+      </div>
+
+      <section aria-labelledby="query">
+        <h2 id="query">One interface across origins {{chip "implemented"}}</h2>
+        <p class="lede">
+          An agent submits one typed query to materialized state. It does not load an
+          origin-specific tool for every website, and this recorded query makes no origin
+          network request.
+        </p>
+
+<pre><code>{
+  "select": [
+    "project:Status.engineeringGate",
+    "project:Status.phase",
+    "development:IndicatorObservation.countryCode",
+    "development:IndicatorObservation.value"
+  ],
+  "sources": ["twirx-org", "api-worldbank-org"],
+  "proof": "highest_proof"
+}</code></pre>
+
+        <dl class="counters wide">
+          <div class="counter"><dt>Origins returned</dt><dd>2<small>TWIRX + World Bank</small></dd></div>
+          <div class="counter"><dt>Proof-linked rows</dt><dd>{{$r.queries.cross_origin.rows}}<small>fixtures excluded</small></dd></div>
+          <div class="counter"><dt>Origin calls</dt><dd>{{$r.queries.cross_origin.network_requests}}<small>materialized snapshot</small></dd></div>
+        </dl>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Recorded cross-origin result</caption>
+            <thead><tr><th scope="col">Origin</th><th scope="col">Native value</th><th scope="col">Semantic field</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><code>twirx-org</code></th><td><code>E1</code></td><td><code>project:Status.engineeringGate</code></td></tr>
+              <tr><th scope="row"><code>twirx-org</code></th><td><code>genesis</code></td><td><code>project:Status.phase</code></td></tr>
+              <tr><th scope="row"><code>api-worldbank-org</code></th><td><code>CHL</code></td><td><code>development:IndicatorObservation.countryCode</code></td></tr>
+              <tr><th scope="row"><code>api-worldbank-org</code></th><td><code>19764771</code></td><td><code>development:IndicatorObservation.value</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">Query identity: <code class="digest">{{$r.queries.cross_origin.query_digest}}</code></p>
+        <p class="note">Result identity: <code class="digest">{{$r.queries.cross_origin.result_digest}}</code></p>
+      </section>
+
+      <section aria-labelledby="delta">
+        <h2 id="delta">One real historical source change {{chip "implemented"}}</h2>
+        <p>
+          TWIRX retrieved two exact RFC Editor homepage records from two sealed Common Crawl
+          periods. Both are historical archive observations, not current publisher statements.
+          The compiler preserved the exact source lexical values before comparing them.
+        </p>
+
+        <div class="split wide">
+          {{range $i, $c := $r.archive.captures}}
+          <div>
+            <h3>{{if eq $i 0}}Before{{else}}After{{end}} — {{$c.collection}}</h3>
+            <p class="note">{{$c.observed_at}}</p>
+            <pre><code>{{$c.native_lexical}}</code></pre>
+            <p><code>{{$c.native_locator}}</code></p>
+            <p class="digest">{{$c.packet_digest}}</p>
+          </div>
+          {{end}}
+        </div>
+
+        <div class="facts wide">
+          <div class="fact"><dt>Origin delta</dt><dd>modified<small>emitted</small></dd></div>
+          <div class="fact"><dt>Semantic delta</dt><dd>none<small>mapping did not change</small></dd></div>
+          <div class="fact"><dt>Canon delta</dt><dd>none<small>canon did not change</small></dd></div>
+        </div>
+
+        <p class="note">Delta identity: <code class="digest">{{$r.archive.delta_digest}}</code></p>
+      </section>
+
+      <section aria-labelledby="trace">
+        <h2 id="trace">Every result remains traceable</h2>
+        <ol class="spine">
+          <li><b>Origin identity</b><span><code>{{$r.archive.origin_id}}</code> at {{$r.archive.canonical_origin}}</span></li>
+          <li><b>Immutable representation</b><span>Exact archived response bytes, size and SHA-256 evidence.</span></li>
+          <li><b>Source-native statement</b><span><code>html:title</code>, exact locator and lexical bytes.</span></li>
+          <li><b>Semantic packet</b><span>Observed-native lane, historical freshness, no invented mapping.</span></li>
+          <li><b>Delta</b><span>Before and after packet and observation identities, classified as an origin change only.</span></li>
+          <li><b>Snapshot</b><span><code class="digest">{{$r.release.snapshot_id}}</code></span></li>
+        </ol>
+        <p><a class="btn" href="/proof/">Inspect the complete evidence record</a></p>
+      </section>
+
+      <section aria-labelledby="performance">
+        <h2 id="performance">Measured immutable-runtime performance</h2>
+        <dl class="counters wide">
+          <div class="counter"><dt>Requests</dt><dd>{{commas $r.stress.requests}}<small>{{$r.stress.failures}} failures</small></dd></div>
+          <div class="counter"><dt>p95</dt><dd>{{$r.stress.p95_microseconds}} µs<small>literal loopback</small></dd></div>
+          <div class="counter"><dt>Origin calls</dt><dd>{{$r.stress.origin_network_requests}}<small>snapshot-only</small></dd></div>
+        </dl>
+        <p class="note">{{$r.stress.scope}}. This is not a public-network or large-corpus capacity claim.</p>
+
+        <h3>Controlled scale is kept separate</h3>
+        <p>
+          A separate controlled run exercised {{commas $r.controlled_scale.packets}} packets
+          through the real snapshot path. {{$r.controlled_scale.note}}
+        </p>
+      </section>
+
+      <section aria-labelledby="scope">
+        <h2 id="scope">Current boundary</h2>
+        <p class="lede">{{$r.current_scope}}</p>
+        <p>
+          The next public step is deployment of this same immutable read-only runtime behind
+          bounded HTTPS. It is not permission to add arbitrary retrieval or a mutable database
+          to the current shared host.
+        </p>
+      </section>
+    </article>
+  </div>
+</div>
+{{end}}

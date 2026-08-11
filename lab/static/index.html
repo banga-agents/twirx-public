@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TWIRX Lab: invoke approved typed web operations and inspect field-level provenance.">
+  <title>TWIRX Lab — Live Provenance Instrument</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#instrument">Skip to Lab instrument</a>
+  <header class="topbar">
+    <a class="wordmark" href="https://twirx.org" aria-label="TWIRX home">TWIRX<span>/LAB</span></a>
+    <nav aria-label="Project links">
+      <a href="https://twirx.org/proof/">Proof</a>
+      <a href="https://docs.twirx.org">Docs</a>
+      <a href="/openapi.json">OpenAPI</a>
+      <a href="/submit-origin">Submit an origin</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="lab-title">
+      <p class="eyebrow">LIVE PROVENANCE INSTRUMENT · GENESIS PREVIEW</p>
+      <h1 id="lab-title">Use a typed interface.<br>Inspect every derivation.</h1>
+      <p class="lede">Choose an approved public origin, invoke a bounded read operation, and trace every returned field to its source-native value, locator, transformation, and evidence digest.</p>
+      <div class="rail" aria-label="Current Lab status">
+        <span>GENESIS PREVIEW</span><span>E2 CANDIDATE</span><span>CATALOG ONLY</span><span>READ ONLY</span><span>GO + C VERIFY</span>
+      </div>
+      <p class="scope">The Genesis Preview is read-only and limited to approved public origins while arbitrary-origin compilation and browser discovery are hardened.</p>
+    </section>
+
+    <section class="flow" aria-label="TWIRX derivation flow">
+      <span>PUBLIC ORIGIN</span><b>→</b><span>OBSERVATION</span><b>→</b><span>NATIVE STATEMENT</span><b>→</b><span>TYPED RESULT</span><b>→</b><span>PROOF BUNDLE</span>
+    </section>
+
+    <section id="instrument" class="instrument" aria-labelledby="instrument-title">
+      <div class="panel controls">
+        <div class="panel-head"><p>01 / INVOKE</p><span id="api-state" role="status">CONNECTING</span></div>
+        <h2 id="instrument-title">Select an admitted operation</h2>
+        <form id="invoke-form">
+          <label for="origin">Origin</label>
+          <select id="origin" name="origin" required></select>
+          <label for="operation">Typed operation</label>
+          <select id="operation" name="operation" required></select>
+          <label for="mode">Evidence mode</label>
+          <select id="mode" name="mode"><option value="replay">Admitted offline replay</option></select>
+          <div id="typed-inputs"></div>
+          <a id="schema" class="download" href="#">Inspect generated JSON Schema</a>
+          <button id="invoke" type="submit">Invoke typed operation <span aria-hidden="true">→</span></button>
+        </form>
+        <div id="operation-notes" class="notes"></div>
+      </div>
+
+      <div class="panel output" aria-live="polite">
+        <div class="panel-head"><p>02 / INSPECT</p><span id="result-state">AWAITING INVOCATION</span></div>
+        <div id="empty-result" class="empty">
+          <p class="hash">sha256:————————————————————————————————</p>
+          <h2>The result will appear here.</h2>
+          <p>Native wording remains visible beside the semantic view. No source value is silently replaced.</p>
+        </div>
+        <div id="result" hidden>
+          <div class="result-meta"><div><small>RESULT</small><code id="result-id"></code></div><a id="bundle" class="download" href="#">Download proof bundle</a></div>
+          <div class="tabs" role="tablist" aria-label="Result views">
+            <button role="tab" aria-selected="true" data-tab="typed">TYPED RESULT</button>
+            <button role="tab" aria-selected="false" data-tab="native">NATIVE VALUE</button>
+            <button role="tab" aria-selected="false" data-tab="transformation">TRANSFORMATION</button>
+            <button role="tab" aria-selected="false" data-tab="evidence">EVIDENCE</button>
+            <button role="tab" aria-selected="false" data-tab="verify">VERIFY</button>
+          </div>
+          <pre id="result-content" tabindex="0"></pre>
+        </div>
+        <p id="error" class="error" role="alert" hidden></p>
+      </div>
+    </section>
+
+    <section class="principles" aria-labelledby="principles-title">
+      <p class="eyebrow">WHAT THIS INSTRUMENT PROVES</p>
+      <h2 id="principles-title">Evidence before authority.</h2>
+      <div><article><b>01</b><h3>Native meaning stays</h3><p>The source term, locator, and lexical value remain available before semantic mapping.</p></article><article><b>02</b><h3>Derivation is declared</h3><p>Every transformation and mapping relation travels with the field it produced.</p></article><article><b>03</b><h3>Bundles verify offline</h3><p>Content-addressed artifacts are published manifest-last and checked independently in Go and restricted C.</p></article></div>
+    </section>
+  </main>
+  <footer><span>TWIRX · THE TYPED WEB COMMONS</span><span>OPEN TYPED INFRASTRUCTURE FOR AGENTS</span></footer>
+</body>
+</html>

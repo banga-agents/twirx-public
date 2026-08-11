@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/egress-result-0.1.json",
+  "title": "TWIRX immutable egress result 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "work_order_id", "work_order_digest", "origin_id", "purpose", "request_url", "final_url", "retrieved_at", "http_status", "media_type", "redirect_count", "observation_digest", "body_digest", "body_size", "duration_ms"],
+  "properties": {
+    "format": {"const": "tw.egress-result/0.1"},
+    "work_order_id": {"$ref": "#/$defs/id"},
+    "work_order_digest": {"$ref": "#/$defs/digest"},
+    "origin_id": {"$ref": "#/$defs/id"},
+    "purpose": {"enum": ["robots", "profile", "observation"]},
+    "request_url": {"type": "string", "maxLength": 4096},
+    "final_url": {"type": "string", "maxLength": 4096},
+    "retrieved_at": {"type": "string", "format": "date-time"},
+    "http_status": {"type": "integer", "minimum": 100, "maximum": 599},
+    "media_type": {"type": "string", "minLength": 1, "maxLength": 255},
+    "redirect_count": {"type": "integer", "minimum": 0, "maximum": 3},
+    "observation_digest": {"$ref": "#/$defs/digest"},
+    "body_digest": {"$ref": "#/$defs/digest"},
+    "body_size": {"type": "integer", "minimum": 0, "maximum": 2097152},
+    "duration_ms": {"type": "integer", "minimum": 0, "maximum": 30000}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

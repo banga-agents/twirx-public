@@ -1,0 +1,6 @@
+E3.2 provisional commercial/access candidate
+origin: https://reuters.com
+candidate basis: journalism publisher selected for explicit review of subscription or commercial access characteristics
+evidence class: maintainer-directed catalog-review proposal; no origin representation was fetched for this classification
+limits: no access term, price, offer validity, payment protocol, executable capability, or policy permission is asserted
+required next action: human reviewer must inspect current publisher evidence and either confirm, constrain, deny, or leave uncertain

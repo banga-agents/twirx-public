@@ -1,0 +1,71 @@
+---
+title: "Typed Web Commons"
+description: "An open protocol for typed, provenance-bearing agent interfaces to web representations."
+---
+
+# Give agents a trustworthy interface to the open Web
+
+TWIRX is an open, language-neutral protocol for compiling public Web
+representations into typed, reusable semantic state while preserving the exact
+path from origin evidence to every returned value.
+
+```text
+public origin representation
+    ↓
+immutable observation
+    ↓
+source-native statement
+    ↓
+declared transformation
+    ↓
+semantic packet
+    ↓
+materialized read-only state
+    ↓
+typed query result with field-level provenance
+```
+
+The project does not certify that provider content is objectively true. It establishes a reproducible account of **what an origin represented and how the system derived the value it returned**.
+
+<CardGroup cols={2}>
+  <Card title="FUTO release proof" icon="flask" href="/start/futo-release">
+    Inspect the exact real-source, controlled-scale, snapshot, query, and release evidence.
+  </Card>
+  <Card title="Run Genesis" icon="terminal" href="/start/quickstart">
+    Build and execute the complete local evidence-to-result path.
+  </Card>
+  <Card title="Understand the truth contract" icon="file-check" href="/concepts/source-statement-fidelity">
+    Learn exactly what the protocol proves and what it does not claim.
+  </Card>
+  <Card title="Inspect the architecture" icon="network" href="/architecture/genesis-slice">
+    See the current boundaries, data flow, and deliberate exclusions.
+  </Card>
+  <Card title="Review security" icon="shield" href="/security/threat-model">
+    Study the attacker assumptions and public-deployment gate.
+  </Card>
+</CardGroup>
+
+## What exists today
+
+The FUTO release candidate provides:
+
+- 500 selected Atlas identities, not 500 working adapters;
+- three completed human policy decisions;
+- one real two-period Common Crawl archive profile;
+- 15 public-source packets and five separately labeled fixture packets;
+- one genuine source-native origin delta;
+- two materialized views and one cross-origin query;
+- an immutable read-only snapshot runtime with zero origin calls;
+- independent bounded verification in the Genesis Go and C implementations;
+- a deterministic sanitized public-source export.
+
+The controlled 25,018-packet result is capacity evidence from the real snapshot
+path, but it is fixture-dominated. It is not 25,018 public facts and does not
+mean 500 origins are compiled or live.
+
+<Note>
+The public Query Lab is staged but not claimed live until DNS, TLS and wire
+verification pass. TWIRX does not currently offer arbitrary URLs, browser or
+model execution, authentication, payments, write actions, continuous crawling,
+or production PostgreSQL.
+</Note>

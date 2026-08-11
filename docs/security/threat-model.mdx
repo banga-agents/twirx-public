@@ -1,0 +1,33 @@
+---
+title: "Threat model"
+description: "Attacker assumptions, protected assets, controls, and residual risks."
+---
+
+Typed Web accepts adversarial input by design. Assume an attacker may control the URL, DNS records, redirects, headers, body, structured metadata, schema proposal, adapter proposal, and resource-consumption pattern.
+
+## Protected assets
+
+- private networks and metadata services;
+- canonical artifacts and semantic meaning;
+- evidence integrity;
+- maintainer credentials and signing material;
+- funding records and wallet control;
+- local filesystem outside configured stores;
+- the distinction between source statements and semantic interpretations.
+
+## Genesis controls
+
+- protocol and port allowlists;
+- resolved-address validation;
+- redirect revalidation;
+- response and timeout bounds;
+- content-addressed evidence;
+- independent C verification;
+- manually admitted deterministic adapters;
+- no browser, model, authentication, or write action;
+- no network in offline extraction;
+- missing required fields fail closed.
+
+## Residual risk
+
+The safe-fetch package is an application-layer control, not a complete public-service sandbox. Public deployment requires isolated worker networks, controlled egress, dedicated credentials, quotas, observability, recovery, and external review.

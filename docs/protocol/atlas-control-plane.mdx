@@ -1,0 +1,164 @@
+---
+title: "Genesis Atlas control plane"
+description: "Canonical identity, orthogonal origin state, exact policy binding, and a network-disabled frontier."
+---
+
+> **Authority:** Normative summary · **Status:** Admission factory implemented; pilot review incomplete; selected-origin retrieval disabled · **Applies to:** E3.1–E3.2 · **Verified against:** current checkout · **Source:** `spec/atlas/ATLAS_CONTROL_PLANE_0_1.md`, ADRs 006–007, and Atlas JSON schemas
+
+## Purpose
+
+The Atlas control plane keeps candidate selection, catalog, policy, technical,
+publisher, health, adapter-trust, and mapping-trust claims distinct. The exact
+500-origin selection is not a network allowlist.
+
+```bash
+make build
+bin/twirx-atlas validate --root .
+bin/twirx-atlas metrics --root .
+bin/twirx-atlas plan --root . --at 2026-08-11T00:00:00Z
+```
+
+The committed state has three cataloged public identities, three completed
+human policy reviews, two semantically linked technical records, zero live
+origins, disabled scheduling and zero frontier jobs.
+
+## Admission factory
+
+Each pilot origin has its own directory under `atlas/admissions/{origin_id}`:
+
+```text
+record.json
+policy-evidence.json
+decision.json
+evidence/
+```
+
+The factory binds each identity to the accepted selection, rehashes local
+policy evidence, rejects duplicate origins and execution aliases, and renders
+deterministic policy, registry, batch, and dossier artifacts.
+
+```bash
+make build
+bin/twirx-admission validate --root . --admissions atlas/admissions
+bin/twirx-admission check-canonical --root . --admissions atlas/admissions
+```
+
+It cannot create a decision. A canonical admission requires a completed
+decision artifact with `reviewer_type: human` and an approval reference. That
+catalog admission remains independent from policy: a human may admit an
+identity while its policy stays `pending + uncertain`, but no retrieval work
+order may be produced from that state.
+
+The E3.2 batch contains 25 catalog dossiers across all nine domain families,
+11 proposed jurisdictions, and six proposed languages. Twenty-two await
+founder review. TWIRX, World Bank and RFC Editor render as public canonical
+records. Their decisions are respectively `permit_live`,
+`permit_with_constraints` and `profile_only`; none enables the disabled Atlas
+scheduler or broad retrieval.
+
+The batch also includes five explicitly provisional commercial/access
+candidates: LA Times, Le Monde, The New York Times, Reuters, and The Washington
+Post. Their records are inferred catalog-review proposals. No price, current
+terms, payment mechanism, policy permission, or executable commercial route is
+claimed.
+
+The generated admission work queue covers all 500 selected origins without
+inventing 475 evidence dossiers. It distinguishes `prepared` from
+`not_prepared`, preserves pending policy as uncertain, and gives every origin
+an explicit next action. The current queue contains 25 prepared and 475
+unprepared dossiers.
+
+## State model
+
+```text
+catalog.state       candidate | cataloged
+policy.review_state pending | completed
+policy.decision     permit_live | permit_with_constraints | profile_only |
+                    catalog_only | deny | uncertain
+technical.stage     unprofiled | profiled | observed | native_schema |
+                    compiled | semantically_linked | live
+publisher.status    unclaimed | domain_verified | publisher_approved |
+                    publisher_signed
+health.status       unknown | healthy | degraded | stale | suspended | revoked
+adapter_trust       none | candidate | reviewed | conformant | revoked
+mapping_trust       none | candidate | reviewed | disputed | revoked
+```
+
+Only technical stage is ordered, and only within that dimension. A compiled
+adapter does not complete policy review. Publisher approval does not establish
+health or live status. Adapter conformance does not approve a mapping.
+
+Pending policy is fail-closed and never counts as completed. Its decision is
+`uncertain`; a completed uncertain decision requires explicit human review.
+
+## Future-compatible capability metadata
+
+Origin records now describe interface declarations, capability candidates,
+effect classes, access/economic metadata, provisional offer candidates, and
+publisher-readiness signals. Every non-unknown declaration is bound to an
+immutable evidence digest and records its evidence class.
+
+This metadata is not execution authority. The only `admitted` capabilities in
+E3.2 are the four existing public-read E2 operations across the two canonical
+public origins. WebMCP, browser, authenticated, write, financial, legal,
+material, and destructive capabilities may be described but cannot execute.
+The API exposes these declarations only in bounded origin descriptions and
+metrics; it does not implement semantic resolution or ranking.
+
+## Canonical E2 identity
+
+`atlas/registry.json` is the canonical origin registry. E2 retains its bounded
+execution routes and typed inputs, but every execution entry binds a
+`registry_id`. Host, publisher, scope, or alias mismatch prevents E2 startup.
+
+The registry includes `twirx-org`, `api-worldbank-org` and `rfc-editor-org` as
+public records. The first two retain exact E2 replay, contract, conformance,
+proof and semantic-closure evidence; the third binds the approved historical
+archive-only profile. The controlled E2 origin is a `test_fixture`
+and is excluded from every Genesis-500 public counter.
+
+Its source record lives under `atlas/fixtures`, separately from the 25 public
+pilot dossiers, and the admission render preserves it in the one canonical
+registry.
+
+## Dry-run frontier
+
+The frontier emits origin IDs, decisions, budgets, and due times—never a
+destination URL—and declares `network_access: disabled`. Only completed
+`permit_live` or `permit_with_constraints` state plus positive budgets and an
+active scheduler could produce a dry-run job. The committed plan has none.
+
+Every selected origin receives exactly one frontier outcome. The current plan
+contains zero jobs because scheduling and all retrieval budgets remain
+disabled. A completed policy decision alone is not execution authority.
+
+## Full-catalog runtime workload
+
+`make stress-e3-500` runs the actual loopback Atlas HTTP service across all
+500 origins. It verifies five list pages, 500 direct descriptions, all family
+and orthogonal-state filters, all 500 frontier outcomes, malformed-request
+rejection, concurrent repeated lookups, and byte-identical status after a
+service restart. Its client accepts only a literal loopback HTTP endpoint and
+cannot fetch a selected origin.
+
+## Read-only API
+
+```text
+GET /api/v1/atlas/status
+GET /api/v1/atlas/metrics
+GET /api/v1/atlas/origins
+GET /api/v1/atlas/origins/{origin_id}
+```
+
+List filters are `family`, each state-dimension name, `limit`, and `cursor`.
+There is no URL parameter, invocation route, write route, crawler, browser,
+model, or HTTP client in this process.
+
+## Failure behavior
+
+Duplicate keys, unknown fields, trailing JSON, symlinked or digest-substituted
+policy evidence, duplicate origins or aliases,
+non-HTTPS or credentialed identities, quota drift, missing state evidence,
+policy mismatch, a false human-review claim, unsafe evidence paths, digest
+substitution, unsafe scheduler state and unbounded API queries fail closed.
+The server accepts only a literal loopback listener.

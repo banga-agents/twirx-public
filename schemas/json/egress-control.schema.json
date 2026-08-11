@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/egress-control-0.1.json",
+  "title": "TWIRX egress kill switch and revocation control 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "enabled", "emergency_stop", "revoked_origins", "revoked_orders"],
+  "properties": {
+    "format": {"const": "tw.egress-control/0.1"},
+    "enabled": {"type": "boolean"},
+    "emergency_stop": {"type": "boolean"},
+    "revoked_origins": {"$ref": "#/$defs/ids"},
+    "revoked_orders": {"$ref": "#/$defs/ids"}
+  },
+  "$defs": {
+    "ids": {"type": "array", "maxItems": 500, "items": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,127}$"}}
+  }
+}

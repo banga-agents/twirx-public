@@ -1,0 +1,7 @@
+{
+  "product_id": "sku-missing-required",
+  "name": "Missing required price",
+  "offer": {
+    "currency": "usd"
+  }
+}

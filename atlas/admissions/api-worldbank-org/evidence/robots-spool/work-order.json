@@ -1,0 +1,25 @@
+{
+  "format": "tw.egress-work-order/0.1",
+  "id": "futo-world-bank-robots",
+  "origin_id": "api-worldbank-org",
+  "purpose": "robots",
+  "authority_class": "policy_evidence_collection",
+  "method": "GET",
+  "url": "https://api.worldbank.org/robots.txt",
+  "allowed_hosts": [
+    "api.worldbank.org"
+  ],
+  "policy_decision": "uncertain",
+  "policy_evidence_digest": "sha256:1fd98cab8c01e1918793ac986fdfbd9fe6425063ccda2b13f4a5062b5338326b",
+  "decision_digest": "sha256:f061a70448a716b9b1a5139646c94060240816e3b9fa06c5167a0369c32a5ef9",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "not_before": "2026-08-11T12:15:50Z",
+  "expires_at": "2026-08-12T12:15:50Z",
+  "max_redirects": 0,
+  "max_body_bytes": 262144,
+  "timeout_ms": 15000,
+  "connect_timeout_ms": 5000,
+  "header_timeout_ms": 10000,
+  "max_consecutive_failures": 2,
+  "circuit_cooldown_seconds": 300
+}

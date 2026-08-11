@@ -1,0 +1,139 @@
+{
+  "id": "bcb-gov-br",
+  "scope": "genesis_public",
+  "canonical_origin": "https://bcb.gov.br",
+  "registrable_domain": "bcb.gov.br",
+  "execution_catalog_ids": [],
+  "catalog": {
+    "state": "cataloged",
+    "reviewed_at": "2026-08-11T00:00:00Z",
+    "reviewer": "E3.2 admission factory (agent-prepared; founder review pending)",
+    "evidence_refs": [
+      "atlas/genesis-500/selection.json"
+    ]
+  },
+  "policy": {
+    "review_state": "pending",
+    "decision": "uncertain",
+    "reviewed_at": null,
+    "reviewer": null,
+    "policy_id": "bcb-gov-br",
+    "policy_set_digest": null,
+    "robots_digest": null,
+    "attribution": "pending human review",
+    "authentication": "pending human review",
+    "rate_policy": "pending human review",
+    "retention_policy": "pending human review",
+    "terms_reference": "pending human review",
+    "risk_state": "pending",
+    "reviewer_notes": "No policy decision or live retrieval authority is claimed."
+  },
+  "technical": {
+    "stage": "unprofiled",
+    "reviewed_at": null,
+    "reviewer": null,
+    "evidence_refs": []
+  },
+  "publisher": {
+    "name": "bcb.gov.br",
+    "kind": "unreviewed-origin-owner",
+    "status": "unclaimed",
+    "reviewed_at": null,
+    "reviewer": null,
+    "evidence_refs": [],
+    "manifest_url": null
+  },
+  "health": {
+    "status": "unknown",
+    "checked_at": null,
+    "evidence_refs": []
+  },
+  "adapter_trust": {
+    "status": "none",
+    "reviewed_at": null,
+    "reviewer": null,
+    "evidence_refs": []
+  },
+  "mapping_trust": {
+    "status": "none",
+    "reviewed_at": null,
+    "reviewer": null,
+    "evidence_refs": []
+  },
+  "jurisdiction": "BR",
+  "languages": [
+    "pt"
+  ],
+  "domain_families": [
+    "economics_markets_public_disclosure"
+  ],
+  "authority_class": "candidate-metadata-requires-founder-review",
+  "discovery": {
+    "sources": [],
+    "profiled_at": null,
+    "robots_url": null,
+    "sitemap_urls": [],
+    "feed_urls": [],
+    "api_descriptions": [],
+    "structured_data": [],
+    "public_endpoints": []
+  },
+  "runtime": {
+    "last_seen": null,
+    "last_observed": null,
+    "refresh_class": "disabled",
+    "request_budget": 0,
+    "storage_budget_bytes": 0,
+    "scheduler": {
+      "state": "disabled",
+      "last_attempt": null,
+      "cooldown_until": null,
+      "consecutive_failures": 0,
+      "public_value": 0,
+      "semantic_novelty": 0,
+      "demonstrated_demand": 0,
+      "change_probability": 0,
+      "health_need": 0,
+      "estimated_request_cost": 0
+    }
+  },
+  "semantics": {
+    "native_module": null,
+    "adapter_id": null,
+    "conformance_ref": null,
+    "contract_set_digest": null,
+    "mapping_modules": [],
+    "concept_ids": [],
+    "operation_ids": [],
+    "semantic_closure_digests": []
+  },
+  "evidence": {
+    "observation_ids": [],
+    "artifacts": []
+  },
+  "interfaces": [],
+  "capabilities": [],
+  "access": {
+    "class": "unknown",
+    "assessment_status": "not_assessed",
+    "license_or_terms_refs": [],
+    "attribution": "not_assessed",
+    "rate_policy": "not_assessed",
+    "payment_protocol_candidates": [],
+    "price_discovery_status": "not_assessed",
+    "evidence_digest": null,
+    "offer_candidates": []
+  },
+  "economics": {
+    "funding_class": "unknown",
+    "requests": 0,
+    "transferred_bytes": 0,
+    "evidence_bytes": 0,
+    "cpu_milliseconds": 0,
+    "human_review_seconds": 0,
+    "infrastructure_cost_estimate": null
+  },
+  "publisher_readiness": {
+    "signals": []
+  }
+}

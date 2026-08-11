@@ -1,0 +1,341 @@
+{
+  "id": "twirx-org",
+  "scope": "genesis_public",
+  "canonical_origin": "https://twirx.org",
+  "registrable_domain": "twirx.org",
+  "execution_catalog_ids": [
+    "twirx-project"
+  ],
+  "catalog": {
+    "state": "cataloged",
+    "reviewed_at": "2026-08-10T16:01:26Z",
+    "reviewer": "Genesis steward",
+    "evidence_refs": [
+      "CHARTER.md",
+      "decisions/005-twirx-origin-admission.md"
+    ]
+  },
+  "policy": {
+    "review_state": "completed",
+    "decision": "permit_live",
+    "reviewed_at": "2026-08-11T12:15:50Z",
+    "reviewer": "Richi (Genesis steward)",
+    "policy_id": "twirx-org",
+    "policy_set_digest": null,
+    "robots_digest": "sha256:279da8a22975a0debaec359c0d4c9412c5f6fe9635c2bb7f07ee4ad6a699d89d",
+    "attribution": "Preserve TWIRX project attribution and source-native wording when reusing published project metadata.",
+    "authentication": "none_required",
+    "rate_policy": "Only exact publisher-authored public project routes are permitted; the Atlas scheduler remains disabled for the FUTO release.",
+    "retention_policy": "Retain bounded public evidence and immutable proof artifacts; exclude private repository content, personal data and unpublished reports.",
+    "terms_reference": "CHARTER.md",
+    "risk_state": "accepted",
+    "reviewer_notes": "Founder-controlled public origin approved for bounded public-read access. Robots permits all routes and advertises the public sitemap; the decision does not enable scheduled retrieval."
+  },
+  "technical": {
+    "stage": "semantically_linked",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 local evidence suite",
+    "evidence_refs": [
+      "conformance/e2/vectors.tsv",
+      "contracts/e2/contracts.json",
+      "origins/fixtures/twirx-project-status.json",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "publisher": {
+    "name": "TWIRX",
+    "kind": "public-infrastructure-project",
+    "status": "publisher_approved",
+    "reviewed_at": "2026-08-10T16:01:26Z",
+    "reviewer": "Genesis steward",
+    "evidence_refs": [
+      "CHARTER.md",
+      "decisions/005-twirx-origin-admission.md"
+    ],
+    "manifest_url": null
+  },
+  "health": {
+    "status": "unknown",
+    "checked_at": null,
+    "evidence_refs": []
+  },
+  "adapter_trust": {
+    "status": "conformant",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 Go and restricted-C conformance suite",
+    "evidence_refs": [
+      "conformance/e2/vectors.tsv",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "mapping_trust": {
+    "status": "reviewed",
+    "reviewed_at": "2026-08-10T00:00:00Z",
+    "reviewer": "E2 local evidence suite",
+    "evidence_refs": [
+      "contracts/e2/contracts.json",
+      "reports/gate-e2-live-provenance-lab.md"
+    ]
+  },
+  "jurisdiction": "not_established",
+  "languages": [
+    "en"
+  ],
+  "domain_families": [
+    "standards_technical_docs_open_source"
+  ],
+  "authority_class": "publisher-authored-project-surface",
+  "discovery": {
+    "sources": [
+      "contracts/e2/contracts.json",
+      "origins/catalog.json",
+      "origins/fixtures/twirx-project-status.json"
+    ],
+    "profiled_at": "2026-08-10T00:00:00Z",
+    "robots_url": "https://twirx.org/robots.txt",
+    "sitemap_urls": [],
+    "feed_urls": [],
+    "api_descriptions": [],
+    "structured_data": [],
+    "public_endpoints": [
+      "https://twirx.org/data/project-status.json"
+    ]
+  },
+  "runtime": {
+    "last_seen": null,
+    "last_observed": "2026-08-10T00:00:00Z",
+    "refresh_class": "disabled",
+    "request_budget": 0,
+    "storage_budget_bytes": 0,
+    "scheduler": {
+      "state": "disabled",
+      "last_attempt": null,
+      "cooldown_until": null,
+      "consecutive_failures": 0,
+      "public_value": 0,
+      "semantic_novelty": 0,
+      "demonstrated_demand": 0,
+      "change_probability": 0,
+      "health_need": 0,
+      "estimated_request_cost": 0
+    }
+  },
+  "semantics": {
+    "native_module": "origin:twirx@2026-08-10",
+    "adapter_id": "tw.e2/generated-adapter/twirx-project@2026-08-10",
+    "conformance_ref": "conformance/e2/vectors.tsv",
+    "contract_set_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814",
+    "mapping_modules": [
+      "project:core@0.1.0",
+      "tw:kernel@0.1.0"
+    ],
+    "concept_ids": [
+      "project:EngineeringGate.evidenceStatus",
+      "project:EngineeringGate.hostedCI",
+      "project:EngineeringGate.id",
+      "project:EngineeringGate.reportPath",
+      "project:EngineeringGateReport",
+      "project:RiskRegister",
+      "project:RiskRegister.items",
+      "project:Status",
+      "project:Status.engineeringGate",
+      "project:Status.gateStatus",
+      "project:Status.maturity",
+      "project:Status.phase"
+    ],
+    "operation_ids": [
+      "project.getEngineeringGateReport",
+      "project.getStatus",
+      "project.listUnresolvedRisks"
+    ],
+    "semantic_closure_digests": [
+      "sha256:549a9f132e43252cc2a5ac76fe031a7358f09b9d5d688e54d80c5603b8b0f330"
+    ]
+  },
+  "evidence": {
+    "observation_ids": [],
+    "artifacts": [
+      {
+        "path": "conformance/e2/vectors.tsv",
+        "digest": "sha256:aa898a71692d3cfde34987a5d88d902d1b97acd1738472e49b16dcf2dc87e1cb"
+      },
+      {
+        "path": "contracts/e2/contracts.json",
+        "digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+      },
+      {
+        "path": "generated/e2/mcp-tools.json",
+        "digest": "sha256:ac0a9b16b370f4d2e4f9d9e2ae25f4040aa9ff25dc9829a8ff59a5a4bba91639"
+      },
+      {
+        "path": "generated/e2/openapi.json",
+        "digest": "sha256:8ba799449d1f6989ea1f32fbfe7ff4cd40a0cc2b2782a14dc302e86f16299319"
+      },
+      {
+        "path": "generated/e2/public-proof.json",
+        "digest": "sha256:a3d80c8616196296c162315c977a7b8d0869f790ade51b8f769a7cf5adb29197"
+      },
+      {
+        "path": "origins/catalog.json",
+        "digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+      },
+      {
+        "path": "origins/fixtures/twirx-project-status.json",
+        "digest": "sha256:d33c172f72b5d095b09a86137576b408fa27051f7f32f65e689bcfa4374ec537"
+      }
+    ]
+  },
+  "interfaces": [
+    {
+      "id": "e2-mcp",
+      "kind": "mcp",
+      "declaration_status": "publisher_declared",
+      "endpoint_or_locator": "generated/e2/mcp-tools.json",
+      "authentication": "local stdio binding; no remote origin execution authority",
+      "health": "unknown",
+      "execution_status": "descriptive_only",
+      "evidence_digest": "sha256:ac0a9b16b370f4d2e4f9d9e2ae25f4040aa9ff25dc9829a8ff59a5a4bba91639"
+    },
+    {
+      "id": "e2-openapi",
+      "kind": "openapi",
+      "declaration_status": "publisher_declared",
+      "endpoint_or_locator": "generated/e2/openapi.json",
+      "authentication": "schema declaration only; execution remains owned by the E2 catalog",
+      "health": "unknown",
+      "execution_status": "descriptive_only",
+      "evidence_digest": "sha256:8ba799449d1f6989ea1f32fbfe7ff4cd40a0cc2b2782a14dc302e86f16299319"
+    },
+    {
+      "id": "e2-rest",
+      "kind": "rest",
+      "declaration_status": "observed",
+      "endpoint_or_locator": "origins/catalog.json#twirx-project",
+      "authentication": "none in the admitted E2 public-read route",
+      "health": "unknown",
+      "execution_status": "admitted_public_read",
+      "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+    },
+    {
+      "id": "e2-twirx-native",
+      "kind": "twirx_native",
+      "declaration_status": "publisher_declared",
+      "endpoint_or_locator": "origins/catalog.json#twirx-project",
+      "authentication": "none in the admitted E2 public-read route",
+      "health": "unknown",
+      "execution_status": "admitted_public_read",
+      "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+    }
+  ],
+  "capabilities": [
+    {
+      "native_id": "project.getEngineeringGateReport",
+      "native_label": "Get engineering gate report",
+      "semantic_operation_candidates": [
+        "project.getEngineeringGateReport"
+      ],
+      "input_shape_ref": "contracts/e2/contracts.json#project.getEngineeringGateReport/input",
+      "output_shape_ref": "contracts/e2/contracts.json#project.getEngineeringGateReport/output",
+      "effect_class": "public_read",
+      "status": "admitted",
+      "interface_refs": [
+        "e2-twirx-native"
+      ],
+      "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+    },
+    {
+      "native_id": "project.getStatus",
+      "native_label": "Get project status",
+      "semantic_operation_candidates": [
+        "project.getStatus"
+      ],
+      "input_shape_ref": "contracts/e2/contracts.json#project.getStatus/input",
+      "output_shape_ref": "contracts/e2/contracts.json#project.getStatus/output",
+      "effect_class": "public_read",
+      "status": "admitted",
+      "interface_refs": [
+        "e2-twirx-native"
+      ],
+      "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+    },
+    {
+      "native_id": "project.listUnresolvedRisks",
+      "native_label": "List unresolved risks",
+      "semantic_operation_candidates": [
+        "project.listUnresolvedRisks"
+      ],
+      "input_shape_ref": "contracts/e2/contracts.json#project.listUnresolvedRisks/input",
+      "output_shape_ref": "contracts/e2/contracts.json#project.listUnresolvedRisks/output",
+      "effect_class": "public_read",
+      "status": "admitted",
+      "interface_refs": [
+        "e2-twirx-native"
+      ],
+      "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+    }
+  ],
+  "access": {
+    "class": "unknown",
+    "assessment_status": "not_assessed",
+    "license_or_terms_refs": [],
+    "attribution": "not_assessed",
+    "rate_policy": "not_assessed",
+    "payment_protocol_candidates": [],
+    "price_discovery_status": "not_assessed",
+    "evidence_digest": null,
+    "offer_candidates": []
+  },
+  "economics": {
+    "funding_class": "unknown",
+    "requests": 0,
+    "transferred_bytes": 0,
+    "evidence_bytes": 0,
+    "cpu_milliseconds": 0,
+    "human_review_seconds": 0,
+    "infrastructure_cost_estimate": null
+  },
+  "publisher_readiness": {
+    "signals": [
+      {
+        "kind": "api",
+        "presence": "present",
+        "source": "origins/catalog.json#twirx-project",
+        "observation_class": "observed",
+        "observed_at": "2026-08-10T00:00:00Z",
+        "freshness": "committed E2 snapshot",
+        "standard_status": "not_applicable",
+        "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+      },
+      {
+        "kind": "mcp",
+        "presence": "present",
+        "source": "generated/e2/mcp-tools.json",
+        "observation_class": "publisher_declared",
+        "observed_at": "2026-08-10T00:00:00Z",
+        "freshness": "committed E2 generated binding",
+        "standard_status": "experimental",
+        "evidence_digest": "sha256:ac0a9b16b370f4d2e4f9d9e2ae25f4040aa9ff25dc9829a8ff59a5a4bba91639"
+      },
+      {
+        "kind": "openapi",
+        "presence": "present",
+        "source": "generated/e2/openapi.json",
+        "observation_class": "publisher_declared",
+        "observed_at": "2026-08-10T00:00:00Z",
+        "freshness": "committed E2 generated binding",
+        "standard_status": "finalized",
+        "evidence_digest": "sha256:8ba799449d1f6989ea1f32fbfe7ff4cd40a0cc2b2782a14dc302e86f16299319"
+      },
+      {
+        "kind": "twirx_native",
+        "presence": "present",
+        "source": "contracts/e2/contracts.json#project",
+        "observation_class": "publisher_declared",
+        "observed_at": "2026-08-10T00:00:00Z",
+        "freshness": "committed E2 snapshot",
+        "standard_status": "experimental",
+        "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+---
+title: "Adapter manifest"
+description: "A deterministic read contract for one source-native representation."
+---
+
+**Status:** Genesis implementation format; not yet a stable protocol RFC.
+
+A manifest declares:
+
+- adapter identity and version;
+- origin scope;
+- read operation and resource type;
+- semantic module closure;
+- source-native fields;
+- JSON Pointer locators;
+- output types;
+- required or optional status;
+- deterministic transformations;
+- mapping relation.
+
+```json
+{
+  "id": "price_currency",
+  "native_term": "origin:testorigin/currency",
+  "semantic_term": "commerce:OfferPrice.currency",
+  "json_pointer": "/offer/currency",
+  "value_type": "currency_code",
+  "required": true,
+  "transforms": ["trim", "uppercase"],
+  "mapping_relation": "equivalent_in_context"
+}
+```
+
+## Failure behavior
+
+- Missing required field: extraction fails closed.
+- Missing optional field: output status is `unresolved` and still carries provenance.
+- An empty source string is a resolved value and remains distinct from `unresolved`.
+- Invalid decimal or currency code: extraction fails.
+- Origin mismatch: adapter refuses execution.
+- Non-JSON media type: Genesis JSON adapter refuses execution.
+- Duplicate object keys, trailing JSON values, and unknown manifest properties are rejected.
+
+## Bounded JSON profile
+
+Both manifests and observed representations must be valid UTF-8 and contain
+exactly one top-level JSON value followed only by whitespace. Duplicate object
+keys are rejected at every depth.
+Escaped UTF-16 surrogate code units must form valid pairs; lone surrogates are
+rejected rather than replaced with a different lexical value.
+
+| Limit | Manifest | Observed representation |
+|---|---:|---:|
+| Document bytes | 262,144 | Observation body limit, at most 2,097,152 |
+| Nested containers | 32 | 64 |
+| Decoded scalar bytes | 8,192 | 65,536 |
+| Entries in one object or array | 4,096 | 16,384 |
+| JSON tokens | 32,768 | 65,536 |
+
+A manifest contains at most 64 fields and 64 semantic modules. A field
+contains at most 16 transforms. A JSON Pointer is at most 4,096 bytes and 128
+tokens. Pointer escapes follow RFC 6901; array indexes are `0` or an unsigned
+decimal without leading zeroes.
+
+## Lexical preservation and transforms
+
+For a JSON scalar, `native.lexical_value` is its decoded lexical value. JSON
+number spelling is preserved. The exact original JSON token remains available
+in the immutable body through the body digest and JSON Pointer locator.
+
+`trim`, `uppercase`, and `lowercase` operate on ASCII only. They do not apply
+implicit Unicode normalization or locale-sensitive case conversion. The
+native value is recorded before every declared transform; the transformed
+value appears only in the semantic view.
+
+Serialized results are bounded to 8 MiB and are published by a synchronized
+temporary file followed by atomic rename. A partial result is never promoted
+to its final path.
+
+## Digest behavior
+
+The current adapter digest hashes the exact manifest bytes. A later canonical adapter-package format will define deterministic structured encoding and signatures.

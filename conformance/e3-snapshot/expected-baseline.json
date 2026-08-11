@@ -1,0 +1,25 @@
+{
+  "format": "tw.snapshot-demo-baseline/0.1",
+  "actual": {
+    "atlas_identities": 500,
+    "archive_profiles": 0,
+    "public_origins_with_packets": 2,
+    "fixture_origins_with_packets": 1,
+    "operations": 5,
+    "packets": 18,
+    "public_packets": 13,
+    "fixture_packets": 5,
+    "resolved_packets": 18,
+    "unresolved_packets": 0,
+    "deltas": 0,
+    "materialized_views": 2,
+    "proof_artifacts": 50
+  },
+  "population_query_rows": 4,
+  "two_origin_query_origins": [
+    "api-worldbank-org",
+    "twirx-org"
+  ],
+  "network_requests": 0,
+  "fixtures_excluded_by_default": true
+}

@@ -1,0 +1,36 @@
+---
+title: "Independent C verifier"
+description: "A small portable verifier for canonical observation artifacts and CAS evidence."
+---
+
+The C verifier exists to provide an implementation independent from the Go control path.
+
+It verifies:
+
+- fixed field count and order;
+- deterministic CBOR integer forms;
+- bounded text and byte strings;
+- observation version;
+- method and status constraints;
+- absence of trailing bytes;
+- body path, size, and SHA-256 digest.
+
+It does not:
+
+- access the network;
+- resolve DNS;
+- parse arbitrary HTML or JSON;
+- load plugins;
+- interpret ontology mappings;
+- hold credentials;
+- write canonical state.
+
+Build assurance includes GCC, Clang, AddressSanitizer, UndefinedBehaviorSanitizer, and corrupted-evidence tests.
+
+`conformance/observation/vectors.json` is the shared Go/C corpus. The C test
+harness materializes each vector, verifies its declared acceptance class, and
+then replaces valid evidence to prove digest rejection. A separate libFuzzer
+target mutates the bounded envelope parser without filesystem or network
+access; sanitizer findings fail the Gate 1 suite.
+
+The verifier is intentionally narrow. C supplies portability and independent assurance without becoming the exposed hostile-web runtime.

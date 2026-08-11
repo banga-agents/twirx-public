@@ -1,0 +1,35 @@
+{
+  "arbitrary_url_input": false,
+  "bindings": [
+    "cli",
+    "json-schema",
+    "local-mcp",
+    "openapi"
+  ],
+  "catalog_only": true,
+  "claim": "Records an origin representation and declared derivation; does not assert objective truth.",
+  "engineering_gate": "E2",
+  "format": "tw.public-proof-data/0.1",
+  "gate_status": "implementation_candidate",
+  "independent_verifiers": [
+    "go",
+    "restricted-c"
+  ],
+  "operation_count": 5,
+  "operations": [
+    "project.getStatus",
+    "project.getEngineeringGateReport",
+    "project.listUnresolvedRisks",
+    "fixture.getOffer",
+    "development.getIndicator"
+  ],
+  "origin_count": 3,
+  "origins": [
+    "controlled-origin-lab",
+    "twirx-project",
+    "world-bank-indicators"
+  ],
+  "read_only": true,
+  "release_label": "Genesis Preview",
+  "result_format": "tw.result/0.2"
+}

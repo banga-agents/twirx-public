@@ -1,0 +1,33 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "nytimes-com",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://nytimes.com",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "subscription",
+  "commercial_offer_candidates": 1,
+  "record_digest": "sha256:e55b5597259e14d083af930d7043226308e17a74357f6b8fc21c545a99951422",
+  "policy_evidence_digest": "sha256:e93cddd965dad2121bb3c4a41225d439b25f67e20b6f3f15409afaf920fc876a",
+  "decision_digest": "sha256:99e4f3de8274122ce83c3b562ad75da81f38e4c4f24ebce9919f990182b82e8f",
+  "approval_reference": "",
+  "constraints": [
+    "Commercial and access metadata is provisional and grants no execution or payment authority.",
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

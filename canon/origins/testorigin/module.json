@@ -1,0 +1,13 @@
+{
+  "format": "tw.semantic-module/0.1-draft",
+  "id": "origin:testorigin",
+  "version": "2026-08-10",
+  "status": "fixture",
+  "terms": [
+    "origin:testorigin/product_id",
+    "origin:testorigin/name",
+    "origin:testorigin/current_price",
+    "origin:testorigin/currency",
+    "origin:testorigin/availability"
+  ]
+}

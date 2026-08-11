@@ -1,0 +1,33 @@
+---
+title: "Typed Web IR direction"
+description: "The future closed operational representation between open semantics and agent transports."
+---
+
+**Status:** Design direction; not implemented in Genesis code.
+
+The semantic layer is open-world: more information and vocabularies may exist.
+
+Agent execution must be closed-world: an operation accepts finite inputs, returns declared outputs, produces explicit errors, and has known effects.
+
+Typed Web IR will bridge these models.
+
+```text
+web observation
+→ semantic analysis
+→ TWIR
+→ MCP / WebMCP / OpenAPI / SDK / WIT bindings
+```
+
+TWIR should define:
+
+- primitive and structured types;
+- resources and identity fields;
+- finite operations;
+- error contracts;
+- pagination and streams;
+- evidence requirements;
+- effect and risk classes;
+- authorization requirements;
+- exact semantic module closure.
+
+Transport bindings must compile from TWIR rather than independently inventing semantics.

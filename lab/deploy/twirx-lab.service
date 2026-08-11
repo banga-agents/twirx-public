@@ -1,0 +1,46 @@
+[Unit]
+Description=TWIRX Live Provenance Lab
+Documentation=https://docs.twirx.org
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=twirx-lab
+Group=twirx-lab
+WorkingDirectory=/srv/twirx-lab/current
+ExecStart=/srv/twirx-lab/current/bin/twirx-lab serve --root /srv/twirx-lab/current --results /var/lib/twirx-lab/results --static /srv/twirx-lab/current/lab/static --listen 127.0.0.1:8090
+Restart=on-failure
+RestartSec=3s
+TimeoutStopSec=10s
+UMask=0027
+
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/twirx-lab
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged @mount
+CapabilityBoundingSet=
+AmbientCapabilities=
+TasksMax=128
+MemoryMax=512M
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

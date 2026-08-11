@@ -1,0 +1,10 @@
+{
+  "product_id": "sku-001",
+  "name": "Field Notebook",
+  "availability": "in_stock",
+  "offer": {
+    "current_price": "19.99",
+    "currency": "usd"
+  },
+  "updated_at": "2026-08-10T00:00:00Z"
+}

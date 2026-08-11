@@ -1,0 +1,62 @@
+{
+  "_source": "reports/gate-1-genesis.md, reports/gate-e2-live-provenance-lab.md, reports/futo-f3-real-archive-evidence.md, and reports/futo-grant-readiness.md. Deployment state is reported separately from local implementation state.",
+  "status_date": "2026-08-11",
+  "implemented_locally": [
+    {
+      "capability": "Source-statement evidence spine",
+      "detail": "Canonical observation, content-addressed evidence, native lexical preservation, semantic mapping and offline replay.",
+      "evidence": "reports/gate-1-genesis.md"
+    },
+    {
+      "capability": "Independent verification",
+      "detail": "Bounded Go and restricted-C implementations validate shared positive and adversarial vectors.",
+      "evidence": "reports/gate-1-genesis.md and reports/futo-f3-real-archive-evidence.md"
+    },
+    {
+      "capability": "Typed read-only operations",
+      "detail": "One contract family generates CLI, JSON Schema, OpenAPI and local MCP bindings.",
+      "evidence": "reports/gate-e2-live-provenance-lab.md"
+    },
+    {
+      "capability": "Origin Atlas and admission boundary",
+      "detail": "500 selected identities, orthogonal origin state, deterministic dossiers, explicit human decisions and route-bound work orders.",
+      "evidence": "atlas/registry.json and reports/futo-policy-decision-proposals.md"
+    },
+    {
+      "capability": "Sealed archive acquisition",
+      "detail": "Restricted Common Crawl index lookup and exact byte-range acquisition for one approved origin over two periods.",
+      "evidence": "reports/futo-f3-real-archive-evidence.md"
+    },
+    {
+      "capability": "Semantic packets and origin delta",
+      "detail": "Two real historical archive packets preserve native title values and emit one origin delta without inventing semantic or canon deltas.",
+      "evidence": "reports/futo-f3-real-archive-evidence.md"
+    },
+    {
+      "capability": "Immutable Semantic Snapshot",
+      "detail": "Proof artifacts, packets, materialized views, queries and deltas published under a canonical manifest digest.",
+      "evidence": "sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5"
+    },
+    {
+      "capability": "Read-only snapshot runtime",
+      "detail": "Local query execution over immutable state with zero origin calls and a 5,000-request bounded stress run.",
+      "evidence": "reports/futo-grant-readiness.md"
+    }
+  ],
+  "not_publicly_deployed": [
+    "Read-only Query Lab",
+    "Public agent API",
+    "Semantic change subscription endpoint"
+  ],
+  "not_implemented_or_not_authorized": [
+    "Arbitrary URL compilation",
+    "Browser execution",
+    "Model authority or automatic canon promotion",
+    "Authenticated private actions",
+    "Payments, purchases or writes",
+    "Production PostgreSQL on the shared Meridian host",
+    "Continuous broad crawling",
+    "Production multi-tenancy"
+  ],
+  "scope_note": "The 25,018-packet controlled run is fixture-dominated capacity evidence. The real released public-source count is 15 packets across three origins."
+}

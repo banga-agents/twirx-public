@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/origin-registry-0.3.json",
+  "title": "TWIRX canonical origin registry 0.3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "version", "origins"],
+  "properties": {
+    "format": {"const": "tw.origin-registry/0.3"},
+    "version": {"type": "string", "minLength": 1, "maxLength": 128},
+    "origins": {"type": "array", "maxItems": 564, "items": {"$ref": "#/$defs/origin"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "maxLength": 16384},
+    "nullableText": {"type": ["string", "null"], "maxLength": 16384},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "nullableDigest": {"anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+    "texts": {"type": "array", "maxItems": 4096, "items": {"$ref": "#/$defs/text"}},
+    "digests": {"type": "array", "maxItems": 4096, "items": {"$ref": "#/$defs/digest"}},
+    "catalog": {
+      "type": "object", "additionalProperties": false,
+      "required": ["state", "reviewed_at", "reviewer", "evidence_refs"],
+      "properties": {
+        "state": {"enum": ["candidate", "cataloged"]},
+        "reviewed_at": {"$ref": "#/$defs/nullableText"},
+        "reviewer": {"$ref": "#/$defs/nullableText"},
+        "evidence_refs": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["review_state", "decision", "reviewed_at", "reviewer", "policy_id", "policy_set_digest", "robots_digest", "attribution", "authentication", "rate_policy", "retention_policy", "terms_reference", "risk_state", "reviewer_notes"],
+      "properties": {
+        "review_state": {"enum": ["pending", "completed"]},
+        "decision": {"enum": ["permit_live", "permit_with_constraints", "profile_only", "catalog_only", "deny", "uncertain"]},
+        "reviewed_at": {"$ref": "#/$defs/nullableText"},
+        "reviewer": {"$ref": "#/$defs/nullableText"},
+        "policy_id": {"$ref": "#/$defs/nullableText"},
+        "policy_set_digest": {"$ref": "#/$defs/nullableDigest"},
+        "robots_digest": {"$ref": "#/$defs/nullableDigest"},
+        "attribution": {"$ref": "#/$defs/text"},
+        "authentication": {"$ref": "#/$defs/text"},
+        "rate_policy": {"$ref": "#/$defs/text"},
+        "retention_policy": {"$ref": "#/$defs/text"},
+        "terms_reference": {"$ref": "#/$defs/text"},
+        "risk_state": {"$ref": "#/$defs/text"},
+        "reviewer_notes": {"$ref": "#/$defs/text"}
+      }
+    },
+    "technical": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage", "reviewed_at", "reviewer", "evidence_refs"],
+      "properties": {
+        "stage": {"enum": ["unprofiled", "profiled", "observed", "native_schema", "compiled", "semantically_linked", "live"]},
+        "reviewed_at": {"$ref": "#/$defs/nullableText"},
+        "reviewer": {"$ref": "#/$defs/nullableText"},
+        "evidence_refs": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "publisher": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "kind", "status", "reviewed_at", "reviewer", "evidence_refs", "manifest_url"],
+      "properties": {
+        "name": {"$ref": "#/$defs/text"},
+        "kind": {"$ref": "#/$defs/text"},
+        "status": {"enum": ["unclaimed", "domain_verified", "publisher_approved", "publisher_signed"]},
+        "reviewed_at": {"$ref": "#/$defs/nullableText"},
+        "reviewer": {"$ref": "#/$defs/nullableText"},
+        "evidence_refs": {"$ref": "#/$defs/texts"},
+        "manifest_url": {"$ref": "#/$defs/nullableText"}
+      }
+    },
+    "health": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "checked_at", "evidence_refs"],
+      "properties": {
+        "status": {"enum": ["unknown", "healthy", "degraded", "stale", "suspended", "revoked"]},
+        "checked_at": {"$ref": "#/$defs/nullableText"},
+        "evidence_refs": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "adapterTrust": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "reviewed_at", "reviewer", "evidence_refs"],
+      "properties": {
+        "status": {"enum": ["none", "candidate", "reviewed", "conformant", "revoked"]},
+        "reviewed_at": {"$ref": "#/$defs/nullableText"},
+        "reviewer": {"$ref": "#/$defs/nullableText"},
+        "evidence_refs": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "mappingTrust": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "reviewed_at", "reviewer", "evidence_refs"],
+      "properties": {
+        "status": {"enum": ["none", "candidate", "reviewed", "disputed", "revoked"]},
+        "reviewed_at": {"$ref": "#/$defs/nullableText"},
+        "reviewer": {"$ref": "#/$defs/nullableText"},
+        "evidence_refs": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "discovery": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sources", "profiled_at", "robots_url", "sitemap_urls", "feed_urls", "api_descriptions", "structured_data", "public_endpoints"],
+      "properties": {
+        "sources": {"$ref": "#/$defs/texts"},
+        "profiled_at": {"$ref": "#/$defs/nullableText"},
+        "robots_url": {"$ref": "#/$defs/nullableText"},
+        "sitemap_urls": {"$ref": "#/$defs/texts"},
+        "feed_urls": {"$ref": "#/$defs/texts"},
+        "api_descriptions": {"$ref": "#/$defs/texts"},
+        "structured_data": {"$ref": "#/$defs/texts"},
+        "public_endpoints": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "interface": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "declaration_status", "endpoint_or_locator", "authentication", "health", "execution_status", "evidence_digest"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"},
+        "kind": {"enum": ["twirx_native", "mcp", "openapi", "graphql", "rest", "rss", "atom", "jsonld", "microdata", "semantic_html", "webmcp", "browser", "search_discovery"]},
+        "declaration_status": {"enum": ["publisher_declared", "observed", "inferred", "archive_derived"]},
+        "endpoint_or_locator": {"$ref": "#/$defs/text"},
+        "authentication": {"$ref": "#/$defs/text"},
+        "health": {"enum": ["unknown", "healthy", "degraded", "stale", "suspended", "revoked"]},
+        "execution_status": {"enum": ["descriptive_only", "not_admitted", "admitted_public_read"]},
+        "evidence_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "capability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["native_id", "native_label", "semantic_operation_candidates", "input_shape_ref", "output_shape_ref", "effect_class", "status", "interface_refs", "evidence_digest"],
+      "properties": {
+        "native_id": {"$ref": "#/$defs/text"},
+        "native_label": {"$ref": "#/$defs/text"},
+        "semantic_operation_candidates": {"$ref": "#/$defs/texts"},
+        "input_shape_ref": {"$ref": "#/$defs/nullableText"},
+        "output_shape_ref": {"$ref": "#/$defs/nullableText"},
+        "effect_class": {"enum": ["public_read", "authenticated_read", "reversible_write", "stateful_commitment", "financial", "legal_or_material", "destructive", "unknown"]},
+        "status": {"enum": ["observed", "candidate", "reviewed", "admitted"]},
+        "interface_refs": {"$ref": "#/$defs/texts"},
+        "evidence_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "offerCandidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "native_label", "status", "access_class", "terms_ref", "price_status", "evidence_digest"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"},
+        "native_label": {"$ref": "#/$defs/text"},
+        "status": {"enum": ["candidate", "observed", "reviewed"]},
+        "access_class": {"enum": ["public_free", "authenticated", "subscription", "metered", "paid_per_use", "quote_required", "restricted"]},
+        "terms_ref": {"$ref": "#/$defs/text"},
+        "price_status": {"enum": ["not_assessed", "not_found", "candidate", "source_stated", "reviewed"]},
+        "evidence_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "access": {
+      "type": "object", "additionalProperties": false,
+      "required": ["class", "assessment_status", "license_or_terms_refs", "attribution", "rate_policy", "payment_protocol_candidates", "price_discovery_status", "evidence_digest", "offer_candidates"],
+      "properties": {
+        "class": {"enum": ["public_free", "authenticated", "subscription", "metered", "paid_per_use", "quote_required", "restricted", "unknown"]},
+        "assessment_status": {"enum": ["not_assessed", "candidate", "observed", "reviewed"]},
+        "license_or_terms_refs": {"$ref": "#/$defs/texts"},
+        "attribution": {"$ref": "#/$defs/text"},
+        "rate_policy": {"$ref": "#/$defs/text"},
+        "payment_protocol_candidates": {"$ref": "#/$defs/texts"},
+        "price_discovery_status": {"enum": ["not_assessed", "not_found", "candidate", "source_stated", "reviewed"]},
+        "evidence_digest": {"$ref": "#/$defs/nullableDigest"},
+        "offer_candidates": {"type": "array", "maxItems": 256, "items": {"$ref": "#/$defs/offerCandidate"}}
+      }
+    },
+    "costEstimate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["amount_microunits", "currency", "basis"],
+      "properties": {
+        "amount_microunits": {"type": "integer", "minimum": 0},
+        "currency": {"$ref": "#/$defs/text"},
+        "basis": {"$ref": "#/$defs/text"}
+      }
+    },
+    "economics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["funding_class", "requests", "transferred_bytes", "evidence_bytes", "cpu_milliseconds", "human_review_seconds", "infrastructure_cost_estimate"],
+      "properties": {
+        "funding_class": {"enum": ["commons", "publisher", "sponsor", "usage", "self_hosted", "unknown"]},
+        "requests": {"type": "integer", "minimum": 0},
+        "transferred_bytes": {"type": "integer", "minimum": 0},
+        "evidence_bytes": {"type": "integer", "minimum": 0},
+        "cpu_milliseconds": {"type": "integer", "minimum": 0},
+        "human_review_seconds": {"type": "integer", "minimum": 0},
+        "infrastructure_cost_estimate": {"anyOf": [{"$ref": "#/$defs/costEstimate"}, {"type": "null"}]}
+      }
+    },
+    "readinessSignal": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "presence", "source", "observation_class", "observed_at", "freshness", "standard_status", "evidence_digest"],
+      "properties": {
+        "kind": {"enum": ["twirx_native", "mcp", "openapi", "graphql", "api", "rss", "atom", "jsonld", "webmcp", "payment_requirement", "commercial_offer", "oauth_protected_resource", "agent_skill", "alternate_machine_representation"]},
+        "presence": {"enum": ["present", "absent", "unknown"]},
+        "source": {"$ref": "#/$defs/text"},
+        "observation_class": {"enum": ["publisher_declared", "observed", "inferred", "archive_derived", "not_assessed"]},
+        "observed_at": {"$ref": "#/$defs/nullableText"},
+        "freshness": {"$ref": "#/$defs/text"},
+        "standard_status": {"enum": ["finalized", "draft", "proposal", "experimental", "not_applicable", "unknown"]},
+        "evidence_digest": {"$ref": "#/$defs/nullableDigest"}
+      }
+    },
+    "publisherReadiness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["signals"],
+      "properties": {"signals": {"type": "array", "maxItems": 64, "items": {"$ref": "#/$defs/readinessSignal"}}}
+    },
+    "scheduler": {
+      "type": "object", "additionalProperties": false,
+      "required": ["state", "last_attempt", "cooldown_until", "consecutive_failures", "public_value", "semantic_novelty", "demonstrated_demand", "change_probability", "health_need", "estimated_request_cost"],
+      "properties": {
+        "state": {"enum": ["disabled", "ready", "cooldown"]},
+        "last_attempt": {"$ref": "#/$defs/nullableText"},
+        "cooldown_until": {"$ref": "#/$defs/nullableText"},
+        "consecutive_failures": {"type": "integer", "minimum": 0, "maximum": 1000},
+        "public_value": {"type": "integer", "minimum": 0, "maximum": 100},
+        "semantic_novelty": {"type": "integer", "minimum": 0, "maximum": 100},
+        "demonstrated_demand": {"type": "integer", "minimum": 0, "maximum": 100},
+        "change_probability": {"type": "integer", "minimum": 0, "maximum": 100},
+        "health_need": {"type": "integer", "minimum": 0, "maximum": 100},
+        "estimated_request_cost": {"type": "integer", "minimum": 0, "maximum": 100}
+      }
+    },
+    "runtime": {
+      "type": "object", "additionalProperties": false,
+      "required": ["last_seen", "last_observed", "refresh_class", "request_budget", "storage_budget_bytes", "scheduler"],
+      "properties": {
+        "last_seen": {"$ref": "#/$defs/nullableText"},
+        "last_observed": {"$ref": "#/$defs/nullableText"},
+        "refresh_class": {"$ref": "#/$defs/text"},
+        "request_budget": {"type": "integer", "minimum": 0, "maximum": 1440},
+        "storage_budget_bytes": {"type": "integer", "minimum": 0, "maximum": 104857600},
+        "scheduler": {"$ref": "#/$defs/scheduler"}
+      }
+    },
+    "semantics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["native_module", "adapter_id", "conformance_ref", "contract_set_digest", "mapping_modules", "concept_ids", "operation_ids", "semantic_closure_digests"],
+      "properties": {
+        "native_module": {"$ref": "#/$defs/nullableText"},
+        "adapter_id": {"$ref": "#/$defs/nullableText"},
+        "conformance_ref": {"$ref": "#/$defs/nullableText"},
+        "contract_set_digest": {"$ref": "#/$defs/nullableDigest"},
+        "mapping_modules": {"$ref": "#/$defs/texts"},
+        "concept_ids": {"$ref": "#/$defs/texts"},
+        "operation_ids": {"$ref": "#/$defs/texts"},
+        "semantic_closure_digests": {"$ref": "#/$defs/digests"}
+      }
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "digest"],
+      "properties": {
+        "path": {"$ref": "#/$defs/text"},
+        "digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["observation_ids", "artifacts"],
+      "properties": {
+        "observation_ids": {"$ref": "#/$defs/texts"},
+        "artifacts": {"type": "array", "maxItems": 4096, "items": {"$ref": "#/$defs/artifact"}}
+      }
+    },
+    "origin": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "scope", "canonical_origin", "registrable_domain", "execution_catalog_ids", "catalog", "policy", "technical", "publisher", "health", "adapter_trust", "mapping_trust", "jurisdiction", "languages", "domain_families", "authority_class", "discovery", "interfaces", "capabilities", "access", "economics", "publisher_readiness", "runtime", "semantics", "evidence"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"},
+        "scope": {"enum": ["genesis_public", "test_fixture"]},
+        "canonical_origin": {"$ref": "#/$defs/text"},
+        "registrable_domain": {"$ref": "#/$defs/text"},
+        "execution_catalog_ids": {"$ref": "#/$defs/texts"},
+        "catalog": {"$ref": "#/$defs/catalog"},
+        "policy": {"$ref": "#/$defs/policy"},
+        "technical": {"$ref": "#/$defs/technical"},
+        "publisher": {"$ref": "#/$defs/publisher"},
+        "health": {"$ref": "#/$defs/health"},
+        "adapter_trust": {"$ref": "#/$defs/adapterTrust"},
+        "mapping_trust": {"$ref": "#/$defs/mappingTrust"},
+        "jurisdiction": {"$ref": "#/$defs/text"},
+        "languages": {"$ref": "#/$defs/texts"},
+        "domain_families": {"$ref": "#/$defs/texts"},
+        "authority_class": {"$ref": "#/$defs/text"},
+        "discovery": {"$ref": "#/$defs/discovery"},
+        "interfaces": {"type": "array", "maxItems": 256, "items": {"$ref": "#/$defs/interface"}},
+        "capabilities": {"type": "array", "maxItems": 1024, "items": {"$ref": "#/$defs/capability"}},
+        "access": {"$ref": "#/$defs/access"},
+        "economics": {"$ref": "#/$defs/economics"},
+        "publisher_readiness": {"$ref": "#/$defs/publisherReadiness"},
+        "runtime": {"$ref": "#/$defs/runtime"},
+        "semantics": {"$ref": "#/$defs/semantics"},
+        "evidence": {"$ref": "#/$defs/evidence"}
+      }
+    }
+  }
+}

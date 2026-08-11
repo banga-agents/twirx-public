@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TWIRX Query Lab: query an immutable semantic snapshot and trace results to source-native evidence.">
+  <title>TWIRX Query Lab — immutable semantic state with proof</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#query">Skip to the query instrument</a>
+  <header class="topbar">
+    <a class="brand" href="https://twirx.org/">TWIRX <span>/ QUERY LAB</span></a>
+    <nav aria-label="Project"><a href="https://twirx.org/demo/">Demo</a><a href="https://twirx.org/proof/">Proof</a><a href="https://docs.twirx.org/">Docs</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">LIVE READ-ONLY SNAPSHOT · GENESIS PREVIEW</p>
+      <h1 id="title">Query what sources represented.<br>Trace every returned field.</h1>
+      <p class="lede">This Lab serves one verified immutable Semantic Snapshot. It does not browse, refresh an origin, accept a URL, run a model, authenticate, pay, or write.</p>
+      <div class="statusline"><span id="service-state" role="status">CONNECTING</span><span>SNAPSHOT ONLY</span><span>NO ORIGIN CALLS</span><span>FIXTURES EXCLUDED</span></div>
+    </section>
+
+    <section class="metrics" aria-label="Snapshot counts">
+      <div><small>ATLAS IDENTITIES</small><strong id="atlas-count">—</strong><span>selection, not working adapters</span></div>
+      <div><small>PUBLIC PACKETS</small><strong id="packet-count">—</strong><span id="origin-count">across — origins</span></div>
+      <div><small>MATERIALIZED VIEWS</small><strong id="view-count">—</strong><span>proof-linked</span></div>
+      <div><small>ORIGIN DELTAS</small><strong id="delta-count">—</strong><span>semantic/canon separate</span></div>
+    </section>
+
+    <section class="atlas" aria-labelledby="atlas-title">
+      <div class="atlashead">
+        <div>
+          <p class="eyebrow">ATLAS / ALL 500 IDENTITIES</p>
+          <h2 id="atlas-title">Explore the complete selected universe.</h2>
+          <p>The snapshot carries all 500 canonical identities. Packet state is shown separately: an identity with zero packets has not silently become reviewed, observed, compiled or live.</p>
+        </div>
+        <div class="atlasfilters">
+          <label for="origin-search">Filter by ID, host or family</label>
+          <input id="origin-search" type="search" autocomplete="off" placeholder="e.g. worldbank or public health">
+          <label for="family-filter">Domain family</label>
+          <select id="family-filter"><option value="">All families</option></select>
+        </div>
+      </div>
+      <p id="atlas-summary" class="boundary" role="status">Loading manifest-bound Atlas…</p>
+      <div class="tablewrap atlas-table"><table><caption>Canonical Atlas selection and actual snapshot packet state</caption><thead><tr><th>Origin ID</th><th>Canonical host</th><th>Domain family</th><th>Snapshot packet state</th></tr></thead><tbody id="origins"></tbody></table></div>
+    </section>
+
+    <section id="query" class="instrument" aria-labelledby="query-title">
+      <div class="controls">
+        <p class="eyebrow">01 / SELECT A RECORDED QUERY</p>
+        <h2 id="query-title">Ask the immutable state</h2>
+        <button class="preset active" type="button" data-preset="cross-origin"><b>Cross-origin status and indicator</b><span>TWIRX + World Bank · current semantic view</span></button>
+        <button class="preset" type="button" data-preset="archive-history"><b>RFC Editor title history</b><span>Two Common Crawl periods · observed-native view</span></button>
+        <button id="run-query" class="run" type="button">Run typed query <span aria-hidden="true">→</span></button>
+        <p class="boundary">The browser chooses only between committed bounded requests. It cannot supply an origin, route or URL.</p>
+      </div>
+
+      <div class="output" aria-live="polite">
+        <div class="outputhead"><p class="eyebrow">02 / RESULT</p><span id="result-state">AWAITING QUERY</span></div>
+        <div id="empty-result" class="empty"><p class="hash">sha256:————————————————————————————————</p><h2>A proof-linked result will appear here.</h2><p>Every row retains its origin, native term, locator, lexical value, packet digest and observation digest.</p></div>
+        <div id="result" hidden>
+          <dl class="resultmeta"><div><dt>Query</dt><dd id="query-digest"></dd></div><div><dt>Result</dt><dd id="result-digest"></dd></div><div><dt>Network requests</dt><dd id="network-requests"></dd></div><div><dt>Fixtures excluded</dt><dd id="fixtures-excluded"></dd></div></dl>
+          <div class="tablewrap"><table><caption id="result-caption">Typed query rows</caption><thead><tr><th>Origin</th><th>Native statement</th><th>Semantic field</th><th>Proof</th></tr></thead><tbody id="rows"></tbody></table></div>
+          <details><summary>Canonical response and execution plan</summary><pre id="raw-result"></pre></details>
+        </div>
+        <p id="error" class="error" role="alert" hidden></p>
+      </div>
+    </section>
+
+    <section class="delta" aria-labelledby="delta-title">
+      <p class="eyebrow">03 / WATCH WHAT CHANGED</p>
+      <h2 id="delta-title">Origin, semantic and canon changes remain distinct.</h2>
+      <div id="deltas"><p>Loading admitted deltas…</p></div>
+    </section>
+
+    <section class="api" aria-labelledby="api-title">
+      <p class="eyebrow">AGENT INTERFACE</p>
+      <h2 id="api-title">Use the same bounded API directly.</h2>
+      <p>An agent can inspect status, concepts, views, deltas, packets and traces, then submit a typed semantic query. The runtime has no origin HTTP client.</p>
+      <pre><code>GET  /api/v1/status
+GET  /api/v1/origins?limit=500
+GET  /api/v1/origins/{origin_id}
+GET  /api/v1/views
+GET  /api/v1/deltas
+GET  /api/v1/trace/{packet_digest}
+GET  /api/v1/packets/{packet_digest}
+GET  /api/v1/snapshot/manifest.cbor
+POST /api/v1/query</code></pre>
+      <p class="note">Raw third-party archive representations are not exposed while their public-redistribution treatment remains under review.</p>
+    </section>
+  </main>
+
+  <dialog id="trace-dialog"><form method="dialog"><button aria-label="Close trace">Close</button></form><p class="eyebrow">PACKET TRACE</p><pre id="trace-content"></pre></dialog>
+  <footer><span>TWIRX · THE TYPED WEB COMMONS</span><span id="snapshot-id">SNAPSHOT —</span></footer>
+</body>
+</html>

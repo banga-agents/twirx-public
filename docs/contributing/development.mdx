@@ -1,0 +1,38 @@
+---
+title: "Development workflow"
+description: "Build, test, benchmark, and document changes locally."
+---
+
+## Build
+
+```bash
+make build
+```
+
+## Test
+
+```bash
+make test
+```
+
+## Demonstrate
+
+```bash
+make demo
+```
+
+## Benchmark
+
+```bash
+make benchmark
+```
+
+## Rules
+
+- Normal tests run without public internet access.
+- Protocol behavior changes require fixtures and expected results.
+- Parser changes require malformed-input tests.
+- Performance claims require measured benchmarks.
+- Do not add third-party runtime dependencies without an ADR.
+- Do not use `unsafe`, cgo, native plugins, or shell execution in trusted Go request paths.
+- Keep documentation synchronized with implemented behavior.

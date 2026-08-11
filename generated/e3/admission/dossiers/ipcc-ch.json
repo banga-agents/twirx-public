@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "ipcc-ch",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://ipcc.ch",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:0c73b847c148d8da5b500060cf2ad8c8ab9190b3231d59aea807a5d77e954744",
+  "policy_evidence_digest": "sha256:7bf95ded1574cbd449b0b5729091cdb6e7873de4ff45bccee0be1cce647e21ea",
+  "decision_digest": "sha256:311dc0d5b6940a9a911f6c16c40a5894930609522d3f6660d52dfc6fa3445e11",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

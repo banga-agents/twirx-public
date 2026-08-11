@@ -1,0 +1,97 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Typed Web Commons",
+  "description": "Open protocol documentation for typed, provenance-bearing agent interfaces to the web.",
+  "colors": {
+    "primary": "#1f6b5c",
+    "light": "#2c7f6e",
+    "dark": "#8bd8c8"
+  },
+  "search": {
+    "prompt": "Search the protocol, architecture, and security model..."
+  },
+  "metadata": {
+    "timestamp": true
+  },
+  "seo": {
+    "indexing": "navigable",
+    "metatags": {
+      "og:site_name": "Typed Web Commons",
+      "twitter:card": "summary"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Start",
+            "pages": [
+              "index",
+              "start/futo-release",
+              "start/quickstart",
+              "start/e2-lab-quickstart",
+              "start/genesis-status"
+            ]
+          },
+          {
+            "group": "Core concepts",
+            "pages": [
+              "concepts/source-statement-fidelity",
+              "concepts/native-and-semantic-views",
+              "concepts/language-sovereignty"
+            ]
+          },
+          {
+            "group": "Architecture",
+            "pages": [
+              "architecture/genesis-slice",
+              "architecture/trust-boundaries",
+              "architecture/local-first"
+            ]
+          },
+          {
+            "group": "Protocol",
+            "pages": [
+              "protocol/observation-envelope",
+              "protocol/adapter-manifest",
+              "protocol/ontology-kernel",
+              "protocol/twir-direction",
+              "protocol/twir-core-result",
+              "protocol/live-lab-api",
+              "protocol/semantic-snapshot-runtime",
+              "protocol/atlas-control-plane"
+            ]
+          },
+          {
+            "group": "Security",
+            "pages": [
+              "security/threat-model",
+              "security/origin-access",
+              "security/observatory-worker",
+              "security/c-verifier",
+              "security/live-lab-boundary"
+            ]
+          },
+          {
+            "group": "Governance",
+            "pages": [
+              "governance/charter",
+              "governance/funding-transparency",
+              "governance/roadmap"
+            ]
+          },
+          {
+            "group": "Contribute",
+            "pages": [
+              "contributing/development",
+              "contributing/conformance"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

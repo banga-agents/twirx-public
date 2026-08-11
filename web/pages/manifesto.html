@@ -1,0 +1,231 @@
+{{define "content"}}
+<div class="page">
+  {{template "pagehead" .}}
+
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#declaration">The declaration</a></li>
+          <li><a href="#limits">Our present limits</a></li>
+          <li><a href="#layers">Declaration, manifesto, charter, specification</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+
+      <section aria-labelledby="declaration">
+        <h2 id="declaration">The declaration</h2>
+
+        <p class="lede">
+          The Web was built so knowledge and capability could cross boundaries.
+        </p>
+
+        <p>
+          Its primary interface was made for human beings: pages, links, forms, visual
+          hierarchy, gestures, and browsers. That interface transformed civilisation. It made
+          publishing universal, connected distant communities, and allowed people to build
+          together without first asking permission from a central authority.
+        </p>
+
+        <p>
+          A new class of participant is now entering that Web. Software agents can search,
+          compare, analyse, coordinate, and eventually act. Yet they reach the Web through
+          interfaces that were not designed for them. They imitate human browsing, infer
+          meaning from presentation, repeat expensive navigation, and frequently lose the
+          evidence needed to explain what they found.
+        </p>
+
+        <p>This creates a profound architectural choice.</p>
+
+        <p>
+          The machine-readable Web may become a collection of private interfaces controlled
+          by a few model providers, browser runtimes, clouds, or platforms. Meaning may be
+          inferred invisibly. Provenance may be reduced to a link. Independent agents may
+          depend on proprietary interpretation. Publishers may face uncontrolled automation
+          without a credible path to declare what machines may read or do.
+        </p>
+
+        <p>Or we can build an open layer.</p>
+
+        <p>
+          TWIRX is the Genesis implementation of the Typed Web Commons: an open protocol
+          effort for transforming public web representations into typed, provenance-bearing
+          interfaces for software agents.
+        </p>
+
+        <h3>The project begins with a narrow truth contract</h3>
+
+        <p>
+          We do not claim that a provider's statement is objectively true. A website may be
+          accurate, mistaken, outdated, deceptive, satirical, compromised, or in disagreement
+          with another source. Typing a statement does not turn it into fact, and committing
+          a hash to a blockchain does not make the external proposition true.
+        </p>
+
+        <p>We claim something more precise and more defensible:</p>
+
+        <div class="contract">
+          <p>
+            This origin returned these bytes at this time. This observation preserved them.
+            This adapter found this native statement at this location. These declared
+            transformations and semantic mappings produced the value shown to the agent.
+          </p>
+        </div>
+
+        <p>The evidence and derivation are part of the result.</p>
+
+        <h3>Native meaning comes first</h3>
+
+        <p>
+          A website's original term and lexical value remain available beside any shared
+          semantic interpretation. Normalisation is a view, not an erasure. Mappings are
+          versioned claims with context and provenance, not invisible declarations of
+          universal equivalence. When sources disagree, the disagreement remains visible.
+          When a field cannot be interpreted safely, the correct result is unresolved — not
+          a plausible invention.
+        </p>
+
+        <h3>The protocol must remain sovereign from its first implementation</h3>
+
+        <p>
+          No programming language, compiler, package registry, browser, cloud, model
+          provider, chain, company, or institution owns the Typed Web. Specifications,
+          canonical encodings, public test vectors, and conformance define the protocol.
+          Implementations may compete and still interoperate. Self-hosting, federation,
+          independent verification, and the right to fork must remain possible.
+        </p>
+
+        <h3>Security is not an ornamental layer added after adoption</h3>
+
+        <p>
+          TWIRX processes adversarial inputs by design. We assume that a hostile party may
+          control a URL, redirect, response, document, structured-data block, adapter
+          proposal, model input, or contributor account. Untrusted components may observe,
+          extract, infer, and propose. They cannot grant themselves canonical authority.
+          Failure must be visible. Resource use must be bounded. Unsafe components must
+          remain isolated. A signed artefact may still be wrong; a signature proves integrity
+          and responsibility, not truth.
+        </p>
+
+        <h3>The project is accountable to the people and publishers who make the Web valuable</h3>
+
+        <p>
+          Read-only access is the default. Authentication, access controls, paywalls, and
+          reasonable rate limits are not obstacles to evade. The long-term goal is not perfect
+          reverse engineering. It is a Web in which publishers can expose authoritative,
+          typed, rate-governed interfaces directly — and in which agents can understand
+          exactly what they are permitted to do.
+        </p>
+
+        <p>
+          Future actions will require explicit authority. Financial, destructive,
+          irreversible, or legally consequential operations must be scoped, limited,
+          state-bound, reviewable, and receipted. No agent should receive broad power where a
+          narrow mandate is sufficient.
+        </p>
+
+        <h3>Cryptography without speculative ownership</h3>
+
+        <p>
+          Cryptography may strengthen this architecture through artefact signatures,
+          transparency logs, publisher attestations, revocations, scoped mandates, and
+          execution receipts. Public chains may optionally notarise commitments or settle
+          payments. They will not become the source of semantic truth or the government of
+          the commons.
+        </p>
+
+        <p>
+          There will be no protocol token. Governance rights will not be sold. Artificial
+          scarcity will not be imposed on a public semantic layer.
+        </p>
+
+        <h3>A future corpus, not a premature model</h3>
+
+        <p>
+          The architecture will eventually produce a remarkable body of semantic training
+          evidence: observations, candidate structures, proposed mappings, accepted and
+          rejected interpretations, drift events, adversarial examples, and repair history.
+          That record may support a future Web semantic induction model. But models will
+          propose; they will not define the canon, authorise actions, or promote their own
+          conclusions.
+        </p>
+      </section>
+
+      <section aria-labelledby="limits">
+        <h2 id="limits">Our present limits</h2>
+
+        <p>
+          TWIRX is currently Genesis / pre-alpha. Its first implemented gate is intentionally
+          narrow: controlled observation, content-addressed evidence, deterministic encoding,
+          independent Go and C validation, fail-closed extraction, native and semantic value
+          separation, unresolved states, fuzzing, sanitizer checks, and offline replay. It is
+          not yet a public arbitrary-URL service. It does not yet provide browser discovery,
+          model-assisted inference, actions, payments, or production multi-tenancy.
+        </p>
+
+        <p><strong>We publish those limits because credibility begins where exaggeration ends.</strong></p>
+
+        <p>
+          This project is being built for the world, and serious public infrastructure requires
+          sustained professional engineering capacity. Maintainer compensation, tools, compute,
+          storage and review are therefore explicit project costs. Contributors may fund the
+          work, operate compatible services, build independent implementations, or help govern
+          a mature community. They may not purchase ownership of the protocol or privileged
+          control over technical truth.
+        </p>
+
+        <p>
+          We invite engineers, security researchers, semantic-web scholars, publishers,
+          standards practitioners, public institutions, infrastructure providers, and people
+          who believe the agentic Web should remain open.
+        </p>
+
+        <p>A machine-readable Web will exist.</p>
+
+        <p>
+          The decisive question is whether it will be enclosed or shared, opaque or
+          evidentiary, centralised or plural, persuasive or accountable.
+        </p>
+
+        <p>TWIRX exists to help choose the open path.</p>
+
+        <div class="contract">
+          <p>The Typed Web belongs to everyone — or it is not the Typed Web.</p>
+        </div>
+
+        <p class="actions">
+          <a class="btn btn--primary" href="/proof/">See what is actually built</a>
+          <a class="btn" href="/funding/">Support Genesis</a>
+        </p>
+      </section>
+
+      <section aria-labelledby="layers">
+        <h2 id="layers">Declaration, manifesto, charter, specification</h2>
+
+        <p class="lede">
+          This page is the declaration: the short public commitment. It is deliberately not
+          the same document as the values behind it, the law that binds the steward, or the
+          technical contract an implementer must satisfy.
+        </p>
+
+        <ol class="spine">
+          <li><b>Public declaration</b> {{chip "explanatory"}}<span>This page. A concise invitation and commitment, readable without technical background.</span></li>
+          <li><b>Manifesto</b> {{chip "explanatory"}}<span>The complete moral, technical, and public-interest vision: why the project exists, what it values, and the future it wants. <a href="{{repo .Site "MANIFESTO.md"}}">Read the full manifesto<span class="ext" aria-hidden="true">↗</span></a>.</span></li>
+          <li><b>Charter</b> {{chip "normative"}}<span>Binding stewardship and governance law. It constrains the founder, and it is the document to hold this project to. <a href="{{repo .Site "CHARTER.md"}}">Read the charter<span class="ext" aria-hidden="true">↗</span></a>.</span></li>
+          <li><b>Specifications</b> {{chip "normative"}}<span>The normative technical contracts that define conformance and make independent implementation possible. <a href="{{repo .Site "schemas"}}">Read the schemas<span class="ext" aria-hidden="true">↗</span></a>.</span></li>
+        </ol>
+
+        <p>
+          Keeping them apart is a practical commitment, not an editorial preference. A
+          declaration mixed into a specification cannot be enforced, and a specification
+          mixed into a declaration cannot be implemented.
+        </p>
+      </section>
+
+    </article>
+  </div>
+</div>
+{{end}}

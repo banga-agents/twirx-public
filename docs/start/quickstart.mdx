@@ -1,0 +1,90 @@
+---
+title: "Quickstart"
+description: "Run the Genesis observer, independent verifier, and offline adapter locally."
+---
+
+## Requirements
+
+- Go 1.23 or later; Go 1.26 is recommended.
+- GCC with C2x support.
+- Clang 17 or later for sanitizer tests.
+- Bash, Python 3, and curl.
+
+## Run the complete demonstration
+
+From the repository root:
+
+```bash
+make demo
+```
+
+The script performs these steps:
+
+1. Starts a controlled origin on loopback.
+2. Observes one JSON representation under an explicit local-fixture policy.
+3. Stores the body by SHA-256 digest.
+4. Writes a deterministic CBOR observation envelope and JSON view.
+5. Verifies the evidence in Go.
+6. Verifies it independently in C.
+7. Stops the origin.
+8. Executes the adapter from preserved evidence only.
+9. Prints a result carrying native and semantic values with field-level provenance.
+
+## Run tests
+
+```bash
+make test
+```
+
+The suite includes Go unit and mutation fuzz tests, a GCC build, a Clang
+sanitizer build, a bounded C libFuzzer run, shared-corpus independent C
+verification, corrupted-evidence rejection, an offline end-to-end test, and
+documentation navigation checks. All normal tests use only local fixtures.
+
+## Build and query the immutable snapshot
+
+The FUTO release snapshot is built from admitted local evidence and queried
+without contacting an origin:
+
+```bash
+make build
+bin/twirx-snapshot build \
+  --root . \
+  --out var/futo-public-snapshot-d13c0bf-rebuilt \
+  --source-revision d13c0bfaf4aed19b9db541b3fd7ebc97e251ebc3 \
+  --created-at 2026-08-11T12:59:03Z \
+  --archive-acquisition rfc-editor-futo-history
+
+bin/twirx-snapshot verify \
+  --snapshot var/futo-public-snapshot-d13c0bf-rebuilt \
+  --id sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5
+
+bin/twirx-snapshot query \
+  --snapshot var/futo-public-snapshot-d13c0bf-rebuilt \
+  --id sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5 \
+  --file examples/semantic-query-two-origins.json
+```
+
+The immutable snapshot directory is a generated local artifact and is not
+committed. Rebuilding the archive-derived packets requires the private evidence
+profile; the sanitized public export intentionally omits third-party WARC and
+HTML bytes. The exact build and verification procedure is recorded in
+`reports/futo-f3-real-archive-evidence.md`.
+
+## Inspect artifacts
+
+After `make demo`:
+
+```text
+var/demo/observation.cbor
+var/demo/observation.json
+var/demo/body.ref
+var/demo/result.json
+var/cas/sha256/<prefix>/<digest>
+```
+
+The body is not copied into the run directory. `body.ref` points to immutable content-addressed evidence.
+
+## Safety note
+
+`--allow-loopback` exists only for the controlled fixture. Public policy rejects loopback, private, link-local, multicast, reserved, and documentation network ranges.

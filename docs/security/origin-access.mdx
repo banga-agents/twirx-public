@@ -1,0 +1,43 @@
+---
+title: "Origin access policy"
+description: "Deny-by-default URL and network behavior for Genesis observations."
+---
+
+Public policy permits HTTP and HTTPS only.
+
+It rejects:
+
+- embedded credentials;
+- private, loopback, link-local, multicast, reserved, carrier-grade NAT, and documentation ranges;
+- non-standard ports;
+- excessive redirects;
+- oversized decompressed bodies;
+- requests exceeding time budgets.
+
+The controlled test origin requires an explicit local-only switch:
+
+```bash
+bin/tw observe \
+  --url http://127.0.0.1:18080/product/sku-001 \
+  --allow-loopback
+```
+
+<Warning>
+Do not expose `--allow-loopback` in a public API or user-controlled service configuration.
+</Warning>
+
+Every redirected request passes through URL validation again, and the dialer connects directly to a validated resolved address.
+
+The E3.2 public-egress candidate adds an exact admitted-host list and resolves
+the name again before each connection, so a redirect or DNS rebinding answer
+cannot reuse an earlier public-address decision. Its systemd candidate repeats
+the private-range blocks at the cgroup firewall layer.
+
+The E3 Observatory proof narrows this further: its job schema accepts only a
+literal `127.0.0.1` robots fixture, allows no redirects, and preserves evidence
+before parsing. See [Observatory worker boundary](/security/observatory-worker).
+This local proof does not authorize public-origin retrieval.
+
+The sealed public worker also remains unauthorized while its global control
+artifact is disabled, an origin or work order is revoked, its circuit is open,
+its validity window is closed, or its per-origin policy review is incomplete.

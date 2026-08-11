@@ -1,0 +1,22 @@
+{
+  "format": "tw.admission-decision/0.1",
+  "origin_id": "bom-gov-au",
+  "review_state": "pending",
+  "admit_to_registry": false,
+  "reviewer_type": "none",
+  "approval_reference": "",
+  "catalog_reviewed_at": "2026-08-11T00:00:00Z",
+  "catalog_reviewer": "E3.2 admission factory (agent-prepared; founder review pending)",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "policy_reviewed_at": null,
+  "policy_reviewer": null,
+  "rationale": "Candidate dossier prepared for explicit human catalog and policy review; no canonical admission or retrieval authority is claimed.",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

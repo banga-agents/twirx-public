@@ -1,0 +1,49 @@
+{
+  "format": "tw.admission-policy-evidence/0.1",
+  "policy": {
+    "id": "rfc-editor-org",
+    "origin_id": "rfc-editor-org",
+    "canonical_origin": "https://www.rfc-editor.org",
+    "review_state": "completed",
+    "decision": "profile_only",
+    "reviewed_at": "2026-08-11T12:15:50Z",
+    "reviewer": "Richi (Genesis steward)",
+    "robots": {
+      "state": "successful",
+      "url": "https://www.rfc-editor.org/robots.txt",
+      "observed_at": "2026-08-11T12:20:06.617760004Z",
+      "artifact_digest": "sha256:151cf0b9cebe42bf87d2489a855e32bbe6dd6b795f6844e30c48cb8891520b44",
+      "product_token": "TWIRXBot"
+    },
+    "terms_state": "not_found",
+    "terms_reference": "reports/futo-policy-decision-proposals.md",
+    "attribution": "Preserve RFC Editor attribution and source-native lexical values for every historical archive statement.",
+    "authentication": "none_required",
+    "rate_policy": "Only exact Common Crawl index queries and byte ranges for the approved homepage route and two periods are permitted; no live content crawl.",
+    "retention_policy": "Retain exact bounded historical evidence, derived packets and proof artifacts; never present archive evidence as current publisher state.",
+    "risk_state": "accepted",
+    "reviewer_notes": "Historical public-interest archive profiling is approved. Robots disallows three RFC subtrees; none is the approved homepage route. No live RFC content retrieval is authorized.",
+    "evidence_refs": [
+      "evidence/founder-review.txt",
+      "evidence/review-scope.txt",
+      "evidence/robots-spool/cas/sha256/df/05/df052cf390448ea2916ce4d3b5f6e42880cd246ea2bf1d5efce5596b1b2e3827",
+      "evidence/robots-spool/evidence/body.ref",
+      "evidence/robots-spool/evidence/observation.cbor",
+      "evidence/robots-spool/evidence/observation.json",
+      "evidence/robots-spool/manifest.json",
+      "evidence/robots-spool/result.json",
+      "evidence/robots-spool/work-order.json"
+    ]
+  },
+  "artifacts": [
+    {"path": "evidence/founder-review.txt", "digest": "sha256:b65195037a4239d1560fc7984b42b3c5506af5550a4a3fb935f8f5657317879a"},
+    {"path": "evidence/review-scope.txt", "digest": "sha256:77b7c62de43ad8265f5a760732f945a658dc29710e0a427379a2f93df2756e96"},
+    {"path": "evidence/robots-spool/cas/sha256/df/05/df052cf390448ea2916ce4d3b5f6e42880cd246ea2bf1d5efce5596b1b2e3827", "digest": "sha256:df052cf390448ea2916ce4d3b5f6e42880cd246ea2bf1d5efce5596b1b2e3827"},
+    {"path": "evidence/robots-spool/evidence/body.ref", "digest": "sha256:7f69a54f895eae7ed02f2e56dafe78bad13ea541c9b880194f58c1a21547f497"},
+    {"path": "evidence/robots-spool/evidence/observation.cbor", "digest": "sha256:151cf0b9cebe42bf87d2489a855e32bbe6dd6b795f6844e30c48cb8891520b44"},
+    {"path": "evidence/robots-spool/evidence/observation.json", "digest": "sha256:7c94212d16fca52a40f4f11ec9ff362476f1f8f77453926ac472490df233e29d"},
+    {"path": "evidence/robots-spool/manifest.json", "digest": "sha256:6baf9341a4adde6f6df82c3710d2f8bfde42bc56d6ca1c7e597b0ef5de025564"},
+    {"path": "evidence/robots-spool/result.json", "digest": "sha256:bf176e335fbeefafaa546de50b17e21c76b948edb14ecf16cb72b7ab21f85678"},
+    {"path": "evidence/robots-spool/work-order.json", "digest": "sha256:b01d2f74c425021e201b5bc891477c002b5bfb21e0c67d0f5a49636727bf19a1"}
+  ]
+}

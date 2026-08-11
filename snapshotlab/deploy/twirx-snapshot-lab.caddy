@@ -1,0 +1,39 @@
+lab.twirx.org {
+	tls rick@twirx.org
+	encode zstd gzip
+
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; font-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; object-src 'none'"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+		Referrer-Policy "no-referrer"
+		X-Content-Type-Options "nosniff"
+		Cross-Origin-Opener-Policy "same-origin"
+		Cross-Origin-Resource-Policy "same-origin"
+	}
+
+	request_body {
+		max_size 64KB
+	}
+
+	@proof_artifacts path /api/v1/proof/*
+	respond @proof_artifacts 404
+
+	@api path /api/*
+	handle @api {
+		reverse_proxy 127.0.0.1:8092 {
+			health_uri /api/v1/status
+			health_interval 30s
+			health_timeout 5s
+		}
+	}
+
+	root * /srv/twirx-snapshot-ui/current
+	@immutable path /app.js /styles.css
+	header @immutable Cache-Control "public, max-age=3600"
+	@html path / /index.html
+	header @html Cache-Control "public, max-age=300, must-revalidate"
+	try_files {path} /index.html
+	file_server
+}

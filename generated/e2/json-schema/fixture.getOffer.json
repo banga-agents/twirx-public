@@ -1,0 +1,21 @@
+{
+  "$id": "urn:twirx:operation:fixture.getOffer:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Returns a typed offer from the controlled local JSON fixture.",
+  "properties": {
+    "product_id": {
+      "description": "Admitted controlled fixture product identifier.",
+      "enum": [
+        "demo-1"
+      ],
+      "maxLength": 16,
+      "type": "string"
+    }
+  },
+  "required": [
+    "product_id"
+  ],
+  "title": "Get controlled fixture offer",
+  "type": "object"
+}

@@ -1,0 +1,33 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "washingtonpost-com",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://washingtonpost.com",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "subscription",
+  "commercial_offer_candidates": 1,
+  "record_digest": "sha256:ece18db5df904bd6dbfa4aed696d12055dbb49809d1e8d6a397a19976e3b5d14",
+  "policy_evidence_digest": "sha256:61051bd4736d989b87b2efca422db013872b3616e723949b1b9f6f770638fd4c",
+  "decision_digest": "sha256:0e27d89d73f29a0c629a6b4a65b87facfd1c846471545f21af72f6fa948c88d0",
+  "approval_reference": "",
+  "constraints": [
+    "Commercial and access metadata is provisional and grants no execution or payment authority.",
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

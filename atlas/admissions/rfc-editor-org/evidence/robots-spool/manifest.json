@@ -1,0 +1,31 @@
+{
+  "format": "tw.egress-manifest/0.1",
+  "work_order_id": "futo-rfc-editor-robots",
+  "work_order_digest": "sha256:b01d2f74c425021e201b5bc891477c002b5bfb21e0c67d0f5a49636727bf19a1",
+  "artifacts": [
+    {
+      "path": "cas/sha256/df/05/df052cf390448ea2916ce4d3b5f6e42880cd246ea2bf1d5efce5596b1b2e3827",
+      "digest": "sha256:df052cf390448ea2916ce4d3b5f6e42880cd246ea2bf1d5efce5596b1b2e3827"
+    },
+    {
+      "path": "evidence/body.ref",
+      "digest": "sha256:7f69a54f895eae7ed02f2e56dafe78bad13ea541c9b880194f58c1a21547f497"
+    },
+    {
+      "path": "evidence/observation.cbor",
+      "digest": "sha256:151cf0b9cebe42bf87d2489a855e32bbe6dd6b795f6844e30c48cb8891520b44"
+    },
+    {
+      "path": "evidence/observation.json",
+      "digest": "sha256:7c94212d16fca52a40f4f11ec9ff362476f1f8f77453926ac472490df233e29d"
+    },
+    {
+      "path": "result.json",
+      "digest": "sha256:bf176e335fbeefafaa546de50b17e21c76b948edb14ecf16cb72b7ab21f85678"
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:b01d2f74c425021e201b5bc891477c002b5bfb21e0c67d0f5a49636727bf19a1"
+    }
+  ]
+}

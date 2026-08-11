@@ -1,0 +1,436 @@
+; TWIRX Semantic Data Plane 0.1.
+; Fixed-order arrays, integer counters and explicit bounds are normative.
+; Every top-level core is self-digest-free. Identifiers are detached SHA-256
+; digests over the exact deterministic-CBOR bytes.
+
+semantic-packet-core = [
+  version: "tw.semantic-packet/0.1",
+  kind: packet-kind,
+  subject: packet-subject,
+  predicate: packet-predicate,
+  object: packet-object,
+  context: packet-context,
+  time: packet-time,
+  source: packet-source,
+  derivation: packet-derivation,
+  epistemic: packet-epistemic,
+  lifecycle: packet-lifecycle,
+  retention: retention-class,
+  disclosure: "public",
+  extensions: []
+]
+
+packet-kind =
+  "claim" / "state" / "capability" / "offer" /
+  "relationship" / "event" / "measurement" / "document"
+
+packet-subject = [
+  native: identifier-text,
+  canonical-candidates: [*32 identifier-text]
+]
+
+packet-predicate = [
+  native: identifier-text,
+  semantic: nil / identifier-text
+]
+
+packet-object = [
+  native-status: value-status,
+  native-lexical: lexical-text,
+  media-type: nil / short-text,
+  language: nil / language-tag,
+  typed: nil / typed-value
+]
+
+typed-value = [
+  type: value-type,
+  lexical: typed-lexical,
+  unit: nil / identifier-text,
+  currency: nil / currency-code
+]
+
+value-type =
+  "boolean" / "integer" / "decimal" / "text" / "date" /
+  "datetime" / "duration" / "uri" / "identifier"
+
+value-status =
+  "resolved" / "unknown" / "not_observed" / "not_provided" /
+  "not_applicable" / "withheld" / "redacted" / "unresolved" /
+  "contradictory" / "invalid" / "confirmed_absent"
+
+packet-context = [
+  dimensions: [*32 context-dimension],
+  jurisdiction: nil / identifier-text,
+  language: nil / language-tag,
+  scope: nil / identifier-text
+]
+
+context-dimension = [
+  key: identifier-text,
+  value: typed-value
+]
+
+packet-time = [
+  observed-at: utc-second,
+  asserted-at: nil / utc-second,
+  valid-from: nil / utc-second,
+  valid-until: nil / utc-second,
+  source-modified-at: nil / utc-second
+]
+
+packet-source = [
+  origin-id: identifier-text,
+  representation-digest: sha256,
+  locator: locator-text,
+  native-schema-ref: nil / identifier-text
+]
+
+packet-derivation = [
+  observation-digest: sha256,
+  transport-digest: nil / sha256,
+  adapter-digest: sha256,
+  extraction-plan-digest: sha256,
+  transformation-ids: [*32 identifier-text],
+  mapping-ids: [*32 identifier-text],
+  semantic-closure-digest: nil / sha256,
+  compiler-contract-digest: sha256,
+  compiler-version: identifier-text
+]
+
+packet-epistemic = [
+  lane: trust-lane,
+  extraction-status: "deterministic" / "publisher_attested",
+  mapping-status: mapping-status,
+  confidence-millionths: nil / 0..1000000,
+  authority-class: identifier-text,
+  freshness-status: "current" / "stale" / "unknown"
+]
+
+trust-lane = "observed_native" / "provisional_semantic" / "attested_semantic"
+
+mapping-status =
+  "none" / "candidate" / "reviewed" / "disputed" / "revoked"
+
+packet-lifecycle = [
+  state: "current" / "superseded" / "withdrawn" / "stale" /
+         "retracted" / "invalid",
+  supersedes-packet-digest: nil / sha256
+]
+
+retention-class = "public_transient" / "public_versioned" / "public_archival"
+
+; Packet and delta entries are sorted by digest. Artifact entries are sorted
+; by name. A manifest is valid only after all referenced bytes exist.
+packet-batch-manifest = [
+  version: "tw.packet-batch-manifest/0.1",
+  origin-id: identifier-text,
+  compiler-contract-digest: sha256,
+  policy-decision-digest: sha256,
+  started-at: utc-second,
+  completed-at: utc-second,
+  previous-batch-id: nil / sha256,
+  observations: [1*1024 sha256],
+  packets: [*32768 digest-size-entry],
+  deltas: [*32768 digest-size-entry],
+  rejection-report-digest: sha256,
+  metrics-digest: sha256,
+  artifacts: [1*64 named-artifact-entry],
+  extensions: []
+]
+
+digest-size-entry = [
+  digest: sha256,
+  size: 1..4194304
+]
+
+named-artifact-entry = [
+  name: artifact-name,
+  digest: sha256,
+  size: 1..4194304
+]
+
+semantic-delta-core = [
+  version: "tw.semantic-delta/0.1",
+  class: delta-class,
+  kind: delta-kind,
+  semantic-key-digest: sha256,
+  before-packet-digest: nil / sha256,
+  after-packet-digest: nil / sha256,
+  before-source-evidence-digest: nil / sha256,
+  after-source-evidence-digest: nil / sha256,
+  origin-id: identifier-text,
+  occurred-at: utc-second,
+  batch-id: sha256,
+  canon-version: identifier-text,
+  reason-code: identifier-text,
+  extensions: []
+]
+
+delta-class = "origin" / "semantic" / "canon"
+
+delta-kind =
+  "added" / "modified" / "withdrawn" / "restored" /
+  "source_retracted" / "mapped" / "remapped" / "narrowed" /
+  "broadened" / "disputed" / "attested" / "de_attested" /
+  "module_added" / "module_superseded" / "mapping_superseded" /
+  "closure_changed"
+
+semantic-query-core = [
+  version: "tw.semantic-query/0.1",
+  select: [1*32 identifier-text],
+  subject: query-subject,
+  dimensions: [*32 query-dimension],
+  time: query-time,
+  ontology: query-ontology,
+  sources: query-sources,
+  trust: query-trust,
+  freshness: query-freshness,
+  economics: query-economics,
+  conflicts: query-conflicts,
+  execution: query-execution,
+  proof: query-proof,
+  preference: preference-policy,
+  limits: query-limits,
+  extensions: []
+]
+
+query-subject = [
+  concept: nil / identifier-text,
+  ids: [*256 identifier-text]
+]
+
+query-dimension = [
+  key: identifier-text,
+  relation: "eq" / "in" / "lt" / "lte" / "gt" / "gte",
+  values: [1*64 typed-value]
+]
+
+query-time = [
+  mode: "current" / "as_of" / "between" / "history",
+  from: nil / utc-second,
+  until: nil / utc-second
+]
+
+query-ontology = [
+  maximum-depth: 0..16,
+  maximum-path-cost-millionths: 0..16000000,
+  allowed-edge-statuses: [1*3 query-mapping-status]
+]
+
+query-sources = [
+  allowed-origin-ids: [*256 identifier-text],
+  minimum-distinct-origins: 1..32,
+  allowed-authority-classes: [*32 identifier-text]
+]
+
+query-trust = [
+  allowed-lanes: [1*3 trust-lane],
+  allowed-mapping-statuses: [1*4 query-mapping-status]
+]
+
+query-mapping-status = "none" / "candidate" / "reviewed" / "disputed"
+
+query-freshness = [
+  maximum-age-seconds: nil / 0..315576000,
+  stale-behavior: "exclude" / "return_explicit_stale" / "request_refresh"
+]
+
+query-economics = [
+  maximum-price: nil / decimal-text,
+  currency: nil / currency-code,
+  allowed-funding-classes: [*16 identifier-text]
+]
+
+query-conflicts = [
+  mode: "preserve_sources" / "group_equivalent" / "reject_conflict"
+]
+
+query-execution = [
+  allow-materialized-state: 0 / 1,
+  allow-live-refresh: 0 / 1,
+  maximum-live-origins: 0..8,
+  deadline-milliseconds: 1..30000
+]
+
+query-proof = [
+  level: "packet" / "field" / "bundle",
+  include-plan: 0 / 1,
+  include-native: 1
+]
+
+preference-policy =
+  "most_authoritative" / "freshest" / "fastest" /
+  "least_expensive" / "highest_proof" / "balanced"
+
+query-limits = [
+  maximum-results: 1..1000,
+  maximum-packets: 1..10000,
+  maximum-proof-bytes: 1024..16777216
+]
+
+semantic-subscription-core = [
+  version: "tw.semantic-subscription/0.1",
+  query-digest: sha256,
+  delta-classes: [1*3 delta-class],
+  delta-kinds: [1*16 delta-kind],
+  delivery: "sse" / "poll",
+  resume-after-sequence: 0..18446744073709551615,
+  maximum-events-per-minute: 1..600,
+  proof-level: "packet" / "bundle",
+  expires-at: nil / utc-second,
+  extensions: []
+]
+
+semantic-query-result-core = [
+  version: "tw.semantic-query-result/0.1",
+  query-digest: sha256,
+  plan-digest: sha256,
+  preference: preference-policy,
+  snapshot-sequence: 0..18446744073709551615,
+  status: "resolved" / "partial" / "unresolved",
+  rows: [*1000 query-result-row],
+  conflicts: [*256 conflict-group],
+  proof-artifacts: [1*10000 digest-size-entry],
+  economic-event-digest: sha256,
+  generated-at: utc-second,
+  extensions: []
+]
+
+query-result-row = [
+  subject-id: identifier-text,
+  predicate-id: identifier-text,
+  status: value-status,
+  native-term: identifier-text,
+  native-locator: locator-text,
+  native-lexical: lexical-text,
+  semantic-term: nil / identifier-text,
+  typed: nil / typed-value,
+  origin-id: identifier-text,
+  packet-digest: sha256,
+  observation-digest: sha256,
+  lane: trust-lane,
+  observed-at: utc-second
+]
+
+conflict-group = [
+  semantic-key-digest: sha256,
+  kind: "value" / "time" / "identity" / "mapping" / "authority",
+  packet-digests: [2*32 sha256],
+  resolution: "preserved" / "caller_policy_selected" / "unresolved"
+]
+
+materialization-manifest = [
+  version: "tw.materialization-manifest/0.1",
+  materialization-id: identifier-text,
+  definition-digest: sha256,
+  canon-version: identifier-text,
+  through-sequence: 0..18446744073709551615,
+  packet-digests: [*100000 sha256],
+  result-artifact-digest: sha256,
+  row-count: 0..10000000,
+  built-at: utc-second,
+  extensions: []
+]
+
+economic-event-core = [
+  version: "tw.economic-event/0.1",
+  event-id: identifier-text,
+  occurred-at: utc-second,
+  origin-id: nil / identifier-text,
+  work-type: identifier-text,
+  query-digest: nil / sha256,
+  batch-id: nil / sha256,
+  resources: economic-resources,
+  funding-class: identifier-text,
+  sponsor-id: nil / identifier-text,
+  cost: economic-money,
+  revenue: economic-money,
+  measurement-method: identifier-text,
+  extensions: []
+]
+
+economic-resources = [
+  requests: 0..1000000,
+  transferred-bytes: 0..1099511627776,
+  cpu-milliseconds: 0..4294967295,
+  peak-memory-bytes: 0..1099511627776,
+  evidence-bytes-written: 0..1099511627776,
+  proof-bytes-returned: 0..1099511627776,
+  human-review-seconds: 0..4294967295
+]
+
+economic-money = [
+  currency: currency-code,
+  amount: decimal-text,
+  class: identifier-text
+]
+
+; A semantic snapshot is an acyclic, manifest-last release. The detached
+; snapshot-id is SHA-256 over the exact canonical bytes of this manifest.
+; manifest.cbor, detached display wrappers and mutable channel pointers are
+; never constituent artifacts.
+semantic-snapshot-manifest = [
+  version: "tw.semantic-snapshot-manifest/0.1",
+  channel: identifier-text,
+  created-at: utc-second,
+  source-revision: identifier-text,
+  compiler-contract-digest: sha256,
+  compiler-version: identifier-text,
+  atlas-selection-digest: sha256,
+  canon-module-set-digest: sha256,
+  previous-snapshot-id: nil / sha256,
+  evidence-classes: [1*16 identifier-text],
+  artifacts: [1*16384 snapshot-artifact],
+  views: [*32 snapshot-view],
+  counts: snapshot-counts,
+  highest-packet-sequence: 0..18446744073709551615,
+  highest-delta-sequence: 0..18446744073709551615,
+  total-artifact-bytes: 1..8589934592,
+  build-report-digest: sha256,
+  extensions: []
+]
+
+snapshot-artifact = [
+  path: snapshot-path,
+  digest: sha256,
+  size: 1..4294967296,
+  media-type: short-text,
+  role: snapshot-artifact-role
+]
+
+snapshot-artifact-role =
+  "origin_catalog" / "concepts" / "mappings" / "packet_batch" /
+  "delta_batch" / "materialized_view" / "search_index" /
+  "proof_index" / "economic_summary" / "build_report"
+
+snapshot-view = [
+  id: identifier-text,
+  definition-digest: sha256,
+  artifact-digest: sha256,
+  row-count: 0..10000000,
+  through-sequence: 0..18446744073709551615
+]
+
+snapshot-counts = [
+  origins: 0..1000000,
+  concepts: 0..10000000,
+  mappings: 0..10000000,
+  packets: 0..1000000000,
+  deltas: 0..1000000000,
+  views: 0..32,
+  proof-artifacts: 0..1000000000,
+  economic-events: 0..1000000000
+]
+
+sha256 = bytes .size 32
+short-text = tstr .size (1..255)
+identifier-text = tstr .size (1..512)
+locator-text = tstr .size (1..16384)
+lexical-text = tstr .size (0..262144)
+typed-lexical = tstr .size (1..262144)
+artifact-name = tstr .size (1..255)
+snapshot-path = tstr .size (1..255)
+language-tag = tstr .size (2..63)
+currency-code = tstr .size 3
+decimal-text = tstr .size (1..128)
+utc-second = tstr .size 20

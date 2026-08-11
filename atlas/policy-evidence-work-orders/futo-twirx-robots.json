@@ -1,0 +1,25 @@
+{
+  "format": "tw.egress-work-order/0.1",
+  "id": "futo-twirx-robots",
+  "origin_id": "twirx-org",
+  "purpose": "robots",
+  "authority_class": "policy_evidence_collection",
+  "method": "GET",
+  "url": "https://twirx.org/robots.txt",
+  "allowed_hosts": [
+    "twirx.org"
+  ],
+  "policy_decision": "uncertain",
+  "policy_evidence_digest": "sha256:3e0ddc7a1d086a86421c792014cbc2fa75094c77d9ed310bc557295e8d5479a0",
+  "decision_digest": "sha256:14051e507fad767b9ce222c8f595d2115b611a0d040587d4377403a00f76bda9",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "not_before": "2026-08-11T12:15:50Z",
+  "expires_at": "2026-08-12T12:15:50Z",
+  "max_redirects": 0,
+  "max_body_bytes": 262144,
+  "timeout_ms": 15000,
+  "connect_timeout_ms": 5000,
+  "header_timeout_ms": 10000,
+  "max_consecutive_failures": 2,
+  "circuit_cooldown_seconds": 300
+}

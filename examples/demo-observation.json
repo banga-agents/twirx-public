@@ -1,0 +1,15 @@
+{
+  "format": "tw.observation/0.1",
+  "version": 1,
+  "request_url": "http://127.0.0.1:18080/product/sku-001",
+  "final_url": "http://127.0.0.1:18080/product/sku-001",
+  "method": "GET",
+  "status": 200,
+  "media_type": "application/json",
+  "retrieved_at": "2026-08-10T05:07:03.9995434Z",
+  "body_digest": "sha256:e194e7dfd8bad2e92564e2a01527aad79af467feda26733d9d06ac2132ebd73a",
+  "body_size": 162,
+  "policy_id": "tw.fetch.local-fixture-v0",
+  "observer_id": "typed-web-go/0.1",
+  "envelope_hash": "sha256:98025ae34cf1c21ea7bf14c9ca0e2a25f504a9ec1768ec6c0f5202ac49d02e57"
+}

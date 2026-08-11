@@ -1,0 +1,9 @@
+{
+  "format": "tw.archive-range-evidence/0.1",
+  "data_url": "https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687572337.15/warc/CC-MAIN-20260607191654-20260607221654-00647.warc.gz",
+  "requested_range": "bytes=830637590-830674187",
+  "http_status": 206,
+  "content_range": "bytes 830637590-830674187/957372797",
+  "body_digest": "sha256:620bdca6552900d9e4cc547568759e5de165521c0207cf82f19778edc0904908",
+  "body_size": 36598
+}

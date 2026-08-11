@@ -1,0 +1,8 @@
+{
+  "product_id": "sku-missing-optional",
+  "name": "Missing optional availability",
+  "offer": {
+    "current_price": "19.99",
+    "currency": "usd"
+  }
+}

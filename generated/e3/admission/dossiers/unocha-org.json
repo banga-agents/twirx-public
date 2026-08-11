@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "unocha-org",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://unocha.org",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:4251e559d7685688df4c7bb99bf38b7797f8f1d68a6d79f15aca0445f3a05313",
+  "policy_evidence_digest": "sha256:1d88badb68fcf24aa2f6c35697fc662e7ad51967b854cbb0897f39567bed7b25",
+  "decision_digest": "sha256:07597f3654f61c2e972004a78447411be20bddb0091eb2b2cd304d46f6d29b50",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

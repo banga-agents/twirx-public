@@ -1,0 +1,34 @@
+{
+  "select": [
+    "development:IndicatorObservation.countryCode",
+    "development:IndicatorObservation.value",
+    "project:Status.engineeringGate",
+    "project:Status.phase"
+  ],
+  "subject_concept": "",
+  "subject_ids": [
+    "origin:twirx/project-status/operation/project.getStatus",
+    "origin:worldbank/indicator-response-v2/operation/development.getIndicator"
+  ],
+  "origin_ids": [
+    "api-worldbank-org",
+    "twirx-org"
+  ],
+  "minimum_distinct_origins": 2,
+  "authority_classes": [],
+  "lanes": [
+    "attested_semantic"
+  ],
+  "mapping_statuses": [
+    "reviewed"
+  ],
+  "time_mode": "current",
+  "time_from": "",
+  "time_until": "",
+  "maximum_age_seconds": null,
+  "stale_behavior": "return_explicit_stale",
+  "preference": "highest_proof",
+  "maximum_results": 16,
+  "maximum_proof_bytes": 1048576,
+  "proof_level": "packet"
+}

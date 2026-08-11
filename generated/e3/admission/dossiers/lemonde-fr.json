@@ -1,0 +1,33 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "lemonde-fr",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://lemonde.fr",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "subscription",
+  "commercial_offer_candidates": 1,
+  "record_digest": "sha256:28d62e723dfa8e3918f8ec1d546b47e77e0b220d88e79f824d53c4877d5adf5a",
+  "policy_evidence_digest": "sha256:01b232d840f93fb380e9b69af375e53cc99bc33368160c5909972be3629027c8",
+  "decision_digest": "sha256:503d27bbf28a7aac41311f41fab719819352595aed1d8b8bac7d9a7766ca781f",
+  "approval_reference": "",
+  "constraints": [
+    "Commercial and access metadata is provisional and grants no execution or payment authority.",
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

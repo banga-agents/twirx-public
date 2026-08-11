@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/egress-manifest-0.1.json",
+  "title": "TWIRX manifest-last egress spool 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "work_order_id", "work_order_digest", "artifacts"],
+  "properties": {
+    "format": {"const": "tw.egress-manifest/0.1"},
+    "work_order_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,127}$"},
+    "work_order_digest": {"$ref": "#/$defs/digest"},
+    "artifacts": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/artifact"}}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "digest"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1, "maxLength": 4096, "not": {"const": "manifest.json"}},
+        "digest": {"$ref": "#/$defs/digest"}
+      }
+    }
+  }
+}

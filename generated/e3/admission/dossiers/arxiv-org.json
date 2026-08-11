@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "arxiv-org",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://arxiv.org",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:84e0fa7ad58f1aa326e1706fd6ffd5ac960b9f607183251f13e3a0ef48fa1226",
+  "policy_evidence_digest": "sha256:16683c44c9a1327b333548aba19649a9c14297dcaec639dd5c2ed04d149e1155",
+  "decision_digest": "sha256:d92e81422ffa606b1c5da0fd68639de203a7274fa4c257600324263edea3af1b",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

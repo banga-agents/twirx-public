@@ -1,0 +1,10 @@
+{
+  "$id": "urn:twirx:operation:project.getEngineeringGateReport:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Returns the current gate evidence statement without converting it into an objective truth claim.",
+  "properties": {},
+  "required": [],
+  "title": "Get engineering gate report status",
+  "type": "object"
+}

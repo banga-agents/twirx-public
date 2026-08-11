@@ -1,0 +1,40 @@
+; TWIRX typed result envelope v0.2.
+; Array order and bounds are normative for this version.
+
+result-envelope = [
+  version: "tw.result/0.2",
+  invocation-id: bounded-text,
+  origin-id: bounded-text,
+  origin-version: bounded-text,
+  operation-id: bounded-text,
+  operation-version: bounded-text,
+  effect: "read",
+  status: "resolved" / "partial",
+  observed-at: bounded-text,
+  input-digest: bytes .size 32,
+  observation-digest: bytes .size 32,
+  transport-digest: bytes .size 32,
+  adapter-digest: bytes .size 32,
+  contract-digest: bytes .size 32,
+  semantic-closure-digest: bytes .size 32,
+  fields: [1*128 field-provenance],
+  extensions: []
+]
+
+field-provenance = [
+  field-id: bounded-text,
+  status: "resolved" / "unresolved",
+  native-term: bounded-text,
+  native-locator: bounded-text,
+  native-present: 0 / 1,
+  native-lexical: lexical-text,
+  semantic-term: bounded-text,
+  semantic-type: bounded-text,
+  semantic-present: 0 / 1,
+  semantic-lexical: lexical-text,
+  transformations: [*16 bounded-text],
+  mapping: bounded-text
+]
+
+bounded-text = tstr .size (1..16384)
+lexical-text = tstr .size (0..262144)

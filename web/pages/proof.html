@@ -1,0 +1,540 @@
+{{define "content"}}
+{{$s := .Data.project_status}}
+{{$v := $s.validation}}
+{{$e2 := .Data.e2_lab}}
+{{$r := .Data.futo_release}}
+
+<div class="page">
+  {{template "pagehead" .}}
+
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#claim">What E1 proves</a></li>
+          <li><a href="#path">The path it proves</a></li>
+          <li><a href="#reproduce">Reproduce it</a></li>
+          <li><a href="#record">Evidence record</a></li>
+          <li><a href="#totals">Conformance totals</a></li>
+          <li><a href="#fuzz">Fuzzing and sanitizers</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#benchmark">Benchmark scope</a></li>
+          <li><a href="#ci">Hosted CI status</a></li>
+          <li><a href="#notproven">What E1 does not prove</a></li>
+          <li><a href="#risks">E1 unresolved risks</a></li>
+          <li><a href="#e2">E2 — Live Provenance Lab</a></li>
+          <li><a href="#e3">E3 — Semantic Snapshot</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+
+      <div class="callout callout--key">
+        <p class="callout__title">A verified kernel and a small end-to-end release</p>
+        <p>
+          E1 establishes the evidence spine. Later local gates add typed operations, Atlas
+          admission, semantic packets, immutable views, queries and deltas. The released
+          snapshot is implemented and validated locally; the public Query Lab is not yet
+          deployed. None of this authorizes arbitrary URLs, production write actions or a
+          mutable semantic database on the current shared host.
+        </p>
+      </div>
+
+      <section aria-labelledby="claim">
+        <h2 id="claim">What E1 proves {{chip "implemented"}}</h2>
+
+        <p class="lede">
+          For the controlled source representation and the committed adversarial corpus,
+          the implementation can bind retrieved bytes to a canonical observation,
+          independently verify those bytes in Go and in C, and deterministically extract
+          a source-native statement plus an explicit semantic interpretation and a
+          complete derivation record — while offline.
+        </p>
+
+        <p>
+          It also proves rejection behaviour for the bounded classes represented by the
+          public vectors, and it proves that the local demonstration does not need the
+          origin to remain available after observation. Those two properties are what make
+          the evidence claim meaningful: a result that can be recomputed from stored bytes
+          after the source is gone is a result that can be audited.
+        </p>
+
+        <p class="note">
+          Everything on this page is copied from
+          <a href="{{repo .Site "reports/gate-1-genesis.md"}}">reports/gate-1-genesis.md<span class="ext" aria-hidden="true">↗</span></a>,
+          the committed evidence report. Where this page and the report disagree, the report
+          is authoritative. The same figures are published as
+          <a href="/data/project-status.json">project-status.json</a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="path">
+        <h2 id="path">The path it proves</h2>
+
+        <ol class="spine">
+          <li><b>Controlled origin</b><span>A local fixture server, not a production source. Loopback access is denied unless explicitly enabled.</span></li>
+          <li><b>Policy-constrained observation</b><span>HTTP GET under an explicit URL policy with bounded time, size, redirects, and ports.</span></li>
+          <li><b>Content-addressed evidence</b><span>The response body is stored under its SHA-256 digest and retrieved by that digest.</span></li>
+          <li><b>Deterministic CBOR envelope</b><span>Retrieval metadata is bound to the evidence digest in a canonical encoding with a normative CDDL schema.</span></li>
+          <li><b>Go verifier and independent C verifier</b><span>Two implementations validate the same envelope and body against the same committed vectors.</span></li>
+          <li><b>Origin stopped</b><span>The fixture server is shut down. Nothing after this point may contact the network.</span></li>
+          <li><b>Deterministic offline extraction</b><span>A manually admitted adapter reads the stored bytes. No shell, no network, no model.</span></li>
+          <li><b>Native statement and semantic view</b><span>The provider's own term and lexical value are retained beside the transformed value.</span></li>
+          <li><b>Field-level provenance</b><span>Every emitted field carries request URL, final URL, retrieval time, body and observation digests, adapter identity and digest, extraction method, locator, transform chain, and mapping relation.</span></li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="reproduce">
+        <h2 id="reproduce">Reproduce it</h2>
+
+        <p>
+          The acceptance sequence runs from a clean generated-artefact state and requires no
+          public internet. Requirements are Go 1.23 or later (1.26 recommended), GCC with C2x
+          support, Clang 17 or later for the sanitizer tests, plus Bash, Python 3, and curl.
+        </p>
+
+<pre><code>git clone {{.Site.RepoURL}}.git
+cd TWIRX
+
+make clean &amp;&amp; make build &amp;&amp; make test &amp;&amp; make demo</code></pre>
+
+        <p>
+          <code>make test</code> runs the normal Go tests, all four Go fuzz targets, the Clang
+          ASan/UBSan C corpus, 5,000 libFuzzer executions, the offline end-to-end test, and the
+          documentation navigation check. <code>make demo</code> observes the local fixture,
+          verifies it in Go and C, stops the origin, and completes extraction from evidence.
+        </p>
+
+        <h3>Inspect a single result by hand</h3>
+
+<pre><code>bin/tw observe --url http://127.0.0.1:18080/product/sku-001 \
+  --out var/demo --cas var/cas --allow-loopback
+
+bin/tw verify --observation var/demo/observation.cbor --cas var/cas
+bin/tw-verify-c var/demo/observation.cbor var/cas
+
+# This command does not contact the origin.
+bin/tw extract --observation var/demo/observation.cbor --cas var/cas \
+  --adapter adapters/testorigin-product/adapter.json \
+  --out var/demo/result.json</code></pre>
+
+        <p class="note">
+          The <code>--allow-loopback</code> flag weakens the public network policy for local
+          fixtures only. It must never become an option on a public service.
+        </p>
+      </section>
+
+      <section aria-labelledby="record">
+        <h2 id="record">Evidence record</h2>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Commits and status</caption>
+            <tbody>
+              <tr><th scope="row">Evidence date</th><td>{{$s.status_date}}</td></tr>
+              <tr><th scope="row">Status</th><td>{{$s.gate.evidence_status}}</td></tr>
+              <tr><th scope="row">Baseline commit</th><td><code>{{$s.gate.baseline_commit}}</code></td></tr>
+              <tr><th scope="row">Implementation commit tested</th><td><code>{{$s.gate.implementation_commit}}</code></td></tr>
+              <tr><th scope="row">Evidence commit</th><td><code>{{$s.gate.evidence_commit}}</code></td></tr>
+              <tr><th scope="row">Merge commit</th><td><code>{{$s.gate.merge_commit}}</code></td></tr>
+              <tr><th scope="row">Report</th><td><a href="{{repo .Site $s.gate.report_path}}">{{$s.gate.report_path}}<span class="ext" aria-hidden="true">↗</span></a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          The report is committed after the implementation it describes, so its own commit
+          identifier is intentionally not the tested implementation identifier.
+        </p>
+
+        <h3>Toolchain and host</h3>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Versions used for the recorded run</caption>
+            <thead><tr><th scope="col">Component</th><th scope="col">Version</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Host</th><td><code>{{$s.toolchain.host}}</code></td></tr>
+              <tr><th scope="row">Go</th><td><code>{{$s.toolchain.go}}</code></td></tr>
+              <tr><th scope="row">GCC</th><td><code>{{$s.toolchain.gcc}}</code></td></tr>
+              <tr><th scope="row">Clang</th><td><code>{{$s.toolchain.clang}}</code></td></tr>
+              <tr><th scope="row">Python</th><td><code>{{$s.toolchain.python}}</code></td></tr>
+              <tr><th scope="row">Bash</th><td><code>{{$s.toolchain.bash}}</code></td></tr>
+              <tr><th scope="row">Make</th><td><code>{{$s.toolchain.make}}</code></td></tr>
+              <tr><th scope="row">ShellCheck</th><td><code>{{$s.toolchain.shellcheck}}</code></td></tr>
+              <tr><th scope="row">Git</th><td><code>{{$s.toolchain.git}}</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The repository has no <code>go.sum</code>, and this gate adds no third-party Go
+          runtime dependency. A repository scan for common private-key, GitHub token, AWS
+          access-key, and Slack token patterns returned {{$v.secret_scan}}.
+        </p>
+      </section>
+
+      <section aria-labelledby="totals">
+        <h2 id="totals">Conformance totals</h2>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Test and conformance evidence</caption>
+            <thead>
+              <tr>
+                <th scope="col">Evidence</th>
+                <th scope="col" class="num">Passed</th>
+                <th scope="col" class="num">Failed</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Named Go test events</th>
+                <td class="num">{{$v.go_named_test_events_passed}}</td><td class="num">0</td>
+                <td>{{$v.go_tested_packages}} tested packages; two command packages have no test files</td>
+              </tr>
+              <tr>
+                <th scope="row">Observation vectors in Go</th>
+                <td class="num">{{$v.observation_vectors_total}}</td><td class="num">0</td>
+                <td>{{$v.observation_vectors_accepted}} accepted, {{$v.observation_vectors_rejected_envelope}} envelope rejects, {{$v.observation_vectors_rejected_evidence}} evidence rejects</td>
+              </tr>
+              <tr>
+                <th scope="row">Observation vectors in C</th>
+                <td class="num">{{$v.observation_vectors_run_in_c}}</td><td class="num">0</td>
+                <td>The same committed inputs and expectations as Go</td>
+              </tr>
+              <tr>
+                <th scope="row">Corrupted CAS checks</th>
+                <td class="num">{{$v.corrupted_cas_checks}}</td><td class="num">0</td>
+                <td>One Go check and one C check</td>
+              </tr>
+              <tr>
+                <th scope="row">Extraction vectors</th>
+                <td class="num">{{$v.extraction_vectors_total}}</td><td class="num">0</td>
+                <td>{{$v.extraction_vectors_accepted}} accepted, {{$v.extraction_vectors_rejected}} rejected</td>
+              </tr>
+              <tr>
+                <th scope="row">Network-policy tests</th>
+                <td class="num">{{$v.network_policy_tests}}</td><td class="num">0</td>
+                <td>Local fixtures only</td>
+              </tr>
+              <tr>
+                <th scope="row">Offline end-to-end test</th>
+                <td class="num">{{$v.offline_e2e_tests}}</td><td class="num">0</td>
+                <td>Extraction succeeds after the origin stops</td>
+              </tr>
+              <tr>
+                <th scope="row">Documentation navigation</th>
+                <td class="num">{{$v.documentation_navigation_checks}}</td><td class="num">0</td>
+                <td>Configuration parsed and all navigation targets existed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Static and hygiene checks</h3>
+        <p>
+          Race detector, <code>go vet</code>, <code>gofmt</code>, ShellCheck, Clang static
+          analysis, secret scan, and the stopped-origin demonstration all passed. The C
+          verifier was additionally built under both GCC and Clang with
+          <code>-Wall -Wextra -Werror -Wconversion -Wshadow -Wpedantic</code>.
+        </p>
+      </section>
+
+      <section aria-labelledby="fuzz">
+        <h2 id="fuzz">Fuzzing and sanitizers</h2>
+
+        <p>
+          Four Go fuzz targets and one C libFuzzer target ran clean. The independent verifier
+          was compiled with <code>-fsanitize=address,undefined -fno-omit-frame-pointer</code>;
+          ASan and UBSan emitted {{$v.asan_ubsan_findings}} findings. The parser-only C harness
+          ran {{commas $v.c_libfuzzer_executions}} mutations seeded by every shared observation
+          vector without a crash or sanitizer finding. That harness performs no filesystem or
+          network operation.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Go fuzz smoke-run executions</caption>
+            <thead><tr><th scope="col">Target</th><th scope="col" class="num">Executions</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Observation parser</th><td class="num">{{commas $s.fuzz_smoke_executions.observation_parser}}</td></tr>
+              <tr><th scope="row">JSON Pointer</th><td class="num">{{commas $s.fuzz_smoke_executions.json_pointer}}</td></tr>
+              <tr><th scope="row">Manifest decoder</th><td class="num">{{commas $s.fuzz_smoke_executions.manifest_decoder}}</td></tr>
+              <tr><th scope="row">Bounded extraction</th><td class="num">{{commas $s.fuzz_smoke_executions.bounded_extraction}}</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout--limit">
+          <p class="callout__title">How to read these numbers</p>
+          <p>
+            The execution counts are host- and scheduling-dependent. The gate is the absence
+            of a panic or a failing invariant, not a throughput claim. Short fuzz runs over a
+            small corpus do not prove parser correctness; they only fail to disprove it. This
+            is unresolved risk R5 below.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="coverage">
+        <h2 id="coverage">Coverage</h2>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Statement coverage from <code>go test -cover ./...</code></caption>
+            <thead><tr><th scope="col">Package</th><th scope="col" class="num">Coverage</th></tr></thead>
+            <tbody>
+              {{range $s.coverage}}<tr><th scope="row"><code>{{.package}}</code></th><td class="num">{{.percent}}%</td></tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Command packages report 0% because they have no direct Go tests; their current path
+          is exercised by the shell end-to-end test and the demonstration. Adding CLI
+          error-path tests is unresolved risk R6.
+        </p>
+      </section>
+
+      <section aria-labelledby="benchmark">
+        <h2 id="benchmark">Benchmark scope</h2>
+
+<pre><code>{{$s.benchmark.name}}  {{$s.benchmark.ns_per_op}} ns/op  {{$s.benchmark.bytes_per_op}} B/op  {{$s.benchmark.allocs_per_op}} allocs/op</code></pre>
+
+        <p>Recorded on {{$s.benchmark.host}}.</p>
+
+        <div class="callout callout--limit">
+          <p class="callout__title">What this figure is not</p>
+          <p>{{$s.benchmark.scope_warning}}</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="ci">
+        <h2 id="ci">Hosted CI status {{chip "not-proven"}}</h2>
+
+        <p class="lede">{{$s.remote_ci.summary}}</p>
+
+        <p>{{$s.remote_ci.detail}}</p>
+
+        <p>
+          <strong>Remaining cause:</strong> {{$s.remote_ci.remaining_cause}}
+        </p>
+
+        <div class="callout callout--stop">
+          <p class="callout__title">Consequence</p>
+          <p>
+            {{$s.remote_ci.consequence}} Until a hosted runner executes the suite, no reader
+            should treat E1 as independently reproduced. The evidence is real, it is
+            reproducible from the commands above, and it has been produced on exactly one
+            host by exactly one party. Independent reproduction is the next admission
+            condition, not a formality.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="notproven">
+        <h2 id="notproven">What E1 does not prove</h2>
+
+        <ol class="register register--plain">
+          {{range $s.not_proven}}<li>{{.}}</li>
+          {{end}}
+        </ol>
+      </section>
+
+      <section aria-labelledby="risks">
+        <h2 id="risks">Unresolved risks</h2>
+
+        <p class="lede">
+          Seven risks remain open against E1. They are published here in full and
+          unedited because a risk register that only appears in a repository file is a
+          risk register designed not to be read.
+        </p>
+
+        <ol class="register">
+          {{range $s.unresolved_risks}}<li>{{.}}</li>
+          {{end}}
+        </ol>
+
+        <p class="note">
+          R1 is expanded on the <a href="/security/">security page</a>. R3 and R4 are
+          admission conditions for later gates on the <a href="/progress/">progress page</a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="e2">
+        <h2 id="e2">E2 — Typed Provenance Lab {{chip "implemented"}}</h2>
+
+        <div class="callout callout--limit">
+          <p class="callout__title">Implemented locally; public deployment pending</p>
+          <p>{{$e2.status_statement}}</p>
+        </div>
+
+        <p class="lede">
+          E2 proves that one canonical operation definition can expose a real read-only
+          resource to an agent through CLI, JSON Schema, OpenAPI, and MCP at once — including
+          against a live external API, not only a fixture.
+        </p>
+
+        <h3>Catalog</h3>
+        <div class="tablewrap wide">
+          <table>
+            <caption>Three reviewed catalog entries, {{$e2.operations_generated_from_one_source}} operations, one contract source</caption>
+            <thead><tr><th scope="col">Origin</th><th scope="col">Kind</th><th scope="col">Operations</th></tr></thead>
+            <tbody>
+              {{range $e2.catalog}}
+              <tr>
+                <th scope="row">{{.title}}</th>
+                <td>{{.kind}}</td>
+                <td>{{range $i, $o := .operations}}{{if $i}}, {{end}}<code>{{$o}}</code>{{end}}</td>
+              </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          Bindings generated from <code>{{$e2.contract_source}}</code>:
+          {{range $i, $b := $e2.bindings_generated}}{{if $i}}, {{end}}{{$b}}{{end}}.
+        </p>
+
+        <h3>ADR 003 — resolving the digest cycle</h3>
+        <p>{{$e2.adr_003.problem}}</p>
+<pre><code>{{$e2.adr_003.resolution}}</code></pre>
+        <p>{{$e2.adr_003.detail}}</p>
+
+        <h3>Conformance</h3>
+        <div class="tablewrap wide">
+          <table>
+            <caption>E2 conformance and adversarial evidence</caption>
+            <thead><tr><th scope="col">Evidence</th><th scope="col" class="num">Value</th><th scope="col">Scope</th></tr></thead>
+            <tbody>
+              {{range $e2.conformance}}
+              <tr><th scope="row">{{.label}}</th><td class="num">{{.value}}<br><small>{{.detail}}</small></td><td>{{.scope}}</td></tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Sample results</h3>
+        <div class="tablewrap wide">
+          <table>
+            <caption>Fresh-mode invocations, this evidence run</caption>
+            <thead><tr><th scope="col">Origin</th><th scope="col">Operation</th><th scope="col">Fields</th><th scope="col">Result digest</th></tr></thead>
+            <tbody>
+              {{range $e2.sample_results}}
+              <tr><th scope="row">{{.origin}}</th><td><code>{{.operation}}</code></td><td class="num">{{.fields_resolved}}</td><td><code class="digest">{{.result_digest}}</code></td></tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Controlled browser comparison</h3>
+        <p class="note">{{$e2.browser_comparison.status}}</p>
+        <p>{{$e2.browser_comparison.method}}</p>
+        <div class="tablewrap wide">
+          <table>
+            <caption><code>{{$e2.browser_comparison.command}}</code></caption>
+            <thead><tr><th scope="col">Measure</th><th scope="col">Controlled browser</th><th scope="col">Promoted typed adapter</th><th scope="col" class="num">Ratio</th></tr></thead>
+            <tbody>
+              {{range $e2.browser_comparison.rows}}
+              <tr><th scope="row">{{.measure}}</th><td>{{.browser}}</td><td>{{.typed}}</td><td class="num">{{.ratio}}</td></tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+        <p class="note">{{$e2.browser_comparison.note}}</p>
+
+        <h3>Load</h3>
+        <p>
+          Nominal: {{$e2.load.nominal.requests}} requests at concurrency {{$e2.load.nominal.concurrency}},
+          {{$e2.load.nominal.successes}} succeeded, {{$e2.load.nominal.rate_limited}} rate-limited, average
+          {{$e2.load.nominal.average_seconds}}s, p95 {{$e2.load.nominal.p95_seconds}}s.
+          Overload: a configured burst of {{$e2.load.overload.burst}} admitted exactly
+          {{$e2.load.overload.successes}} successes and rejected {{$e2.load.overload.rate_limited}}
+          requests with HTTP {{$e2.load.overload.status_code}}. Host: {{$e2.load.host}}.
+        </p>
+
+        <h3>Security</h3>
+        <p>{{$e2.security.fresh_fetch_policy}}</p>
+        <p><strong>Excluded from the trusted request path:</strong> {{$e2.security.excluded_from_trusted_path}}</p>
+        <p class="note">{{$e2.security.secret_scan}}</p>
+        <p class="note">{{$e2.security.caddy_validation}}</p>
+
+        <h3>E2 unresolved risks</h3>
+        <ol class="register">
+          {{range $e2.unresolved_risks}}<li>{{.}}</li>
+          {{end}}
+        </ol>
+
+        <p class="note">
+          Full report: <a href="{{repo .Site "reports/gate-e2-live-provenance-lab.md"}}">reports/gate-e2-live-provenance-lab.md<span class="ext" aria-hidden="true">↗</span></a>.
+          Machine-readable: <a href="/data/e2-lab.json">e2-lab.json</a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="e3">
+        <h2 id="e3">E3 — Semantic Snapshot {{chip "implemented"}}</h2>
+
+        <p class="lede">
+          E3 now connects the Atlas and admission boundary to a sealed archive acquisition,
+          proof-linked semantic packets, immutable materialized views, typed queries and a real
+          historical origin delta. It is a small local release, not a 500-origin live service.
+        </p>
+
+        <dl class="counters wide">
+          <div class="counter"><dt>Selected Atlas identities</dt><dd>{{commas $r.actual.atlas_identities}}<small>selection only</small></dd></div>
+          <div class="counter"><dt>Completed policy decisions</dt><dd>{{$r.actual.completed_policy_decisions}}<small>human-reviewed</small></dd></div>
+          <div class="counter"><dt>Public packets</dt><dd>{{$r.actual.public_packets}}<small>{{$r.actual.public_origins_with_packets}} origins</small></dd></div>
+          <div class="counter"><dt>Materialized views</dt><dd>{{$r.actual.materialized_views}}<small>immutable snapshot</small></dd></div>
+          <div class="counter"><dt>Origin deltas</dt><dd>{{$r.actual.deltas}}<small>historical archive evidence</small></dd></div>
+          <div class="counter"><dt>Runtime origin calls</dt><dd>{{$r.actual.runtime_origin_network_requests}}<small>snapshot query path</small></dd></div>
+        </dl>
+
+        <h3>Immutable release identity</h3>
+        <p><code class="digest">{{$r.release.snapshot_id}}</code></p>
+        <p>
+          The snapshot contains {{$r.actual.packets}} packets in total: {{$r.actual.public_packets}}
+          from public-origin evidence and {{$r.actual.fixture_packets}} controlled fixtures.
+          The separate {{commas $r.controlled_scale.packets}}-packet capacity run is fixture-dominated
+          and is never presented as a real public corpus.
+        </p>
+
+        <h3>Real two-period archive delta</h3>
+        <p>
+          Two sealed RFC Editor records preserve distinct source-native title values and emit
+          one <code>origin</code> delta. No semantic or canon delta is emitted because neither the
+          mapping nor canon changed. <a href="/demo/#delta">Inspect the complete trace</a>.
+        </p>
+
+        <h3>Complete validation</h3>
+        <p>
+          Revision <code>{{$r.release.validation_revision}}</code> passed the offline suite,
+          race detector, vet, {{$r.validation.go_fuzz_targets}} Go fuzz targets, shared Go/C
+          conformance, ASan/UBSan and {{$r.validation.c_fuzzer_campaigns}} independent C fuzz
+          campaigns of {{commas $r.validation.c_fuzzer_runs_each}} runs each.
+        </p>
+
+        <h3>Residual release limitations</h3>
+        <ul>
+          <li>The public Query Lab is not deployed.</li>
+          <li>The source repository remains private pending a fresh sanitized public release.</li>
+          <li>Off-host snapshot restore evidence remains to be completed.</li>
+          <li>Raw archive evidence contains third-party page material; public redistribution requires an explicit treatment.</li>
+          <li>The real corpus is intentionally small and does not establish broad semantic coverage.</li>
+        </ul>
+
+        <p class="note">
+          Reports: <a href="{{repo .Site "reports/futo-f3-real-archive-evidence.md"}}">real archive evidence<span class="ext" aria-hidden="true">↗</span></a>
+          and <a href="{{repo .Site "reports/futo-grant-readiness.md"}}">FUTO readiness<span class="ext" aria-hidden="true">↗</span></a>.
+          Machine-readable: <a href="/data/futo-release.json">futo-release.json</a>.
+        </p>
+      </section>
+
+    </article>
+  </div>
+</div>
+{{end}}

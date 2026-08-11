@@ -1,0 +1,38 @@
+---
+title: "Native and semantic views"
+description: "Preserve provider language before applying shared ontology mappings."
+---
+
+A typed result carries two related but distinct views.
+
+## Native view
+
+```json
+{
+  "term": "origin:testorigin/currency",
+  "locator": "/offer/currency",
+  "lexical_value": "usd"
+}
+```
+
+This is the provider-facing vocabulary and lexical representation.
+
+## Semantic view
+
+```json
+{
+  "term": "commerce:OfferPrice.currency",
+  "value": {
+    "type": "currency_code",
+    "lexical": "USD"
+  }
+}
+```
+
+This is the shared typed interpretation after declared transformations.
+
+## Invariant
+
+The semantic view never overwrites the native view. The transformation from `usd` to `USD` is visible in provenance as `uppercase`.
+
+Mappings are versioned claims, not invisible aliases. A future mapping may supersede the current interpretation without changing the preserved observation.

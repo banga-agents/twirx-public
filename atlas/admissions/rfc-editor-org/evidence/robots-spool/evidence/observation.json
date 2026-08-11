@@ -1,0 +1,15 @@
+{
+  "format": "tw.observation/0.1",
+  "version": 1,
+  "request_url": "https://www.rfc-editor.org/robots.txt",
+  "final_url": "https://www.rfc-editor.org/robots.txt",
+  "method": "GET",
+  "status": 200,
+  "media_type": "text/plain",
+  "retrieved_at": "2026-08-11T12:20:06.617760004Z",
+  "body_digest": "sha256:df052cf390448ea2916ce4d3b5f6e42880cd246ea2bf1d5efce5596b1b2e3827",
+  "body_size": 135,
+  "policy_id": "tw.egress.public-origin-v0",
+  "observer_id": "typed-web-go/0.1",
+  "envelope_hash": "sha256:151cf0b9cebe42bf87d2489a855e32bbe6dd6b795f6844e30c48cb8891520b44"
+}

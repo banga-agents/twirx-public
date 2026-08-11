@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "bcb-gov-br",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://bcb.gov.br",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:c79a8d595a2e2383593acb1c17e1b931025afcb09d6f76246b5d2de568cb5472",
+  "policy_evidence_digest": "sha256:9ea4ca90c5e1a9484c6c1c3ca1df28adeab0e56509c1b8e21379d839a2be3d58",
+  "decision_digest": "sha256:6e625bf89add02f13f52d726cef896ecca5d572e1045fcd1bd8c712b9e976936",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

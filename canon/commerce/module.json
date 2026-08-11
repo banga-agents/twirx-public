@@ -1,0 +1,16 @@
+{
+  "format": "tw.semantic-module/0.1-draft",
+  "id": "tw:commerce",
+  "version": "0.1.0",
+  "status": "draft",
+  "imports": ["tw:kernel@0.1.0"],
+  "terms": [
+    "commerce:Product",
+    "commerce:Product.identifier",
+    "commerce:Product.name",
+    "commerce:Offer",
+    "commerce:OfferPrice.amount",
+    "commerce:OfferPrice.currency",
+    "commerce:Offer.availability"
+  ]
+}

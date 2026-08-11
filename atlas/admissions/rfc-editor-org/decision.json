@@ -1,0 +1,26 @@
+{
+  "format": "tw.admission-decision/0.1",
+  "origin_id": "rfc-editor-org",
+  "review_state": "completed",
+  "admit_to_registry": true,
+  "reviewer_type": "human",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "catalog_reviewed_at": "2026-08-11T12:15:50Z",
+  "catalog_reviewer": "Richi (Genesis steward)",
+  "policy_review_state": "completed",
+  "policy_decision": "profile_only",
+  "policy_reviewed_at": "2026-08-11T12:15:50Z",
+  "policy_reviewer": "Richi (Genesis steward)",
+  "rationale": "The RFC Editor public-knowledge origin is approved for exact bounded historical archive profiling after migration to its www publisher host. Robots disallows three RFC subtrees; none is the approved homepage route. Archive evidence is never a current publisher statement.",
+  "constraints": [
+    "Historical evidence must retain RFC Editor attribution and native lexical values.",
+    "No live content crawl, authentication, browser, model, payment, action or canon promotion is authorized.",
+    "Only the exact homepage route and two approved Common Crawl periods are permitted.",
+    "The scheduler remains disabled and archive evidence is not a current publisher statement."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json",
+    "decisions/012-rfc-editor-canonical-origin-migration.md",
+    "reports/futo-policy-decision-proposals.md"
+  ]
+}

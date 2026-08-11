@@ -1,0 +1,63 @@
+---
+title: "Ontology kernel direction"
+description: "A small stable metamodel with unbounded, versioned domain extension."
+---
+
+**Status:** Design direction; not implemented in Genesis code.
+
+The kernel should define how to express:
+
+```text
+Origin
+Representation
+Observation
+SourceStatement
+Extraction
+Derivation
+Evidence
+Term
+Type
+Relation
+Role
+Context
+Time
+IdentityReference
+Mapping
+Resource
+Operation
+Effect
+Capability
+Policy
+Authority
+Mandate
+Receipt
+Version
+Module
+```
+
+Domain concepts such as `Product`, `ScientificPaper`, `Flight`, or `FinancialInstrument` belong in separate immutable modules.
+
+## Module layers
+
+```text
+kernel
+→ quantities and common structural modules
+→ domain modules
+→ source-native origin modules
+→ mapping modules
+→ instance and source-statement graph
+→ learned indexes
+```
+
+## Core laws
+
+- Native meaning is never destroyed.
+- Claims are not silently promoted into facts.
+- Context and time are first-class.
+- Identity is scoped and revisable.
+- Absence distinguishes unknown, not provided, not applicable, redacted, unresolved, and confirmed absent.
+- Contradiction is preserved.
+- Mappings are versioned claims with provenance.
+- Released versions are immutable.
+- Anyone may extend; canon admission remains governed.
+- Operational reasoning is bounded.

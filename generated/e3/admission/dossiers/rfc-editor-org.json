@@ -1,0 +1,36 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "rfc-editor-org",
+  "admission_review_state": "completed",
+  "canonical_admission": true,
+  "canonical_origin": "https://www.rfc-editor.org",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "completed",
+  "policy_decision": "profile_only",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:eea5e7558629ce7f8fe1f86b3c61392a9fbabe15bb4ffd94e08ac149ee35192e",
+  "policy_evidence_digest": "sha256:50ee7c1c9b8d4899aba8429dacf486cede68614cbe72622ccdf4023dcd5f59d6",
+  "decision_digest": "sha256:6ed24c63423a5c1ceade4cb1eb97a60ec4f9ef192b545aaac7fff3f8bccb53c9",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "constraints": [
+    "Historical evidence must retain RFC Editor attribution and native lexical values.",
+    "No live content crawl, authentication, browser, model, payment, action or canon promotion is authorized.",
+    "Only the exact homepage route and two approved Common Crawl periods are permitted.",
+    "The scheduler remains disabled and archive evidence is not a current publisher statement."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json",
+    "decisions/012-rfc-editor-canonical-origin-migration.md",
+    "reports/futo-policy-decision-proposals.md"
+  ]
+}

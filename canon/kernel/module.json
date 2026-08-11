@@ -1,0 +1,26 @@
+{
+  "format": "tw.semantic-module/0.1-draft",
+  "id": "tw:kernel",
+  "version": "0.1.0",
+  "status": "draft",
+  "terms": [
+    "Origin",
+    "Representation",
+    "Observation",
+    "SourceStatement",
+    "Extraction",
+    "Derivation",
+    "Evidence",
+    "Term",
+    "Type",
+    "Relation",
+    "Context",
+    "Time",
+    "Mapping",
+    "Resource",
+    "Operation",
+    "Effect",
+    "Version",
+    "Module"
+  ]
+}

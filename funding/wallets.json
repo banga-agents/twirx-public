@@ -1,0 +1,7 @@
+{
+  "format": "tw.treasury-wallets/0.1",
+  "updated_at": "2026-08-10",
+  "wallets": [],
+  "status": "pending",
+  "notes": "No contribution address has been declared. Add only public addresses after backup and control procedures are complete. Never add seed phrases or private keys."
+}

@@ -1,0 +1,11 @@
+Reviewed by Richi (Genesis steward) at 2026-08-11T12:15:50Z.
+
+Decision: permit_with_constraints for the documented World Bank Indicators
+API route already admitted by E2. Requests must be bounded, read-only,
+attributed, cached and compliant with published limits. No broad crawling,
+authentication, browser, model, payment or write action is authorized.
+
+Terms and risk basis: the official Indicators API documentation referenced by
+the dossier, the committed E2 replay evidence and the exact constraints in
+reports/futo-policy-decision-proposals.md. A missing robots resource is
+recorded as unavailable, not silently treated as publisher authorization.

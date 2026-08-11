@@ -1,0 +1,50 @@
+{
+  "format": "tw.common-crawl-work-order/0.2",
+  "id": "rfc-editor-futo-history",
+  "origin_id": "rfc-editor-org",
+  "canonical_origin": "https://www.rfc-editor.org",
+  "permitted_routes": [
+    "https://www.rfc-editor.org/"
+  ],
+  "collection_ids": [
+    "CC-MAIN-2025-30",
+    "CC-MAIN-2026-25"
+  ],
+  "selected_captures": [
+    {
+      "collection_id": "CC-MAIN-2025-30",
+      "route": "https://www.rfc-editor.org/",
+      "timestamp": "20250708102138",
+      "provider_digest": "L6XIA742BVM752M3MXQUXL3JB5M6Y75M",
+      "filename": "crawl-data/CC-MAIN-2025-30/segments/1751905933639.15/warc/CC-MAIN-20250708102057-20250708132057-00647.warc.gz",
+      "offset": 802952064,
+      "length": 15237
+    },
+    {
+      "collection_id": "CC-MAIN-2026-25",
+      "route": "https://www.rfc-editor.org/",
+      "timestamp": "20260607205341",
+      "provider_digest": "5EZCTVCDHO5Y5HWQYAA5WBGRTHABTG4H",
+      "filename": "crawl-data/CC-MAIN-2026-25/segments/1780687572337.15/warc/CC-MAIN-20260607191654-20260607221654-00647.warc.gz",
+      "offset": 830637590,
+      "length": 36598
+    }
+  ],
+  "captures_per_collection": 1,
+  "index_request_budget": 2,
+  "max_index_response_bytes": 262144,
+  "max_compressed_record_bytes": 2097152,
+  "max_decompressed_record_bytes": 8388608,
+  "max_retained_body_bytes": 5242880,
+  "policy_review_state": "completed",
+  "policy_decision": "profile_only",
+  "policy_evidence_digest": "sha256:50ee7c1c9b8d4899aba8429dacf486cede68614cbe72622ccdf4023dcd5f59d6",
+  "decision_digest": "sha256:6ed24c63423a5c1ceade4cb1eb97a60ec4f9ef192b545aaac7fff3f8bccb53c9",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "approved_by": "Richi (Genesis steward)",
+  "approved_at": "2026-08-11T12:15:50Z",
+  "evidence_class": "archive_observation",
+  "freshness": "historical",
+  "current_publisher_statement": false,
+  "observed_by": "common_crawl"
+}

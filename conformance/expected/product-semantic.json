@@ -1,0 +1,28 @@
+{
+  "operation_id": "commerce:getOffer",
+  "resource_type": "commerce:Offer",
+  "fields": {
+    "product_id": {
+      "native": "sku-001",
+      "semantic": "sku-001"
+    },
+    "product_name": {
+      "native": "Field Notebook",
+      "semantic": "Field Notebook"
+    },
+    "price_amount": {
+      "native": "19.99",
+      "semantic": "19.99",
+      "type": "decimal"
+    },
+    "price_currency": {
+      "native": "usd",
+      "semantic": "USD",
+      "type": "currency_code"
+    },
+    "availability": {
+      "native": "in_stock",
+      "semantic": "in_stock"
+    }
+  }
+}

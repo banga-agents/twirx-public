@@ -1,0 +1,335 @@
+{{define "content"}}
+{{$e := .Data.evidence_e1}}
+{{$s := .Data.project_status}}
+
+<div class="page">
+  {{template "pagehead" .}}
+
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#chain">The chain</a></li>
+          <li><a href="#fields">Field by field</a></li>
+          <li><a href="#raw">Raw representation</a></li>
+          <li><a href="#observed">Observation</a></li>
+          <li><a href="#verification">Verification</a></li>
+          <li><a href="#unresolved">Unresolved</a></li>
+          <li><a href="#vectors">Conformance vectors</a></li>
+          <li><a href="#sources">Sources of this page</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+
+      <div class="callout callout--key">
+        <p class="callout__title">How this page is made</p>
+        <p>
+          Every value below is generated from committed repository artefacts by
+          <a href="{{repo .Site "web/evidence.go"}}"><code>web/evidence.go</code><span class="ext" aria-hidden="true">↗</span></a>
+          and republished at <a href="/data/evidence-e1.json">evidence-e1.json</a>. On every build the
+          site re-hashes the raw origin bytes, re-hashes the adapter file, and checks that each field's
+          provenance cites the same observation, body, and adapter. <strong>If the chain does not hold,
+          the site does not build.</strong>
+        </p>
+      </div>
+
+      <section aria-labelledby="chain">
+        <h2 id="chain">The chain {{chip "implemented"}}</h2>
+
+        <p class="lede">
+          One field — the currency of an offer — from the bytes an origin returned to the typed value an
+          agent receives. The origin said <code>usd</code>. The agent is told <code>USD</code>. Everything
+          between those two facts is recorded, and can be recomputed without the origin being online.
+        </p>
+
+        <ol class="spine">
+          <li><b>Origin</b><span><code>{{index $e.origin "final_url"}}</code> returned {{index $e.origin "body_size"}} bytes of <code>{{index $e.origin "media_type"}}</code> with status {{index $e.origin "status"}}, under policy <code>{{index $e.origin "policy_id"}}</code>.</span></li>
+          <li><b>Evidence</b><span>Those bytes are stored and retrieved by their digest: <code class="digest">{{index $e.origin "body_digest"}}</code></span></li>
+          <li><b>Observation</b><span>Retrieval metadata is bound to that digest in a canonical CBOR envelope, itself addressed as <code class="digest">{{index $e.observation "envelope_hash"}}</code></span></li>
+          <li><b>Verification</b><span>Two independent implementations validate the envelope and re-hash the body: Go, and a restricted C verifier with no network path.</span></li>
+          <li><b>Adapter</b><span><code>{{index $e.adapter "id"}}</code> version {{index $e.adapter "version"}}, admitted by hand, digest <code class="digest">{{index $e.adapter "digest"}}</code></span></li>
+          <li><b>Native statement</b><span>At locator <code>/offer/currency</code> the provider's own term <code>origin:testorigin/currency</code> holds the lexical value <code>usd</code>.</span></li>
+          <li><b>Declared transformation</b><span><code>trim</code> then <code>uppercase</code> — ASCII only, by decision, and recorded rather than applied silently.</span></li>
+          <li><b>Semantic interpretation</b><span><code>commerce:OfferPrice.currency</code> under closure <code class="digest">{{index $e.result "semantic_closure_hash"}}</code>, relation <code>equivalent_in_context</code>.</span></li>
+          <li><b>Typed result</b><span>Type <code>currency_code</code>, value <code>USD</code>, carrying the whole chain above it. Result digest <code class="digest">{{index $e.result "result_digest"}}</code></span></li>
+        </ol>
+      </section>
+
+      <!-- The explorer. Without JavaScript this is a plain list of every field
+           with all of its panels expanded: the complete proof, just longer. The
+           enhancement module turns it into a two-pane selector. -->
+      <section aria-labelledby="fields" id="explorer" data-explorer>
+        <h2 id="fields">Field by field</h2>
+
+        <p class="lede">
+          The five fields the Gate E1 demonstration resolves. Each one carries its own native statement,
+          semantic interpretation, and complete derivation record.
+        </p>
+
+        <div class="explorer wide">
+          <nav class="explorer__list" aria-label="Fields">
+            <ol>
+              {{range $i, $f := $e.fields}}
+              <li>
+                <a href="#field-{{$f.id}}" data-field-link="{{$f.id}}">
+                  <code>{{$f.id}}</code>
+                  <span class="explorer__native">{{index $f.native "lexical_value"}}</span>
+                </a>
+              </li>
+              {{end}}
+            </ol>
+            <p class="note">
+              {{len $e.fields}} resolved fields. The unresolved case is
+              <a href="#unresolved">below</a>.
+            </p>
+          </nav>
+
+          <div class="explorer__panels">
+            {{range $e.fields}}
+            <article class="field" id="field-{{.id}}" data-field="{{.id}}">
+              <h3><code>{{.id}}</code> <span class="field__status">{{.status}}</span></h3>
+
+              <div class="field__cols">
+                <div>
+                  <h4>Native — what the origin returned</h4>
+                  <dl class="kv">
+                    <dt>Term</dt><dd><code>{{index .native "term"}}</code></dd>
+                    <dt>Locator</dt><dd><code>{{index .native "locator"}}</code></dd>
+                    <dt>Lexical value</dt><dd><samp>{{index .native "lexical_value"}}</samp></dd>
+                  </dl>
+                </div>
+                <div>
+                  <h4>Semantic — our interpretation</h4>
+                  <dl class="kv">
+                    <dt>Term</dt><dd><code>{{index .semantic "term"}}</code></dd>
+                    <dt>Type</dt><dd><code>{{index .semantic.value "type"}}</code></dd>
+                    <dt>Value</dt><dd><samp>{{index .semantic.value "lexical"}}</samp></dd>
+                  </dl>
+                </div>
+              </div>
+
+              <h4>Provenance — how one became the other</h4>
+              <dl class="kv kv--wide">
+                <dt>Extraction</dt><dd><code>{{index .provenance "extraction_method"}}</code> at <code>{{index .provenance "locator"}}</code></dd>
+                <dt>Transforms</dt><dd>{{range $i, $t := .provenance.transform_chain}}{{if $i}} → {{end}}<code>{{$t}}</code>{{end}}</dd>
+                <dt>Mapping relation</dt><dd><code>{{index .provenance "mapping_relation"}}</code>{{if eq (printf "%v" (index .provenance "mapping_relation")) "related"}} <span class="flag">weaker than equivalence — deliberately</span>{{end}}</dd>
+                <dt>Retrieved at</dt><dd><code>{{index .provenance "retrieved_at"}}</code></dd>
+                <dt>Final URL</dt><dd><code>{{index .provenance "final_url"}}</code></dd>
+                <dt>Body digest</dt><dd><code class="digest">{{index .provenance "body_digest"}}</code></dd>
+                <dt>Observation</dt><dd><code class="digest">{{index .provenance "observation_hash"}}</code></dd>
+                <dt>Adapter</dt><dd><code class="digest">{{index .provenance "adapter_digest"}}</code></dd>
+              </dl>
+            </article>
+            {{end}}
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="raw">
+        <h2 id="raw">Raw representation</h2>
+
+        <p>
+          The exact bytes the controlled origin returned, read from the content-addressed store by the
+          digest the observation records. {{index $e.origin "note"}}
+        </p>
+
+<pre><code>{{index $e.origin "body_text"}}</code></pre>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Verified at build time</caption>
+            <tbody>
+              <tr><th scope="row">Bytes</th><td class="num">{{index $e.origin "body_size"}}</td></tr>
+              <tr><th scope="row">SHA-256 of the bytes above</th><td><code class="digest">{{index $e.origin "body_digest"}}</code></td></tr>
+              <tr><th scope="row">Recomputed on every build</th><td>Yes. A mismatch fails the build.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          This is a fixture, deliberately. The point of E1 is not that this document is interesting; it
+          is that the path from these bytes to a typed value is complete and checkable.
+        </p>
+      </section>
+
+      <section aria-labelledby="observed">
+        <h2 id="observed">Observation</h2>
+
+        <p>
+          The canonical envelope binds retrieval metadata to the evidence digest. Its field order and byte
+          bounds are normative, defined in CDDL, and enforced identically by both implementations.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Observation envelope v1</caption>
+            <tbody>
+              <tr><th scope="row">Format</th><td><code>{{index $e.observation "format"}}</code> v{{index $e.observation "version"}}</td></tr>
+              <tr><th scope="row">Request URL</th><td><code>{{index $e.observation "request_url"}}</code></td></tr>
+              <tr><th scope="row">Final URL</th><td><code>{{index $e.observation "final_url"}}</code></td></tr>
+              <tr><th scope="row">Method / status</th><td><code>{{index $e.observation "method"}}</code> / <code>{{index $e.observation "status"}}</code></td></tr>
+              <tr><th scope="row">Media type</th><td><code>{{index $e.observation "media_type"}}</code></td></tr>
+              <tr><th scope="row">Retrieved at</th><td><code>{{index $e.observation "retrieved_at"}}</code></td></tr>
+              <tr><th scope="row">Policy</th><td><code>{{index $e.observation "policy_id"}}</code></td></tr>
+              <tr><th scope="row">Observer</th><td><code>{{index $e.observation "observer_id"}}</code></td></tr>
+              <tr><th scope="row">Body digest / size</th><td><code class="digest">{{index $e.observation "body_digest"}}</code> / {{index $e.observation "body_size"}}</td></tr>
+              <tr><th scope="row">Envelope hash</th><td><code class="digest">{{index $e.observation "envelope_hash"}}</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout--limit">
+          <p class="callout__title">What v1 does not record</p>
+          <p>
+            The redirect chain and selected transport headers are absent. That is unresolved risk R2, and
+            it is why Observation v2 is scoped into E2 as a new artefact rather than a mutation of v1 —
+            released vectors are immutable.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="verification">
+        <h2 id="verification">Independent verification</h2>
+
+        <p class="lede">
+          A single implementation cannot tell you whether a rule belongs to the protocol or only to the
+          code that happens to enforce it. Two can.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>The two verifiers and what each is allowed to do</caption>
+            <thead>
+              <tr><th scope="col">Implementation</th><th scope="col">Validates</th><th scope="col">Result</th><th scope="col">Authority</th></tr>
+            </thead>
+            <tbody>
+              {{range $e.verification}}
+              <tr>
+                <th scope="row">{{.implementation}}<br><span class="note">{{.language}}</span></th>
+                <td>{{.validates}}</td>
+                <td>{{.result}}</td>
+                <td>{{.authority}}</td>
+              </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The adapter digest above is not taken on trust either: the build recomputes the SHA-256 of
+          <a href="{{repo .Site "adapters/testorigin-product/adapter.json"}}"><code>{{index $e.adapter "path"}}</code><span class="ext" aria-hidden="true">↗</span></a>
+          and fails if it differs from the digest every field's provenance cites.
+        </p>
+
+        <div class="callout callout--limit">
+          <p class="callout__title">Where the second implementation stops</p>
+          <p>
+            C independently verifies the observation envelope and the stored body. It does not yet verify
+            the adapter runtime or the result envelope — the adapter has one implementation, and its
+            formats are pre-stable and unsigned. That is unresolved risk R3, and extending C verification
+            to results and bundles is scoped into E2.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="unresolved">
+        <h2 id="unresolved">Unresolved is a result, not a gap</h2>
+
+        <p class="lede">{{index $e.unresolved_example "why"}}</p>
+
+        <p>
+          Vector <code>{{index $e.unresolved_example "vector"}}</code> uses this source, which simply has
+          no <code>availability</code> member:
+        </p>
+
+<pre><code>{{index $e.unresolved_example "source_text"}}</code></pre>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Expected outcome</caption>
+            <tbody>
+              <tr><th scope="row">Field</th><td><code>{{index $e.unresolved_example "field"}}</code></td></tr>
+              <tr><th scope="row">Status</th><td><code>{{index $e.unresolved_example "expected_status"}}</code></td></tr>
+              <tr><th scope="row">Provenance present</th><td>Yes — an unresolved field still records where it was looked for</td></tr>
+              <tr><th scope="row">Lexical value</th><td>Omitted entirely. There is no fabricated value to mistake for data.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>{{index $e.unresolved_example "contrast"}} And a <em>required</em> field that cannot be extracted does not degrade — it fails closed, and no result is published at all.</p>
+      </section>
+
+      <section aria-labelledby="vectors">
+        <h2 id="vectors">Conformance vectors</h2>
+
+        <p>
+          The {{len $e.extraction_vectors}} committed extraction vectors. Six of them exist to prove that
+          the system refuses input, which is the half of conformance that is easy to skip.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>conformance/extraction/vectors.json</caption>
+            <thead>
+              <tr><th scope="col">Vector</th><th scope="col">Expected</th><th scope="col">Source fixture</th></tr>
+            </thead>
+            <tbody>
+              {{range $e.extraction_vectors}}
+              <tr>
+                <th scope="row"><code>{{.id}}</code></th>
+                <td>{{if eq (printf "%v" .expected) "accept"}}{{chip "implemented"}}{{else}}{{chip "not-proven"}}{{end}} <code>{{.expected}}</code></td>
+                <td><code>{{.source_file}}</code></td>
+              </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          The chip marks the expected outcome, not a pass or fail: <em>accept</em> means the system must
+          produce a result; <em>reject</em> means it must refuse. All eleven behaved as expected in the E1
+          run. There are a further {{index $e.observation_vectors "total"}} shared observation vectors,
+          run identically in Go and C.
+        </p>
+      </section>
+
+      <section aria-labelledby="sources">
+        <h2 id="sources">Sources of this page</h2>
+
+        <p>
+          The generator records the digest of every artefact it read, so a reviewer can check that the
+          published proof came from the bytes they can see in the repository.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Inputs to /data/evidence-e1.json</caption>
+            <thead><tr><th scope="col">Artefact</th><th scope="col" class="num">Bytes</th><th scope="col">SHA-256</th></tr></thead>
+            <tbody>
+              {{range $e.sources}}
+              <tr>
+                <th scope="row"><code>{{.path}}</code></th>
+                <td class="num">{{.bytes}}</td>
+                <td><code class="digest">{{.sha256}}</code></td>
+              </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Regenerate with <code>make demo</code> at the repository root, then
+          <code>cd web &amp;&amp; go run . -evidence</code>. Full evidence record on the
+          <a href="/proof/">proof page</a>; the report itself is
+          <a href="{{repo .Site $s.gate.report_path}}">{{$s.gate.report_path}}<span class="ext" aria-hidden="true">↗</span></a>.
+        </p>
+      </section>
+
+    </article>
+  </div>
+</div>
+<script type="module" src="/explorer.js"></script>
+{{end}}

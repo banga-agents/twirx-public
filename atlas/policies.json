@@ -1,0 +1,112 @@
+{
+  "format": "tw.atlas-policy-set/0.2",
+  "version": "2026-08-11",
+  "statement": "Rendered from explicit per-origin E3.2 policy evidence and human decision artifacts. Rendering does not create or approve a decision.",
+  "policies": [
+    {
+      "id": "api-worldbank-org",
+      "origin_id": "api-worldbank-org",
+      "canonical_origin": "https://api.worldbank.org",
+      "review_state": "completed",
+      "decision": "permit_with_constraints",
+      "reviewed_at": "2026-08-11T12:15:50Z",
+      "reviewer": "Richi (Genesis steward)",
+      "robots": {
+        "state": "unavailable",
+        "url": "https://api.worldbank.org/robots.txt",
+        "observed_at": "2026-08-11T12:19:58.145385159Z",
+        "artifact_digest": "sha256:49f835ed198ad83d45094bd5754dfdb08e96fa662878847d1b5487a5655d7225",
+        "product_token": "TWIRXBot"
+      },
+      "terms_state": "accepted",
+      "terms_reference": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+      "attribution": "Preserve World Bank attribution and represent provider content without promoting it to objective truth.",
+      "authentication": "none_required",
+      "rate_policy": "Use only the bounded E2 country, indicator and year route; identify TWIRX, cache responses, obey published limits and do not broadly crawl.",
+      "retention_policy": "Retain bounded observations and immutable proof artifacts required for replay, attribution and audit.",
+      "risk_state": "accepted",
+      "reviewer_notes": "The documented public API route is approved with explicit bounds. The robots resource returned 404 and is recorded as unavailable rather than treated as access authorization.",
+      "evidence_refs": [
+        "evidence/founder-review.txt",
+        "evidence/review-scope.txt",
+        "evidence/robots-spool/cas/sha256/34/94/3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9",
+        "evidence/robots-spool/evidence/body.ref",
+        "evidence/robots-spool/evidence/observation.cbor",
+        "evidence/robots-spool/evidence/observation.json",
+        "evidence/robots-spool/manifest.json",
+        "evidence/robots-spool/result.json",
+        "evidence/robots-spool/work-order.json"
+      ]
+    },
+    {
+      "id": "rfc-editor-org",
+      "origin_id": "rfc-editor-org",
+      "canonical_origin": "https://www.rfc-editor.org",
+      "review_state": "completed",
+      "decision": "profile_only",
+      "reviewed_at": "2026-08-11T12:15:50Z",
+      "reviewer": "Richi (Genesis steward)",
+      "robots": {
+        "state": "successful",
+        "url": "https://www.rfc-editor.org/robots.txt",
+        "observed_at": "2026-08-11T12:20:06.617760004Z",
+        "artifact_digest": "sha256:151cf0b9cebe42bf87d2489a855e32bbe6dd6b795f6844e30c48cb8891520b44",
+        "product_token": "TWIRXBot"
+      },
+      "terms_state": "not_found",
+      "terms_reference": "reports/futo-policy-decision-proposals.md",
+      "attribution": "Preserve RFC Editor attribution and source-native lexical values for every historical archive statement.",
+      "authentication": "none_required",
+      "rate_policy": "Only exact Common Crawl index queries and byte ranges for the approved homepage route and two periods are permitted; no live content crawl.",
+      "retention_policy": "Retain exact bounded historical evidence, derived packets and proof artifacts; never present archive evidence as current publisher state.",
+      "risk_state": "accepted",
+      "reviewer_notes": "Historical public-interest archive profiling is approved. Robots disallows three RFC subtrees; none is the approved homepage route. No live RFC content retrieval is authorized.",
+      "evidence_refs": [
+        "evidence/founder-review.txt",
+        "evidence/review-scope.txt",
+        "evidence/robots-spool/cas/sha256/df/05/df052cf390448ea2916ce4d3b5f6e42880cd246ea2bf1d5efce5596b1b2e3827",
+        "evidence/robots-spool/evidence/body.ref",
+        "evidence/robots-spool/evidence/observation.cbor",
+        "evidence/robots-spool/evidence/observation.json",
+        "evidence/robots-spool/manifest.json",
+        "evidence/robots-spool/result.json",
+        "evidence/robots-spool/work-order.json"
+      ]
+    },
+    {
+      "id": "twirx-org",
+      "origin_id": "twirx-org",
+      "canonical_origin": "https://twirx.org",
+      "review_state": "completed",
+      "decision": "permit_live",
+      "reviewed_at": "2026-08-11T12:15:50Z",
+      "reviewer": "Richi (Genesis steward)",
+      "robots": {
+        "state": "successful",
+        "url": "https://twirx.org/robots.txt",
+        "observed_at": "2026-08-11T12:19:50.788778592Z",
+        "artifact_digest": "sha256:279da8a22975a0debaec359c0d4c9412c5f6fe9635c2bb7f07ee4ad6a699d89d",
+        "product_token": "TWIRXBot"
+      },
+      "terms_state": "accepted",
+      "terms_reference": "CHARTER.md",
+      "attribution": "Preserve TWIRX project attribution and source-native wording when reusing published project metadata.",
+      "authentication": "none_required",
+      "rate_policy": "Only exact publisher-authored public project routes are permitted; the Atlas scheduler remains disabled for the FUTO release.",
+      "retention_policy": "Retain bounded public evidence and immutable proof artifacts; exclude private repository content, personal data and unpublished reports.",
+      "risk_state": "accepted",
+      "reviewer_notes": "Founder-controlled public origin approved for bounded public-read access. Robots permits all routes and advertises the public sitemap; the decision does not enable scheduled retrieval.",
+      "evidence_refs": [
+        "evidence/founder-review.txt",
+        "evidence/review-scope.txt",
+        "evidence/robots-spool/cas/sha256/43/55/435522b81da2dd98cbce642602e283b7b0e69905f4d69931b8001ea231f6f83b",
+        "evidence/robots-spool/evidence/body.ref",
+        "evidence/robots-spool/evidence/observation.cbor",
+        "evidence/robots-spool/evidence/observation.json",
+        "evidence/robots-spool/manifest.json",
+        "evidence/robots-spool/result.json",
+        "evidence/robots-spool/work-order.json"
+      ]
+    }
+  ]
+}

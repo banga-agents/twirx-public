@@ -1,0 +1,43 @@
+{
+  "format": "tw.archive-capture-manifest/0.1",
+  "work_order_id": "rfc-editor-futo-history",
+  "work_order_digest": "sha256:c96281801f9e95e603fb950a77b98ac3cf9ad0bf29920259a1e062b59dfd3724",
+  "evidence_manifest_digest": "sha256:e7e320683b738fa08b33a992173ed7419cc3ca955c4a440f493cba8a00b17cbd",
+  "artifacts": [
+    {
+      "path": "capture.json",
+      "digest": "sha256:f1618fa2f9a7dc0a615b461e6eda14a45977b727f8e23ba185b5f33b03a5cb93",
+      "size": 1181
+    },
+    {
+      "path": "evidence-manifest.json",
+      "digest": "sha256:e7e320683b738fa08b33a992173ed7419cc3ca955c4a440f493cba8a00b17cbd",
+      "size": 844
+    },
+    {
+      "path": "index-record.json",
+      "digest": "sha256:faa5129c2b60f7f663aa3e56f2d85cbd493fdbab768f84c026278ab750d2bb34",
+      "size": 422
+    },
+    {
+      "path": "range-response.json",
+      "digest": "sha256:40578bb921d1340b39e12f32df43d7c0467e641f1911eca481553bba91346a8d",
+      "size": 448
+    },
+    {
+      "path": "representation.body",
+      "digest": "sha256:fe8b7109b112b755ca1f869eb36ec585159afe86a7f6fe4504a32538cab57152",
+      "size": 69089
+    },
+    {
+      "path": "warc-record.gz",
+      "digest": "sha256:f676dd68d75fd9e054bdc15755f9e68a51c70a5606c2f54ba91ab7d912c4bee0",
+      "size": 15237
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:c96281801f9e95e603fb950a77b98ac3cf9ad0bf29920259a1e062b59dfd3724",
+      "size": 1887
+    }
+  ]
+}

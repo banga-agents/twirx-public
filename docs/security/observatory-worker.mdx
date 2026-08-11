@@ -1,0 +1,102 @@
+---
+title: "Observatory and egress worker boundaries"
+description: "Evidence-first fixture proof and the unactivated sealed public-egress pilot."
+---
+
+> **Authority:** Normative summary · **Status:** Local-fixture proof implemented; sealed public-egress candidate implemented but disabled and unactivated · **Applies to:** E3.1–E3.2 · **Verified against:** current checkout · **Source:** `spec/atlas/OBSERVATORY_WORKER_0_1.md`, ADR 007, egress JSON schemas, and `deploy/egress`
+
+## Purpose
+
+The Atlas control plane has no HTTP client. The Observatory worker is a
+separate command whose current executable profile accepts only one robots job
+at a literal `127.0.0.1` fixture URL. It cannot contact the selected Atlas
+origins.
+
+```bash
+make build
+make demo-e3-worker
+```
+
+The demonstration starts the controlled fixture, retrieves its robots
+representation, writes content-addressed evidence, evaluates a target, stops
+the fixture, and verifies the decision offline.
+
+## Evidence order
+
+```text
+validated job
+  → preserved exact job
+  → bounded fixture response
+  → CAS body
+  → canonical observation
+  → robots parse and evaluation
+  → result
+```
+
+Invalid UTF-8 or another parser failure leaves the observation evidence in
+place and publishes no successful result. The worker has no registry or canon
+write path.
+
+## Failure behavior
+
+The job decoder rejects duplicate keys, unknown fields, trailing data,
+symlinks, public and private destinations, hostnames, credentials, queries,
+fragments, redirects, and bodies above 500 KiB. Offline verification recomputes
+the evidence digests and the robots decision without constructing a client.
+
+## Security status
+
+The repository includes an unactivated systemd candidate that denies every
+address except loopback. This is configuration for review, not deployment
+evidence. Public-origin observation still requires explicit `allow` policy,
+controlled DNS and redirect behavior, network-level egress enforcement,
+dedicated credentials, quotas, monitoring, revocation, and disposable workers.
+
+The fixture result is not evidence for the live `twirx.org` robots
+representation and does not change its pending, uncertain policy state.
+
+## Sealed public-egress pilot
+
+The E3.2 worker is a separate executable. It accepts only a work-order ID:
+
+```bash
+bin/twirx-egress-worker execute --id reviewed-order-001
+```
+
+There is no URL argument. A root-owned work order binds the exact HTTPS route,
+admitted hosts, policy and human-decision digests, approval reference,
+validity interval, and bounded redirects, bytes, timeouts, failures, and
+cooldown. `profile_only` cannot authorize an observation.
+
+A separate `policy_evidence_collection` authority breaks the robots-review
+cycle without opening general access. It accepts only the exact
+`/robots.txt` route of a human-admitted origin under `pending + uncertain`
+policy. It cannot profile or observe content. Every broader route requires a
+completed retrieval-permitting policy.
+
+Every connection resolves DNS again and denies private, loopback, link-local,
+metadata, multicast, documentation, benchmark, and reserved IPv4 and IPv6
+ranges. Redirects repeat those checks. Numeric address encodings, embedded
+credentials, non-HTTP schemes, and unexpected ports fail before retrieval.
+
+The worker preserves the sealed work order, content-addressed body, canonical
+observation, JSON view, and result. It writes the manifest last. Offline
+admission rehashes every manifest entry and checks the result, observation,
+and CAS body agree:
+
+```bash
+bin/twirx-egress-worker verify \
+  --spool /var/lib/twirx-egress/spool/reviewed-order-001/DIGEST
+```
+
+## Deployment status
+
+`deploy/egress/twirx-egress-worker@.service` is an uninstalled review
+candidate. It adds a dedicated account, read-only work orders, hidden control
+plane and secret paths, a cgroup-scoped private-range firewall, a one-worker
+process lease, and CPU, memory, task, file, and time limits. The committed
+control artifact is disabled with the emergency stop active. Repository tests
+do not install, enable, start, or deploy it.
+
+No real-origin retrieval may start until the founder approves the individual
+policy decision, the exact work order, and target-host verification.

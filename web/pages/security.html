@@ -1,0 +1,289 @@
+{{define "content"}}
+{{$s := .Data.project_status}}
+<div class="page">
+  {{template "pagehead" .}}
+
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#adversary">The adversary model</a></li>
+          <li><a href="#controls">Threats and current controls</a></li>
+          <li><a href="#authority">Candidate versus canonical</a></li>
+          <li><a href="#gap">The production egress gap</a></li>
+          <li><a href="#gate">The public-deployment gate</a></li>
+          <li><a href="#future">Future isolation work</a></li>
+          <li><a href="#risks">Residual risks</a></li>
+          <li><a href="#report">Report a vulnerability</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+
+      <div class="callout callout--stop">
+        <p class="callout__title">Scope of every claim on this page</p>
+        <p>
+          Statements below distinguish the E1 evidence kernel, the later sealed acquisition
+          worker, and the immutable snapshot runtime. The public website is hosted, but the
+          Query Lab is not yet deployed. TWIRX is not approved for arbitrary-URL or mutable
+          multi-tenant deployment; the remaining production requirements appear below.
+        </p>
+      </div>
+
+      <section aria-labelledby="adversary">
+        <h2 id="adversary">The adversary model</h2>
+
+        <p class="lede">
+          A system whose input is the public web has an adversary by default. TWIRX assumes
+          an attacker may control any of the following, simultaneously, and that none of it
+          is unusual.
+        </p>
+
+        <div class="cards cards--3 wide">
+          <div class="card"><h3>The request path</h3><p>Submitted URL text, DNS records and address changes, redirects, ports.</p></div>
+          <div class="card"><h3>The response</h3><p>HTTP headers and status, compressed and malformed bodies, resource-exhaustion attempts.</p></div>
+          <div class="card"><h3>The content</h3><p>JSON keys, values, nesting, duplicate semantic claims, and metadata that impersonates publisher authority.</p></div>
+          <div class="card"><h3>The proposals</h3><p>Adapter proposals, ontology and mapping proposals.</p></div>
+          <div class="card"><h3>The model input</h3><p>Prompt-injection content planted for future model-assisted stages. The corpus already contains such a vector.</p></div>
+          <div class="card"><h3>The project itself</h3><p>One ordinary contributor account.</p></div>
+        </div>
+
+        <p class="note">
+          The full model, including protected assets and per-threat residual risk, is in
+          <a href="{{repo .Site "THREAT_MODEL.md"}}">THREAT_MODEL.md<span class="ext" aria-hidden="true">↗</span></a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="controls">
+        <h2 id="controls">Threats and current controls</h2>
+
+        <p>
+          Each row states what is implemented and what remains outside the demonstrated
+          boundary. The right-hand column is the more useful one.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Current controls and their residual risk</caption>
+            <thead>
+              <tr>
+                <th scope="col">Threat</th>
+                <th scope="col">Implemented control</th>
+                <th scope="col">Residual risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Server-side request forgery</th>
+                <td>HTTP/HTTPS allowlist; no URL credentials; private and reserved address rejection; direct dialling of validated resolved addresses; redirect revalidation; standard ports by default; request timeout and body limits.</td>
+                <td>The sealed worker adds admitted route work orders and adversarial DNS/redirect handling, but target-host network isolation still needs production verification. Public callers cannot provide arbitrary destinations.</td>
+              </tr>
+              <tr>
+                <th scope="row">Evidence substitution</th>
+                <td>SHA-256 body addressing; envelope body digest and size; re-hash before extraction; independent C verification; immutable path convention.</td>
+                <td>Local filesystem compromise can replace code and evidence together. Release signing and external transparency are not in Gate E1.</td>
+              </tr>
+              <tr>
+                <th scope="row">Parser and memory corruption</th>
+                <td>Memory-safe Go in the privileged path; a tiny bounded CBOR subset; a fixed C envelope schema; input size caps; dual-compiler builds; ASan and UBSan; shared Go/C vectors; Go mutation fuzzing; a sanitizer-backed C libFuzzer target; no C networking or plugin loading.</td>
+                <td>Parser defects remain possible. Finite tests and short fuzz runs cannot establish their absence — only continuous fuzzing and independent implementations reduce this.</td>
+              </tr>
+              <tr>
+                <th scope="row">Semantic injection</th>
+                <td>Provider text stays untrusted data; native term and value stay visible; mappings are explicit and versioned; adapters are manually admitted; no model exists in the canonical path; required fields fail closed.</td>
+                <td>A reviewed adapter can still encode a mistaken interpretation. Conformance and disagreement mechanisms have to grow before this is adequately addressed.</td>
+              </tr>
+              <tr>
+                <th scope="row">Resource exhaustion</th>
+                <td>Limits on URL, response, envelope, JSON bytes, nesting, scalars, containers, tokens, redirects, timeouts, and reads; duplicate keys and trailing top-level values rejected before extraction; no browser or model; fixed extraction operations.</td>
+                <td>The acquisition worker and snapshot runtime have bounded requests, bytes, duration, concurrency and emergency-disable behavior. Public multi-tenant quotas and sustained production capacity remain unproven.</td>
+              </tr>
+              <tr>
+                <th scope="row">Treasury compromise</th>
+                <td>Only public addresses may enter the repository; seed phrases and private keys are forbidden; the project wallet is separated from personal wallets; ledger reconciliation against public chain records.</td>
+                <td>A single-founder wallet is a temporary concentration of authority during Genesis, and is disclosed as such on the <a href="/funding/">funding page</a>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Fail-closed parsing</h3>
+        <p>
+          The bounded JSON profile rejects, rather than repairs: more than one top-level
+          value, duplicate object keys at any depth, escaped surrogate code units that do not
+          form a valid pair, and any input past its declared byte, depth, scalar, container,
+          or token limit. The deterministic CBOR profile rejects non-shortest integers,
+          indefinite forms, wrong field and digest lengths, invalid UTF-8, U+0000,
+          non-canonical UTC times, trailing bytes, and bodies over 2 MiB.
+        </p>
+        <p>
+          Rejecting a duplicate key rather than taking the last one is a small decision with
+          a large consequence: last-key-wins hides source ambiguity and varies between
+          implementations, which would let an attacker construct a document that two
+          conforming systems read differently.
+        </p>
+      </section>
+
+      <section aria-labelledby="authority">
+        <h2 id="authority">Candidate versus canonical authority</h2>
+
+        <p class="lede">
+          The security property the whole architecture is organised around is that producing
+          output and being believed are separate privileges.
+        </p>
+
+        <ol class="spine spine--tight">
+          <li><b>Anything may produce a candidate</b><span>An origin, an adapter proposal, a browser worker, a model, a contributor. Candidates are data with provenance.</span></li>
+          <li><b>Only the admission path creates canonical state</b><span>In Genesis, that is a reviewed repository change containing fixtures, expected outputs, compatibility analysis, and provenance.</span></li>
+          <li><b>No component can promote itself</b><span>Not by asserting authority in its output, not by being confident, and not by being the only implementation available.</span></li>
+        </ol>
+
+        <p>
+          The independent C verifier is a concrete instance of this: it validates the
+          canonical artefact and has no network path, no registry authority, and no ability
+          to write canonical state. It can say no. It cannot say yes on its own.
+        </p>
+      </section>
+
+      <section aria-labelledby="gap">
+        <h2 id="gap">The remaining production egress gap {{chip "not-proven"}}</h2>
+
+        <p class="lede">
+          This is the most important limitation on this page, and the first unresolved risk
+          in the Gate E1 register.
+        </p>
+
+        <p>
+          TWIRX now has both the original URL policy and a sealed, work-order-driven acquisition
+          path that rejects denied address classes and revalidates redirects. Its adversarial
+          suite covers the application boundary. That is still not equivalent to production
+          evidence that the target host's network cannot reach control-plane or metadata ranges.
+        </p>
+
+        <p>
+          TWIRX therefore does not accept arbitrary URLs from untrusted users. Current
+          acquisition is restricted to explicit human decisions and route-bound work orders;
+          the public snapshot runtime makes no origin network requests at all.
+        </p>
+
+        <div class="callout callout--limit">
+          <p class="callout__title">Loopback</p>
+          <p>
+            The <code>--allow-loopback</code> flag deliberately weakens public network policy
+            so the controlled fixture can be observed during local development. It must never
+            become an option on a public service.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="gate">
+        <h2 id="gate">The public-deployment gate</h2>
+
+        <p>
+          Before arbitrary URLs may be exposed to untrusted public users, the project
+          requires all of the following. This list is a commitment, published in
+          <a href="{{repo .Site "SECURITY.md"}}">SECURITY.md<span class="ext" aria-hidden="true">↗</span></a>
+          before there is any pressure to compromise on it.
+        </p>
+
+        <ol class="register register--plain">
+          <li>Separate worker and control networks.</li>
+          <li>A dedicated egress proxy and DNS control.</li>
+          <li>Process, container, or microVM isolation.</li>
+          <li>No worker access to the control database, registry signing keys, cloud metadata, or control credentials.</li>
+          <li>Per-tenant quotas and per-origin budgets.</li>
+          <li>Audit logging and anomaly detection.</li>
+          <li>Tested revocation and recovery.</li>
+          <li>External security review.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="future">
+        <h2 id="future">Future isolation work {{chip "planned"}}</h2>
+
+        <p>
+          Two later gates add the components with the largest attack surface the project will
+          ever adopt. Both are constrained in advance:
+        </p>
+
+        <div class="split wide">
+          <div>
+            <h3>Browser isolation</h3>
+            <p class="note">E4. Discovery only.</p>
+            <ul>
+              <li>Runs inside process or microVM isolation</li>
+              <li>No access to canonical state or credentials</li>
+              <li>No path into the execution hot path</li>
+              <li>Output is a candidate, subject to admission</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Model isolation</h3>
+            <p class="note">E5. Proposals only.</p>
+            <ul>
+              <li>Observed content is assumed to contain prompt injection</li>
+              <li>Model output is untrusted data, never an instruction</li>
+              <li>No model may write canonical state or authorise an action</li>
+              <li>Every accepted proposal keeps the record that accepted it</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="risks">
+        <h2 id="risks">Residual risks</h2>
+
+        <p>
+          The seven open risks against Gate E1, unedited. They are also on the
+          <a href="/proof/#risks">proof page</a> and in
+          <a href="/data/project-status.json">project-status.json</a>.
+        </p>
+
+        <ol class="register">
+          {{range $s.unresolved_risks}}<li>{{.}}</li>
+          {{end}}
+        </ol>
+      </section>
+
+      <section aria-labelledby="report">
+        <h2 id="report">Report a vulnerability</h2>
+
+        <p>
+          Do not disclose a suspected vulnerability in a public issue, discussion, social
+          post, or pull request.
+        </p>
+
+        <p>
+          Once the repository is public, private vulnerability reporting will be enabled and
+          the repository's Security tab is the route. Until that channel is configured, keep
+          the report private and contact the maintainer through an existing trusted private
+          channel.
+        </p>
+
+        <h3>A useful report includes</h3>
+        <ul>
+          <li>the affected commit or release;</li>
+          <li>the component and the trust boundary involved;</li>
+          <li>reproduction steps or a fixture;</li>
+          <li>expected and observed behaviour;</li>
+          <li>potential impact and blast radius;</li>
+          <li>whether credentials, canonical state, or cross-origin access are involved;</li>
+          <li>any proposed mitigation.</li>
+        </ul>
+
+        <div class="callout callout--stop">
+          <p class="callout__title">Do not test against third parties</p>
+          <p>
+            Use the controlled test origin and the local adversarial fixtures. Testing this
+            project's behaviour against websites you do not own is not authorised by anything
+            here, and the project will not normalise it.
+          </p>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</div>
+{{end}}

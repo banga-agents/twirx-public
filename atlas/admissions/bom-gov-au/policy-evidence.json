@@ -1,0 +1,36 @@
+{
+  "format": "tw.admission-policy-evidence/0.1",
+  "policy": {
+    "id": "bom-gov-au",
+    "origin_id": "bom-gov-au",
+    "canonical_origin": "https://bom.gov.au",
+    "review_state": "pending",
+    "decision": "uncertain",
+    "reviewed_at": null,
+    "reviewer": null,
+    "robots": {
+      "state": "not_observed",
+      "url": "https://bom.gov.au/robots.txt",
+      "observed_at": null,
+      "artifact_digest": null,
+      "product_token": "TWIRXBot"
+    },
+    "terms_state": "pending",
+    "terms_reference": "pending human review",
+    "attribution": "pending human review",
+    "authentication": "pending human review",
+    "rate_policy": "pending human review",
+    "retention_policy": "pending human review",
+    "risk_state": "pending",
+    "reviewer_notes": "No policy decision or live retrieval authority is claimed.",
+    "evidence_refs": [
+      "evidence/review-scope.txt"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "evidence/review-scope.txt",
+      "digest": "sha256:77b7c62de43ad8265f5a760732f945a658dc29710e0a427379a2f93df2756e96"
+    }
+  ]
+}

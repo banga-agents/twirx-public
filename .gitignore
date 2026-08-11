@@ -1,0 +1,10 @@
+/bin/
+/var/
+*.log
+.DS_Store
+node_modules/
+.mintlify/cache/
+.env
+.env.*
+!.env.example
+funding/private/

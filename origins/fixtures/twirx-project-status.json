@@ -1,0 +1,24 @@
+{
+  "project": "TWIRX",
+  "phase": "genesis",
+  "maturity": "pre-alpha",
+  "status_date": "2026-08-10",
+  "gate": {
+    "id": "E1",
+    "status": "implemented",
+    "evidence_status": "Local acceptance passed. Hosted CI has not executed.",
+    "report_path": "reports/gate-1-genesis.md"
+  },
+  "remote_ci": {
+    "status": "not-executed"
+  },
+  "unresolved_risks": [
+    "URL and resolved-address checks are application-layer controls; production still needs separate worker and control networks, egress enforcement, metadata isolation, and quotas.",
+    "Observation v1 does not record the redirect chain or selected transport headers.",
+    "The adapter runtime has no independent second implementation.",
+    "Atomic publication is per file rather than a transaction spanning the observation bundle.",
+    "The corpus and normal fuzz durations are intentionally small.",
+    "Direct command-package coverage is absent even though shell workflows exercise the happy path.",
+    "Local filesystem compromise can replace implementation and evidence together."
+  ]
+}

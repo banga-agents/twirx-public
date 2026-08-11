@@ -1,0 +1,77 @@
+---
+title: "Genesis status"
+description: "Implemented capabilities, exclusions, and the current evidence threshold."
+---
+
+## Implemented
+
+| Capability | Status |
+|---|---|
+| Controlled HTTP GET observation | Implemented |
+| Public-address policy and explicit loopback fixture mode | Implemented, pre-alpha |
+| Body size, timeout, port, and redirect bounds | Implemented |
+| SHA-256 content-addressed storage | Implemented |
+| Deterministic CBOR observation envelope | Implemented |
+| Go verification | Implemented |
+| Independent bounded C verification | Implemented |
+| Manual deterministic JSON adapter | Implemented |
+| Bounded duplicate-rejecting JSON profile | Implemented |
+| Native plus semantic field views | Implemented |
+| Field-level provenance | Implemented |
+| Offline replay | Implemented |
+| Shared Go/C conformance and fuzz corpus | Implemented |
+| Bounded atomic result publication | Implemented |
+| E2 typed result and manifest-last bundle | Implemented candidate; publication topology accepted |
+| Exact Genesis-500 candidate selection | Implemented E3.0 candidate |
+| Orthogonal Atlas state counters | Implemented correction candidate |
+| Loopback read-only Atlas discovery API | Implemented E3.0 candidate |
+| Canonical E2/Atlas origin registry | Implemented; three public origins plus one excluded fixture |
+| Digest-bound Atlas policy records | Implemented; three completed human decisions |
+| Bounded offline RFC 9309 evaluator | Implemented E3.1 control candidate |
+| Deterministic network-disabled per-origin frontier | Implemented E3.1 control candidate |
+| Exact 500-origin admission work queue | Implemented; 25 prepared and 475 unprepared |
+| Full-catalog loopback runtime stress | Implemented; every selected origin exercised |
+| Evidence-first Observatory process boundary | Implemented for literal-loopback fixtures only |
+| Offline replay of fixture robots evidence | Implemented |
+| Sealed Common Crawl acquisition | Implemented for one approved origin and two exact captures |
+| Semantic packet and delta contracts | Implemented candidate with Go/C vectors |
+| Immutable Semantic Snapshot | Implemented; exact 20-packet FUTO snapshot |
+| Read-only materialized query runtime | Implemented and staged on literal loopback |
+| Sanitized public-source export | Implemented and locally audited |
+
+## Deliberately excluded
+
+- arbitrary inference;
+- HTML and browser extraction;
+- model-assisted mapping;
+- PostgreSQL and deployed public registry;
+- Wasm adapter execution;
+- public remote MCP and WebMCP serving;
+- publisher verification;
+- write actions and payments;
+- blockchain anchoring;
+- public multi-tenant deployment;
+- public Query Lab execution until DNS/TLS verification passes.
+
+The current generated Atlas metrics report 500 selected candidates, three
+cataloged public identities, three completed human policy decisions, two
+semantically linked technical records, one publisher-approved project origin,
+and zero live origins. The decisions are `permit_live` for TWIRX,
+`permit_with_constraints` for the bounded World Bank route, and `profile_only`
+for two exact RFC Editor archive captures. Schedulers and budgets remain
+disabled. The controlled origin is a test fixture and contributes to none of
+the Genesis-500 public counters.
+
+The FUTO snapshot contains 15 public-source packets, five excluded-by-default
+fixture packets, one real origin delta, two views and 75 proof artifacts.
+
+## Gate 1 evidence
+
+The Gate 1 source-statement slice passes the local offline acceptance matrix as
+of 2026-08-10. Parser bounds, atomic writes, adversarial vectors, Go and C
+fuzzing, network-policy tests, corrupted-evidence rejection, and stopped-origin
+offline replay are exercised together. Exact commands, totals, toolchains,
+benchmarks, and residual risks are recorded in `reports/gate-1-genesis.md`.
+
+Gate 1 is still pre-alpha evidence, not authorization for public multi-tenant
+deployment. CI review and independent security review remain separate gates.

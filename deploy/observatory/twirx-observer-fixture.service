@@ -1,0 +1,42 @@
+[Unit]
+Description=TWIRX Observatory local-fixture worker proof
+After=network.target
+
+[Service]
+Type=oneshot
+User=twirx-observer
+Group=twirx-observer
+EnvironmentFile=/etc/twirx/observer-worker
+ExecStart=/srv/twirx/current/bin/twirx-observer-worker fetch --job ${TWIRX_JOB} --out ${TWIRX_OUTPUT}
+NoNewPrivileges=true
+CapabilityBoundingSet=
+PrivateDevices=true
+PrivateTmp=true
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectProc=invisible
+ProtectSystem=strict
+ProcSubset=pid
+ReadWritePaths=/var/lib/twirx-observer
+RemoveIPC=true
+RestrictAddressFamilies=AF_UNIX AF_INET
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged @resources
+SystemCallErrorNumber=EPERM
+IPAddressDeny=any
+IPAddressAllow=localhost
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

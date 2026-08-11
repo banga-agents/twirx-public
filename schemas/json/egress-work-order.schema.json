@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/egress-work-order-0.1.json",
+  "title": "TWIRX sealed egress work order 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "id", "origin_id", "purpose", "authority_class", "method", "url", "allowed_hosts", "policy_decision", "policy_evidence_digest", "decision_digest", "approval_reference", "not_before", "expires_at", "max_redirects", "max_body_bytes", "timeout_ms", "connect_timeout_ms", "header_timeout_ms", "max_consecutive_failures", "circuit_cooldown_seconds"],
+  "properties": {
+    "format": {"const": "tw.egress-work-order/0.1"},
+    "id": {"$ref": "#/$defs/id"},
+    "origin_id": {"$ref": "#/$defs/id"},
+    "purpose": {"enum": ["robots", "profile", "observation"]},
+    "authority_class": {"enum": ["policy_evidence_collection", "reviewed_policy"]},
+    "method": {"const": "GET"},
+    "url": {"type": "string", "pattern": "^https://", "maxLength": 4096},
+    "allowed_hosts": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string", "pattern": "^[a-z0-9.-]+$", "maxLength": 253}},
+    "policy_decision": {"enum": ["permit_live", "permit_with_constraints", "profile_only", "uncertain"]},
+    "policy_evidence_digest": {"$ref": "#/$defs/digest"},
+    "decision_digest": {"$ref": "#/$defs/digest"},
+    "approval_reference": {"type": "string", "minLength": 1, "maxLength": 4096},
+    "not_before": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "max_redirects": {"type": "integer", "minimum": 0, "maximum": 3},
+    "max_body_bytes": {"type": "integer", "minimum": 1, "maximum": 2097152},
+    "timeout_ms": {"type": "integer", "minimum": 1000, "maximum": 30000},
+    "connect_timeout_ms": {"type": "integer", "minimum": 500, "maximum": 10000},
+    "header_timeout_ms": {"type": "integer", "minimum": 500, "maximum": 15000},
+    "max_consecutive_failures": {"type": "integer", "minimum": 1, "maximum": 10},
+    "circuit_cooldown_seconds": {"type": "integer", "minimum": 60, "maximum": 86400}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"authority_class": {"const": "policy_evidence_collection"}}},
+      "then": {"properties": {"purpose": {"const": "robots"}, "policy_decision": {"const": "uncertain"}}},
+      "else": {"properties": {"policy_decision": {"enum": ["permit_live", "permit_with_constraints", "profile_only"]}}}
+    }
+  ],
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

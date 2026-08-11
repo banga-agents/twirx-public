@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "europeana-eu",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://europeana.eu",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:9e8f2714f7ee0602576b1eb639bc1d2d1ac6de30b0008ef45c7da1096a7f273b",
+  "policy_evidence_digest": "sha256:366c9ddcc227793e39f5405450d6599c2341e6a98ad3110ec2ac741273c13e77",
+  "decision_digest": "sha256:76efe93dc5992bd8d07bca43cc03f6e7f88a40b1d9cbd6730d92c0347a6adeb4",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

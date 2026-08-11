@@ -1,0 +1,13 @@
+{
+  "format": "tw.mapping-module/0.1-draft",
+  "id": "mapping:testorigin-commerce",
+  "version": "0.1.0",
+  "status": "fixture",
+  "mappings": [
+    ["origin:testorigin/product_id", "commerce:Product.identifier", "equivalent_in_context"],
+    ["origin:testorigin/name", "commerce:Product.name", "equivalent_in_context"],
+    ["origin:testorigin/current_price", "commerce:OfferPrice.amount", "equivalent_in_context"],
+    ["origin:testorigin/currency", "commerce:OfferPrice.currency", "equivalent_in_context"],
+    ["origin:testorigin/availability", "commerce:Offer.availability", "related"]
+  ]
+}

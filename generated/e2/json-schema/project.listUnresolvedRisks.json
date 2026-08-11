@@ -1,0 +1,10 @@
+{
+  "$id": "urn:twirx:operation:project.listUnresolvedRisks:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Returns the complete publisher-authored unresolved-risk list from the observed project status artifact.",
+  "properties": {},
+  "required": [],
+  "title": "List published unresolved risks",
+  "type": "object"
+}

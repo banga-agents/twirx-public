@@ -1,0 +1,182 @@
+{
+  "format": "tw.result/0.1",
+  "operation_id": "commerce:getOffer",
+  "resource_type": "commerce:Offer",
+  "observation_digest": "sha256:98025ae34cf1c21ea7bf14c9ca0e2a25f504a9ec1768ec6c0f5202ac49d02e57",
+  "adapter_id": "origin:testorigin/product-offer",
+  "adapter_version": "0.1.0",
+  "adapter_digest": "sha256:86995ebf29b33eb6e23e871de86fdc4112bba3d5101b21781e9f750482c03117",
+  "semantic_closure": [
+    "mapping:testorigin-commerce@0.1.0",
+    "origin:testorigin@2026-08-10",
+    "tw:commerce@0.1.0",
+    "tw:kernel@0.1.0"
+  ],
+  "semantic_closure_hash": "sha256:9ef146c90f8c4e252ef47aa5df0adfb8f17d3d88d67c671502886ce1c58427f4",
+  "fields": [
+    {
+      "id": "product_id",
+      "status": "resolved",
+      "native": {
+        "term": "origin:testorigin/product_id",
+        "locator": "/product_id",
+        "lexical_value": "sku-001"
+      },
+      "semantic": {
+        "term": "commerce:Product.identifier",
+        "value": {
+          "type": "string",
+          "lexical": "sku-001"
+        }
+      },
+      "provenance": {
+        "request_url": "http://127.0.0.1:18080/product/sku-001",
+        "final_url": "http://127.0.0.1:18080/product/sku-001",
+        "retrieved_at": "2026-08-10T05:07:03.9995434Z",
+        "body_digest": "sha256:e194e7dfd8bad2e92564e2a01527aad79af467feda26733d9d06ac2132ebd73a",
+        "observation_hash": "sha256:98025ae34cf1c21ea7bf14c9ca0e2a25f504a9ec1768ec6c0f5202ac49d02e57",
+        "adapter_id": "origin:testorigin/product-offer",
+        "adapter_version": "0.1.0",
+        "adapter_digest": "sha256:86995ebf29b33eb6e23e871de86fdc4112bba3d5101b21781e9f750482c03117",
+        "extraction_method": "json_pointer",
+        "locator": "/product_id",
+        "transform_chain": [
+          "trim"
+        ],
+        "mapping_relation": "equivalent_in_context"
+      }
+    },
+    {
+      "id": "product_name",
+      "status": "resolved",
+      "native": {
+        "term": "origin:testorigin/name",
+        "locator": "/name",
+        "lexical_value": "Field Notebook"
+      },
+      "semantic": {
+        "term": "commerce:Product.name",
+        "value": {
+          "type": "string",
+          "lexical": "Field Notebook"
+        }
+      },
+      "provenance": {
+        "request_url": "http://127.0.0.1:18080/product/sku-001",
+        "final_url": "http://127.0.0.1:18080/product/sku-001",
+        "retrieved_at": "2026-08-10T05:07:03.9995434Z",
+        "body_digest": "sha256:e194e7dfd8bad2e92564e2a01527aad79af467feda26733d9d06ac2132ebd73a",
+        "observation_hash": "sha256:98025ae34cf1c21ea7bf14c9ca0e2a25f504a9ec1768ec6c0f5202ac49d02e57",
+        "adapter_id": "origin:testorigin/product-offer",
+        "adapter_version": "0.1.0",
+        "adapter_digest": "sha256:86995ebf29b33eb6e23e871de86fdc4112bba3d5101b21781e9f750482c03117",
+        "extraction_method": "json_pointer",
+        "locator": "/name",
+        "transform_chain": [
+          "trim"
+        ],
+        "mapping_relation": "equivalent_in_context"
+      }
+    },
+    {
+      "id": "price_amount",
+      "status": "resolved",
+      "native": {
+        "term": "origin:testorigin/current_price",
+        "locator": "/offer/current_price",
+        "lexical_value": "19.99"
+      },
+      "semantic": {
+        "term": "commerce:OfferPrice.amount",
+        "value": {
+          "type": "decimal",
+          "lexical": "19.99"
+        }
+      },
+      "provenance": {
+        "request_url": "http://127.0.0.1:18080/product/sku-001",
+        "final_url": "http://127.0.0.1:18080/product/sku-001",
+        "retrieved_at": "2026-08-10T05:07:03.9995434Z",
+        "body_digest": "sha256:e194e7dfd8bad2e92564e2a01527aad79af467feda26733d9d06ac2132ebd73a",
+        "observation_hash": "sha256:98025ae34cf1c21ea7bf14c9ca0e2a25f504a9ec1768ec6c0f5202ac49d02e57",
+        "adapter_id": "origin:testorigin/product-offer",
+        "adapter_version": "0.1.0",
+        "adapter_digest": "sha256:86995ebf29b33eb6e23e871de86fdc4112bba3d5101b21781e9f750482c03117",
+        "extraction_method": "json_pointer",
+        "locator": "/offer/current_price",
+        "transform_chain": [
+          "trim",
+          "decimal_string"
+        ],
+        "mapping_relation": "equivalent_in_context"
+      }
+    },
+    {
+      "id": "price_currency",
+      "status": "resolved",
+      "native": {
+        "term": "origin:testorigin/currency",
+        "locator": "/offer/currency",
+        "lexical_value": "usd"
+      },
+      "semantic": {
+        "term": "commerce:OfferPrice.currency",
+        "value": {
+          "type": "currency_code",
+          "lexical": "USD"
+        }
+      },
+      "provenance": {
+        "request_url": "http://127.0.0.1:18080/product/sku-001",
+        "final_url": "http://127.0.0.1:18080/product/sku-001",
+        "retrieved_at": "2026-08-10T05:07:03.9995434Z",
+        "body_digest": "sha256:e194e7dfd8bad2e92564e2a01527aad79af467feda26733d9d06ac2132ebd73a",
+        "observation_hash": "sha256:98025ae34cf1c21ea7bf14c9ca0e2a25f504a9ec1768ec6c0f5202ac49d02e57",
+        "adapter_id": "origin:testorigin/product-offer",
+        "adapter_version": "0.1.0",
+        "adapter_digest": "sha256:86995ebf29b33eb6e23e871de86fdc4112bba3d5101b21781e9f750482c03117",
+        "extraction_method": "json_pointer",
+        "locator": "/offer/currency",
+        "transform_chain": [
+          "trim",
+          "uppercase"
+        ],
+        "mapping_relation": "equivalent_in_context"
+      }
+    },
+    {
+      "id": "availability",
+      "status": "resolved",
+      "native": {
+        "term": "origin:testorigin/availability",
+        "locator": "/availability",
+        "lexical_value": "in_stock"
+      },
+      "semantic": {
+        "term": "commerce:Offer.availability",
+        "value": {
+          "type": "string",
+          "lexical": "in_stock"
+        }
+      },
+      "provenance": {
+        "request_url": "http://127.0.0.1:18080/product/sku-001",
+        "final_url": "http://127.0.0.1:18080/product/sku-001",
+        "retrieved_at": "2026-08-10T05:07:03.9995434Z",
+        "body_digest": "sha256:e194e7dfd8bad2e92564e2a01527aad79af467feda26733d9d06ac2132ebd73a",
+        "observation_hash": "sha256:98025ae34cf1c21ea7bf14c9ca0e2a25f504a9ec1768ec6c0f5202ac49d02e57",
+        "adapter_id": "origin:testorigin/product-offer",
+        "adapter_version": "0.1.0",
+        "adapter_digest": "sha256:86995ebf29b33eb6e23e871de86fdc4112bba3d5101b21781e9f750482c03117",
+        "extraction_method": "json_pointer",
+        "locator": "/availability",
+        "transform_chain": [
+          "trim",
+          "lowercase"
+        ],
+        "mapping_relation": "related"
+      }
+    }
+  ],
+  "result_digest": "sha256:b00b1d5832548a27c5244ef7315876ef9bf6898310bfe582365a3900b8ebbbe5"
+}

@@ -1,0 +1,10 @@
+Reviewed by Richi (Genesis steward) at 2026-08-11T12:15:50Z.
+
+Decision: permit_live for exact publisher-authored public project artifacts.
+The approval is read-only, excludes personal data and private repository
+content, preserves attribution and native wording, and does not enable the
+scheduler, authentication, browser, model, payment or write actions.
+
+Terms and risk basis: CHARTER.md and the founder-controlled twirx.org public
+surface. The subsequently collected robots evidence must reconcile with this
+scope before deterministic policy rendering.

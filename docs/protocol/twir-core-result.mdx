@@ -1,0 +1,37 @@
+---
+title: "TWIR Core 0.1 and typed results"
+description: "The bounded E2 contract, result, provenance, and manifest-last publication formats."
+---
+
+> **Authority:** Normative summary · **Status:** Specified and implemented candidate · **Applies to:** E2 · **Verified against:** current checkout · **Source:** `spec/twir/TWIR_CORE_0_1.md`, `schemas/cddl/result.cddl`
+
+TWIR Core 0.1 intentionally includes only primitives, records, optional
+fields, lists, resources, read operations, typed errors, effects, evidence
+requirements, native references, semantic references, module closure, and
+explicit resolved or unresolved state.
+
+Every canonical result binds:
+
+- the admitted origin and operation versions;
+- canonical typed input;
+- Observation Envelope v1 and Transport Evidence v2;
+- adapter descriptor, operation contract, and exact semantic closure;
+- native and semantic values for each field;
+- the transformations and mapping relation for each field.
+
+Required missing evidence fails the invocation. Missing optional content is
+published as `unresolved` with no invented lexical member.
+
+## Non-cyclic publication
+
+The result digest is computed over the complete canonical result bytes. The
+final manifest then binds that result and every other artifact. Its digest is
+the detached bundle ID attached by the API publication record. Neither canonical
+artifact contains its own digest. ADR 003 explains why this directed graph is
+necessary.
+
+```text
+artifacts → result-core bytes → result digest → final manifest → bundle ID
+```
+
+A directory without a valid final manifest is not an admitted proof bundle.

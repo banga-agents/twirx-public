@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Propose a public origin for manual TWIRX review."><title>Submit an origin — TWIRX Lab</title><link rel="stylesheet" href="/assets/styles.css"></head>
+<body>
+  <header class="topbar"><a class="wordmark" href="/">TWIRX<span>/LAB</span></a><nav><a href="/">Lab</a><a href="https://docs.twirx.org">Docs</a></nav></header>
+  <main class="submission">
+    <p class="eyebrow">MANUAL ADMISSION QUEUE</p>
+    <h1>Propose a public origin.</h1>
+    <p class="lede">This form opens an email for human review. It does not fetch, crawl, compile, or activate the submitted URL.</p>
+    <form action="mailto:hello@twirx.org" method="post" enctype="text/plain" class="submission-form">
+      <label for="public-url">Public URL</label><input id="public-url" name="public_url" type="url" maxlength="2048" required>
+      <label for="publisher">Publisher</label><input id="publisher" name="publisher" maxlength="200" required>
+      <label for="relationship">Your relationship to the publisher</label><input id="relationship" name="submitter_relationship" maxlength="500" required>
+      <label for="structured">Available API, feed, JSON-LD, or structured data</label><textarea id="structured" name="structured_data" maxlength="4000" rows="5"></textarea>
+      <label for="use-case">Requested read-only use case</label><textarea id="use-case" name="use_case" maxlength="4000" rows="5" required></textarea>
+      <label for="access">License and access notes</label><textarea id="access" name="license_access_notes" maxlength="4000" rows="4"></textarea>
+      <label class="check"><input name="can_verify" type="checkbox" value="yes"> I can authorize or verify the resulting interface for the publisher.</label>
+      <button type="submit">Open review email <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="scope">Admission is manual. Submission creates no permission, canonical status, or automated network access.</p>
+  </main>
+  <footer><span>TWIRX · THE TYPED WEB COMMONS</span><span>SECURITY: security@twirx.org</span></footer>
+</body>
+</html>

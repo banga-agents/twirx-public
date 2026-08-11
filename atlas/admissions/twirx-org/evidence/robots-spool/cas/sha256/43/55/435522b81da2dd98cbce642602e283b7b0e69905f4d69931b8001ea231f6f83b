@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# This site is meant to be read by software agents as well as by people.
+# The project's facts are published as machine-readable files beside the pages:
+#   /data/project-status.json
+#   /data/funding-status.json
+#   /data/implementation-matrix.json
+#   /data/gates.json
+
+Sitemap: https://twirx.org/sitemap.xml

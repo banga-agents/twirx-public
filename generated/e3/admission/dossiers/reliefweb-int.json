@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "reliefweb-int",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://reliefweb.int",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:82567af03eddb7e614c23672c7208c73f2e729a9abafbedda5035a1e420762dd",
+  "policy_evidence_digest": "sha256:591d7adbbffb63b8f37994818c65ccbe8c10a6a6b85cf34e3b1fde6e12d5d0ef",
+  "decision_digest": "sha256:0e2f9057b0f744b0f3982970e73d27b3e93affaec61b3cfbbf1d898583e7542f",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

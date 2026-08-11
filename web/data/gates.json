@@ -1,0 +1,57 @@
+{
+  "_source": "Historical gate reports plus reports/futo-f3-real-archive-evidence.md and reports/futo-grant-readiness.md. This file summarizes current capability; the named reports remain authoritative for their exact acceptance language.",
+  "status_date": "2026-08-11",
+  "namespace": {
+    "engineering": "E-series: admitted on executed engineering evidence.",
+    "public": "P-series: admitted on a reviewed public surface."
+  },
+  "current": [
+    {
+      "id": "E1",
+      "name": "Source-Statement Evidence Spine",
+      "state": "admitted",
+      "result": "Canonical evidence, independent Go/C observation verification, native lexical preservation, semantic view and offline replay.",
+      "evidence": "reports/gate-1-genesis.md"
+    },
+    {
+      "id": "E2",
+      "name": "Typed Provenance Lab",
+      "state": "implemented_locally",
+      "result": "One operation contract generates CLI, JSON Schema, OpenAPI and local MCP surfaces with proof bundles.",
+      "evidence": "reports/gate-e2-live-provenance-lab.md",
+      "limitation": "The public Lab is not deployed. Fresh public retrieval remains constrained by the separate admission and egress boundary."
+    },
+    {
+      "id": "E3.0–E3.2",
+      "name": "Atlas, admission and secure acquisition",
+      "state": "implemented_locally",
+      "result": "500 selected identities, orthogonal state, deterministic dossiers, three human policy decisions and a sealed two-period archive acquisition.",
+      "evidence": "atlas/registry.json and reports/futo-f3-real-archive-evidence.md",
+      "limitation": "Selection is not live coverage; broad scheduling and arbitrary URLs remain disabled."
+    },
+    {
+      "id": "E3.3-Snapshot",
+      "name": "Semantic Snapshot Release",
+      "state": "implemented_locally",
+      "result": "15 public-source packets across three origins, two materialized views, one genuine origin delta and proof-linked local queries.",
+      "evidence": "snapshot sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5",
+      "limitation": "The corpus is small, the public runtime is not deployed, and continuous mutable state is not admitted."
+    },
+    {
+      "id": "P1",
+      "name": "Public Proof Release",
+      "state": "in_progress",
+      "result": "Public website and documentation exist; this release adds the FUTO reviewer path and exact Semantic Snapshot evidence.",
+      "limitation": "A fresh public source repository, public Query Lab, off-host restore proof and documentation synchronization remain."
+    }
+  ],
+  "future_not_current": [
+    "Continuous multi-origin compiler",
+    "Large real semantic corpus",
+    "Public semantic subscription stream",
+    "Publisher-native signed interfaces",
+    "Browser discovery",
+    "Model-assisted semantic induction",
+    "Authenticated or paid actions"
+  ]
+}

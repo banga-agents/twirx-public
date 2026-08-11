@@ -1,0 +1,11 @@
+{
+  "format": "tw.archive-native-profile/0.1",
+  "id": "rfc-editor-homepage-title",
+  "origin_id": "rfc-editor-org",
+  "operation_id": "archive.profile.homepage-title",
+  "subject": "rfc-editor:homepage",
+  "predicate": "html:title",
+  "locator": "html/head/title[1]/text()",
+  "kind": "state",
+  "media_type": "text/html"
+}

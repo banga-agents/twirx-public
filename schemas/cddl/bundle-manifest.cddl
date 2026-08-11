@@ -1,0 +1,13 @@
+bundle-manifest = [
+  version: "tw.bundle-manifest/0.1",
+  result-id: sha256-reference,
+  entries: [1*32 artifact-entry]
+]
+
+artifact-entry = [
+  name: tstr .size (1..255),
+  digest: bytes .size 32,
+  size: 1..4194304
+]
+
+sha256-reference = tstr .size 71

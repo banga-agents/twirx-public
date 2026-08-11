@@ -1,0 +1,18 @@
+; Typed Web Genesis observation envelope v1.
+; The fixed array order is normative. Indefinite lengths are forbidden.
+; Text is valid UTF-8, non-empty, and contains no U+0000. retrieved-at is
+; canonical RFC3339Nano UTC. Genesis bodies are bounded to 2 MiB.
+
+observation-envelope = [
+  version: 1,
+  request-url: tstr .size (1..8192),
+  final-url: tstr .size (1..8192),
+  method: "GET",
+  status: 100..599,
+  media-type: tstr .size (1..256),
+  retrieved-at: tstr .size (20..30),
+  body-sha256: bstr .size 32,
+  body-size: 0..2097152,
+  policy-id: tstr .size (1..256),
+  observer-id: tstr .size (1..256)
+]

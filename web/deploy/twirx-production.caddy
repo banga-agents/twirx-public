@@ -1,0 +1,40 @@
+(twirx_production_static) {
+	root * /srv/twirx/site/current
+	encode zstd gzip
+
+	@deployment_metadata path /_headers /_redirects
+	respond @deployment_metadata 404
+
+	@mutable path / /index.html /*/ /*/index.html /data/*.json
+	header @mutable Cache-Control "public, max-age=300, must-revalidate"
+
+	@styles path /styles.css /explorer.js
+	header @styles Cache-Control "public, max-age=3600"
+
+	@icons path /icon.svg
+	header @icons Cache-Control "public, max-age=86400"
+
+	header {
+		Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'; upgrade-insecure-requests"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+		Cross-Origin-Opener-Policy "same-origin"
+		Cross-Origin-Resource-Policy "same-origin"
+		Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+		-Server
+	}
+
+	file_server
+}
+
+twirx.org {
+	tls rick@twirx.org
+	import twirx_production_static
+}
+
+www.twirx.org {
+	tls rick@twirx.org
+	header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	redir https://twirx.org{uri} 301
+}

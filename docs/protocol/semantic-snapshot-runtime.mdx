@@ -1,0 +1,83 @@
+---
+title: "Immutable Semantic Snapshot runtime"
+description: "Read-only packet, delta, view, query, trace, and proof access without origin retrieval."
+---
+
+> **Authority:** Normative summary · **Status:** Implemented candidate; public edge staged · **Applies to:** E3.3 snapshot profile · **Verified against:** snapshot `sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5` · **Source:** `spec/data-plane/READ_ONLY_SNAPSHOT_RUNTIME_0_1.md`, `internal/snapshotruntime`
+
+## Purpose
+
+The Semantic Snapshot runtime answers bounded queries from one manifest-bound,
+immutable materialization. It performs zero origin retrieval and zero semantic
+state writes.
+
+```text
+admitted evidence
+    ↓
+offline packet compiler
+    ↓
+manifest-last immutable snapshot
+    ↓
+read-only query runtime
+    ↓
+typed rows + native values + trace + proof references
+```
+
+## Public candidate endpoints
+
+```text
+GET  /api/v1/status
+GET  /api/v1/origins
+GET  /api/v1/origins/{origin_id}
+POST /api/v1/query
+GET  /api/v1/packets/{digest}
+GET  /api/v1/deltas
+GET  /api/v1/deltas/{digest}
+GET  /api/v1/trace/{packet_digest}
+GET  /api/v1/snapshot/manifest
+```
+
+The FUTO edge profile returns `404` for raw `/api/v1/proof/*` downloads while
+third-party archive redistribution remains outside the public release profile.
+
+## Invariants
+
+- the expected snapshot ID is supplied at startup;
+- every snapshot artifact is rehashed and reconciled before admission;
+- queries reject unknown fields and use bounded selection and pagination;
+- origin discovery returns the exact 500 snapshot identities and separately
+  reports each identity's public-packet count without implying review or live status;
+- controlled fixtures are excluded unless the local runtime explicitly opts in;
+- live refresh and maximum live origins remain disabled;
+- the process accepts no destination URL or arbitrary operation;
+- query results preserve native term, native lexical value, evidence class and
+  packet digest;
+- a trace resolves only admitted packet and proof-index relationships.
+
+## Failure behavior
+
+Missing, substituted, symlinked, malformed, trailing-byte or self-consistent
+but semantically false artifact relationships fail snapshot admission. An
+unknown query property, unsupported live-refresh request, unknown packet or
+unadmitted proof path fails closed.
+
+## Security profile
+
+The staged Meridian service runs as a dedicated unprivileged user on literal
+`127.0.0.1:8092`, with a read-only application tree, no writable semantic
+state, no service credentials, all non-loopback IP traffic denied, zero swap,
+256 MiB memory, 25% CPU, low I/O weight and eight-query concurrency. Caddy is
+the only intended public edge and cannot read the private snapshot directory.
+
+## Conformance
+
+The Genesis Go and restricted-C implementations verify the same canonical
+packet, delta and snapshot vector families. Go runtime tests additionally
+exercise query planning, fixture exclusion, trace relationships, tampering,
+pagination, method/content-type rejection and exact digest downloads.
+
+## Implementation status
+
+The service is installed and passes loopback and target-host isolation checks.
+It is not yet a public execution claim: `lab.twirx.org` DNS, TLS and wire
+verification must pass before the edge is activated.

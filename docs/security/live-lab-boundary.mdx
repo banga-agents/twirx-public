@@ -1,0 +1,51 @@
+---
+title: "Live Lab security boundary"
+description: "Catalog admission, quotas, loopback binding, proof publication, and residual E2 risks."
+---
+
+> **Authority:** Explanatory security profile · **Status:** Implemented candidate · **Applies to:** E2 · **Verified against:** current checkout · **Source:** `internal/labapi`, `internal/origincatalog`, `lab/deploy`
+
+The client supplies only an origin identifier, operation identifier, and
+bounded typed values. Endpoint templates, HTTPS hosts, response limits,
+timeouts, attribution, replay fixtures, and rate limits are reviewed catalog
+configuration.
+
+The application enforces:
+
+- strict bounded JSON with duplicate-key and trailing-value rejection;
+- the reviewed HTTPS hostname enforced for the initial request and every
+  redirect;
+- per-client, per-origin, and global concurrency limits;
+- no credentialed CORS, cookies, third-party scripts, or directory listing;
+- a loopback-only application listener behind Caddy;
+- replay-only HTTP invocation; fresh-origin access fails closed before quota
+  or execution admission;
+- manifest-last proof publication and symlink rejection;
+- hashed, process-local client identifiers in audit events;
+- a dedicated system user, read-only application tree, and one explicit
+  writable result directory in production.
+
+The public-service candidate has no HTTP path to fresh external access.
+Application URL and resolved-address checks still do not replace network
+isolation. Future fresh access requires the separately admitted worker, VPS
+egress policy, controlled DNS, metadata blocking, monitoring, and incident
+procedures. Submitted origin URLs are sent for human review and are never
+fetched automatically.
+
+## Immutable Query Lab profile
+
+The FUTO reviewer surface uses the narrower Semantic Snapshot runtime rather
+than the E2 invocation service. It exposes only precompiled immutable state,
+accepts bounded semantic queries, and makes zero origin calls.
+
+On Meridian it is separated into:
+
+- a private read-only runtime/snapshot tree readable only by
+  `twirx-snapshot`;
+- a separate static UI tree readable only by Caddy;
+- a literal-loopback application listener;
+- a Caddy edge with a 64 KiB request limit and raw-proof denial;
+- hard CPU, memory, swap, I/O, task and network restrictions.
+
+The service is installed but not publicly claimed until `lab.twirx.org` DNS,
+TLS and end-to-end wire checks pass.

@@ -1,0 +1,40 @@
+{{define "content"}}
+<div class="page">
+  {{template "pagehead" .}}
+  <div class="shell">
+    <aside class="rail" aria-label="Contents"><div class="rail__inner">{{template "railhead"}}<ol><li><a href="#benefit">Why publish</a></li><li><a href="#path">Integration path</a></li><li><a href="#authority">Publisher authority</a></li><li><a href="#pilot">Pilot</a></li></ol></div></aside>
+    <article class="doc">
+      <section aria-labelledby="benefit">
+        <h2 id="benefit">One declared interface, many compatible agents</h2>
+        <p class="lede">Publishers should not have to let every agent independently scrape, guess and reinterpret their public information.</p>
+        <div class="cards wide">
+          <div class="card"><h3>Preserve vocabulary</h3><p>Your native names and lexical values remain visible beneath any shared semantic view.</p></div>
+          <div class="card"><h3>Declare policy</h3><p>State attribution, refresh, access, effect and revocation rules explicitly.</p></div>
+          <div class="card"><h3>Reduce waste</h3><p>A promoted typed representation can be compiled once and reused without browser execution for every query.</p></div>
+          <div class="card"><h3>Correct the record</h3><p>Publisher approval, correction and revocation are separate states, never inferred from technical availability.</p></div>
+        </div>
+      </section>
+      <section aria-labelledby="path">
+        <h2 id="path">Planned publisher path</h2>
+        <ol class="spine">
+          <li><b>Describe</b><span>Native concepts, public resources, read-only operations and attribution.</span></li>
+          <li><b>Validate</b><span>Check bounded schemas, effects, evidence requirements and conformance.</span></li>
+          <li><b>Preview</b><span>Inspect native and semantic values, mappings and generated bindings.</span></li>
+          <li><b>Verify origin</b><span>Prove control separately from technical compatibility.</span></li>
+          <li><b>Publish and monitor</b><span>Expose the interface, health state, corrections and revocations.</span></li>
+        </ol>
+        <p class="note">The complete publisher CLI and origin-claim flow are funded roadmap items, not currently released capabilities.</p>
+      </section>
+      <section aria-labelledby="authority">
+        <h2 id="authority">Availability is not authority</h2>
+        <p>TWIRX keeps publisher identity, policy review, technical stage, health, adapter trust and mapping trust as separate dimensions. A working endpoint cannot declare itself approved, authoritative or canonized.</p>
+      </section>
+      <section aria-labelledby="pilot">
+        <h2 id="pilot">Join a publisher-readiness pilot</h2>
+        <p>The initial pilot is read-only and bounded. It helps one publisher document an existing API, feed, JSON-LD or structured public surface while retaining attribution and correction rights.</p>
+        <p><a class="btn btn--primary" href="mailto:rick@twirx.org?subject=TWIRX%20publisher-readiness%20pilot">Contact the maintainer</a></p>
+      </section>
+    </article>
+  </div>
+</div>
+{{end}}

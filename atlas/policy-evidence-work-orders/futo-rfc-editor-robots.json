@@ -1,0 +1,25 @@
+{
+  "format": "tw.egress-work-order/0.1",
+  "id": "futo-rfc-editor-robots",
+  "origin_id": "rfc-editor-org",
+  "purpose": "robots",
+  "authority_class": "policy_evidence_collection",
+  "method": "GET",
+  "url": "https://www.rfc-editor.org/robots.txt",
+  "allowed_hosts": [
+    "www.rfc-editor.org"
+  ],
+  "policy_decision": "uncertain",
+  "policy_evidence_digest": "sha256:28d9a24de23e70d90b58befbb74302cb12b96ddc1ebb3886b4428335d205459c",
+  "decision_digest": "sha256:1e81683140679f036632bba6602b188950988606b3951940ab1d36c68c1c1d5d",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "not_before": "2026-08-11T12:15:50Z",
+  "expires_at": "2026-08-12T12:15:50Z",
+  "max_redirects": 0,
+  "max_body_bytes": 262144,
+  "timeout_ms": 15000,
+  "connect_timeout_ms": 5000,
+  "header_timeout_ms": 10000,
+  "max_consecutive_failures": 2,
+  "circuit_cooldown_seconds": 300
+}

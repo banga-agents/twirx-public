@@ -1,0 +1,64 @@
+---
+title: "Genesis implementation slice"
+description: "The smallest complete evidence-native path from origin representation to typed agent result."
+---
+
+## Data flow
+
+```text
+controlled origin
+      │
+      ▼
+URL and network policy
+      │
+      ▼
+bounded HTTP GET
+      │
+      ├── body → SHA-256 CAS
+      │
+      └── metadata + body digest → observation.cbor
+                                      │
+                         ┌────────────┴────────────┐
+                         ▼                         ▼
+                   Go verifier              C verifier
+                         │                         │
+                         └────────────┬────────────┘
+                                      ▼
+                              manual adapter
+                                      ▼
+                     native statement + semantic view
+                                      ▼
+                            field-level provenance
+```
+
+## Slow and fast paths
+
+Genesis implements only deterministic observation and execution. Later compiler work may use expensive discovery, browsers, and models, but those belong to a slow path.
+
+A promoted adapter's fast path should eventually remain:
+
+```text
+adapter lookup
+→ direct request
+→ deterministic extraction
+→ typed validation
+→ provenance assembly
+→ result
+```
+
+No model or browser should remain in the ordinary execution path when a stable direct representation exists.
+
+## Deliberate simplicity
+
+Genesis does not use:
+
+- a database;
+- a message broker;
+- a graph database;
+- Kubernetes;
+- a browser;
+- an LLM;
+- Wasm;
+- blockchain infrastructure.
+
+These exclusions keep the first trust proof inspectable. Components enter only when a measured requirement and an explicit boundary justify them.

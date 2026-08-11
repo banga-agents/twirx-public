@@ -1,0 +1,113 @@
+{{define "content"}}
+{{$r := .Data.futo_release}}
+<div class="page">
+  {{template "pagehead" .}}
+
+  <div class="shell">
+    <aside class="rail" aria-label="Reviewer path">
+      <div class="rail__inner">
+        <h2>Review in order</h2>
+        <ol>
+          <li><a href="#thesis">Thesis</a></li>
+          <li><a href="#proof">Working proof</a></li>
+          <li><a href="#status">Exact status</a></li>
+          <li><a href="#alignment">FUTO alignment</a></li>
+          <li><a href="#request">Grant request</a></li>
+          <li><a href="#links">Review links</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+      <section aria-labelledby="thesis">
+        <h2 id="thesis">The thesis</h2>
+        <p class="lede">
+          Agents repeatedly download pages, run browsers and ask models to reinterpret the
+          same interfaces. TWIRX compiles public representations into reusable typed state
+          while retaining what the source actually represented and how each result was derived.
+        </p>
+<pre><code>public representation
+→ immutable evidence
+→ source-native statement
+→ semantic packet
+→ materialized state
+→ query or delta
+→ proof</code></pre>
+      </section>
+
+      <section aria-labelledby="proof">
+        <h2 id="proof">Review the working proof</h2>
+        <div class="cards wide">
+          <div class="card"><h3>Query</h3><p>Inspect one four-row query across TWIRX and World Bank with zero origin calls.</p><p><a href="/demo/#query">Open query evidence</a></p></div>
+          <div class="card"><h3>Delta</h3><p>Compare two real RFC Editor archive observations without fabricating semantic or canon changes.</p><p><a href="/demo/#delta">Open the delta</a></p></div>
+          <div class="card"><h3>Trace</h3><p>Follow source-native lexical bytes through packet, observation, proof and snapshot identities.</p><p><a href="/demo/#trace">Open the trace</a></p></div>
+          <div class="card"><h3>Verify</h3><p>Read the exact commands, conformance results, security findings and residual limitations.</p><p><a href="/proof/">Open the evidence record</a></p></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="status">
+        <h2 id="status">Current exact status</h2>
+        <dl class="counters wide">
+          <div class="counter"><dt>Atlas identities</dt><dd>{{commas $r.actual.atlas_identities}}<small>selection, not working adapters</small></dd></div>
+          <div class="counter"><dt>Public packets</dt><dd>{{$r.actual.public_packets}}<small>across {{$r.actual.public_origins_with_packets}} origins</small></dd></div>
+          <div class="counter"><dt>Real deltas</dt><dd>{{$r.actual.deltas}}<small>historical origin change</small></dd></div>
+        </dl>
+        <div class="tablewrap wide">
+          <table>
+            <caption>Released local snapshot</caption>
+            <tbody>
+              <tr><th scope="row">Snapshot ID</th><td><code class="digest">{{$r.release.snapshot_id}}</code></td></tr>
+              <tr><th scope="row">Snapshot source revision</th><td><code>{{$r.release.snapshot_source_revision}}</code></td></tr>
+              <tr><th scope="row">Complete validation revision</th><td><code>{{$r.release.validation_revision}}</code></td></tr>
+              <tr><th scope="row">Website evidence revision</th><td><code>{{$r.release.website_release_commit}}</code></td></tr>
+              <tr><th scope="row">Public Lab</th><td>Not deployed; static evidence is not presented as a live API.</td></tr>
+              <tr><th scope="row">Current scope</th><td>{{$r.current_scope}}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="alignment">
+        <h2 id="alignment">Why FUTO is aligned</h2>
+        <p>
+          TWIRX is designed so the agentic Web does not become dependent on one search
+          company, browser platform, cloud provider, model vendor or proprietary tool
+          registry. The protocol remains independently implementable and self-hostable.
+        </p>
+        <ul>
+          <li>Source-native meaning is retained before semantic mapping.</li>
+          <li>No mandatory model, browser, cloud, chain or hosted service.</li>
+          <li>Publishers retain attribution, correction and revocation paths.</li>
+          <li>No token, advertising incentive, pay-to-rank or purchased governance.</li>
+          <li>Independent conformance, deterministic artifacts and explicit unresolved state.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="request">
+        <h2 id="request">The request</h2>
+        <p class="lede">
+          <strong>${{commas $r.grant.request_usd}} for {{$r.grant.term_days}} days.</strong>
+          The first <strong>${{commas $r.grant.first_milestone_usd}}</strong> milestone
+          completes the public release and funds {{$r.grant.first_milestone_days}} days
+          of focused, full-time maintainer engineering execution.
+        </p>
+        <p><a class="btn btn--primary" href="/funding/">Review budget</a> <a class="btn" href="/roadmap/">Review milestones</a></p>
+      </section>
+
+      <section aria-labelledby="links">
+        <h2 id="links">Reviewer links</h2>
+        <ul class="register register--plain">
+          <li><a href="/demo/">Working Query and Delta evidence</a></li>
+          <li><a href="/proof/">Technical proof and unresolved risks</a></li>
+          <li><a href="/atlas/">Atlas selection and admission state</a></li>
+          <li><a href="/architecture/">Architecture and trust boundaries</a></li>
+          <li><a href="/security/">Threat model and current controls</a></li>
+          <li><a href="{{.Site.DocsURL}}">Technical documentation<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="{{.Site.RepoURL}}">Source repository<span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="mailto:rick@twirx.org">rick@twirx.org</a></li>
+        </ul>
+      </section>
+    </article>
+  </div>
+</div>
+{{end}}

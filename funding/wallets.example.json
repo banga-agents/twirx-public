@@ -1,0 +1,20 @@
+{
+  "format": "tw.treasury-wallets/0.1",
+  "updated_at": "YYYY-MM-DD",
+  "wallets": [
+    {
+      "id": "genesis-evm",
+      "network_family": "evm",
+      "address": "0xPUBLIC_ADDRESS_ONLY",
+      "accepted_assets": [
+        "ETH",
+        "USDC"
+      ],
+      "control": "single-founder-temporary",
+      "purpose": "Genesis contributions and project expenses",
+      "explorer_reference": "Add explorer URL in the published repository",
+      "status": "active"
+    }
+  ],
+  "status": "active"
+}

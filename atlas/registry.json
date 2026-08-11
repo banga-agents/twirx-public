@@ -1,0 +1,956 @@
+{
+  "format": "tw.origin-registry/0.3",
+  "version": "2026-08-11",
+  "origins": [
+    {
+      "id": "api-worldbank-org",
+      "scope": "genesis_public",
+      "canonical_origin": "https://api.worldbank.org",
+      "registrable_domain": "worldbank.org",
+      "execution_catalog_ids": [
+        "world-bank-indicators"
+      ],
+      "catalog": {
+        "state": "cataloged",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "Genesis steward",
+        "evidence_refs": [
+          "origins/README.md",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "policy": {
+        "review_state": "completed",
+        "decision": "permit_with_constraints",
+        "reviewed_at": "2026-08-11T12:15:50Z",
+        "reviewer": "Richi (Genesis steward)",
+        "policy_id": "api-worldbank-org",
+        "policy_set_digest": "sha256:0f7ba43def7fff5a3adb8cd8c91cc5a9c27b0731bc4b0008d61e772b01dc8c20",
+        "robots_digest": "sha256:49f835ed198ad83d45094bd5754dfdb08e96fa662878847d1b5487a5655d7225",
+        "attribution": "Preserve World Bank attribution and represent provider content without promoting it to objective truth.",
+        "authentication": "none_required",
+        "rate_policy": "Use only the bounded E2 country, indicator and year route; identify TWIRX, cache responses, obey published limits and do not broadly crawl.",
+        "retention_policy": "Retain bounded observations and immutable proof artifacts required for replay, attribution and audit.",
+        "terms_reference": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+        "risk_state": "accepted",
+        "reviewer_notes": "The documented public API route is approved with explicit bounds. The robots resource returned 404 and is recorded as unavailable rather than treated as access authorization."
+      },
+      "technical": {
+        "stage": "semantically_linked",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 local evidence suite",
+        "evidence_refs": [
+          "conformance/e2/vectors.tsv",
+          "contracts/e2/contracts.json",
+          "origins/fixtures/world-bank-chl-population-2024.json",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "publisher": {
+        "name": "World Bank",
+        "kind": "international-public-institution",
+        "status": "unclaimed",
+        "reviewed_at": null,
+        "reviewer": null,
+        "evidence_refs": [],
+        "manifest_url": null
+      },
+      "health": {
+        "status": "unknown",
+        "checked_at": null,
+        "evidence_refs": []
+      },
+      "adapter_trust": {
+        "status": "conformant",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 Go and restricted-C conformance suite",
+        "evidence_refs": [
+          "conformance/e2/vectors.tsv",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "mapping_trust": {
+        "status": "reviewed",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 local evidence suite",
+        "evidence_refs": [
+          "contracts/e2/contracts.json",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "jurisdiction": "not_established",
+      "languages": [
+        "en"
+      ],
+      "domain_families": [
+        "economics_markets_public_disclosure"
+      ],
+      "authority_class": "provider-operated-official-api",
+      "discovery": {
+        "sources": [
+          "contracts/e2/contracts.json",
+          "origins/catalog.json",
+          "origins/fixtures/world-bank-chl-population-2024.json"
+        ],
+        "profiled_at": "2026-08-10T00:00:00Z",
+        "robots_url": "https://api.worldbank.org/robots.txt",
+        "sitemap_urls": [],
+        "feed_urls": [],
+        "api_descriptions": [
+          "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"
+        ],
+        "structured_data": [],
+        "public_endpoints": [
+          "https://api.worldbank.org/v2/country/{country}/indicator/{indicator}"
+        ]
+      },
+      "interfaces": [
+        {
+          "id": "e2-rest",
+          "kind": "rest",
+          "declaration_status": "observed",
+          "endpoint_or_locator": "origins/catalog.json#world-bank-indicators",
+          "authentication": "none in the admitted E2 public-read route",
+          "health": "unknown",
+          "execution_status": "admitted_public_read",
+          "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+        }
+      ],
+      "capabilities": [
+        {
+          "native_id": "development.getIndicator",
+          "native_label": "Get development indicator",
+          "semantic_operation_candidates": [
+            "development.getIndicator"
+          ],
+          "input_shape_ref": "contracts/e2/contracts.json#development.getIndicator/input",
+          "output_shape_ref": "contracts/e2/contracts.json#development.getIndicator/output",
+          "effect_class": "public_read",
+          "status": "admitted",
+          "interface_refs": [
+            "e2-rest"
+          ],
+          "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+        }
+      ],
+      "access": {
+        "class": "unknown",
+        "assessment_status": "not_assessed",
+        "license_or_terms_refs": [],
+        "attribution": "not_assessed",
+        "rate_policy": "not_assessed",
+        "payment_protocol_candidates": [],
+        "price_discovery_status": "not_assessed",
+        "evidence_digest": null,
+        "offer_candidates": []
+      },
+      "economics": {
+        "funding_class": "unknown",
+        "requests": 0,
+        "transferred_bytes": 0,
+        "evidence_bytes": 0,
+        "cpu_milliseconds": 0,
+        "human_review_seconds": 0,
+        "infrastructure_cost_estimate": null
+      },
+      "publisher_readiness": {
+        "signals": [
+          {
+            "kind": "api",
+            "presence": "present",
+            "source": "origins/catalog.json#world-bank-indicators",
+            "observation_class": "observed",
+            "observed_at": "2026-08-10T00:00:00Z",
+            "freshness": "committed E2 snapshot",
+            "standard_status": "not_applicable",
+            "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+          }
+        ]
+      },
+      "runtime": {
+        "last_seen": null,
+        "last_observed": "2026-08-10T00:00:00Z",
+        "refresh_class": "disabled",
+        "request_budget": 0,
+        "storage_budget_bytes": 0,
+        "scheduler": {
+          "state": "disabled",
+          "last_attempt": null,
+          "cooldown_until": null,
+          "consecutive_failures": 0,
+          "public_value": 0,
+          "semantic_novelty": 0,
+          "demonstrated_demand": 0,
+          "change_probability": 0,
+          "health_need": 0,
+          "estimated_request_cost": 0
+        }
+      },
+      "semantics": {
+        "native_module": "origin:worldbank@v2",
+        "adapter_id": "tw.e2/generated-adapter/world-bank-indicators@v2",
+        "conformance_ref": "conformance/e2/vectors.tsv",
+        "contract_set_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814",
+        "mapping_modules": [
+          "development:core@0.1.0",
+          "tw:kernel@0.1.0"
+        ],
+        "concept_ids": [
+          "development:Indicator.identifier",
+          "development:IndicatorObservation",
+          "development:IndicatorObservation.countryCode",
+          "development:IndicatorObservation.value",
+          "development:IndicatorObservation.year"
+        ],
+        "operation_ids": [
+          "development.getIndicator"
+        ],
+        "semantic_closure_digests": [
+          "sha256:1320271ebd08f496759a9d0ded8a329e13fc670a389f3c97cd3db5089b9393e3"
+        ]
+      },
+      "evidence": {
+        "observation_ids": [],
+        "artifacts": [
+          {
+            "path": "conformance/e2/vectors.tsv",
+            "digest": "sha256:aa898a71692d3cfde34987a5d88d902d1b97acd1738472e49b16dcf2dc87e1cb"
+          },
+          {
+            "path": "contracts/e2/contracts.json",
+            "digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+          },
+          {
+            "path": "generated/e2/public-proof.json",
+            "digest": "sha256:a3d80c8616196296c162315c977a7b8d0869f790ade51b8f769a7cf5adb29197"
+          },
+          {
+            "path": "origins/catalog.json",
+            "digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+          },
+          {
+            "path": "origins/fixtures/world-bank-chl-population-2024.json",
+            "digest": "sha256:a8f4c80e5937fd206c84ba11290a8a6c137677d488c6042fe7ae1e47f88ca93d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "controlled-origin-lab-fixture",
+      "scope": "test_fixture",
+      "canonical_origin": "https://lab.twirx.org",
+      "registrable_domain": "twirx.org",
+      "execution_catalog_ids": [
+        "controlled-origin-lab"
+      ],
+      "catalog": {
+        "state": "cataloged",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "Genesis steward",
+        "evidence_refs": [
+          "conformance/README.md",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "policy": {
+        "review_state": "pending",
+        "decision": "uncertain",
+        "reviewed_at": null,
+        "reviewer": null,
+        "policy_id": null,
+        "policy_set_digest": null,
+        "robots_digest": null,
+        "attribution": "Controlled TWIRX conformance fixture; not a third-party factual source.",
+        "authentication": "not_applicable",
+        "rate_policy": "Execution is limited to the explicit local-fixture mode admitted by the E2 catalog.",
+        "retention_policy": "Fixture bytes are committed conformance evidence.",
+        "terms_reference": "conformance/README.md",
+        "risk_state": "pending",
+        "reviewer_notes": "This test fixture has no authority to contribute to Genesis-500 public-origin state counters."
+      },
+      "technical": {
+        "stage": "semantically_linked",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 local evidence suite",
+        "evidence_refs": [
+          "adapters/testorigin-product/adapter.json",
+          "conformance/e2/vectors.tsv",
+          "origins/fixtures/controlled-product.json",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "publisher": {
+        "name": "TWIRX",
+        "kind": "controlled-test-fixture",
+        "status": "publisher_approved",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "Genesis steward",
+        "evidence_refs": [
+          "conformance/README.md",
+          "reports/gate-e2-live-provenance-lab.md"
+        ],
+        "manifest_url": null
+      },
+      "health": {
+        "status": "unknown",
+        "checked_at": null,
+        "evidence_refs": []
+      },
+      "adapter_trust": {
+        "status": "conformant",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 Go and restricted-C conformance suite",
+        "evidence_refs": [
+          "conformance/e2/vectors.tsv",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "mapping_trust": {
+        "status": "reviewed",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 local evidence suite",
+        "evidence_refs": [
+          "canon/mappings/testorigin-commerce/module.json",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "jurisdiction": "not_applicable",
+      "languages": [
+        "en"
+      ],
+      "domain_families": [],
+      "authority_class": "controlled-test-fixture",
+      "discovery": {
+        "sources": [
+          "adapters/testorigin-product/adapter.json",
+          "origins/catalog.json",
+          "origins/fixtures/controlled-product.json"
+        ],
+        "profiled_at": "2026-08-10T00:00:00Z",
+        "robots_url": null,
+        "sitemap_urls": [],
+        "feed_urls": [],
+        "api_descriptions": [],
+        "structured_data": [],
+        "public_endpoints": []
+      },
+      "interfaces": [
+        {
+          "id": "e2-rest",
+          "kind": "rest",
+          "declaration_status": "observed",
+          "endpoint_or_locator": "origins/catalog.json#controlled-origin-lab",
+          "authentication": "none in the controlled fixture route",
+          "health": "unknown",
+          "execution_status": "admitted_public_read",
+          "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+        }
+      ],
+      "capabilities": [
+        {
+          "native_id": "fixture.getOffer",
+          "native_label": "Get controlled fixture offer",
+          "semantic_operation_candidates": [
+            "fixture.getOffer"
+          ],
+          "input_shape_ref": "contracts/e2/contracts.json#fixture.getOffer/input",
+          "output_shape_ref": "contracts/e2/contracts.json#fixture.getOffer/output",
+          "effect_class": "public_read",
+          "status": "admitted",
+          "interface_refs": [
+            "e2-rest"
+          ],
+          "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+        }
+      ],
+      "access": {
+        "class": "unknown",
+        "assessment_status": "not_assessed",
+        "license_or_terms_refs": [],
+        "attribution": "not_assessed",
+        "rate_policy": "not_assessed",
+        "payment_protocol_candidates": [],
+        "price_discovery_status": "not_assessed",
+        "evidence_digest": null,
+        "offer_candidates": []
+      },
+      "economics": {
+        "funding_class": "unknown",
+        "requests": 0,
+        "transferred_bytes": 0,
+        "evidence_bytes": 0,
+        "cpu_milliseconds": 0,
+        "human_review_seconds": 0,
+        "infrastructure_cost_estimate": null
+      },
+      "publisher_readiness": {
+        "signals": [
+          {
+            "kind": "api",
+            "presence": "present",
+            "source": "origins/catalog.json#controlled-origin-lab",
+            "observation_class": "observed",
+            "observed_at": "2026-08-10T00:00:00Z",
+            "freshness": "committed E2 fixture snapshot",
+            "standard_status": "not_applicable",
+            "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+          }
+        ]
+      },
+      "runtime": {
+        "last_seen": null,
+        "last_observed": "2026-08-10T00:00:00Z",
+        "refresh_class": "disabled",
+        "request_budget": 0,
+        "storage_budget_bytes": 0,
+        "scheduler": {
+          "state": "disabled",
+          "last_attempt": null,
+          "cooldown_until": null,
+          "consecutive_failures": 0,
+          "public_value": 0,
+          "semantic_novelty": 0,
+          "demonstrated_demand": 0,
+          "change_probability": 0,
+          "health_need": 0,
+          "estimated_request_cost": 0
+        }
+      },
+      "semantics": {
+        "native_module": "origin:testorigin@2026-08-10",
+        "adapter_id": "origin:testorigin/product-offer@0.1.0",
+        "conformance_ref": "conformance/e2/vectors.tsv",
+        "contract_set_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814",
+        "mapping_modules": [
+          "mapping:testorigin-commerce@0.1.0",
+          "tw:commerce@0.1.0",
+          "tw:kernel@0.1.0"
+        ],
+        "concept_ids": [
+          "commerce:Offer",
+          "commerce:Offer.availability",
+          "commerce:OfferPrice.amount",
+          "commerce:OfferPrice.currency",
+          "commerce:Product.identifier",
+          "commerce:Product.name"
+        ],
+        "operation_ids": [
+          "fixture.getOffer"
+        ],
+        "semantic_closure_digests": [
+          "sha256:5a00297653f7af81894b980669343f8dfc1d1af8713172945dd619451cbefd82"
+        ]
+      },
+      "evidence": {
+        "observation_ids": [],
+        "artifacts": [
+          {
+            "path": "adapters/testorigin-product/adapter.json",
+            "digest": "sha256:86995ebf29b33eb6e23e871de86fdc4112bba3d5101b21781e9f750482c03117"
+          },
+          {
+            "path": "canon/mappings/testorigin-commerce/module.json",
+            "digest": "sha256:f9cee13dae63d7e7be63ebaf9db062a15b9ee335bb8b18d4ea2d9bfcfc0b2af2"
+          },
+          {
+            "path": "conformance/e2/vectors.tsv",
+            "digest": "sha256:aa898a71692d3cfde34987a5d88d902d1b97acd1738472e49b16dcf2dc87e1cb"
+          },
+          {
+            "path": "contracts/e2/contracts.json",
+            "digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+          },
+          {
+            "path": "origins/catalog.json",
+            "digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+          },
+          {
+            "path": "origins/fixtures/controlled-product.json",
+            "digest": "sha256:27545ef2ea28993d9b0ab4882c1924d3f9ccdf683386be8ba5b677ac42c2a538"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rfc-editor-org",
+      "scope": "genesis_public",
+      "canonical_origin": "https://www.rfc-editor.org",
+      "registrable_domain": "rfc-editor.org",
+      "execution_catalog_ids": [],
+      "catalog": {
+        "state": "cataloged",
+        "reviewed_at": "2026-08-11T12:15:50Z",
+        "reviewer": "Richi (Genesis steward)",
+        "evidence_refs": [
+          "atlas/genesis-500/selection.json",
+          "reports/futo-policy-decision-proposals.md"
+        ]
+      },
+      "policy": {
+        "review_state": "completed",
+        "decision": "profile_only",
+        "reviewed_at": "2026-08-11T12:15:50Z",
+        "reviewer": "Richi (Genesis steward)",
+        "policy_id": "rfc-editor-org",
+        "policy_set_digest": "sha256:0f7ba43def7fff5a3adb8cd8c91cc5a9c27b0731bc4b0008d61e772b01dc8c20",
+        "robots_digest": "sha256:151cf0b9cebe42bf87d2489a855e32bbe6dd6b795f6844e30c48cb8891520b44",
+        "attribution": "Preserve RFC Editor attribution and source-native lexical values for every historical archive statement.",
+        "authentication": "none_required",
+        "rate_policy": "Only exact Common Crawl index queries and byte ranges for the approved homepage route and two periods are permitted; no live content crawl.",
+        "retention_policy": "Retain exact bounded historical evidence, derived packets and proof artifacts; never present archive evidence as current publisher state.",
+        "terms_reference": "reports/futo-policy-decision-proposals.md",
+        "risk_state": "accepted",
+        "reviewer_notes": "Historical public-interest archive profiling is approved. Robots disallows three RFC subtrees; none is the approved homepage route. No live RFC content retrieval is authorized."
+      },
+      "technical": {
+        "stage": "unprofiled",
+        "reviewed_at": null,
+        "reviewer": null,
+        "evidence_refs": []
+      },
+      "publisher": {
+        "name": "RFC Editor",
+        "kind": "public-standards-publisher",
+        "status": "unclaimed",
+        "reviewed_at": null,
+        "reviewer": null,
+        "evidence_refs": [],
+        "manifest_url": null
+      },
+      "health": {
+        "status": "unknown",
+        "checked_at": null,
+        "evidence_refs": []
+      },
+      "adapter_trust": {
+        "status": "none",
+        "reviewed_at": null,
+        "reviewer": null,
+        "evidence_refs": []
+      },
+      "mapping_trust": {
+        "status": "none",
+        "reviewed_at": null,
+        "reviewer": null,
+        "evidence_refs": []
+      },
+      "jurisdiction": "US",
+      "languages": [
+        "en"
+      ],
+      "domain_families": [
+        "standards_technical_docs_open_source"
+      ],
+      "authority_class": "public-standards-publisher",
+      "discovery": {
+        "sources": [],
+        "profiled_at": null,
+        "robots_url": "https://www.rfc-editor.org/robots.txt",
+        "sitemap_urls": [],
+        "feed_urls": [],
+        "api_descriptions": [],
+        "structured_data": [],
+        "public_endpoints": []
+      },
+      "interfaces": [],
+      "capabilities": [],
+      "access": {
+        "class": "unknown",
+        "assessment_status": "not_assessed",
+        "license_or_terms_refs": [],
+        "attribution": "not_assessed",
+        "rate_policy": "not_assessed",
+        "payment_protocol_candidates": [],
+        "price_discovery_status": "not_assessed",
+        "evidence_digest": null,
+        "offer_candidates": []
+      },
+      "economics": {
+        "funding_class": "unknown",
+        "requests": 0,
+        "transferred_bytes": 0,
+        "evidence_bytes": 0,
+        "cpu_milliseconds": 0,
+        "human_review_seconds": 0,
+        "infrastructure_cost_estimate": null
+      },
+      "publisher_readiness": {
+        "signals": []
+      },
+      "runtime": {
+        "last_seen": null,
+        "last_observed": null,
+        "refresh_class": "disabled",
+        "request_budget": 0,
+        "storage_budget_bytes": 0,
+        "scheduler": {
+          "state": "disabled",
+          "last_attempt": null,
+          "cooldown_until": null,
+          "consecutive_failures": 0,
+          "public_value": 0,
+          "semantic_novelty": 0,
+          "demonstrated_demand": 0,
+          "change_probability": 0,
+          "health_need": 0,
+          "estimated_request_cost": 0
+        }
+      },
+      "semantics": {
+        "native_module": null,
+        "adapter_id": null,
+        "conformance_ref": null,
+        "contract_set_digest": null,
+        "mapping_modules": [],
+        "concept_ids": [],
+        "operation_ids": [],
+        "semantic_closure_digests": []
+      },
+      "evidence": {
+        "observation_ids": [],
+        "artifacts": []
+      }
+    },
+    {
+      "id": "twirx-org",
+      "scope": "genesis_public",
+      "canonical_origin": "https://twirx.org",
+      "registrable_domain": "twirx.org",
+      "execution_catalog_ids": [
+        "twirx-project"
+      ],
+      "catalog": {
+        "state": "cataloged",
+        "reviewed_at": "2026-08-10T16:01:26Z",
+        "reviewer": "Genesis steward",
+        "evidence_refs": [
+          "CHARTER.md",
+          "decisions/005-twirx-origin-admission.md"
+        ]
+      },
+      "policy": {
+        "review_state": "completed",
+        "decision": "permit_live",
+        "reviewed_at": "2026-08-11T12:15:50Z",
+        "reviewer": "Richi (Genesis steward)",
+        "policy_id": "twirx-org",
+        "policy_set_digest": "sha256:0f7ba43def7fff5a3adb8cd8c91cc5a9c27b0731bc4b0008d61e772b01dc8c20",
+        "robots_digest": "sha256:279da8a22975a0debaec359c0d4c9412c5f6fe9635c2bb7f07ee4ad6a699d89d",
+        "attribution": "Preserve TWIRX project attribution and source-native wording when reusing published project metadata.",
+        "authentication": "none_required",
+        "rate_policy": "Only exact publisher-authored public project routes are permitted; the Atlas scheduler remains disabled for the FUTO release.",
+        "retention_policy": "Retain bounded public evidence and immutable proof artifacts; exclude private repository content, personal data and unpublished reports.",
+        "terms_reference": "CHARTER.md",
+        "risk_state": "accepted",
+        "reviewer_notes": "Founder-controlled public origin approved for bounded public-read access. Robots permits all routes and advertises the public sitemap; the decision does not enable scheduled retrieval."
+      },
+      "technical": {
+        "stage": "semantically_linked",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 local evidence suite",
+        "evidence_refs": [
+          "conformance/e2/vectors.tsv",
+          "contracts/e2/contracts.json",
+          "origins/fixtures/twirx-project-status.json",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "publisher": {
+        "name": "TWIRX",
+        "kind": "public-infrastructure-project",
+        "status": "publisher_approved",
+        "reviewed_at": "2026-08-10T16:01:26Z",
+        "reviewer": "Genesis steward",
+        "evidence_refs": [
+          "CHARTER.md",
+          "decisions/005-twirx-origin-admission.md"
+        ],
+        "manifest_url": null
+      },
+      "health": {
+        "status": "unknown",
+        "checked_at": null,
+        "evidence_refs": []
+      },
+      "adapter_trust": {
+        "status": "conformant",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 Go and restricted-C conformance suite",
+        "evidence_refs": [
+          "conformance/e2/vectors.tsv",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "mapping_trust": {
+        "status": "reviewed",
+        "reviewed_at": "2026-08-10T00:00:00Z",
+        "reviewer": "E2 local evidence suite",
+        "evidence_refs": [
+          "contracts/e2/contracts.json",
+          "reports/gate-e2-live-provenance-lab.md"
+        ]
+      },
+      "jurisdiction": "not_established",
+      "languages": [
+        "en"
+      ],
+      "domain_families": [
+        "standards_technical_docs_open_source"
+      ],
+      "authority_class": "publisher-authored-project-surface",
+      "discovery": {
+        "sources": [
+          "contracts/e2/contracts.json",
+          "origins/catalog.json",
+          "origins/fixtures/twirx-project-status.json"
+        ],
+        "profiled_at": "2026-08-10T00:00:00Z",
+        "robots_url": "https://twirx.org/robots.txt",
+        "sitemap_urls": [],
+        "feed_urls": [],
+        "api_descriptions": [],
+        "structured_data": [],
+        "public_endpoints": [
+          "https://twirx.org/data/project-status.json"
+        ]
+      },
+      "interfaces": [
+        {
+          "id": "e2-mcp",
+          "kind": "mcp",
+          "declaration_status": "publisher_declared",
+          "endpoint_or_locator": "generated/e2/mcp-tools.json",
+          "authentication": "local stdio binding; no remote origin execution authority",
+          "health": "unknown",
+          "execution_status": "descriptive_only",
+          "evidence_digest": "sha256:ac0a9b16b370f4d2e4f9d9e2ae25f4040aa9ff25dc9829a8ff59a5a4bba91639"
+        },
+        {
+          "id": "e2-openapi",
+          "kind": "openapi",
+          "declaration_status": "publisher_declared",
+          "endpoint_or_locator": "generated/e2/openapi.json",
+          "authentication": "schema declaration only; execution remains owned by the E2 catalog",
+          "health": "unknown",
+          "execution_status": "descriptive_only",
+          "evidence_digest": "sha256:8ba799449d1f6989ea1f32fbfe7ff4cd40a0cc2b2782a14dc302e86f16299319"
+        },
+        {
+          "id": "e2-rest",
+          "kind": "rest",
+          "declaration_status": "observed",
+          "endpoint_or_locator": "origins/catalog.json#twirx-project",
+          "authentication": "none in the admitted E2 public-read route",
+          "health": "unknown",
+          "execution_status": "admitted_public_read",
+          "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+        },
+        {
+          "id": "e2-twirx-native",
+          "kind": "twirx_native",
+          "declaration_status": "publisher_declared",
+          "endpoint_or_locator": "origins/catalog.json#twirx-project",
+          "authentication": "none in the admitted E2 public-read route",
+          "health": "unknown",
+          "execution_status": "admitted_public_read",
+          "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+        }
+      ],
+      "capabilities": [
+        {
+          "native_id": "project.getEngineeringGateReport",
+          "native_label": "Get engineering gate report",
+          "semantic_operation_candidates": [
+            "project.getEngineeringGateReport"
+          ],
+          "input_shape_ref": "contracts/e2/contracts.json#project.getEngineeringGateReport/input",
+          "output_shape_ref": "contracts/e2/contracts.json#project.getEngineeringGateReport/output",
+          "effect_class": "public_read",
+          "status": "admitted",
+          "interface_refs": [
+            "e2-twirx-native"
+          ],
+          "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+        },
+        {
+          "native_id": "project.getStatus",
+          "native_label": "Get project status",
+          "semantic_operation_candidates": [
+            "project.getStatus"
+          ],
+          "input_shape_ref": "contracts/e2/contracts.json#project.getStatus/input",
+          "output_shape_ref": "contracts/e2/contracts.json#project.getStatus/output",
+          "effect_class": "public_read",
+          "status": "admitted",
+          "interface_refs": [
+            "e2-twirx-native"
+          ],
+          "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+        },
+        {
+          "native_id": "project.listUnresolvedRisks",
+          "native_label": "List unresolved risks",
+          "semantic_operation_candidates": [
+            "project.listUnresolvedRisks"
+          ],
+          "input_shape_ref": "contracts/e2/contracts.json#project.listUnresolvedRisks/input",
+          "output_shape_ref": "contracts/e2/contracts.json#project.listUnresolvedRisks/output",
+          "effect_class": "public_read",
+          "status": "admitted",
+          "interface_refs": [
+            "e2-twirx-native"
+          ],
+          "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+        }
+      ],
+      "access": {
+        "class": "unknown",
+        "assessment_status": "not_assessed",
+        "license_or_terms_refs": [],
+        "attribution": "not_assessed",
+        "rate_policy": "not_assessed",
+        "payment_protocol_candidates": [],
+        "price_discovery_status": "not_assessed",
+        "evidence_digest": null,
+        "offer_candidates": []
+      },
+      "economics": {
+        "funding_class": "unknown",
+        "requests": 0,
+        "transferred_bytes": 0,
+        "evidence_bytes": 0,
+        "cpu_milliseconds": 0,
+        "human_review_seconds": 0,
+        "infrastructure_cost_estimate": null
+      },
+      "publisher_readiness": {
+        "signals": [
+          {
+            "kind": "api",
+            "presence": "present",
+            "source": "origins/catalog.json#twirx-project",
+            "observation_class": "observed",
+            "observed_at": "2026-08-10T00:00:00Z",
+            "freshness": "committed E2 snapshot",
+            "standard_status": "not_applicable",
+            "evidence_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+          },
+          {
+            "kind": "mcp",
+            "presence": "present",
+            "source": "generated/e2/mcp-tools.json",
+            "observation_class": "publisher_declared",
+            "observed_at": "2026-08-10T00:00:00Z",
+            "freshness": "committed E2 generated binding",
+            "standard_status": "experimental",
+            "evidence_digest": "sha256:ac0a9b16b370f4d2e4f9d9e2ae25f4040aa9ff25dc9829a8ff59a5a4bba91639"
+          },
+          {
+            "kind": "openapi",
+            "presence": "present",
+            "source": "generated/e2/openapi.json",
+            "observation_class": "publisher_declared",
+            "observed_at": "2026-08-10T00:00:00Z",
+            "freshness": "committed E2 generated binding",
+            "standard_status": "finalized",
+            "evidence_digest": "sha256:8ba799449d1f6989ea1f32fbfe7ff4cd40a0cc2b2782a14dc302e86f16299319"
+          },
+          {
+            "kind": "twirx_native",
+            "presence": "present",
+            "source": "contracts/e2/contracts.json#project",
+            "observation_class": "publisher_declared",
+            "observed_at": "2026-08-10T00:00:00Z",
+            "freshness": "committed E2 snapshot",
+            "standard_status": "experimental",
+            "evidence_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+          }
+        ]
+      },
+      "runtime": {
+        "last_seen": null,
+        "last_observed": "2026-08-10T00:00:00Z",
+        "refresh_class": "disabled",
+        "request_budget": 0,
+        "storage_budget_bytes": 0,
+        "scheduler": {
+          "state": "disabled",
+          "last_attempt": null,
+          "cooldown_until": null,
+          "consecutive_failures": 0,
+          "public_value": 0,
+          "semantic_novelty": 0,
+          "demonstrated_demand": 0,
+          "change_probability": 0,
+          "health_need": 0,
+          "estimated_request_cost": 0
+        }
+      },
+      "semantics": {
+        "native_module": "origin:twirx@2026-08-10",
+        "adapter_id": "tw.e2/generated-adapter/twirx-project@2026-08-10",
+        "conformance_ref": "conformance/e2/vectors.tsv",
+        "contract_set_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814",
+        "mapping_modules": [
+          "project:core@0.1.0",
+          "tw:kernel@0.1.0"
+        ],
+        "concept_ids": [
+          "project:EngineeringGate.evidenceStatus",
+          "project:EngineeringGate.hostedCI",
+          "project:EngineeringGate.id",
+          "project:EngineeringGate.reportPath",
+          "project:EngineeringGateReport",
+          "project:RiskRegister",
+          "project:RiskRegister.items",
+          "project:Status",
+          "project:Status.engineeringGate",
+          "project:Status.gateStatus",
+          "project:Status.maturity",
+          "project:Status.phase"
+        ],
+        "operation_ids": [
+          "project.getEngineeringGateReport",
+          "project.getStatus",
+          "project.listUnresolvedRisks"
+        ],
+        "semantic_closure_digests": [
+          "sha256:549a9f132e43252cc2a5ac76fe031a7358f09b9d5d688e54d80c5603b8b0f330"
+        ]
+      },
+      "evidence": {
+        "observation_ids": [],
+        "artifacts": [
+          {
+            "path": "conformance/e2/vectors.tsv",
+            "digest": "sha256:aa898a71692d3cfde34987a5d88d902d1b97acd1738472e49b16dcf2dc87e1cb"
+          },
+          {
+            "path": "contracts/e2/contracts.json",
+            "digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814"
+          },
+          {
+            "path": "generated/e2/mcp-tools.json",
+            "digest": "sha256:ac0a9b16b370f4d2e4f9d9e2ae25f4040aa9ff25dc9829a8ff59a5a4bba91639"
+          },
+          {
+            "path": "generated/e2/openapi.json",
+            "digest": "sha256:8ba799449d1f6989ea1f32fbfe7ff4cd40a0cc2b2782a14dc302e86f16299319"
+          },
+          {
+            "path": "generated/e2/public-proof.json",
+            "digest": "sha256:a3d80c8616196296c162315c977a7b8d0869f790ade51b8f769a7cf5adb29197"
+          },
+          {
+            "path": "origins/catalog.json",
+            "digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513"
+          },
+          {
+            "path": "origins/fixtures/twirx-project-status.json",
+            "digest": "sha256:d33c172f72b5d095b09a86137576b408fa27051f7f32f65e689bcfa4374ec537"
+          }
+        ]
+      }
+    }
+  ]
+}

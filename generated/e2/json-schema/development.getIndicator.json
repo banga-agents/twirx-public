@@ -1,0 +1,46 @@
+{
+  "$id": "urn:twirx:operation:development.getIndicator:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Returns one World Bank Indicators API value for bounded country, indicator, and year inputs.",
+  "properties": {
+    "country": {
+      "description": "Admitted ISO 3166-1 alpha-3 country code.",
+      "enum": [
+        "CHL",
+        "USA",
+        "VNM"
+      ],
+      "maxLength": 3,
+      "type": "string"
+    },
+    "indicator": {
+      "description": "Admitted World Bank indicator code.",
+      "enum": [
+        "NY.GDP.MKTP.CD",
+        "SP.POP.TOTL"
+      ],
+      "maxLength": 32,
+      "type": "string"
+    },
+    "year": {
+      "description": "Admitted observation year.",
+      "enum": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "type": "integer"
+    }
+  },
+  "required": [
+    "country",
+    "indicator",
+    "year"
+  ],
+  "title": "Get an admitted development indicator",
+  "type": "object"
+}

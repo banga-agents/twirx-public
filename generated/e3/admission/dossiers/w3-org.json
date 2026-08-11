@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "w3-org",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://w3.org",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:1567b1c0e2dfab00a53dda165e93b5bc3f5259ee475ca5571c536101ac67842b",
+  "policy_evidence_digest": "sha256:a8eee08fc41e518395740995285755f46e64fb600e98ec8ab6360d4f65df5c78",
+  "decision_digest": "sha256:bd65ffccd0e7133f4d6cfdb2f58f9187d1137ad7099500517913924fbc0e0964",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

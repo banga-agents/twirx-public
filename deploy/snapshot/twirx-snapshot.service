@@ -1,0 +1,58 @@
+[Unit]
+Description=TWIRX immutable Semantic Snapshot runtime
+Documentation=https://twirx.org/proof
+After=network.target
+ConditionPathIsDirectory=/srv/twirx/snapshots
+
+[Service]
+Type=simple
+User=twirx-snapshot
+Group=twirx-snapshot
+EnvironmentFile=/etc/twirx/snapshot-runtime.env
+ExecStart=/srv/twirx/current/bin/twirx-snapshot serve --snapshot ${TWIRX_SNAPSHOT_PATH} --id ${TWIRX_SNAPSHOT_ID} --listen 127.0.0.1:8091
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+PrivateDevices=true
+PrivateTmp=true
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectProc=invisible
+ProtectSystem=strict
+ProcSubset=pid
+InaccessiblePaths=/srv/twirx/current/.git /srv/twirx/current/atlas /srv/twirx/current/reports /var/lib/postgresql /run/credentials /run/secrets /root /home
+RemoveIPC=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged @resources
+SystemCallErrorNumber=EPERM
+SocketBindAllow=tcp:8091
+SocketBindDeny=any
+IPAddressDeny=any
+IPAddressAllow=localhost
+UMask=0077
+TimeoutStartSec=30
+TimeoutStopSec=10
+CPUQuota=200%
+MemoryHigh=1536M
+MemoryMax=2048M
+MemorySwapMax=0
+IOWeight=1
+TasksMax=64
+LimitNOFILE=256
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+{
+  "a/b": "slash",
+  "m~n": "tilde",
+  "array": [
+    "zero",
+    "one"
+  ]
+}

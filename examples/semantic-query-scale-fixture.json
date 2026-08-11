@@ -1,0 +1,31 @@
+{
+  "select": [
+    "field_24999"
+  ],
+  "subject_concept": "",
+  "subject_ids": [
+    "fixture:scale-corpus/document/1"
+  ],
+  "origin_ids": [
+    "controlled-scale-corpus-fixture"
+  ],
+  "minimum_distinct_origins": 1,
+  "authority_classes": [
+    "controlled_test_fixture"
+  ],
+  "lanes": [
+    "observed_native"
+  ],
+  "mapping_statuses": [
+    "none"
+  ],
+  "time_mode": "current",
+  "time_from": "",
+  "time_until": "",
+  "maximum_age_seconds": null,
+  "stale_behavior": "return_explicit_stale",
+  "preference": "highest_proof",
+  "maximum_results": 1,
+  "maximum_proof_bytes": 1048576,
+  "proof_level": "packet"
+}

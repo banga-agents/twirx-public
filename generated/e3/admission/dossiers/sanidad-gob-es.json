@@ -1,0 +1,32 @@
+{
+  "format": "tw.admission-dossier/0.1",
+  "origin_id": "sanidad-gob-es",
+  "admission_review_state": "pending",
+  "canonical_admission": false,
+  "canonical_origin": "https://sanidad.gob.es",
+  "scope": "genesis_public",
+  "catalog_state": "cataloged",
+  "policy_review_state": "pending",
+  "policy_decision": "uncertain",
+  "technical_stage": "unprofiled",
+  "publisher_status": "unclaimed",
+  "health_status": "unknown",
+  "adapter_trust": "none",
+  "mapping_trust": "none",
+  "interfaces": 0,
+  "capability_candidates": 0,
+  "admitted_public_read_operations": 0,
+  "access_class": "unknown",
+  "commercial_offer_candidates": 0,
+  "record_digest": "sha256:46b6108886f14164ab16a9bd2810db45ca6a4cd72d026cea597c3e5e1dab7dc0",
+  "policy_evidence_digest": "sha256:e4190c6e640613a584b4ecfcfb9bd0d0e99341469ac5ae7f01dafafbcad4e512",
+  "decision_digest": "sha256:6001471a3d9ca36e2b087344aa3add1562ce6a9c62068b2a3ad9af1d205adc27",
+  "approval_reference": "",
+  "constraints": [
+    "Founder review is required before canonical admission.",
+    "Live retrieval is forbidden while policy review is pending."
+  ],
+  "evidence_refs": [
+    "atlas/genesis-500/selection.json"
+  ]
+}

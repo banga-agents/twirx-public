@@ -1,0 +1,301 @@
+{{define "content"}}
+<div class="page">
+  {{template "pagehead" .}}
+
+  <div class="shell">
+    <aside class="rail" aria-label="Contents">
+      <div class="rail__inner">
+        {{template "railhead"}}
+        <ol>
+          <li><a href="#why">Why founder-led, for now</a></li>
+          <li><a href="#authority">The authority order</a></li>
+          <li><a href="#laws">The founding laws</a></li>
+          <li><a href="#decisions">Decision classes</a></li>
+          <li><a href="#admission">The admission rule</a></li>
+          <li><a href="#money">What funding cannot buy</a></li>
+          <li><a href="#succession">Succession</a></li>
+          <li><a href="#documents">The four documents</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="doc">
+
+      <section aria-labelledby="why">
+        <h2 id="why">Why founder-led, for now</h2>
+
+        <p class="lede">
+          TWIRX is founder-led during Genesis because accountability requires a real
+          decision-maker. There is currently one maintainer. A governance structure that
+          pretended otherwise would be theatre, and theatre is the failure mode this project
+          is least able to afford.
+        </p>
+
+        <p>
+          That stewardship is constrained rather than absolute. The protocol assets — the
+          specifications, canonical schemas, conformance vectors, trust models, semantic
+          kernel, reference implementations, registry metadata, governance and treasury
+          records — are held for the commons. No donor, maintainer, company, model provider,
+          cloud provider, or chain purchases ownership of them.
+        </p>
+
+        <p>
+          Governance should become more distributed when there is a real contributor and
+          maintainer community to distribute it to. Not before. Simulated decentralisation
+          before a community exists concentrates power while claiming the opposite.
+        </p>
+
+        <div class="callout callout--key">
+          <p class="callout__title">The practical difference</p>
+          <p>
+            Founder-led means the founder decides. Constitution-bound means the founder has
+            published, in advance and in public, the things they have agreed not to decide —
+            and the record of every material decision, including the alternatives rejected
+            and the conditions under which it would be reversed.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="authority">
+        <h2 id="authority">The authority order</h2>
+
+        <p class="lede">
+          When two project artefacts disagree, this ordering settles it. It exists because
+          documentation drifts faster than code, and code drifts faster than a specification.
+        </p>
+
+        <ol class="spine">
+          <li><b>Normative schema and specification</b> {{chip "normative"}}<span>The CDDL wire schemas and the specification text. These define the protocol.</span></li>
+          <li><b>Conformance vectors</b> {{chip "normative"}}<span>Committed positive and negative inputs with expected outcomes. Released vectors are immutable.</span></li>
+          <li><b>Gate evidence report</b> {{chip "normative"}}<span>What was actually executed, on which host, with which result. The authority for any implementation-status claim.</span></li>
+          <li><b>Implementation code</b> {{chip "explanatory"}}<span>What the current implementation happens to do. Not the definition of correct.</span></li>
+          <li><b>Architecture decision records</b> {{chip "explanatory"}}<span>Why a choice was made, what was rejected, and how it could be reversed.</span></li>
+          <li><b>Explanatory documentation</b> {{chip "explanatory"}}<span>This website and the technical documentation. Helpful, never authoritative.</span></li>
+          <li><b>Roadmap and research</b> {{chip "explanatory"}}<span>Direction. Carries no commitment that anything will be built.</span></li>
+        </ol>
+
+        <p class="note">
+          This is why every technical page here carries an implementation-status label, and
+          why the <a href="/proof/">proof page</a> quotes the evidence report rather than
+          paraphrasing it.
+        </p>
+      </section>
+
+      <section aria-labelledby="laws">
+        <h2 id="laws">The founding laws</h2>
+
+        <p>
+          Twelve commitments from the
+          <a href="{{repo .Site "CHARTER.md"}}">Charter<span class="ext" aria-hidden="true">↗</span></a>.
+          An amendment requires a public change record explaining why it strengthens or
+          preserves the mission. No amendment may privatise the protocol, retroactively
+          conceal treasury activity, or convert financial sponsorship into ownership of
+          technical truth.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Charter 0.1 — founding laws</caption>
+            <thead><tr><th scope="col" class="num">#</th><th scope="col">Law</th><th scope="col">What it forbids in practice</th></tr></thead>
+            <tbody>
+              <tr><td class="num">1</td><th scope="row">Source-statement fidelity</th><td>Publishing a canonical result that cannot identify what an origin represented and how it was derived.</td></tr>
+              <tr><td class="num">2</td><th scope="row">Native meaning first</th><td>Normalisation that erases the source-native statement.</td></tr>
+              <tr><td class="num">3</td><th scope="row">No invented certainty</th><td>Fabricating a plausible value where knowledge is absent.</td></tr>
+              <tr><td class="num">4</td><th scope="row">Separate dimensions</th><td>Collapsing integrity, publisher identity, authority, confidence, freshness, and evidence completeness into one score.</td></tr>
+              <tr><td class="num">5</td><th scope="row">Visible failure</th><td>Silent degradation, drift, revocation, contradiction, or uncertainty.</td></tr>
+              <tr><td class="num">6</td><th scope="row">Language sovereignty</th><td>Letting an implementation language define the protocol.</td></tr>
+              <tr><td class="num">7</td><th scope="row">Local and cloud neutrality</th><td>Essential protocol functions that cannot be self-hosted.</td></tr>
+              <tr><td class="num">8</td><th scope="row">Open extension, governed canon</th><td>Both closed extension and automatic canonisation.</td></tr>
+              <tr><td class="num">9</td><th scope="row">Least authority</th><td>Inferring action authority from a read interface.</td></tr>
+              <tr><td class="num">10</td><th scope="row">Optional cryptographic infrastructure</th><td>Making a chain a mandatory protocol sovereign.</td></tr>
+              <tr><td class="num">11</td><th scope="row">No token</th><td>Selling governance rights or protocol participation through a speculative asset.</td></tr>
+              <tr><td class="num">12</td><th scope="row">Honest sustenance</th><td>Disguising maintainer compensation, or exchanging it for ownership of the standard.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="decisions">
+        <h2 id="decisions">Decision classes</h2>
+
+        <p>
+          Not every change deserves the same ceremony. The class determines the record
+          that must exist before the change is accepted.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>Decision classes and required records</caption>
+            <thead><tr><th scope="col">Class</th><th scope="col">Examples</th><th scope="col">Required record</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Implementation</th><td>Refactor, internal package layout, test helper</td><td>Pull request and tests</td></tr>
+              <tr><th scope="row">Architecture</th><td>Storage abstraction, wire encoding, isolation boundary</td><td>Architecture decision record</td></tr>
+              <tr><th scope="row">Protocol</th><td>Representation semantics, provenance fields, trust states</td><td>RFC plus conformance vectors</td></tr>
+              <tr><th scope="row">Security-critical</th><td>URL policy, signature rules, action risk</td><td>Threat-model update, security review, RFC or ADR</td></tr>
+              <tr><th scope="row">Constitutional</th><td>Ownership, funding rights, protocol guarantees</td><td>Charter amendment</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          A material protocol decision must record the problem, the alternatives considered,
+          the security and compatibility effects, the rationale, the decision owner, the date
+          and version, and the conditions under which it would be reversed or migrated.
+          <a href="{{repo .Site "decisions/001-genesis-validation-profile.md"}}">ADR 001<span class="ext" aria-hidden="true">↗</span></a>
+          is the worked example.
+        </p>
+      </section>
+
+      <section aria-labelledby="admission">
+        <h2 id="admission">The admission rule</h2>
+
+        <p class="lede">
+          Automated systems may generate candidates. Only the admission path may create
+          canonical releases.
+        </p>
+
+        <p>
+          In Genesis, admission is a reviewed repository change containing fixtures, expected
+          outputs, compatibility analysis, and provenance. That is a low-tech process, and
+          deliberately so: the rule matters more than the machinery, and the machinery can
+          only be trusted once the rule has been enforced by hand for long enough to know
+          what it costs.
+        </p>
+
+        <h3>How influence is earned</h3>
+        <p>
+          Influence follows demonstrated responsibility: accurate implementation, review
+          quality, security discipline, maintenance over time, documentation and conformance
+          work, and respect for the charter. Money, popularity, institutional status,
+          nationality, ideology, and access to a model provider do not buy technical
+          authority.
+        </p>
+
+        <h3>How disagreement is handled</h3>
+        <p>
+          Through explicit claims, evidence, experiments, benchmarks, threat analysis, and
+          reversible decisions where possible. Competing modules or competing implementations
+          are preferable to forcing a false consensus into the protocol.
+        </p>
+      </section>
+
+      <section aria-labelledby="money">
+        <h2 id="money">What funding cannot buy</h2>
+
+        <p>
+          The project needs money and says so plainly on the
+          <a href="/funding/">funding page</a>. The charter constrains what that money can
+          ever mean.
+        </p>
+
+        <div class="split wide">
+          <div>
+            <h3>A contributor may receive {{chip "implemented"}}</h3>
+            <ul>
+              <li>Public or private acknowledgment, at their choice</li>
+              <li>Project updates</li>
+              <li>Transparent evidence of how the contribution was used</li>
+              <li>Participation through the ordinary contribution and review process</li>
+            </ul>
+          </div>
+          <div>
+            <h3>A contributor does not receive</h3>
+            <ul>
+              <li>Ownership of the protocol</li>
+              <li>Equity, by implication or otherwise</li>
+              <li>Governance votes or private vetoes</li>
+              <li>Canon or ontology admission</li>
+              <li>Preferential security exceptions</li>
+              <li>Exclusive access to the specification</li>
+              <li>A token, or any promise of financial return</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          Grant terms are held to the same standard. Any confidential condition that could
+          affect protocol independence must be rejected or disclosed before acceptance.
+        </p>
+      </section>
+
+      <section aria-labelledby="succession">
+        <h2 id="succession">Succession</h2>
+
+        <p class="lede">
+          No indispensable credential, repository, domain, wallet, signing key, or production
+          system should remain permanently controlled by one person. Today, several do.
+        </p>
+
+        <p>
+          That is stated rather than hidden because it is the honest description of a
+          one-person project at its first gate. The charter fixes the remedy in advance:
+          when the project has additional trusted stewards, critical assets migrate to
+          threshold or multisignature control with documented recovery procedures. If the
+          steward organisation dissolves, public protocol assets transfer to a compatible
+          open-source or public-interest steward — never a private buyer.
+        </p>
+
+        <div class="callout callout--limit">
+          <p class="callout__title">Current concentration</p>
+          <p>
+            One maintainer holds the repository, the release decision, and — once declared —
+            the treasury wallet under single-signature control. The migration condition is
+            published on the <a href="/funding/">funding page</a>: multisignature control
+            after at least two additional trusted stewards and tested recovery procedures
+            exist.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="documents">
+        <h2 id="documents">The four documents</h2>
+
+        <p>
+          Mixing morality, governance, implementation, and wire rules into one document is
+          the most common way a project's commitments become unenforceable. These four are
+          kept separate on purpose.
+        </p>
+
+        <div class="tablewrap wide">
+          <table>
+            <caption>The public corpus</caption>
+            <thead><tr><th scope="col">Document</th><th scope="col">Function</th><th scope="col">Authority</th></tr></thead>
+            <tbody>
+              <tr>
+                <th scope="row"><a href="/manifesto/">Public declaration</a></th>
+                <td>A concise invitation and public commitment, readable by non-specialists.</td>
+                <td>{{chip "explanatory"}}</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="{{repo .Site "MANIFESTO.md"}}">Manifesto<span class="ext" aria-hidden="true">↗</span></a></th>
+                <td>Why the project exists, what it values, and the future it wants.</td>
+                <td>{{chip "explanatory"}}</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="{{repo .Site "CHARTER.md"}}">Charter<span class="ext" aria-hidden="true">↗</span></a></th>
+                <td>Binding stewardship and governance law. Constrains the steward.</td>
+                <td>{{chip "normative"}}</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="{{repo .Site "schemas"}}">Specifications<span class="ext" aria-hidden="true">↗</span></a></th>
+                <td>Technical requirements for conformance and independent implementation.</td>
+                <td>{{chip "normative"}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Also public:
+          <a href="{{repo .Site "GOVERNANCE.md"}}">GOVERNANCE.md<span class="ext" aria-hidden="true">↗</span></a>,
+          <a href="{{repo .Site "CONTRIBUTING.md"}}">CONTRIBUTING.md<span class="ext" aria-hidden="true">↗</span></a>,
+          <a href="{{repo .Site "CODE_OF_CONDUCT.md"}}">CODE_OF_CONDUCT.md<span class="ext" aria-hidden="true">↗</span></a>,
+          <a href="{{repo .Site "ACCESS_POLICY.md"}}">ACCESS_POLICY.md<span class="ext" aria-hidden="true">↗</span></a>, and the
+          <a href="{{repo .Site "constitution"}}">constitution<span class="ext" aria-hidden="true">↗</span></a> directory.
+        </p>
+      </section>
+
+    </article>
+  </div>
+</div>
+{{end}}

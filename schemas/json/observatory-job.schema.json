@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/observatory-job-0.1.json",
+  "title": "TWIRX local-fixture observatory job 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "mode",
+    "origin_id",
+    "artifact_kind",
+    "url",
+    "product_token",
+    "target_path",
+    "max_body_bytes"
+  ],
+  "properties": {
+    "format": {"const": "tw.observatory-job/0.1"},
+    "mode": {"const": "local_fixture"},
+    "origin_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,127}$"},
+    "artifact_kind": {"const": "robots"},
+    "url": {"type": "string", "pattern": "^http://127\\.0\\.0\\.1:[0-9]+/robots\\.txt$", "maxLength": 64},
+    "product_token": {"const": "TWIRXBot"},
+    "target_path": {"type": "string", "pattern": "^/", "minLength": 1, "maxLength": 16384},
+    "max_body_bytes": {"type": "integer", "minimum": 1, "maximum": 512000}
+  }
+}

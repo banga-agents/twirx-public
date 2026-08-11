@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://twirx.org/schemas/atlas-selection-0.2.json",
+  "title": "TWIRX Atlas candidate selection 0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "version", "status", "canonical_scheme", "statement", "family_quotas", "candidates"],
+  "properties": {
+    "format": {"const": "tw.atlas-selection/0.2"},
+    "version": {"type": "string", "minLength": 1, "maxLength": 128},
+    "status": {"const": "candidate_selection"},
+    "canonical_scheme": {"const": "https"},
+    "statement": {"type": "string", "minLength": 1, "maxLength": 16384},
+    "family_quotas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "government_law_public_data", "science_research_scholarly_infrastructure",
+        "standards_technical_docs_open_source", "economics_markets_public_disclosure",
+        "journalism_public_interest", "health_public_health",
+        "climate_environment_earth_systems", "education_reference_culture",
+        "humanitarian_civic_global_development"
+      ],
+      "properties": {
+        "government_law_public_data": {"const": 100},
+        "science_research_scholarly_infrastructure": {"const": 80},
+        "standards_technical_docs_open_source": {"const": 60},
+        "economics_markets_public_disclosure": {"const": 60},
+        "journalism_public_interest": {"const": 50},
+        "health_public_health": {"const": 50},
+        "climate_environment_earth_systems": {"const": 50},
+        "education_reference_culture": {"const": 30},
+        "humanitarian_civic_global_development": {"const": 20}
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 500,
+      "maxItems": 500,
+      "items": {"$ref": "#/$defs/candidate"}
+    }
+  },
+  "$defs": {
+    "family": {
+      "enum": [
+        "government_law_public_data", "science_research_scholarly_infrastructure",
+        "standards_technical_docs_open_source", "economics_markets_public_disclosure",
+        "journalism_public_interest", "health_public_health",
+        "climate_environment_earth_systems", "education_reference_culture",
+        "humanitarian_civic_global_development"
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "canonical_origin", "canonical_host", "domain_family", "catalog", "publisher_hint", "jurisdiction_hint", "language_hints"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 255},
+        "canonical_origin": {"type": "string", "pattern": "^https://[a-z0-9.-]+$", "maxLength": 261},
+        "canonical_host": {"type": "string", "pattern": "^[a-z0-9.-]+$", "maxLength": 253},
+        "domain_family": {"$ref": "#/$defs/family"},
+        "catalog": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state"],
+          "properties": {"state": {"const": "candidate"}}
+        },
+        "publisher_hint": {"type": "null"},
+        "jurisdiction_hint": {"type": "null"},
+        "language_hints": {"type": "array", "maxItems": 0}
+      }
+    }
+  }
+}
