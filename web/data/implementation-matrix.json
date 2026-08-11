@@ -44,7 +44,7 @@
     }
   ],
   "not_publicly_deployed": [
-    "Read-only Query Lab",
+    "Read-only Query Lab (staged on literal loopback; DNS/TLS pending)",
     "Public agent API",
     "Semantic change subscription endpoint"
   ],

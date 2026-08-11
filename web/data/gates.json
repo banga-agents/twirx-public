@@ -19,7 +19,7 @@
       "state": "implemented_locally",
       "result": "One operation contract generates CLI, JSON Schema, OpenAPI and local MCP surfaces with proof bundles.",
       "evidence": "reports/gate-e2-live-provenance-lab.md",
-      "limitation": "The public Lab is not deployed. Fresh public retrieval remains constrained by the separate admission and egress boundary."
+      "limitation": "The public Lab is staged on literal loopback and awaits authoritative DNS/TLS. Fresh public retrieval remains constrained by the separate admission and egress boundary."
     },
     {
       "id": "E3.0–E3.2",
@@ -35,14 +35,14 @@
       "state": "implemented_locally",
       "result": "15 public-source packets across three origins, two materialized views, one genuine origin delta and proof-linked local queries.",
       "evidence": "snapshot sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5",
-      "limitation": "The corpus is small, the public runtime is not deployed, and continuous mutable state is not admitted."
+      "limitation": "The corpus is small, the public runtime is staged but not reachable through DNS/TLS, and continuous mutable state is not admitted."
     },
     {
       "id": "P1",
       "name": "Public Proof Release",
       "state": "in_progress",
-      "result": "Public website and documentation exist; this release adds the FUTO reviewer path and exact Semantic Snapshot evidence.",
-      "limitation": "A fresh public source repository, public Query Lab, off-host restore proof and documentation synchronization remain."
+      "result": "A fresh sanitized public source repository, public website and FUTO reviewer path now exist; the read-only Lab runtime is staged.",
+      "limitation": "Public Lab DNS/TLS, off-host restore proof and live documentation synchronization remain."
     }
   ],
   "future_not_current": [

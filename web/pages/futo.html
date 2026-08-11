@@ -60,7 +60,8 @@
               <tr><th scope="row">Snapshot source revision</th><td><code>{{$r.release.snapshot_source_revision}}</code></td></tr>
               <tr><th scope="row">Complete validation revision</th><td><code>{{$r.release.validation_revision}}</code></td></tr>
               <tr><th scope="row">Website evidence revision</th><td><code>{{$r.release.website_release_commit}}</code></td></tr>
-              <tr><th scope="row">Public Lab</th><td>Not deployed; static evidence is not presented as a live API.</td></tr>
+              <tr><th scope="row">Public repository</th><td><a href="{{$r.release.public_repository}}"><code>{{$r.release.public_repository_commit}}</code><span class="ext" aria-hidden="true">↗</span></a></td></tr>
+              <tr><th scope="row">Public Lab</th><td>Staged and isolated; authoritative DNS and TLS verification remain before public activation.</td></tr>
               <tr><th scope="row">Current scope</th><td>{{$r.current_scope}}</td></tr>
             </tbody>
           </table>
@@ -88,8 +89,8 @@
         <p class="lede">
           <strong>${{commas $r.grant.request_usd}} for {{$r.grant.term_days}} days.</strong>
           The first <strong>${{commas $r.grant.first_milestone_usd}}</strong> milestone
-          completes the public release and funds {{$r.grant.first_milestone_days}} days
-          of focused, full-time maintainer engineering execution.
+          funds {{$r.grant.first_milestone_days}} days of focused, full-time engineering
+          across the complete Atlas-500 processing program.
         </p>
         <p><a class="btn btn--primary" href="/funding/">Review budget</a> <a class="btn" href="/roadmap/">Review milestones</a></p>
       </section>

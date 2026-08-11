@@ -31,7 +31,7 @@
               <tr><th scope="row">Snapshot</th><td><code class="digest">{{$r.release.snapshot_id}}</code></td></tr>
               <tr><th scope="row">Snapshot source</th><td><code>{{$r.release.snapshot_source_revision}}</code></td></tr>
               <tr><th scope="row">Complete validation</th><td><code>{{$r.release.validation_revision}}</code></td></tr>
-              <tr><th scope="row">Public Lab</th><td>Not deployed</td></tr>
+              <tr><th scope="row">Public Lab</th><td>Staged on literal loopback; DNS/TLS pending</td></tr>
             </tbody>
           </table>
         </div>
@@ -52,8 +52,8 @@
       <section aria-labelledby="release">
         <h2 id="release">What still blocks the public release</h2>
         <ul>
-          <li>Create the fresh sanitized public repository or resolve private-host metadata exposure.</li>
-          <li>Deploy the immutable read-only runtime at <code>lab.twirx.org</code> with host limits and no mutable semantic database.</li>
+          <li>Maintain the fresh sanitized public repository and exact source-export manifest.</li>
+          <li>Activate the staged immutable runtime at <code>lab.twirx.org</code> after authoritative DNS and TLS verification.</li>
           <li>Restore-test off-host snapshot and evidence storage.</li>
           <li>Publish only redistribution-safe archive evidence or an independently reproducible acquisition manifest.</li>
           <li>Synchronize the technical documentation with the released snapshot and current scope.</li>

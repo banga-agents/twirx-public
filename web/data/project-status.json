@@ -13,7 +13,7 @@
     "500 Atlas identities",
     "Read-only",
     "No arbitrary URLs",
-    "Hosted CI: not executed"
+    "Hosted CI: startup blocked"
   ],
 
   "namespaces": {
@@ -166,12 +166,12 @@
   ],
 
   "remote_ci": {
-    "status": "not-executed",
-    "statement": "Engineering Gate E1 passed the complete local validation suite recorded in the Gate E1 evidence report. GitHub-hosted Actions failed during check-suite startup before creating any job; no hosted CI execution is claimed.",
-    "summary": "GitHub-hosted Actions failed during check-suite startup before creating any job, so no intended CI command reached a runner.",
-    "detail": "The `ci` workflow is reported active with zero associated runs. Repository events are recorded against a separate deleted workflow with an empty name and no jobs. A byte-identical rename to ci.yaml, actionlint validation, disabling and re-enabling the workflow, and closing and reopening the pull request all reproduced the same startup failure.",
-    "remaining_cause": "External to the workflow document: GitHub Actions availability, budget, or account eligibility for hosted runners on this private repository.",
-    "consequence": "Local Gate 1 evidence is currently the only executed validation evidence."
+    "status": "external-startup-failure",
+    "statement": "The complete local release suite passed. The fresh public repository's GitHub Actions job was registered, but GitHub assigned no runner and created no steps because the account is locked due to a billing issue. No hosted CI execution is claimed.",
+    "summary": "The public `genesis` job exists with runner_id 0 and no steps. A CI-only rerun produced the same account-level startup failure.",
+    "detail": "GitHub's exact annotation is: The job was not started because your account is locked due to a billing issue. Run: https://github.com/banga-agents/twirx-public/actions/runs/31507308068",
+    "remaining_cause": "The GitHub account billing lock must be resolved by the account owner. The workflow registered correctly and no workflow correction is warranted.",
+    "consequence": "Complete local validation is the executed release evidence; hosted execution remains unavailable and is reported separately."
   },
 
   "toolchain": {

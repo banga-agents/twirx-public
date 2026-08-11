@@ -89,9 +89,9 @@ Semantic Snapshot integration and documentation checks passed.
 
 ## Funding and roadmap correction
 
-Public funding copy now calls the first USD 3,200 allocation **full-time
-maintainer engineering capacity**. It does not present private household,
-housing or relocation details as project evidence.
+Public funding copy calls the first USD 3,200 allocation **full-time maintainer
+engineering capacity** and binds it to published project milestones and
+evidence.
 
 The 90-day plan commits to dossiers and completed human policy outcomes across
 all 500 selected origins and a bounded profile attempt for every policy-eligible

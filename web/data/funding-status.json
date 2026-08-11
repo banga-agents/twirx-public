@@ -10,6 +10,7 @@
     "first_milestone_amount": 6000,
     "first_milestone_days": 30
   },
+  "first_milestone_outcome": "Complete policy processing across Atlas-500 and attempt bounded profiling for every eligible origin while operating the public proof release.",
   "received": 0,
   "committed": 0,
   "spent": 0,
@@ -37,5 +38,5 @@
     "github_sponsors": "Not enabled yet.",
     "in_kind": "Infrastructure, security review, documentation review and aligned introductions are welcome and recorded separately."
   },
-  "privacy_boundary": "Project money is transparent. Private home addresses, immigration records, medical information, personal account statements and sensitive personal receipts are not public treasury evidence."
+  "privacy_boundary": "Project funding is reported by purpose, amount and milestone. Sensitive financial and identity documents are not public treasury evidence."
 }

@@ -4,11 +4,13 @@
   "release": {
     "snapshot_id": "sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5",
     "snapshot_source_revision": "d13c0bfaf4aed19b9db541b3fd7ebc97e251ebc3",
-    "validation_revision": "bdee40c52bbd2be137cfadc577bac6098c799968",
-    "website_release_commit": "ded2b190f722e1e0ab661817926a692994ebd9a1",
+    "validation_revision": "95a537a0a2d54e160a4b67643be2f637f5a7bea5",
+    "website_release_commit": "95a537a0a2d54e160a4b67643be2f637f5a7bea5",
+    "public_repository": "https://github.com/banga-agents/twirx-public",
+    "public_repository_commit": "6646df57baac2b79539d375ec1a0d184e4015bc2",
     "draft_pr": 17,
     "runtime_mode": "immutable_materialized_snapshot_only",
-    "public_lab_status": "not_deployed"
+    "public_lab_status": "staged_awaiting_authoritative_dns"
   },
   "actual": {
     "atlas_identities": 500,
@@ -109,7 +111,7 @@
     "term_days": 90,
     "first_milestone_usd": 6000,
     "first_milestone_days": 30,
-    "first_milestone": "Complete the public release and fund 30 days of focused, full-time maintainer engineering execution.",
+    "first_milestone": "Fund 30 days of focused, full-time engineering to complete policy processing across Atlas-500 and attempt bounded profiling for every eligible origin.",
     "budget": [
       {"use": "Full-time maintainer engineering capacity", "amount": 3200},
       {"use": "Coding-agent and API access", "amount": 1200},
