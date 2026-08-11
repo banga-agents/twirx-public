@@ -5,9 +5,9 @@
     "snapshot_id": "sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5",
     "snapshot_source_revision": "d13c0bfaf4aed19b9db541b3fd7ebc97e251ebc3",
     "validation_revision": "2c85b56322d381409ca11001eacec8a8111d251d",
-    "website_release_commit": "23d937d1652c6119432741dc90a1fbd043125524",
+    "website_release_commit": "c0ab594b95bb21936ee5d78d0172f3bd064d71e0",
     "public_repository": "https://github.com/banga-agents/twirx-public",
-    "public_repository_commit": "ba5d2d6868df7a4ee785e267d4a89f2d3f74453f",
+    "public_repository_commit": "4b9e138068d723bcea3db6fc9fa7e6d9cdb5850e",
     "draft_pr": 17,
     "runtime_mode": "immutable_materialized_snapshot_only",
     "public_lab_status": "live_read_only_immutable_snapshot"

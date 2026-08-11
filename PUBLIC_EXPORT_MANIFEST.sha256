@@ -14,7 +14,7 @@ a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9  ./LICENSE
 35b189d8b4d5926f854d20029b6e2e2b941ea68893d6ec545fbf59a705d580bb  ./Makefile
 2135e7be6df350e175456aca4c4a9e07c58dfbb48510d6dc3b0a32714a02d012  ./NOTICE
 5fb253136fb0c4df271f4db62aa67f9ac1163332ebbb72e54fd1e5fc3ff6cea9  ./PUBLIC_EVIDENCE_PROFILE.md
-f98eb2222518373309677cf837156f90166d9929f2532a11e84e89410c7952a1  ./PUBLIC_EXPORT_SOURCE.txt
+8a06d9920960edc87c6546eff56821c3e0787986009cafa2719c2107eda59b08  ./PUBLIC_EXPORT_SOURCE.txt
 0e9770e99d77a627b62d18dcd4da57e1088397edfe4b9b0dcfaefbb007cd3cd1  ./README.md
 39d052c3923e6002318e978e15fad969336fdd8da246ea578ac8fb2273c6cefb  ./SECURITY.md
 8e059bf21736438cae00f955cceb5e34e66917158c2aeb22b6924a869258c607  ./START_HERE.md
@@ -493,7 +493,7 @@ c96281801f9e95e603fb950a77b98ac3cf9ad0bf29920259a1e062b59dfd3724  ./reports/futo
 fe2b38f4d7f56ce2e626257a8db3fe9b2391e69bd41d27cf7939636f2a889881  ./reports/futo-f0-integration.md
 b397ffe0b4f25137372b898d1fb5ba6232de2df9fdb7f91d7cb800fef5740b6f  ./reports/futo-f3-real-archive-evidence.md
 545329a9eac9b39a7a9aaa739700091f3544dfe4451dd6acb109486c0467d1da  ./reports/futo-f3-restricted-acquisition-helper.md
-46982dc610af6e78a2e44aed0d5468d6d43c20b1e2fdffdcc4004dfbf1c91f31  ./reports/futo-grant-readiness.md
+9e77f893709e8e53b73bfacbea124c2ea502122c70e7b495777e3c6d4d7c0241  ./reports/futo-grant-readiness.md
 8c9c50306406c70905583abc6f427eabcdc5c1694930f9da2ef82f8a5da3f67a  ./reports/futo-offhost-durability.md
 7770b68b311421091b9885cfd52d241fda6d3df49f8098a583ed2d8491d30590  ./reports/futo-policy-decision-proposals.md
 54613f50213c7d8c421ef4f02595411ec0fed7c7b4d80077dfb5633695dde9be  ./reports/futo-public-source-export.md
@@ -607,7 +607,7 @@ ed19d3c9c8a5e34d0179e0b1a9c2907d2e657738733e4a432a8cf81c76ce56f1  ./web/.gitigno
 af08bfba897f8dd4fdfb5d85bc726bd870a5542929352e859d21e6d0a76fbecd  ./web/data/e2-lab.json
 3038994c17a7b8a6313c8efd5692c108f4126bb0b1ca73c0e5560f3c7cb35d77  ./web/data/evidence-e1.json
 ab89768333d92e3aa0386c03eb6c4a0472431bb2a9cb3c3c571cb08c18519c27  ./web/data/funding-status.json
-966f2b77c0f2405d032a6ef1f1dbef32074273b6f99d027b1e74c4ed6090e8b6  ./web/data/futo-release.json
+415cac8786379664721ee8dfbc49470de5ad9940fa6d0d100778d29676fe013e  ./web/data/futo-release.json
 11d8394f7ce8549a8beda1da2746412ad86c0c5a5434282773d74f5ee4212b5f  ./web/data/gates.json
 992c5bb004d77e75e9c768c9d7b024b0e5753b6c72329d870da0bb44482f7b24  ./web/data/implementation-matrix.json
 0a5ded4b69a845e29e342a5a7cc3d98979d78bf648e3661ae3c2ac8c60f42fb5  ./web/data/project-status.json

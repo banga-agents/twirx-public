@@ -12,7 +12,7 @@ operational limitations must remain disclosed**
 `https://github.com/banga-agents/twirx-public`
 
 **Validated public source release:**
-`ba5d2d6868df7a4ee785e267d4a89f2d3f74453f`
+`4b9e138068d723bcea3db6fc9fa7e6d9cdb5850e`
 
 **Immutable snapshot:**
 `sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5`
@@ -67,7 +67,7 @@ execution is not claimed.
 | `lab.twirx.org` HTTPS and read-only Lab | **PASS** | Both authoritative nameservers resolve the host; TLS, API, browser, headers, input/method rejection, raw-proof denial and zero-origin-call behavior pass. Runtime remains literal loopback. |
 | Independent encrypted restore | **PASS** | A new isolated Borg repository on the Storage Box passed `--verify-data`, byte-identical 85-file restore and exact snapshot verification. Existing archive content was neither listed nor touched. |
 | Versioned Object Storage release | **CONDITION OPEN** | The existing `meridianv2raw` bucket and credentials remain untouched; a dedicated TWIRX bucket and least-privilege identity are still required. |
-| Website source and reviewer path | **PASS DEPLOYED** | Sixteen generated pages pass all checks and are active in immutable release `20260811T161000Z-2c85b56`; all routes and public safety denials pass. |
+| Website source and reviewer path | **PASS DEPLOYED** | Sixteen generated pages pass all checks and are active in immutable release `20260811T163300Z-c0ab594`; all routes and public safety denials pass. |
 | Mintlify documentation | **CONDITION OPEN** | Release documentation exists in source; `https://docs.twirx.org/start/futo-release` currently returns `404`, so external synchronization is not claimed. |
 | Real versus fixture counters separated | **PASS** | Fifteen public packets and five controlled fixture packets are separate; fixtures are excluded by default. |
 | Professional funding request | **PASS IN SOURCE** | The $6,000 first milestone funds full-time maintainer engineering capacity, tools, infrastructure, documentation, security and administration against published outputs. |
@@ -176,7 +176,7 @@ Results:
 ## Hosted CI evidence
 
 Public-release run URL:
-`https://github.com/banga-agents/twirx-public/actions/runs/31511957334`
+`https://github.com/banga-agents/twirx-public/actions/runs/31513337632`
 
 Job result:
 
