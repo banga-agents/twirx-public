@@ -7,7 +7,7 @@
   "docs_url": "https://docs.twirx.org",
   "scripts_allowed_on": ["proof/explorer"],
   "script_budget_gzip_bytes": 8192,
-  "status_note": "Read-only Genesis Preview. Approved evidence only; no arbitrary URLs.",
+  "status_note": "Live read-only Genesis Preview. Immutable approved evidence only; no arbitrary URLs.",
   "footer_lead": "TWIRX is the Genesis implementation of the Typed Web Commons. Open protocol work for a verifiable, plural, and secure agentic web. No token. No protocol ownership sold.",
   "pages": [
     {

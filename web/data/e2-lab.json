@@ -1,7 +1,7 @@
 {
   "_source": "reports/gate-e2-live-provenance-lab.md, reports/e2-performance.md, reports/e2-load.md, reports/e2-browser-comparison.md, contracts/e2/contracts.json. All at implementation commit 88431ffcaf3d3f37a85eaed3dddbf7129ba00b27, evidence date 2026-08-10.",
-  "status": "implemented_locally",
-  "status_statement": "Local implementation acceptance passed. The typed read-only operation and bindings exist, and the immutable public Lab runtime is staged on literal loopback pending DNS/TLS. Fresh-origin execution remains constrained by explicit policy, route-bound work orders, and the production egress boundary.",
+  "status": "immutable_snapshot_lab_public",
+  "status_statement": "Local implementation acceptance passed. The typed read-only operation and bindings exist, and the HTTPS public Lab serves one admitted immutable snapshot through a loopback-only runtime. Fresh-origin execution remains constrained by explicit policy, route-bound work orders, and the production egress boundary.",
 
   "catalog": [
     { "origin_id": "twirx-project", "title": "TWIRX project status", "kind": "Publisher-authored", "operations": ["project.getStatus", "project.getEngineeringGateReport", "project.listUnresolvedRisks"] },
@@ -61,7 +61,7 @@
   },
 
   "unresolved_risks": [
-    "The Lab service and firewall isolation pass on literal loopback, but public Caddy/TLS and lab.twirx.org wire verification remain blocked on authoritative DNS.",
+    "The public Lab serves immutable snapshot state only. It cannot refresh origins or exercise the fresh-origin egress path.",
     "Application URL and DNS controls are not network isolation. A separate least-privilege worker/egress boundary, private-range and metadata blocking, network-layer redirect tests, quotas, monitoring, and incident/revocation procedures are still needed before public fresh-origin execution.",
     "In-memory rate limits reset on restart and are not distributed. There is no cache, origin-health probe, or circuit breaker; health is honestly reported as not_probed.",
     "An external provider can change content, schema, policy, or availability at any time. The committed replay fixture is evidence of one representation, not a claim of provider permanence.",

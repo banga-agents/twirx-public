@@ -61,7 +61,7 @@
               <tr><th scope="row">Complete validation revision</th><td><code>{{$r.release.validation_revision}}</code></td></tr>
               <tr><th scope="row">Website evidence revision</th><td><code>{{$r.release.website_release_commit}}</code></td></tr>
               <tr><th scope="row">Public repository</th><td><a href="{{$r.release.public_repository}}"><code>{{$r.release.public_repository_commit}}</code><span class="ext" aria-hidden="true">↗</span></a></td></tr>
-              <tr><th scope="row">Public Lab</th><td>Staged and isolated; authoritative DNS and TLS verification remain before public activation.</td></tr>
+              <tr><th scope="row">Public Lab</th><td><a href="https://lab.twirx.org/">Live read-only immutable snapshot<span class="ext" aria-hidden="true">↗</span></a></td></tr>
               <tr><th scope="row">Current scope</th><td>{{$r.current_scope}}</td></tr>
             </tbody>
           </table>
@@ -98,6 +98,7 @@
       <section aria-labelledby="links">
         <h2 id="links">Reviewer links</h2>
         <ul class="register register--plain">
+          <li><a href="https://lab.twirx.org/">Live Query Lab<span class="ext" aria-hidden="true">↗</span></a></li>
           <li><a href="/demo/">Working Query and Delta evidence</a></li>
           <li><a href="/proof/">Technical proof and unresolved risks</a></li>
           <li><a href="/atlas/">Atlas selection and admission state</a></li>

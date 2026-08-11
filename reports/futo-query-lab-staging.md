@@ -1,9 +1,9 @@
-# FUTO Query Lab staging report
+# FUTO Query Lab activation report
 
-**Status:** STAGED — refreshed immutable runtime and Atlas-500 explorer pass on
-literal loopback; public activation awaits authoritative DNS.
+**Status:** ACTIVATED — the immutable runtime and Atlas-500 explorer pass on
+literal loopback and through the public HTTPS edge.
 
-**Staging date:** 2026-08-11
+**Activation date:** 2026-08-11
 
 **Source revision:**
 `95a537a0a2d54e160a4b67643be2f637f5a7bea5`
@@ -22,11 +22,12 @@ literal loopback; public activation awaits authoritative DNS.
 
 ## Result
 
-The immutable Semantic Snapshot Query Lab is installed on the Meridian host
-and runs as a dedicated unprivileged service bound only to literal loopback at
-`127.0.0.1:8092`. Its Caddy virtual host is installed and validates, but it is
-not imported into the active Caddy configuration. No public Lab execution is
-claimed yet.
+The immutable Semantic Snapshot Query Lab is public at
+`https://lab.twirx.org/`. The application runs as a dedicated unprivileged
+service bound only to literal loopback at `127.0.0.1:8092`; Caddy is its only
+public edge. Both authoritative Namecheap nameservers publish the `lab` CNAME,
+Caddy obtained TLS, and public API, method, security-header, raw-proof-denial
+and browser-rendering checks pass.
 
 The refreshed service exposes one exact admitted snapshot and the complete
 500-origin identity catalog. It can search and inspect all selected origins,
@@ -69,7 +70,8 @@ a technical maximum.
 - no Caddy access log for the Lab virtual host.
 
 The service is active and enabled. Its refreshed runtime uses approximately
-12 MiB at idle and retains the same hard systemd limits.
+12 MiB at idle and retains the same hard systemd limits. Port `8092` is not
+publicly reachable.
 
 ## Publication profile
 
@@ -139,34 +141,72 @@ The following literal-loopback behaviors passed:
 - a query containing an unknown `url` field fails closed with HTTP `400`;
 - a connection to public `116.202.50.220:8092` times out.
 
-## Remaining activation work
+## Public activation evidence
 
-1. Publish `CNAME lab twirx.org.` at the authoritative Namecheap DNS service.
-2. Wait until both authoritative Namecheap nameservers return the record.
-3. Import `/etc/caddy/twirx-snapshot-lab.caddy` into the active Caddyfile,
-   validate the complete configuration and reload Caddy without restarting it.
-4. Verify TLS, exact preset query results, headers, body/method limits, raw
-   proof denial, browser rendering, zero cookies and zero origin calls over the
-   public hostname.
-5. Deploy the release-bound website that links the verified public Lab.
+The active Caddy configuration was backed up before the Lab import. The Lab
+site was then imported, the complete Caddy configuration was validated and the
+service was reloaded without restarting unrelated applications. The repository
+deployment fragment required one minimal routing correction: API handlers now
+run in an explicit `route` before the static SPA fallback. Without that order,
+the static `try_files` handler returned HTML for API requests. No runtime,
+snapshot, query, production-code or evidence behavior changed.
 
-At the report time, direct queries to `dns1.registrar-servers.com` still return
-no CNAME, A or AAAA response for `lab.twirx.org`; therefore Caddy activation
-would fail certificate issuance and is intentionally deferred.
+Commands executed against the public hostname included:
 
-No apex, `www`, `docs`, Proton Mail, DKIM, SPF, DMARC, MX or Mintlify record was
-modified by this staging gate.
+```bash
+for ns in dns1.registrar-servers.com dns2.registrar-servers.com; do
+  dig +short @"$ns" lab.twirx.org CNAME
+  dig +short @"$ns" lab.twirx.org A
+done
+
+curl --fail --silent --show-error --dump-header - \
+  https://lab.twirx.org/api/v1/status
+curl --fail --silent --show-error \
+  'https://lab.twirx.org/api/v1/origins?offset=0&limit=500'
+curl --fail --silent --show-error \
+  -H 'Content-Type: application/json' \
+  --data-binary @examples/semantic-query-two-origins.json \
+  https://lab.twirx.org/api/v1/query
+curl --silent --output /dev/null --write-out '%{http_code}\n' \
+  https://lab.twirx.org/api/v1/proof/unadmitted
+```
+
+Observed public results:
+
+- both authoritative nameservers return `lab.twirx.org CNAME twirx.org` and
+  address `116.202.50.220`;
+- HTTP redirects to HTTPS and HTTPS returns a valid certificate;
+- status returns the exact admitted snapshot and execution mode
+  `immutable_materialized_snapshot_only`;
+- the origin endpoint returns all 500 identities, with three packet-bearing
+  public origins and 15 public packets;
+- the cross-origin preset returns four rows, excludes five fixtures and makes
+  zero network requests;
+- the raw proof-body route returns HTTP `404`;
+- unknown query properties return HTTP `400`, while unsupported query methods
+  return HTTP `405`;
+- no cookies are set;
+- HSTS, strict CSP, Permissions Policy, Referrer Policy, MIME-sniffing,
+  opener and resource policies are present;
+- a headless Chromium render shows the verified snapshot status, exact counts
+  and all 500 origin identities without CSP, resource or uncaught errors;
+- a connection to public `116.202.50.220:8092` times out.
+
+No apex, `www`, `docs`, Proton Mail, DKIM, SPF, DMARC, MX or Mintlify DNS record
+was modified by this activation gate.
 
 ## Unresolved risks
 
-- The Lab is not publicly reachable until DNS and edge activation pass.
 - Off-host snapshot durability and a clean independent restore remain
   unverified.
 - The current measurement is a small immutable snapshot on a shared host; it
   is not a production-capacity claim.
+- The 64 KiB edge request limit fails closed before the runtime, but Caddy
+  currently normalizes an oversized request to HTTP `502` rather than `413`.
+  The request does not reach the application; response-code normalization is
+  a residual edge-hardening item.
 
 ## Next recommended gate
 
-Activate and wire-verify `lab.twirx.org`, then deploy the synchronized website
-and complete the off-host restore test using TWIRX-specific credentials and a
-new encrypted repository path.
+Deploy the synchronized website, then complete the off-host restore test using
+TWIRX-specific credentials and a new encrypted repository path.

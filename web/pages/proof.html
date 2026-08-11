@@ -370,7 +370,7 @@ bin/tw extract --observation var/demo/observation.cbor --cas var/cas \
         <h2 id="e2">E2 — Typed Provenance Lab {{chip "implemented"}}</h2>
 
         <div class="callout callout--limit">
-          <p class="callout__title">Implemented locally; public deployment pending</p>
+          <p class="callout__title">Implemented locally; immutable public Lab live</p>
           <p>{{$e2.status_statement}}</p>
         </div>
 
@@ -520,7 +520,7 @@ bin/tw extract --observation var/demo/observation.cbor --cas var/cas \
 
         <h3>Residual release limitations</h3>
         <ul>
-          <li>The read-only Query Lab is staged on literal loopback; public DNS/TLS verification remains.</li>
+          <li>The public Query Lab is an immutable snapshot edge, not a continuously refreshed origin service.</li>
           <li>The sanitized source repository is public; retained raw archive bodies remain private by policy.</li>
           <li>Off-host snapshot restore evidence remains to be completed.</li>
           <li>Raw archive evidence contains third-party page material; public redistribution requires an explicit treatment.</li>

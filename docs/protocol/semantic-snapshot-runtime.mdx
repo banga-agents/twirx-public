@@ -3,7 +3,7 @@ title: "Immutable Semantic Snapshot runtime"
 description: "Read-only packet, delta, view, query, trace, and proof access without origin retrieval."
 ---
 
-> **Authority:** Normative summary · **Status:** Implemented candidate; public edge staged · **Applies to:** E3.3 snapshot profile · **Verified against:** snapshot `sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5` · **Source:** `spec/data-plane/READ_ONLY_SNAPSHOT_RUNTIME_0_1.md`, `internal/snapshotruntime`
+> **Authority:** Normative summary · **Status:** Implemented candidate; immutable public edge live · **Applies to:** E3.3 snapshot profile · **Verified against:** snapshot `sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5` · **Source:** `spec/data-plane/READ_ONLY_SNAPSHOT_RUNTIME_0_1.md`, `internal/snapshotruntime`
 
 ## Purpose
 
@@ -23,7 +23,7 @@ read-only query runtime
 typed rows + native values + trace + proof references
 ```
 
-## Public candidate endpoints
+## Public endpoints
 
 ```text
 GET  /api/v1/status
@@ -63,7 +63,7 @@ unadmitted proof path fails closed.
 
 ## Security profile
 
-The staged Meridian service runs as a dedicated unprivileged user on literal
+The Meridian service runs as a dedicated unprivileged user on literal
 `127.0.0.1:8092`, with a read-only application tree, no writable semantic
 state, no service credentials, all non-loopback IP traffic denied, zero swap,
 256 MiB memory, 25% CPU, low I/O weight and eight-query concurrency. Caddy is
@@ -78,6 +78,7 @@ pagination, method/content-type rejection and exact digest downloads.
 
 ## Implementation status
 
-The service is installed and passes loopback and target-host isolation checks.
-It is not yet a public execution claim: `lab.twirx.org` DNS, TLS and wire
-verification must pass before the edge is activated.
+The service is public at `https://lab.twirx.org/` and passes loopback,
+target-host isolation, authoritative DNS, TLS and public wire checks. This is a
+claim about immutable snapshot query execution only; it is not fresh-origin or
+continuous-compiler execution.

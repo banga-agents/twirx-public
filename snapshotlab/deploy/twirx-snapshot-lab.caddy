@@ -18,22 +18,27 @@ lab.twirx.org {
 	}
 
 	@proof_artifacts path /api/v1/proof/*
-	respond @proof_artifacts 404
-
 	@api path /api/*
-	handle @api {
-		reverse_proxy 127.0.0.1:8092 {
-			health_uri /api/v1/status
-			health_interval 30s
-			health_timeout 5s
+	@immutable path /app.js /styles.css
+	@html path / /index.html
+
+	route {
+		handle @proof_artifacts {
+			respond 404
+		}
+		handle @api {
+			reverse_proxy 127.0.0.1:8092 {
+				health_uri /api/v1/status
+				health_interval 30s
+				health_timeout 5s
+			}
+		}
+		handle {
+			root * /srv/twirx-snapshot-ui/current
+			header @immutable Cache-Control "public, max-age=3600"
+			header @html Cache-Control "public, max-age=300, must-revalidate"
+			try_files {path} /index.html
+			file_server
 		}
 	}
-
-	root * /srv/twirx-snapshot-ui/current
-	@immutable path /app.js /styles.css
-	header @immutable Cache-Control "public, max-age=3600"
-	@html path / /index.html
-	header @html Cache-Control "public, max-age=300, must-revalidate"
-	try_files {path} /index.html
-	file_server
 }

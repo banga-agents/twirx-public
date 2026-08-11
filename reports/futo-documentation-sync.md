@@ -29,11 +29,11 @@ A dedicated FUTO release page records the exact distinctions:
 - the 25,018-packet result is fixture-dominated capacity evidence;
 - one real archive-origin delta is not a semantic or canon delta;
 - the runtime performs zero origin calls at query time;
-- the public Query Lab remains unclaimed until DNS/TLS verification passes.
+- the public Query Lab serves one immutable snapshot through its HTTPS edge.
 
 The protocol documentation now includes the immutable Semantic Snapshot
 runtime, candidate endpoints, invariants, failure behavior, host limits,
-conformance scope and staged-not-public status. Atlas, security, roadmap,
+conformance scope and immutable-public status. Atlas, security, roadmap,
 quickstart and funding pages all use the same release facts.
 
 ## Files changed
@@ -75,20 +75,19 @@ Results:
   truth;
 - archive observations are labeled historical and not current publisher
   statements;
-- implemented, staged, public and planned behavior remain separate;
+- implemented, public and planned behavior remain separate;
 - no arbitrary URL, browser, model, payment, authentication or write authority
   is implied;
 - no dependency was added to the repository.
 
 ## Unresolved risk
 
-The source change is pushed to draft PR 17. Mintlify reported its deployment
-check as `SKIPPED` because this is a draft release path. The live pages must be
-deployed and wire-checked before this gate advances from source PASS to
-deployed PASS.
+The source change is pushed to draft PR 17 and passes the documentation checks,
+but `https://docs.twirx.org/start/futo-release` currently returns `404`. The
+external Mintlify production deployment is therefore not claimed synchronized.
 
 ## Next recommended gate
 
 After founder review, merge the documentation source or authorize an external
-preview. Then verify the live FUTO release, snapshot-runtime, funding, roadmap
-and Genesis status pages at `https://docs.twirx.org`.
+production deployment. Then verify the live FUTO release, snapshot-runtime,
+funding, roadmap and Genesis status pages at `https://docs.twirx.org`.

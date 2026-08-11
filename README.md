@@ -289,8 +289,11 @@ human policy decisions, 15 public-source packets across three origins, five
 separately labeled fixtures, two materialized views and one genuine historical
 origin delta. The read-only runtime exposes all 500 identities and their actual
 packet state without treating selection as review, observation, compilation or
-live status. The public Query Lab is staged pending DNS/TLS verification;
-durable off-host restore evidence and the fresh sanitized public repository
-remain release gates. Production PostgreSQL remains prohibited on the shared
-Meridian host. See [`reports/futo-grant-readiness.md`](reports/futo-grant-readiness.md)
-and [`spec/data-plane/`](spec/data-plane/).
+live status. The immutable public Query Lab is live at
+[`lab.twirx.org`](https://lab.twirx.org/), performs zero origin calls and
+accepts no arbitrary URL. A fresh sanitized public repository is available at
+[`banga-agents/twirx-public`](https://github.com/banga-agents/twirx-public).
+Durable off-host restore evidence remains open. Production PostgreSQL remains
+prohibited on the shared Meridian host. See
+[`reports/futo-grant-readiness.md`](reports/futo-grant-readiness.md) and
+[`spec/data-plane/`](spec/data-plane/).

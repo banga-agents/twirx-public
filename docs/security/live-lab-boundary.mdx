@@ -47,5 +47,8 @@ On Meridian it is separated into:
 - a Caddy edge with a 64 KiB request limit and raw-proof denial;
 - hard CPU, memory, swap, I/O, task and network restrictions.
 
-The service is installed but not publicly claimed until `lab.twirx.org` DNS,
-TLS and end-to-end wire checks pass.
+The service is public at `https://lab.twirx.org/`. Authoritative DNS, TLS,
+security headers, raw-proof denial, method and input rejection, browser
+rendering, exact snapshot identity and zero-origin-call query behavior have
+passed end-to-end wire checks. The application listener remains literal
+loopback only.

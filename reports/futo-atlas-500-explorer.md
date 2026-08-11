@@ -104,8 +104,8 @@ not create an artificial processing ceiling.
 1. Only three explicitly approved policy scopes currently contribute public
    packets. Expanding the packet-bearing set requires additional exact human
    decisions and bounded work orders.
-2. `lab.twirx.org` still has no authoritative DNS record, so no public service
-   execution is claimed by this report.
+2. The public `lab.twirx.org` service exposes the admitted immutable snapshot
+   only; it does not retrieve, compile or refresh origins.
 3. The immutable snapshot has not yet passed versioned off-host upload and
    independent encrypted restore evidence.
 
@@ -117,7 +117,6 @@ origins.
 
 ## Next recommended gate
 
-Publish the sanitized source repository, activate the already-staged Lab only
-after authoritative DNS resolves, and complete off-host snapshot restore
-evidence in a new TWIRX-specific storage namespace that does not touch Meridian
-or quantlab data.
+Continue expanding exact human decisions and bounded evidence admission, and
+complete off-host snapshot restore evidence in a new TWIRX-specific storage
+namespace that does not touch Meridian or quantlab data.

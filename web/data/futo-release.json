@@ -4,13 +4,13 @@
   "release": {
     "snapshot_id": "sha256:54739822257ef617b136454285a8fd47802f0960c7cf53a49abd2d5d1f1389c5",
     "snapshot_source_revision": "d13c0bfaf4aed19b9db541b3fd7ebc97e251ebc3",
-    "validation_revision": "95a537a0a2d54e160a4b67643be2f637f5a7bea5",
-    "website_release_commit": "95a537a0a2d54e160a4b67643be2f637f5a7bea5",
+    "validation_revision": "b1618ce45ff1f01fcf2c942115d5a597779f84cf",
+    "website_release_commit": "23d937d1652c6119432741dc90a1fbd043125524",
     "public_repository": "https://github.com/banga-agents/twirx-public",
-    "public_repository_commit": "6646df57baac2b79539d375ec1a0d184e4015bc2",
+    "public_repository_commit": "3d2a3878817c50678c03309e8ae7a4376c6343b1",
     "draft_pr": 17,
     "runtime_mode": "immutable_materialized_snapshot_only",
-    "public_lab_status": "staged_awaiting_authoritative_dns"
+    "public_lab_status": "live_read_only_immutable_snapshot"
   },
   "actual": {
     "atlas_identities": 500,

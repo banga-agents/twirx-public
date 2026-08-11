@@ -43,9 +43,11 @@
       "evidence": "reports/futo-grant-readiness.md"
     }
   ],
+  "publicly_deployed": [
+    "Read-only immutable Query Lab and bounded HTTP query/origin/trace API"
+  ],
   "not_publicly_deployed": [
-    "Read-only Query Lab (staged on literal loopback; DNS/TLS pending)",
-    "Public agent API",
+    "Fresh-origin execution API",
     "Semantic change subscription endpoint"
   ],
   "not_implemented_or_not_authorized": [
