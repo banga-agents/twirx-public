@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Typed Web Commons",
-  "description": "Open protocol documentation for typed, provenance-bearing agent interfaces to the web.",
+  "name": "TWIRX",
+  "description": "Documentation for the open, self-hostable Semantic Data Plane and reference implementation of the Typed Web Commons.",
   "colors": {
     "primary": "#1f6b5c",
     "light": "#2c7f6e",
@@ -17,7 +17,7 @@
   "seo": {
     "indexing": "navigable",
     "metatags": {
-      "og:site_name": "Typed Web Commons",
+      "og:site_name": "TWIRX",
       "twitter:card": "summary"
     }
   },
