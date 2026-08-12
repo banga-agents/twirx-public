@@ -4,8 +4,9 @@ CC ?= gcc
 CLANG ?= clang
 BIN_DIR ?= bin
 FUZZ_WORKERS ?= 4
+FUZZ_TIME ?= 3s
 
-.PHONY: all build test test-go test-go-fuzz test-c test-c-fuzz test-e2e test-snapshot demo demo-e2 demo-e3 demo-e3-worker demo-semantic-snapshot stress-e2 stress-e3-500 stress-semantic-snapshot stress-semantic-snapshot-scale clean docs-check fmt vet benchmark generate-e2 generate-e3 generate-e3-admission generate-e3-s1 force-go
+.PHONY: all build test test-go test-go-fuzz test-c test-c-fuzz test-e2e test-snapshot demo demo-e2 demo-e3 demo-e3-worker demo-e4-agent demo-e4-investigation demo-semantic-snapshot stress-e2 stress-e3-500 stress-semantic-snapshot stress-semantic-snapshot-scale clean docs-check fmt vet benchmark benchmark-e4-universe verify-e4-worldstate generate-e2 generate-e3 generate-e3-admission generate-e3-s1 generate-e4-ontology generate-e4-vectors force-go
 
 C_VERIFIER_SOURCES := verifier/c/main.c verifier/c/observation.c verifier/c/sha256.c
 C_VERIFIER_HEADERS := verifier/c/observation.h verifier/c/sha256.h
@@ -18,7 +19,7 @@ C_WARNINGS := -Wall -Wextra -Werror -Wconversion -Wshadow -Wpedantic
 
 all: build test
 
-build: $(BIN_DIR)/tw $(BIN_DIR)/tw-test-origin $(BIN_DIR)/twirx-lab $(BIN_DIR)/twirx-stress $(BIN_DIR)/twirx-atlas $(BIN_DIR)/twirx-observer-worker $(BIN_DIR)/twirx-admission $(BIN_DIR)/twirx-egress-worker $(BIN_DIR)/twirx-snapshot $(BIN_DIR)/twirx-archive $(BIN_DIR)/twirx-archive-acquire $(BIN_DIR)/tw-verify-c $(BIN_DIR)/tw-verify-result-c $(BIN_DIR)/tw-verify-e2-artifact-c $(BIN_DIR)/tw-verify-data-plane-c
+build: $(BIN_DIR)/tw $(BIN_DIR)/tw-test-origin $(BIN_DIR)/twirx-lab $(BIN_DIR)/twirx-stress $(BIN_DIR)/twirx-atlas $(BIN_DIR)/twirx-observer-worker $(BIN_DIR)/twirx-admission $(BIN_DIR)/twirx-egress-worker $(BIN_DIR)/twirx-snapshot $(BIN_DIR)/twirx-archive $(BIN_DIR)/twirx-archive-acquire $(BIN_DIR)/twirx-ontology $(BIN_DIR)/twirx-e4-agent $(BIN_DIR)/twirx-e4-worldstate $(BIN_DIR)/twirx-e4-opportunity $(BIN_DIR)/twirx-e4-capacity $(BIN_DIR)/tw-verify-c $(BIN_DIR)/tw-verify-result-c $(BIN_DIR)/tw-verify-e2-artifact-c $(BIN_DIR)/tw-verify-data-plane-c
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
@@ -58,6 +59,21 @@ $(BIN_DIR)/twirx-archive: force-go | $(BIN_DIR)
 $(BIN_DIR)/twirx-archive-acquire: force-go | $(BIN_DIR)
 	$(GO) build -trimpath -o $@ ./cmd/twirx-archive-acquire
 
+$(BIN_DIR)/twirx-ontology: force-go | $(BIN_DIR)
+	$(GO) build -trimpath -o $@ ./cmd/twirx-ontology
+
+$(BIN_DIR)/twirx-e4-agent: force-go | $(BIN_DIR)
+	$(GO) build -trimpath -o $@ ./cmd/twirx-e4-agent
+
+$(BIN_DIR)/twirx-e4-worldstate: force-go | $(BIN_DIR)
+	$(GO) build -trimpath -o $@ ./cmd/twirx-e4-worldstate
+
+$(BIN_DIR)/twirx-e4-opportunity: force-go | $(BIN_DIR)
+	$(GO) build -trimpath -o $@ ./cmd/twirx-e4-opportunity
+
+$(BIN_DIR)/twirx-e4-capacity: force-go | $(BIN_DIR)
+	$(GO) build -trimpath -o $@ ./cmd/twirx-e4-capacity
+
 $(BIN_DIR)/tw-verify-c: $(C_VERIFIER_SOURCES) $(C_VERIFIER_HEADERS) | $(BIN_DIR)
 	$(CC) -std=c2x -O2 $(C_WARNINGS) -o $@ $(C_VERIFIER_SOURCES)
 
@@ -77,29 +93,38 @@ test-go:
 
 test-go-fuzz: export GOMAXPROCS := $(FUZZ_WORKERS)
 test-go-fuzz:
-	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalCBOR$$' -fuzztime=1s ./internal/observation
-	$(GO) test -run='^$$' -fuzz='^FuzzJSONPointer$$' -fuzztime=1s ./internal/adapter
-	$(GO) test -run='^$$' -fuzz='^FuzzDecodeManifest$$' -fuzztime=1s ./internal/adapter
-	$(GO) test -run='^$$' -fuzz='^FuzzResultExtraction$$' -fuzztime=1s ./internal/adapter
-	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalResult$$' -fuzztime=1s ./internal/e2format
-	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalManifest$$' -fuzztime=1s ./internal/proofbundle
-	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalTransport$$' -fuzztime=1s ./internal/transportevidence
-	$(GO) test -run='^$$' -fuzz='^FuzzSelectionJSON$$' -fuzztime=1s ./internal/atlas
-	$(GO) test -run='^$$' -fuzz='^FuzzRegistryJSON$$' -fuzztime=1s ./internal/atlas
-	$(GO) test -run='^$$' -fuzz='^FuzzPolicySetJSON$$' -fuzztime=1s ./internal/atlas
-	$(GO) test -run='^$$' -fuzz='^FuzzParseAndEvaluate$$' -fuzztime=1s ./internal/robotstxt
-	$(GO) test -run='^$$' -fuzz='^FuzzJobJSON$$' -fuzztime=1s ./internal/observatoryworker
-	$(GO) test -run='^$$' -fuzz='^FuzzDecisionJSON$$' -fuzztime=1s ./internal/admission
-	$(GO) test -run='^$$' -fuzz='^FuzzWorkOrderJSON$$' -fuzztime=1s ./internal/egressworker
-	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalDataPlane$$' -fuzztime=1s ./internal/dataplane
-	$(GO) test -run='^$$' -fuzz='^FuzzPacketSegmentJSON$$' -fuzztime=1s ./internal/snapshotartifact
-	$(GO) test -run='^$$' -fuzz='^FuzzProofIndexJSON$$' -fuzztime=1s ./internal/snapshotartifact
-	$(GO) test -run='^$$' -fuzz='^FuzzQueryRequestJSON$$' -fuzztime=1s ./cmd/twirx-snapshot
-	$(GO) test -run='^$$' -fuzz='^FuzzWorkOrderJSON$$' -fuzztime=1s ./internal/archiveimport
-	$(GO) test -run='^$$' -fuzz='^FuzzIndexResponse$$' -fuzztime=1s ./internal/archiveimport
-	$(GO) test -run='^$$' -fuzz='^FuzzCompressedWARC$$' -fuzztime=1s ./internal/archiveimport
-	$(GO) test -run='^$$' -fuzz='^FuzzManifestJSON$$' -fuzztime=1s ./internal/archiveacquire
-	$(GO) test -run='^$$' -fuzz='^FuzzExtractTitle$$' -fuzztime=1s ./internal/archiveprofile
+	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalCBOR$$' -fuzztime=$(FUZZ_TIME) ./internal/observation
+	$(GO) test -run='^$$' -fuzz='^FuzzJSONPointer$$' -fuzztime=$(FUZZ_TIME) ./internal/adapter
+	$(GO) test -run='^$$' -fuzz='^FuzzDecodeManifest$$' -fuzztime=$(FUZZ_TIME) ./internal/adapter
+	$(GO) test -run='^$$' -fuzz='^FuzzResultExtraction$$' -fuzztime=$(FUZZ_TIME) ./internal/adapter
+	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalResult$$' -fuzztime=$(FUZZ_TIME) ./internal/e2format
+	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalManifest$$' -fuzztime=$(FUZZ_TIME) ./internal/proofbundle
+	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalTransport$$' -fuzztime=$(FUZZ_TIME) ./internal/transportevidence
+	$(GO) test -run='^$$' -fuzz='^FuzzSelectionJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/atlas
+	$(GO) test -run='^$$' -fuzz='^FuzzRegistryJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/atlas
+	$(GO) test -run='^$$' -fuzz='^FuzzPolicySetJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/atlas
+	$(GO) test -run='^$$' -fuzz='^FuzzParseAndEvaluate$$' -fuzztime=$(FUZZ_TIME) ./internal/robotstxt
+	$(GO) test -run='^$$' -fuzz='^FuzzJobJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/observatoryworker
+	$(GO) test -run='^$$' -fuzz='^FuzzDecisionJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/admission
+	$(GO) test -run='^$$' -fuzz='^FuzzWorkOrderJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/egressworker
+	$(GO) test -run='^$$' -fuzz='^FuzzUnmarshalDataPlane$$' -fuzztime=$(FUZZ_TIME) ./internal/dataplane
+	$(GO) test -run='^$$' -fuzz='^FuzzPacketSegmentJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/snapshotartifact
+	$(GO) test -run='^$$' -fuzz='^FuzzProofIndexJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/snapshotartifact
+	$(GO) test -run='^$$' -fuzz='^FuzzQueryRequestJSON$$' -fuzztime=$(FUZZ_TIME) ./cmd/twirx-snapshot
+	$(GO) test -run='^$$' -fuzz='^FuzzWorkOrderJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/archiveimport
+	$(GO) test -run='^$$' -fuzz='^FuzzIndexResponse$$' -fuzztime=$(FUZZ_TIME) ./internal/archiveimport
+	$(GO) test -run='^$$' -fuzz='^FuzzCompressedWARC$$' -fuzztime=$(FUZZ_TIME) ./internal/archiveimport
+	$(GO) test -run='^$$' -fuzz='^FuzzManifestJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/archiveacquire
+	$(GO) test -run='^$$' -fuzz='^FuzzExtractTitle$$' -fuzztime=$(FUZZ_TIME) ./internal/archiveprofile
+	$(GO) test -run='^$$' -fuzz='^FuzzModuleSource$$' -fuzztime=$(FUZZ_TIME) ./internal/ontologyfabric
+	$(GO) test -run='^$$' -fuzz='^FuzzCompileWorldBank$$' -fuzztime=$(FUZZ_TIME) ./internal/universeimport
+	$(GO) test -run='^$$' -fuzz='^FuzzCompileGrantsFetch$$' -fuzztime=$(FUZZ_TIME) ./internal/universeimport
+	$(GO) test -run='^$$' -fuzz='^FuzzCompileGrantsBulkProjection$$' -fuzztime=$(FUZZ_TIME) ./internal/universeimport
+	$(GO) test -run='^$$' -fuzz='^FuzzProjectGrantsXML$$' -fuzztime=$(FUZZ_TIME) ./internal/opportunitypilot
+	$(GO) test -run='^$$' -fuzz='^FuzzOpenNative$$' -fuzztime=$(FUZZ_TIME) ./internal/universesnapshot
+	$(GO) test -run='^$$' -fuzz='^FuzzOpenColumnar$$' -fuzztime=$(FUZZ_TIME) ./internal/universesnapshot
+	$(GO) test -run='^$$' -fuzz='^FuzzOpenCompact$$' -fuzztime=$(FUZZ_TIME) ./internal/universesnapshot
+	$(GO) test -run='^$$' -fuzz='^FuzzPlanJSON$$' -fuzztime=$(FUZZ_TIME) ./internal/worldstatepilot
 
 test-c: $(BIN_DIR)/tw-verify-c $(BIN_DIR)/twirx-lab
 	$(CLANG) -std=c2x -O1 -g $(C_WARNINGS) \
@@ -117,6 +142,9 @@ test-c: $(BIN_DIR)/tw-verify-c $(BIN_DIR)/twirx-lab
 		-fsanitize=address,undefined -fno-omit-frame-pointer \
 		-o $(BIN_DIR)/tw-verify-data-plane-c-sanitized $(DP_C_VERIFIER_SOURCES)
 	./scripts/test-c-dataplane.sh $(BIN_DIR)/tw-verify-data-plane-c-sanitized
+	./scripts/test-c-e4-ontology.sh $(BIN_DIR)/tw-verify-data-plane-c-sanitized
+	./scripts/test-c-e4-worldstate-release.sh $(BIN_DIR)/tw-verify-data-plane-c-sanitized
+	./scripts/test-c-e4-opportunity-sample.sh $(BIN_DIR)/tw-verify-data-plane-c-sanitized generated/e4/releases/grants-gov-20260811-c-sample
 
 test-c-fuzz: $(BIN_DIR)/twirx-lab | $(BIN_DIR)
 	$(CLANG) -std=c2x -O1 -g $(C_WARNINGS) \
@@ -150,6 +178,13 @@ demo-e3: build
 demo-e3-worker: build
 	./scripts/demo-e3-worker.sh
 
+demo-e4-agent: $(BIN_DIR)/twirx-e4-agent
+	$(BIN_DIR)/twirx-e4-agent --root . --scenario world-state.controlled-development
+
+demo-e4-investigation: $(BIN_DIR)/twirx-e4-agent
+	$(BIN_DIR)/twirx-e4-agent --root . \
+		--investigation utility.controlled-world-and-opportunity
+
 demo-semantic-snapshot: build
 	./scripts/demo-semantic-snapshot.sh
 
@@ -180,6 +215,15 @@ vet:
 benchmark:
 	$(GO) test -bench=. -benchmem ./internal/adapter ./internal/labengine ./internal/snapshotruntime
 
+benchmark-e4-universe:
+	$(GO) test ./internal/universesnapshot -run='^$$' \
+		-bench='Benchmark(Native|Columnar|Compact)ExactSlotQuery' \
+		-benchmem -benchtime=20x -count=3
+
+verify-e4-worldstate: $(BIN_DIR)/twirx-e4-worldstate
+	$(BIN_DIR)/twirx-e4-worldstate verify-release --root . \
+		--release generated/e4/releases/world-bank-e2-matrix
+
 generate-e2: $(BIN_DIR)/twirx-lab
 	$(BIN_DIR)/twirx-lab generate --root . --out generated/e2
 
@@ -191,6 +235,12 @@ generate-e3-admission: $(BIN_DIR)/twirx-admission
 
 generate-e3-s1:
 	$(GO) run ./cmd/twirx-s1-vectors -out conformance/e3-s1/vectors.tsv
+
+generate-e4-ontology: $(BIN_DIR)/twirx-ontology
+	$(BIN_DIR)/twirx-ontology compile --root . --out generated/e4/ontology
+
+generate-e4-vectors:
+	$(GO) run ./cmd/twirx-e4-vectors -out conformance/e4-ontology/vectors.tsv
 
 clean:
 	rm -rf $(BIN_DIR) var

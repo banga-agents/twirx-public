@@ -1,0 +1,137 @@
+---
+title: "Opportunity Utility Universe"
+description: "The admitted Grants.gov source profile, privacy-safe packet and frame release, and manifest-pinned read-only query path."
+---
+
+> **Authority:** Explanatory implementation profile · **Status:** Validated engineering release candidate; public evidence, large runtime not deployed · **Applies to:** E4.5 Opportunity admission · **Verified against:** release manifest `sha256:cbaaa1cd2b41f698f7b423a516727f5a7907bba56ac6c17136528f40f45d7690` · **Source:** `reports/e4-5-opportunity-admission.md`
+
+## What was admitted
+
+The Genesis steward approved one exact policy proposal at
+`2026-08-12T04:33:44Z`. That approval authorized one manual retrieval of one
+named Grants.gov bulk extract, its exact range, byte, timeout, field and
+retention limits, and nothing broader.
+
+The acquisition:
+
+- made 75 sequential bounded range requests;
+- transferred 77,910,428 bytes;
+- stored each range as evidence before archive reconstruction;
+- completed with the scheduler disabled;
+- retained the raw archive as private evidence;
+- cannot be repeated because the persisted one-shot claim is consumed.
+
+No caller-supplied URL, alternate file, redirect, browser, authenticated route,
+payment route, write action or automatic refresh was authorized.
+
+## What the compiler produced
+
+| Object | Exact count |
+|---|---:|
+| Source records seen | 83,133 |
+| Source records accepted | 83,087 |
+| Source records rejected closed | 46 |
+| Real source-derived semantic packets | 1,037,679 |
+| Candidate mapping claims | 747,783 |
+| Opportunity frames | 83,087 |
+| World State frames in the combined segment | 35 |
+| Combined frames | 83,122 |
+| Packet and mapping segments | 42 |
+
+Mappings remain `candidate`; frames remain in the
+`provisional_semantic` trust lane. Packet and frame counts establish source
+depth, not broad multi-source coverage or canonical semantic review.
+
+The release is completed by `release-manifest.json`. Its detached SHA-256 is
+the trusted input to the read-only runtime. The runtime rejects a different
+manifest, missing privacy report, symlinked segment, changed segment size,
+changed digest, invalid frame or count mismatch.
+
+Public engineering evidence is versioned at
+[`v0.4.5-rc.1`](https://github.com/banga-agents/twirx-public/releases/tag/v0.4.5-rc.1).
+The release publishes the exact manifest and its detached SHA-256 while keeping
+the 1.73 GB runtime segments and private acquisition projection off the shared
+public host.
+
+## Privacy treatment
+
+The private projection excluded 247,382 contact fields and 83,130 descriptions.
+The approved eligibility field still contained contact-like text. Publishing
+it would have violated the public-surface privacy standard even though the
+source field itself was in scope.
+
+TWIRX therefore compiles each non-empty eligibility field as:
+
+```yaml
+native_status: withheld
+native_lexical: ""
+typed_value: absent
+packet_proof: present
+```
+
+Empty eligibility fields become `not_provided`. Frames link the corresponding
+packet and preserve that state. The release publishes zero eligibility lexical
+values and makes no applicant-eligibility conclusion.
+
+This product uses the Grants.gov public data source but is not endorsed or
+certified by the U.S. Department of Health and Human Services.
+
+## Agent query
+
+The first admitted scenario is a bounded exact query for records whose
+source-stated agency code is `NSF`:
+
+```json
+{
+  "universe_id": "tw:opportunity",
+  "frame_type": "opportunity:GrantOpportunity",
+  "slot_role": "opportunity:funder",
+  "slot_value": {
+    "type": "identifier",
+    "lexical": "grants-gov:agency/NSF"
+  },
+  "limit": 20
+}
+```
+
+The recorded run returned 20 proof-linked frames. A coordinated investigation
+returned 31 frames across `tw:opportunity` and `tw:world-state`. Both paths had
+zero origin calls, browser executions, live-source calls and model authority.
+The cross-universe investigation coordinates two typed queries; it does not
+invent a semantic join between grants and development observations.
+
+<Warning>
+A returned source record is not a claim that an opportunity remains open or
+that a person or organization is eligible. Date-only source fields remain
+unresolved until a separate declared temporal interpretation is admitted.
+</Warning>
+
+## Verification and measured scope
+
+The complete Go release verifier rehashes and parses every packet, mapping,
+frame and segment, verifies every privacy invariant and reconciles all
+frame-to-packet references. Its recorded full-release run completed in 26.405
+seconds on the evidence host.
+
+The independent restricted-C verifier checked 132 deterministic canonical
+artifacts: 63 packets, 63 mapping claims and six frames. The selection takes
+the first, middle and last entry from every packet and mapping segment and
+three frames from each universe. This is sample evidence; TWIRX does not claim
+that C verified the complete million-packet corpus.
+
+After one runtime admission, 1,000 local NSF scenario executions had a median
+of 2.411 ms and p95 of 3.107 ms for exact query, trace and decode of 20 frames.
+The 4.825-second admission measurement includes whole-file identity and index
+reconciliation for the 273,165,514-byte combined segment. These are one-host
+local measurements, not public-network or production capacity claims.
+
+## Deployment state
+
+The protected FUTO baseline remains live at `lab.twirx.org`. This larger
+Opportunity release is not deployed. Its isolated encrypted off-host archive
+passed full data checking, a byte-identical restore, complete release
+verification, restricted-C sample verification and the two-universe agent
+investigation. The code, report and manifest are admitted as public engineering
+evidence. A separate target-host resource and deployment decision remains
+required. A second versioned Object Storage replica remains desirable but the
+unrelated existing Meridian bucket stays outside scope.

@@ -1,0 +1,25 @@
+{
+  "format": "tw.egress-work-order/0.1",
+  "id": "e4-wb-chl-ny-gdp-mktp-cd-2022",
+  "origin_id": "api-worldbank-org",
+  "purpose": "observation",
+  "authority_class": "reviewed_policy",
+  "method": "GET",
+  "url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2022\u0026format=json\u0026per_page=1",
+  "allowed_hosts": [
+    "api.worldbank.org"
+  ],
+  "policy_decision": "permit_with_constraints",
+  "policy_evidence_digest": "sha256:20b0772f39e23dda77a90e7120c71218e8de837cdb23086f46765a26cfa33e25",
+  "decision_digest": "sha256:751f417e96ffda179c5b0b4b4fba4e0a0d926a2d01f00ceae1c7353d08e6772c",
+  "approval_reference": "reports/futo-policy-decision-proposals.md",
+  "not_before": "2026-08-12T03:00:00Z",
+  "expires_at": "2026-08-13T03:00:00Z",
+  "max_redirects": 0,
+  "max_body_bytes": 262144,
+  "timeout_ms": 15000,
+  "connect_timeout_ms": 5000,
+  "header_timeout_ms": 10000,
+  "max_consecutive_failures": 2,
+  "circuit_cooldown_seconds": 3600
+}

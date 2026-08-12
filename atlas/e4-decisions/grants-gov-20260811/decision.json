@@ -1,0 +1,13 @@
+{
+  "format": "tw.e4-opportunity-policy-decision/0.1",
+  "origin_id": "grants-gov-api",
+  "review_state": "completed",
+  "decision": "permit_with_constraints",
+  "reviewed_at": "2026-08-12T04:33:44Z",
+  "reviewer": "Genesis steward",
+  "approval_reference": "reports/e4-opportunity-policy-decision-proposal.md",
+  "proposal_digest": "sha256:ec901ccd32462eddfc685be91fb6ce185c791297f319edbb1b7c29923fe4e4e3",
+  "founder_review_ref": "atlas/e4-decisions/grants-gov-20260811/founder-review.txt",
+  "source_url": "https://prod-grants-gov-chatbot.s3.amazonaws.com/extracts/GrantsDBExtract20260811v2.zip",
+  "scope": "Exactly the route, file, fields, retention classes, budgets, exclusions and execution constraints in the approved proposal; no broader retrieval or semantic authority."
+}

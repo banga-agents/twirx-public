@@ -319,6 +319,141 @@ conflict-group = [
   resolution: "preserved" / "caller_policy_selected" / "unresolved"
 ]
 
+; E4 Ontology Fabric 0.1. Frames compose admitted packets without replacing
+; their native statements. Module, mapping, frame and universe cores remain
+; self-digest-free and use detached SHA-256 identities.
+
+semantic-frame-core = [
+  version: "tw.semantic-frame/0.1",
+  universe-id: identifier-text,
+  frame-type: identifier-text,
+  native-key: identifier-text,
+  canonical-candidates: [*32 identifier-text],
+  derivation: frame-derivation,
+  slots: [1*256 semantic-frame-slot],
+  context: frame-context,
+  time: frame-time,
+  epistemic: frame-epistemic,
+  lifecycle: frame-lifecycle,
+  extensions: []
+]
+
+semantic-frame-slot = [
+  role-id: identifier-text,
+  status: value-status,
+  cardinality: "one" / "many",
+  values: [*64 typed-value],
+  packet-digests: [1*256 sha256],
+  mapping-ids: [*32 identifier-text],
+  conflict: "none" / "preserved" / "unresolved"
+]
+
+frame-context = [
+  dimensions: [*32 context-dimension],
+  jurisdiction: nil / identifier-text,
+  language: nil / language-tag,
+  scope: nil / identifier-text
+]
+
+frame-time = [
+  composed-at: utc-second,
+  valid-from: nil / utc-second,
+  valid-until: nil / utc-second
+]
+
+frame-epistemic = [
+  lane: trust-lane,
+  completeness-millionths: 0..1000000,
+  conflict-status: "none" / "preserved" / "unresolved"
+]
+
+frame-derivation = [
+  packet-digests: [1*4096 sha256],
+  module-set-digest: sha256,
+  mapping-ids: [*256 identifier-text],
+  compiler-contract-digest: sha256,
+  compiler-version: identifier-text
+]
+
+frame-lifecycle = [
+  state: "current" / "superseded" / "withdrawn" / "stale" /
+         "retracted" / "invalid",
+  supersedes-frame-digest: nil / sha256
+]
+
+mapping-claim-core = [
+  version: "tw.mapping-claim/0.1",
+  mapping-id: identifier-text,
+  native: mapping-native,
+  semantic: mapping-semantic,
+  relation: mapping-relation,
+  scope: mapping-scope,
+  status: "candidate" / "reviewed" / "disputed" / "revoked",
+  evidence-packet-digests: [*256 sha256],
+  module-id: identifier-text,
+  review-decision-digest: nil / sha256,
+  supersedes-mapping-digest: nil / sha256,
+  extensions: []
+]
+
+mapping-native = [
+  origin-id: identifier-text,
+  schema-ref: nil / identifier-text,
+  term: identifier-text,
+  locator-pattern: nil / locator-text
+]
+
+mapping-semantic = [
+  concept-id: identifier-text,
+  role-id: nil / identifier-text
+]
+
+mapping-relation =
+  "exact" / "close" / "broad" / "narrow" / "contextual" / "candidate"
+
+mapping-scope = [
+  universe-id: identifier-text,
+  jurisdictions: [*32 identifier-text],
+  languages: [*32 language-tag],
+  condition-ids: [*32 identifier-text]
+]
+
+ontology-module-manifest = [
+  version: "tw.ontology-module/0.1",
+  module-id: identifier-text,
+  module-version: semver-text,
+  status: "draft" / "reviewed" / "admitted" / "deprecated" / "superseded",
+  imports: [*64 identifier-text],
+  concept-ids: [1*4096 identifier-text],
+  frame-type-ids: [*512 identifier-text],
+  role-ids: [*4096 identifier-text],
+  mapping-claim-digests: [*4096 sha256],
+  query-template-ids: [*256 identifier-text],
+  visualization-ids: [*256 identifier-text],
+  source-artifact-digest: sha256,
+  review-decision-digest: nil / sha256,
+  extensions: []
+]
+
+semantic-universe-core = [
+  version: "tw.semantic-universe/0.1",
+  universe-id: identifier-text,
+  universe-version: semver-text,
+  title: short-text,
+  module-ids: [1*64 identifier-text],
+  frame-type-ids: [1*512 identifier-text],
+  source-origin-ids: [*1024 identifier-text],
+  mapping-claim-digests: [*4096 sha256],
+  materialized-view-ids: [*64 identifier-text],
+  query-template-ids: [*256 identifier-text],
+  visualization-ids: [*256 identifier-text],
+  update-policy-id: identifier-text,
+  evaluation-suite-id: identifier-text,
+  module-set-digest: sha256,
+  compiled-at: utc-second,
+  extensions: []
+]
+
 materialization-manifest = [
   version: "tw.materialization-manifest/0.1",
   materialization-id: identifier-text,
@@ -433,4 +568,5 @@ snapshot-path = tstr .size (1..255)
 language-tag = tstr .size (2..63)
 currency-code = tstr .size 3
 decimal-text = tstr .size (1..128)
+semver-text = tstr .size (1..64)
 utc-second = tstr .size 20

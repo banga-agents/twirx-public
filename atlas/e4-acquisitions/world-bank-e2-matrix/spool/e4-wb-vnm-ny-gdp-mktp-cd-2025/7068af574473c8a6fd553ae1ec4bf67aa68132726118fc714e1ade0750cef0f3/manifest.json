@@ -1,0 +1,31 @@
+{
+  "format": "tw.egress-manifest/0.1",
+  "work_order_id": "e4-wb-vnm-ny-gdp-mktp-cd-2025",
+  "work_order_digest": "sha256:7068af574473c8a6fd553ae1ec4bf67aa68132726118fc714e1ade0750cef0f3",
+  "artifacts": [
+    {
+      "path": "cas/sha256/82/07/8207ac3f39f657ab8c90afde221b14a145b64070135ab4f844c0756e0f4924d0",
+      "digest": "sha256:8207ac3f39f657ab8c90afde221b14a145b64070135ab4f844c0756e0f4924d0"
+    },
+    {
+      "path": "evidence/body.ref",
+      "digest": "sha256:075a37761dd95ae66adb490e58cdd693cc9757e5977da515f6b5940bf9a5d907"
+    },
+    {
+      "path": "evidence/observation.cbor",
+      "digest": "sha256:aff30e22053fea264961d0bccb78720487b61caedb7717550ebd83a7657496f1"
+    },
+    {
+      "path": "evidence/observation.json",
+      "digest": "sha256:d97c78b0b2bf4cd947d8db54c1ad45c0f986c8b16f6464bf2fa48785145a53fd"
+    },
+    {
+      "path": "result.json",
+      "digest": "sha256:c59a0142436b915b41cca262d51a2c1df929fdd7b38f29b8a8a95d9121983b4a"
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:7068af574473c8a6fd553ae1ec4bf67aa68132726118fc714e1ade0750cef0f3"
+    }
+  ]
+}

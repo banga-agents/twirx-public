@@ -36,6 +36,12 @@ trap cleanup EXIT HUP INT TERM
 
 git -C "$repository" archive "$source_revision" | tar -x -C "$staging"
 
+# Exact operator infrastructure identifiers and recovery commands belong to
+# the private operational record, not the public source evidence profile.
+# Public reports retain the restore outcome without publishing unrelated
+# account names, hostnames, archive paths, or local secret-file locations.
+rm -- "$staging/reports/futo-offhost-durability.md"
+
 # These patterns contain exact third-party archive bytes. The public export
 # intentionally retains their TWIRX-authored manifests and digests.
 for path in \

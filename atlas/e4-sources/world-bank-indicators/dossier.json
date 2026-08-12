@@ -1,0 +1,40 @@
+{
+  "format": "tw.e4-source-dossier/0.1",
+  "id": "world-bank-indicators-e4",
+  "universe_id": "tw:world-state",
+  "canonical_origin": "https://api.worldbank.org",
+  "atlas_origin_id": "api-worldbank-org",
+  "source_class": "public_api",
+  "access_class": "unauthenticated_public",
+  "network_execution_state": "disabled",
+  "policy": {
+    "existing_decision_ref": "atlas/admissions/api-worldbank-org/decision.json",
+    "existing_scope": ["documented E2 country, indicator and year route only"],
+    "e4_review_state": "pending",
+    "e4_decision": "none",
+    "reviewed_at": null,
+    "reviewer": null
+  },
+  "proposed_routes": [
+    "https://api.worldbank.org/v2/country/all/indicator/{indicator}?date={from}:{until}&format=json&per_page={limit}",
+    "https://api.worldbank.org/v2/indicator/{indicator}?format=json"
+  ],
+  "proposed_budget": {
+    "maximum_requests": 1000,
+    "maximum_response_bytes": 16777216,
+    "maximum_total_bytes": 1073741824,
+    "maximum_records": 2000000,
+    "timeout_seconds": 60,
+    "concurrency": 2
+  },
+  "authentication": "No API key is required by the documented V2 Indicators API.",
+  "attribution": "Preserve World Bank source, indicator, database, unit, metadata and update attribution.",
+  "retention": "Retain bounded source representations and proof artifacts; deduplicate by representation digest.",
+  "personal_data_treatment": "Use aggregate public indicators only; reject unexpected record classes containing personal profiles.",
+  "license_notes": "Existing E2 policy evidence is not a blanket license or bulk-scope approval; E4 expansion requires human review.",
+  "emergency_disable": "No scheduler or network work order exists; future jobs must honor the source kill switch and exact-host revocation.",
+  "initial_scope": "Proposed 150 to 300 reviewed aggregate indicators across explicit economy and year bounds; no undocumented endpoints.",
+  "documentation": [
+    "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"
+  ]
+}

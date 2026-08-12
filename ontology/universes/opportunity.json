@@ -1,0 +1,16 @@
+{
+  "format": "tw.semantic-universe-source/0.1",
+  "universe_id": "tw:opportunity",
+  "version": "0.1.0",
+  "title": "Opportunity",
+  "module_ids": ["tw:kernel@0.1.0","tw:opportunity@0.1.0"],
+  "frame_type_ids": ["opportunity:GrantOpportunity"],
+  "source_origin_ids": ["grants-gov-api"],
+  "mapping_claim_digests": [],
+  "materialized_view_ids": [],
+  "query_template_ids": ["query:opportunity/deadline-window@0.1","query:opportunity/find-funding@0.1","query:opportunity/unresolved-eligibility@0.1"],
+  "visualization_ids": ["view:opportunity/deadline-timeline@0.1","view:opportunity/eligibility-tree@0.1","view:opportunity/funder-network@0.1"],
+  "update_policy_id": "policy:opportunity/disabled@0.1",
+  "evaluation_suite_id": "eval:opportunity@0.1",
+  "compiled_at": "2026-08-12T00:00:00Z"
+}

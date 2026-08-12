@@ -1,0 +1,31 @@
+{
+  "format": "tw.egress-manifest/0.1",
+  "work_order_id": "e4-wb-usa-ny-gdp-mktp-cd-2025",
+  "work_order_digest": "sha256:a3a5f04a57cd3578d3536d9b2827cb2bb559466516d23ad94b859f0192e03756",
+  "artifacts": [
+    {
+      "path": "cas/sha256/64/27/6427f60b57895e0af97a2635ad47908640fb6e4c9a950ec7710cea922d31fe2f",
+      "digest": "sha256:6427f60b57895e0af97a2635ad47908640fb6e4c9a950ec7710cea922d31fe2f"
+    },
+    {
+      "path": "evidence/body.ref",
+      "digest": "sha256:5d5c698316ab2e708f4e95d3a935e345fed026e968924e6cadbf9602b5d4a9d6"
+    },
+    {
+      "path": "evidence/observation.cbor",
+      "digest": "sha256:802d300ac36d33d890ba309157658a37508f104ade3000265ac9fc9ccda900ba"
+    },
+    {
+      "path": "evidence/observation.json",
+      "digest": "sha256:09936b783ca64f452133ca5a3ddae71ec3062c5316a64af1f7e0d0e38f5807fc"
+    },
+    {
+      "path": "result.json",
+      "digest": "sha256:2403ade4e9ab1007b43aafe7708b6c6b3e2bf780cc8b11aff2388224bf630b3f"
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:a3a5f04a57cd3578d3536d9b2827cb2bb559466516d23ad94b859f0192e03756"
+    }
+  ]
+}

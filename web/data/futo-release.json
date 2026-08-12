@@ -111,7 +111,7 @@
     "term_days": 90,
     "first_milestone_usd": 6000,
     "first_milestone_days": 30,
-    "first_milestone": "Fund 30 days of focused, full-time engineering to complete policy processing across Atlas-500 and attempt bounded profiling for every eligible origin.",
+    "first_milestone": "Fund 30 days of focused, full-time engineering to publish E4.5, deliver Ontology Fabric 0.1, expand Opportunity and World State, and ship the Visual Atlas Agent alpha.",
     "budget": [
       {"use": "Full-time maintainer engineering capacity", "amount": 3200},
       {"use": "Coding-agent and API access", "amount": 1200},

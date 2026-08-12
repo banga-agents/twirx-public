@@ -1,0 +1,39 @@
+{
+  "format": "tw.e4-source-dossier/0.1",
+  "id": "azure-retail-prices-e4",
+  "universe_id": "tw:agent-economy",
+  "canonical_origin": "https://prices.azure.com",
+  "atlas_origin_id": null,
+  "source_class": "public_api",
+  "access_class": "unauthenticated_public",
+  "network_execution_state": "disabled",
+  "policy": {
+    "existing_decision_ref": "",
+    "existing_scope": [],
+    "e4_review_state": "pending",
+    "e4_decision": "none",
+    "reviewed_at": null,
+    "reviewer": null
+  },
+  "proposed_routes": [
+    "https://prices.azure.com/api/retail/prices?$filter={reviewed_filter}"
+  ],
+  "proposed_budget": {
+    "maximum_requests": 2000,
+    "maximum_response_bytes": 33554432,
+    "maximum_total_bytes": 2147483648,
+    "maximum_records": 2000000,
+    "timeout_seconds": 60,
+    "concurrency": 1
+  },
+  "authentication": "The publisher documents an unauthenticated retail-price API.",
+  "attribution": "Preserve Microsoft source, currency, region, SKU, unit, effective date, meter and price type.",
+  "retention": "Retain time-bound source-stated offer observations and proof; never present them as executable quotes.",
+  "personal_data_treatment": "Commercial catalog metadata only; reject unexpected customer or account data.",
+  "license_notes": "Review Microsoft terms before retrieval; non-USD values are documented as reference estimates and must remain labeled.",
+  "emergency_disable": "No network work order or price scheduler exists; future jobs stop on schema, terms or rate-policy change.",
+  "initial_scope": "Proposed selected compute, storage and networking service families with explicit units and regions.",
+  "documentation": [
+    "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+  ]
+}

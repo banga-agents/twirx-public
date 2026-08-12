@@ -1,0 +1,17 @@
+{
+  "format": "tw.egress-result/0.1",
+  "work_order_id": "e4-wb-chl-sp-pop-totl-2025",
+  "work_order_digest": "sha256:a31ccd9b552a6b49cddacfd24f0d6ca8f54411f6af982486e8ad120e4bb593d2",
+  "origin_id": "api-worldbank-org",
+  "purpose": "observation",
+  "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?date=2025\u0026format=json\u0026per_page=1",
+  "final_url": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?date=2025\u0026format=json\u0026per_page=1",
+  "retrieved_at": "2026-08-12T03:07:51.535277745Z",
+  "http_status": 200,
+  "media_type": "application/json",
+  "redirect_count": 0,
+  "observation_digest": "sha256:f3eb0e918d37fc6bd5578a5fa82dd2f219f2b87764365f9b5fbe62088e81e86b",
+  "body_digest": "sha256:876fd21d472fe841a5e61d69fedf4ca5781902db2d53ac74b8a281e04085bbce",
+  "body_size": 283,
+  "duration_ms": 2146
+}

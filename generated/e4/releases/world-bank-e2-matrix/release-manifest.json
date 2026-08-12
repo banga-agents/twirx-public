@@ -1,0 +1,2738 @@
+{
+  "format": "tw.e4-world-state-release/0.1",
+  "plan_id": "world-bank-e2-matrix-2026-08",
+  "origin_id": "api-worldbank-org",
+  "evidence_class": "current_observation",
+  "compiled_at": "2026-08-12T03:12:00Z",
+  "policy_decision_digest": "sha256:751f417e96ffda179c5b0b4b4fba4e0a0d926a2d01f00ceae1c7353d08e6772c",
+  "module_set_digest": "sha256:3ea4e12426eb9df715b5c7f7897b8f0a6deaa7fda1b6bd85496c941d0eea68e8",
+  "source_responses": 36,
+  "eligible_responses": 35,
+  "rejected_responses": 1,
+  "source_records": 35,
+  "packets": 175,
+  "mapping_claims": 175,
+  "frames": 35,
+  "trust_lane": "provisional_semantic",
+  "mapping_status": "candidate",
+  "scheduler_enabled": false,
+  "artifacts": [
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/00/33/00338f266f1e9cea1b8cbdf34cd1a3070a4d0dabc57183c8a12420debf99a604",
+      "digest": "sha256:00338f266f1e9cea1b8cbdf34cd1a3070a4d0dabc57183c8a12420debf99a604",
+      "size": 240
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/02/2e/022e3daa163f02bb22057f6eadbd55be737df73e7f3b02c347b53c1b0ffd28e5",
+      "digest": "sha256:022e3daa163f02bb22057f6eadbd55be737df73e7f3b02c347b53c1b0ffd28e5",
+      "size": 1274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/02/ba/02baa50e14f7aaac3182d67130f13231a7f0ae61133405b1ffde7b2984b244f9",
+      "digest": "sha256:02baa50e14f7aaac3182d67130f13231a7f0ae61133405b1ffde7b2984b244f9",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/03/90/0390a94e18fa3572c58a74588ca1ff56da050974f7783810a1c2b94301c6b1c1",
+      "digest": "sha256:0390a94e18fa3572c58a74588ca1ff56da050974f7783810a1c2b94301c6b1c1",
+      "size": 269
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/04/2f/042f9a3d62458f08ce713ddc44f18b3937b28746d59a24c60ce4cec1fbefe881",
+      "digest": "sha256:042f9a3d62458f08ce713ddc44f18b3937b28746d59a24c60ce4cec1fbefe881",
+      "size": 1273
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/04/9f/049fbcc5a8dca668c1316a02241d3cffc7857d9beafdfd03ba757bd74a9b2167",
+      "digest": "sha256:049fbcc5a8dca668c1316a02241d3cffc7857d9beafdfd03ba757bd74a9b2167",
+      "size": 796
+    },
+    {
+      "kind": "proof_index",
+      "path": "proof/world-state.json",
+      "digest": "sha256:04a0dae39aa529a47ad0ec3db8ab689e6ab9852c5aee3e03b8dc6591b4491645",
+      "size": 38539
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/05/7c/057c1fdd30d3e82cb7c0c17326bf3e729ff5ad31161c136075064c9e4207324a",
+      "digest": "sha256:057c1fdd30d3e82cb7c0c17326bf3e729ff5ad31161c136075064c9e4207324a",
+      "size": 787
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/05/d1/05d1bbbbbf57393c632c84b5f022485cf613f49800119e1f49ba5a04fd75f066",
+      "digest": "sha256:05d1bbbbbf57393c632c84b5f022485cf613f49800119e1f49ba5a04fd75f066",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/06/dc/06dc2a54a07c2529e4dbc54cda7336ce0bfc7046914cd554c9ec4de215e8de37",
+      "digest": "sha256:06dc2a54a07c2529e4dbc54cda7336ce0bfc7046914cd554c9ec4de215e8de37",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/06/fa/06fa22bda90ab0445c2680c4268c270d64ef6e60040636f05751178d3ac9b13f",
+      "digest": "sha256:06fa22bda90ab0445c2680c4268c270d64ef6e60040636f05751178d3ac9b13f",
+      "size": 723
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/07/08/0708f337279547c44dd747eb39dc72bc45f348efc298e49e35187fa7be44734c",
+      "digest": "sha256:0708f337279547c44dd747eb39dc72bc45f348efc298e49e35187fa7be44734c",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/07/7c/077cb685aa2e9d2089904e72c5f8f6f6f1a031ef70e26bd6261d44fcca59b712",
+      "digest": "sha256:077cb685aa2e9d2089904e72c5f8f6f6f1a031ef70e26bd6261d44fcca59b712",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/07/a2/07a201ddd3296fefd88c10b5700bb3366d155672aee65e8fdb57f765620d6b61",
+      "digest": "sha256:07a201ddd3296fefd88c10b5700bb3366d155672aee65e8fdb57f765620d6b61",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/08/27/0827e4965e894dd1eae7e9b1dd3472e96e10f1b41af68747fa5245228ea440b1",
+      "digest": "sha256:0827e4965e894dd1eae7e9b1dd3472e96e10f1b41af68747fa5245228ea440b1",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/08/6d/086d4e18bc4065d232f4633c405130fbb28cda7c0793081ab33af51b4d548ae3",
+      "digest": "sha256:086d4e18bc4065d232f4633c405130fbb28cda7c0793081ab33af51b4d548ae3",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/09/36/0936c73c592fd558aed1daf2653ec763c09584e613b09edf0f23c2560b4dc3a5",
+      "digest": "sha256:0936c73c592fd558aed1daf2653ec763c09584e613b09edf0f23c2560b4dc3a5",
+      "size": 812
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/0a/5c/0a5c074cd39aa9a55e31d42afd279a8c1999e2786504cc0c41d6be540fe41779",
+      "digest": "sha256:0a5c074cd39aa9a55e31d42afd279a8c1999e2786504cc0c41d6be540fe41779",
+      "size": 717
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/0a/d7/0ad78fe319c04a9cf41614e150c6be05951eee4f6f199ff6be90cbeb861b8085",
+      "digest": "sha256:0ad78fe319c04a9cf41614e150c6be05951eee4f6f199ff6be90cbeb861b8085",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/0b/58/0b58d2e0897809d80114d8f0d68cd7f09b57ca67b55d541b3fc24de8bb4651d8",
+      "digest": "sha256:0b58d2e0897809d80114d8f0d68cd7f09b57ca67b55d541b3fc24de8bb4651d8",
+      "size": 766
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/0c/06/0c06c8937deca3b6a13a9590bf9d312709dab5ce546d98abce61ce6ee2c803fa",
+      "digest": "sha256:0c06c8937deca3b6a13a9590bf9d312709dab5ce546d98abce61ce6ee2c803fa",
+      "size": 1273
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/0c/51/0c51901606fbb0817b795bc571d47024ff40b64fe6d7d8365b83dfc4ec327634",
+      "digest": "sha256:0c51901606fbb0817b795bc571d47024ff40b64fe6d7d8365b83dfc4ec327634",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/0c/d3/0cd3ae474ad4dd28350db115e8bc8c2f2bda90d97eab80799ef3ac490be10b3f",
+      "digest": "sha256:0cd3ae474ad4dd28350db115e8bc8c2f2bda90d97eab80799ef3ac490be10b3f",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/0c/fd/0cfd36ae8c16182e9ccdc92c90352b7cfc926182af28eef21ac10009aaaad388",
+      "digest": "sha256:0cfd36ae8c16182e9ccdc92c90352b7cfc926182af28eef21ac10009aaaad388",
+      "size": 796
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/0e/12/0e12820515fad6596cabe65052cad78114041b9634083f76948539d3041d7eaf",
+      "digest": "sha256:0e12820515fad6596cabe65052cad78114041b9634083f76948539d3041d7eaf",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/0e/ed/0eedf689ddc14eb6ea72c09f6042050f0a8e5b9e4c0c371a5e9f3e3a61a5088b",
+      "digest": "sha256:0eedf689ddc14eb6ea72c09f6042050f0a8e5b9e4c0c371a5e9f3e3a61a5088b",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/0f/14/0f147ed709ffcdfaafb0295fd5688b7fa385847060b041235b0048955140f339",
+      "digest": "sha256:0f147ed709ffcdfaafb0295fd5688b7fa385847060b041235b0048955140f339",
+      "size": 814
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/10/2d/102d72a59d7c296ebb14c6644e3c0920dd0139145ee803d2dd6e8850ad590b2c",
+      "digest": "sha256:102d72a59d7c296ebb14c6644e3c0920dd0139145ee803d2dd6e8850ad590b2c",
+      "size": 723
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/10/b4/10b4cadafca4b6863be4f47393656eb70f1de3f75a768582de9f7528aff19814",
+      "digest": "sha256:10b4cadafca4b6863be4f47393656eb70f1de3f75a768582de9f7528aff19814",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/11/cf/11cf7a5f8cf55be132ef99d7322c9affd45c4da1f79c9254977fd5b20b670f9e",
+      "digest": "sha256:11cf7a5f8cf55be132ef99d7322c9affd45c4da1f79c9254977fd5b20b670f9e",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/12/19/12196e09abb194ed31a9bcc76f7ef2642765b3350d1814e40276884278d2c40a",
+      "digest": "sha256:12196e09abb194ed31a9bcc76f7ef2642765b3350d1814e40276884278d2c40a",
+      "size": 723
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/13/6e/136e814b5ce411f35f9541d3d657253e15e7adad5aa97f50943a2948f10bcf8c",
+      "digest": "sha256:136e814b5ce411f35f9541d3d657253e15e7adad5aa97f50943a2948f10bcf8c",
+      "size": 717
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/13/97/13970bddb810055e2731b2139b56c89fd062bf5476860d481fdcbc3b4227ab18",
+      "digest": "sha256:13970bddb810055e2731b2139b56c89fd062bf5476860d481fdcbc3b4227ab18",
+      "size": 1288
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/13/a8/13a8eda2f3029215ac932a9013f3236b6460574b50d24518132450c1918c449c",
+      "digest": "sha256:13a8eda2f3029215ac932a9013f3236b6460574b50d24518132450c1918c449c",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/14/b8/14b8b66b6e211e068a0dac066ff9ad95beafe78164c316dcf8ebc2208d69684a",
+      "digest": "sha256:14b8b66b6e211e068a0dac066ff9ad95beafe78164c316dcf8ebc2208d69684a",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/14/c9/14c91d81a518fcc27d089ac085b282c7ff55730fc198dda5b6818ad87423cc05",
+      "digest": "sha256:14c91d81a518fcc27d089ac085b282c7ff55730fc198dda5b6818ad87423cc05",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/15/06/1506e96fab84b5045a52f0ddb3f474dae7ad67a701ebc183aea3c40dafdeb416",
+      "digest": "sha256:1506e96fab84b5045a52f0ddb3f474dae7ad67a701ebc183aea3c40dafdeb416",
+      "size": 775
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/15/dc/15dc461788c765af9a118b7c8a677cf26b25c66c7a2e9ded819e1f3fd5d7e27a",
+      "digest": "sha256:15dc461788c765af9a118b7c8a677cf26b25c66c7a2e9ded819e1f3fd5d7e27a",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/16/34/1634a7ce0d371556be5d24677cd2129c57c5bba74654b6377e75eaafd8b8a842",
+      "digest": "sha256:1634a7ce0d371556be5d24677cd2129c57c5bba74654b6377e75eaafd8b8a842",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/16/f9/16f9f1bf6e0b98ffb10dd3045aa5471fe23da5a78217be6775bcc994b29a13af",
+      "digest": "sha256:16f9f1bf6e0b98ffb10dd3045aa5471fe23da5a78217be6775bcc994b29a13af",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/17/2b/172b8585509daf9fda6e682bee69d27fa0f104a8e93bcf8a1e5879356ef8338a",
+      "digest": "sha256:172b8585509daf9fda6e682bee69d27fa0f104a8e93bcf8a1e5879356ef8338a",
+      "size": 814
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/17/64/1764ea19c929074e3de7b354cada5f5387878115aba29d972348de5f61591be4",
+      "digest": "sha256:1764ea19c929074e3de7b354cada5f5387878115aba29d972348de5f61591be4",
+      "size": 717
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/17/73/17732589bc5a2aa36f89bf5dcbaa2922f2d09a74087746cb8e6bad714d3184cc",
+      "digest": "sha256:17732589bc5a2aa36f89bf5dcbaa2922f2d09a74087746cb8e6bad714d3184cc",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/17/74/17743259e47082eb3771f8a4bc0cd483980e2e9ab310209ded264d5952400672",
+      "digest": "sha256:17743259e47082eb3771f8a4bc0cd483980e2e9ab310209ded264d5952400672",
+      "size": 787
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/17/7a/177a86a7fe1c1bce871d5f9bb356a71bdd002c0c7af4ad439805a2f1ea31f991",
+      "digest": "sha256:177a86a7fe1c1bce871d5f9bb356a71bdd002c0c7af4ad439805a2f1ea31f991",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/19/b2/19b2eb21cc6ef93905f41ecd716f542a7a14878f7d2853b680b81242d1dedcf8",
+      "digest": "sha256:19b2eb21cc6ef93905f41ecd716f542a7a14878f7d2853b680b81242d1dedcf8",
+      "size": 794
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/19/e0/19e05b7e46a0a865bbe899a4292b5a94ea6c5daf3a615664cf84c34b6e55fc48",
+      "digest": "sha256:19e05b7e46a0a865bbe899a4292b5a94ea6c5daf3a615664cf84c34b6e55fc48",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/19/f4/19f45381c2da6728b4dca543e319e4f076e369cfb0cce096b2783c152524151c",
+      "digest": "sha256:19f45381c2da6728b4dca543e319e4f076e369cfb0cce096b2783c152524151c",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/1b/ad/1bad8755eafd1959d719eb34c96344d2fa3226a53ea69636b4bffec1ab1112bf",
+      "digest": "sha256:1bad8755eafd1959d719eb34c96344d2fa3226a53ea69636b4bffec1ab1112bf",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/1c/81/1c81cbe7f3ecefff45ec82dc7151cd5ee201f1d6a81fcc26fd847b102cdfad24",
+      "digest": "sha256:1c81cbe7f3ecefff45ec82dc7151cd5ee201f1d6a81fcc26fd847b102cdfad24",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/1c/87/1c87da1a9a978022facc03f6cf9f977abca4e15f0a89b155e8ab4a6363d81438",
+      "digest": "sha256:1c87da1a9a978022facc03f6cf9f977abca4e15f0a89b155e8ab4a6363d81438",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/1d/4f/1d4f4123b9cbc9a9d369f260b5bc8d2797df1674c8d8270851d664c253feeec6",
+      "digest": "sha256:1d4f4123b9cbc9a9d369f260b5bc8d2797df1674c8d8270851d664c253feeec6",
+      "size": 238
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/1e/2b/1e2bb3ad660fe4d268b603c78679ac202b3c135035b5b1b66fb9c99596b86ee0",
+      "digest": "sha256:1e2bb3ad660fe4d268b603c78679ac202b3c135035b5b1b66fb9c99596b86ee0",
+      "size": 1273
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/1e/a6/1ea63b295ddab9d795ddba16f2d728cdadbda11c72fcb7bd7b8820bf7d1fe519",
+      "digest": "sha256:1ea63b295ddab9d795ddba16f2d728cdadbda11c72fcb7bd7b8820bf7d1fe519",
+      "size": 794
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/1e/c1/1ec10705d36460ce30d392f0a71d8827ba4d731763bf2044fd5c1a3f2ac3b4f9",
+      "digest": "sha256:1ec10705d36460ce30d392f0a71d8827ba4d731763bf2044fd5c1a3f2ac3b4f9",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/1f/1f/1f1fe07f41f856d3d123a30c2f1b941ff393febc1aadb161a7f237af16436286",
+      "digest": "sha256:1f1fe07f41f856d3d123a30c2f1b941ff393febc1aadb161a7f237af16436286",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/20/6c/206cc768236e9c6cbb0ee16d136a8de2e1b406310eeae08989b2bdf140af0629",
+      "digest": "sha256:206cc768236e9c6cbb0ee16d136a8de2e1b406310eeae08989b2bdf140af0629",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/21/a5/21a50a006435d5bd65d349bcace84922a8e09865cca134fa351ea7ae02a52688",
+      "digest": "sha256:21a50a006435d5bd65d349bcace84922a8e09865cca134fa351ea7ae02a52688",
+      "size": 723
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/22/05/22052211a4fccbddbea5659a5e7814232c9f4ec7b5c33c9fd3c5ee4210857b27",
+      "digest": "sha256:22052211a4fccbddbea5659a5e7814232c9f4ec7b5c33c9fd3c5ee4210857b27",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/23/b2/23b2cbd68dca1b4dfda9b17aef1a9ad5fff310aad761802a9b548d52710fcd51",
+      "digest": "sha256:23b2cbd68dca1b4dfda9b17aef1a9ad5fff310aad761802a9b548d52710fcd51",
+      "size": 804
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/24/29/2429e41a55e92a3d48673bee7fa98747247f20b288658ae51787762d394d1803",
+      "digest": "sha256:2429e41a55e92a3d48673bee7fa98747247f20b288658ae51787762d394d1803",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/24/50/2450b2869c283ed9b45cf5e4f572aae8aa03d4bda1dfb286fdbe7afb75521d8b",
+      "digest": "sha256:2450b2869c283ed9b45cf5e4f572aae8aa03d4bda1dfb286fdbe7afb75521d8b",
+      "size": 723
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/25/78/257827aba6063f0d6f99fc89540a25964c0b6cac6d06c94207ad557f2b7e330b",
+      "digest": "sha256:257827aba6063f0d6f99fc89540a25964c0b6cac6d06c94207ad557f2b7e330b",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/25/d1/25d175b54eed519cd7a0b4566bc0a44114237acbf9eec2243b2db33ba18c7485",
+      "digest": "sha256:25d175b54eed519cd7a0b4566bc0a44114237acbf9eec2243b2db33ba18c7485",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/26/48/2648ce5cc839e99745b880d46fd8d50760de8186fc077c96f2f04b717da468d2",
+      "digest": "sha256:2648ce5cc839e99745b880d46fd8d50760de8186fc077c96f2f04b717da468d2",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/27/6e/276e537c65a11b39420168555208a6f24dcdc2e4bfd5be47beb5c499d48c9551",
+      "digest": "sha256:276e537c65a11b39420168555208a6f24dcdc2e4bfd5be47beb5c499d48c9551",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/27/94/27945d3a77743b9de1dcf00110c44fa321968b9f9e858c3851b9b61d96673d11",
+      "digest": "sha256:27945d3a77743b9de1dcf00110c44fa321968b9f9e858c3851b9b61d96673d11",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/28/04/2804719121e2b774350275ad0206958b75a2c34d018c5715d1ca49c40a7281cc",
+      "digest": "sha256:2804719121e2b774350275ad0206958b75a2c34d018c5715d1ca49c40a7281cc",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/28/28/28287a8b1f74a191a617f9f7e87f28127a4726669e0942504a7b1dc7b5f777ca",
+      "digest": "sha256:28287a8b1f74a191a617f9f7e87f28127a4726669e0942504a7b1dc7b5f777ca",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/28/2d/282d2e49c557643875e50d4ceb3e389eb9a2b3884253a08bc39b39ed4c3c5d42",
+      "digest": "sha256:282d2e49c557643875e50d4ceb3e389eb9a2b3884253a08bc39b39ed4c3c5d42",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/29/7b/297b783b5a0730dc3643c79e08d8360da0afd084ce0e610baf5657eac1477d08",
+      "digest": "sha256:297b783b5a0730dc3643c79e08d8360da0afd084ce0e610baf5657eac1477d08",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/2a/14/2a14fdae61ab7eb8b6e21899da4639791c76e048ae5aa483974ec298f6aa0ba1",
+      "digest": "sha256:2a14fdae61ab7eb8b6e21899da4639791c76e048ae5aa483974ec298f6aa0ba1",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/2a/36/2a3673a3fb7225720bbca166ad594290a6771557b25f90ec4878a772acc20551",
+      "digest": "sha256:2a3673a3fb7225720bbca166ad594290a6771557b25f90ec4878a772acc20551",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/2b/ce/2bcea9e9a97e9eea6392b6dc66d4ae2029298ec2372e3a5951c9353fbcd5ee30",
+      "digest": "sha256:2bcea9e9a97e9eea6392b6dc66d4ae2029298ec2372e3a5951c9353fbcd5ee30",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/2c/2c/2c2c742a978b1708eae14cd4e2686856f93b769f015060c36e187b09a1f8599e",
+      "digest": "sha256:2c2c742a978b1708eae14cd4e2686856f93b769f015060c36e187b09a1f8599e",
+      "size": 787
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/2c/e5/2ce571f6a9e4d22bed6db05d3cacbfe2982e4821d9e09bdc0d6effdb0e10bb83",
+      "digest": "sha256:2ce571f6a9e4d22bed6db05d3cacbfe2982e4821d9e09bdc0d6effdb0e10bb83",
+      "size": 787
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/2e/09/2e096f4cc041b3a58561846cdd1f538d1586dcb12482083b1ff8e560f1f0da30",
+      "digest": "sha256:2e096f4cc041b3a58561846cdd1f538d1586dcb12482083b1ff8e560f1f0da30",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/2f/16/2f16f5ef8a6f1d5d3e7a1c8e132852a2d4e2174f92a9f2d91914032e8c10e504",
+      "digest": "sha256:2f16f5ef8a6f1d5d3e7a1c8e132852a2d4e2174f92a9f2d91914032e8c10e504",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/30/12/3012d574e7e070f2570c650811c9b634b8ba44b2c3494427a9dedc3c608529e1",
+      "digest": "sha256:3012d574e7e070f2570c650811c9b634b8ba44b2c3494427a9dedc3c608529e1",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/30/3f/303fab63d4a02cecbe2bc396c0ec0aad87eb50c06cd5a83ffeb16ed829c1f5e1",
+      "digest": "sha256:303fab63d4a02cecbe2bc396c0ec0aad87eb50c06cd5a83ffeb16ed829c1f5e1",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/30/da/30da742ccb1c74d1cbfb7c828ac13e5c62858bb7ded508f34fc643f9044dadae",
+      "digest": "sha256:30da742ccb1c74d1cbfb7c828ac13e5c62858bb7ded508f34fc643f9044dadae",
+      "size": 723
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/30/ed/30ed8a01f0fb8bee4d7e817f4ce8b735a03e610c54e6fad296338763a348cde5",
+      "digest": "sha256:30ed8a01f0fb8bee4d7e817f4ce8b735a03e610c54e6fad296338763a348cde5",
+      "size": 1274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/30/ef/30ef5bd9061ece8870262b4eeb8717dbdb4f68de8fc14a6d38077cf38d32d84d",
+      "digest": "sha256:30ef5bd9061ece8870262b4eeb8717dbdb4f68de8fc14a6d38077cf38d32d84d",
+      "size": 814
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/34/cd/34cd4fbab2d0910c81eecccdc53e9cb5f45d75db5945853d79f02b84557bca2b",
+      "digest": "sha256:34cd4fbab2d0910c81eecccdc53e9cb5f45d75db5945853d79f02b84557bca2b",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/34/f1/34f1d660b41913276f95be19c23df95d38c4975d3f91435ad416692641f46ccc",
+      "digest": "sha256:34f1d660b41913276f95be19c23df95d38c4975d3f91435ad416692641f46ccc",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/35/3e/353ea9c7daff9a775eaf525790c1f70a549fa0bbf11281111a8176f83ee4aaf8",
+      "digest": "sha256:353ea9c7daff9a775eaf525790c1f70a549fa0bbf11281111a8176f83ee4aaf8",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/35/8c/358cde46cdbcb44995dd701ba8b506cca2bf6371f110ba0e84dc0d4ee7200eb9",
+      "digest": "sha256:358cde46cdbcb44995dd701ba8b506cca2bf6371f110ba0e84dc0d4ee7200eb9",
+      "size": 796
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/35/b1/35b13eb6a1e011795af1a306dbfd714e12c5fa86ca34b94f244825d8cee81939",
+      "digest": "sha256:35b13eb6a1e011795af1a306dbfd714e12c5fa86ca34b94f244825d8cee81939",
+      "size": 794
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/35/ed/35ed3ed7b32381ef4989d3a437918ea73b9ce51795047595d27dd9abaebb4f3e",
+      "digest": "sha256:35ed3ed7b32381ef4989d3a437918ea73b9ce51795047595d27dd9abaebb4f3e",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/36/d7/36d7221853cc59eb5989b312f7577b57434f4d788815a957c5afb8676f2b0380",
+      "digest": "sha256:36d7221853cc59eb5989b312f7577b57434f4d788815a957c5afb8676f2b0380",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/37/68/37685e533e9c03e0467dca78fc46b28ef5bfa01613a7f5f49ad3acd5675d442c",
+      "digest": "sha256:37685e533e9c03e0467dca78fc46b28ef5bfa01613a7f5f49ad3acd5675d442c",
+      "size": 804
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/37/a2/37a2bc8ab2e37bfe76485a0da3aa8d9f143aa2204deeecb306a1722bcf6b89e0",
+      "digest": "sha256:37a2bc8ab2e37bfe76485a0da3aa8d9f143aa2204deeecb306a1722bcf6b89e0",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/37/ae/37ae43a9f17a4b5861f3dff5d39b5cf5306d80a9c06f08f238b4306a8154f3aa",
+      "digest": "sha256:37ae43a9f17a4b5861f3dff5d39b5cf5306d80a9c06f08f238b4306a8154f3aa",
+      "size": 810
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/38/75/3875b2d3a6905a0dc648e2924e13436d9970bcb6144d005ba7e01d70ea7a5645",
+      "digest": "sha256:3875b2d3a6905a0dc648e2924e13436d9970bcb6144d005ba7e01d70ea7a5645",
+      "size": 772
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/39/2c/392ce9237941797fbea198fe7ca7f8a4d7b9aee7f6a05d163d48d4c36b0d17d2",
+      "digest": "sha256:392ce9237941797fbea198fe7ca7f8a4d7b9aee7f6a05d163d48d4c36b0d17d2",
+      "size": 1288
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/39/ad/39adf1b808ed8cd72a34160fb6bfcab0307519b23686786b6fc0d8a51d1ba259",
+      "digest": "sha256:39adf1b808ed8cd72a34160fb6bfcab0307519b23686786b6fc0d8a51d1ba259",
+      "size": 810
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/3a/6b/3a6bdad9f91632c044f1e47693164472ba7ebc38884695049c46fe9d0f3d0bfb",
+      "digest": "sha256:3a6bdad9f91632c044f1e47693164472ba7ebc38884695049c46fe9d0f3d0bfb",
+      "size": 794
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/3c/6b/3c6bde56432bc7e42137d7a276f0c78d4d0e58eb1e7f247c7731c9eed616c30d",
+      "digest": "sha256:3c6bde56432bc7e42137d7a276f0c78d4d0e58eb1e7f247c7731c9eed616c30d",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/3c/eb/3ceb7a8a9fb6e587dcddf90986e1695aad1c01e13b2e41f9e74fb69321bdcf6f",
+      "digest": "sha256:3ceb7a8a9fb6e587dcddf90986e1695aad1c01e13b2e41f9e74fb69321bdcf6f",
+      "size": 804
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/3c/f0/3cf06b1ec939b911f3b8a8b2202cbe86ff7567eca84d99c0770a997853bbeca3",
+      "digest": "sha256:3cf06b1ec939b911f3b8a8b2202cbe86ff7567eca84d99c0770a997853bbeca3",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/3c/f5/3cf5c54a395efced01c5c4e4347d7898fca424bf47a0b189f30b500d604fa2fb",
+      "digest": "sha256:3cf5c54a395efced01c5c4e4347d7898fca424bf47a0b189f30b500d604fa2fb",
+      "size": 238
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/3e/19/3e19d630246bb2d564d16f167b5a76a3b6664a46fcc3c865d6fdef1b50444605",
+      "digest": "sha256:3e19d630246bb2d564d16f167b5a76a3b6664a46fcc3c865d6fdef1b50444605",
+      "size": 1273
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/3e/62/3e62ec3952a3a617c09b8b4c0973c640808f59042e13d8e51e3129be7fbba46c",
+      "digest": "sha256:3e62ec3952a3a617c09b8b4c0973c640808f59042e13d8e51e3129be7fbba46c",
+      "size": 269
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/3e/89/3e896560889bef31e8588c7c5780de3b139036b41f00297168ecc0de431d2adf",
+      "digest": "sha256:3e896560889bef31e8588c7c5780de3b139036b41f00297168ecc0de431d2adf",
+      "size": 1273
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/40/b2/40b240530c08a8dfb3aa0dab195591981dec81049bd0614068a95794c2c0fef1",
+      "digest": "sha256:40b240530c08a8dfb3aa0dab195591981dec81049bd0614068a95794c2c0fef1",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/41/27/4127777eb7d52010cba38ce2a18534bfcf629629fcc220ee55cc797b11c34270",
+      "digest": "sha256:4127777eb7d52010cba38ce2a18534bfcf629629fcc220ee55cc797b11c34270",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/41/68/4168acaa5cf1cb3bfc80db172fa934d37d028317c1fece7f673fa4a81ca70308",
+      "digest": "sha256:4168acaa5cf1cb3bfc80db172fa934d37d028317c1fece7f673fa4a81ca70308",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/41/b8/41b84e22f2274e409154fec4ed9039475b1dd56699feed965c1c427f65366bd9",
+      "digest": "sha256:41b84e22f2274e409154fec4ed9039475b1dd56699feed965c1c427f65366bd9",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/42/52/4252f0c2aaf218bbb8756a9d89ea82183d5d9eb8690cf9697ef80748b83ea1c1",
+      "digest": "sha256:4252f0c2aaf218bbb8756a9d89ea82183d5d9eb8690cf9697ef80748b83ea1c1",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/43/e2/43e23952b37e50398bea0a3813ebd3abc45491c2cd34b7f3da732c86695e41ca",
+      "digest": "sha256:43e23952b37e50398bea0a3813ebd3abc45491c2cd34b7f3da732c86695e41ca",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/44/54/44549f8a1c7b1284c72cea39f4ed77a11914293f34366acfdefff1b05751a4d1",
+      "digest": "sha256:44549f8a1c7b1284c72cea39f4ed77a11914293f34366acfdefff1b05751a4d1",
+      "size": 814
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/45/15/451527d0f02d6924dbd0985a3427ff2766bda9cdbf26b83fb86d30628ad4363c",
+      "digest": "sha256:451527d0f02d6924dbd0985a3427ff2766bda9cdbf26b83fb86d30628ad4363c",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/45/39/453986d3322e32b51232eea3fc13334073e47ca0c92e79da2bb4365aba0511c8",
+      "digest": "sha256:453986d3322e32b51232eea3fc13334073e47ca0c92e79da2bb4365aba0511c8",
+      "size": 814
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/45/72/457299790f3bb1447c5ebe19bc4a5743d03cf25844b84533f52206ea0a33f966",
+      "digest": "sha256:457299790f3bb1447c5ebe19bc4a5743d03cf25844b84533f52206ea0a33f966",
+      "size": 796
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/47/33/4733a0fa64613e47cb8db3d61f81353ad393de62192a0d7d4c85f8e07753652c",
+      "digest": "sha256:4733a0fa64613e47cb8db3d61f81353ad393de62192a0d7d4c85f8e07753652c",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/47/53/4753e613029598fca2eb6ebbe06b17213cc19cc126f8039523487b236bbcc270",
+      "digest": "sha256:4753e613029598fca2eb6ebbe06b17213cc19cc126f8039523487b236bbcc270",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/4a/14/4a14206182d65079fdf2987d02d0b21e6582e23b997a88afda8184600d90db7c",
+      "digest": "sha256:4a14206182d65079fdf2987d02d0b21e6582e23b997a88afda8184600d90db7c",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/4a/29/4a29ff4998bff8cd63296d81cdc543481d26917c06daf066c90f3f5d0e6f7b51",
+      "digest": "sha256:4a29ff4998bff8cd63296d81cdc543481d26917c06daf066c90f3f5d0e6f7b51",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/4a/a9/4aa97502046923b5c1e20bd86fc38c03ca0f039f23ffd136a62243071922e509",
+      "digest": "sha256:4aa97502046923b5c1e20bd86fc38c03ca0f039f23ffd136a62243071922e509",
+      "size": 787
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/4b/71/4b71dbcfb5afe2f585d41602197b9b9d8b872bedc46001a3486365ef2abe0f39",
+      "digest": "sha256:4b71dbcfb5afe2f585d41602197b9b9d8b872bedc46001a3486365ef2abe0f39",
+      "size": 794
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/4c/a7/4ca7ef04b970d2b6a4ee63c0b46b1d40dc786d9a3945cc270c51442e70eabc09",
+      "digest": "sha256:4ca7ef04b970d2b6a4ee63c0b46b1d40dc786d9a3945cc270c51442e70eabc09",
+      "size": 269
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/4d/4a/4d4a07c69be5a7c1af5741e9fa329a839ef00bb79aff89baaf596a8af92fb9a7",
+      "digest": "sha256:4d4a07c69be5a7c1af5741e9fa329a839ef00bb79aff89baaf596a8af92fb9a7",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/4d/b6/4db619ecc258159b485ba21359ae21e0a7efc33efdfa862c3e720107b9e0eed0",
+      "digest": "sha256:4db619ecc258159b485ba21359ae21e0a7efc33efdfa862c3e720107b9e0eed0",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/4e/8c/4e8c31c3506742d5c9f52fa12f7c39d97703227caebaaec584cfd75ca186d4a1",
+      "digest": "sha256:4e8c31c3506742d5c9f52fa12f7c39d97703227caebaaec584cfd75ca186d4a1",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/4e/fb/4efbfcbe90201e3aa1b7d496d5cedce6933b6356762735439cbf553c15c22ffd",
+      "digest": "sha256:4efbfcbe90201e3aa1b7d496d5cedce6933b6356762735439cbf553c15c22ffd",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/4f/30/4f30ac4e92025fe899bffb428c902899230c7a0cea9946561bfd8865a6bc91bd",
+      "digest": "sha256:4f30ac4e92025fe899bffb428c902899230c7a0cea9946561bfd8865a6bc91bd",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/52/5a/525ac150f19d7a7611aa4a6a26f1abcc988e9040672a50cdc5367037963a9fac",
+      "digest": "sha256:525ac150f19d7a7611aa4a6a26f1abcc988e9040672a50cdc5367037963a9fac",
+      "size": 717
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/52/74/5274bdfb3d6772858bbcb503f1f87808be74f6bdac8fdaa348ba959a38340fa2",
+      "digest": "sha256:5274bdfb3d6772858bbcb503f1f87808be74f6bdac8fdaa348ba959a38340fa2",
+      "size": 1273
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/53/93/53933defa71f2d45310b938c4e742f6b57c8e01de04dec46fd37aac2771b5f78",
+      "digest": "sha256:53933defa71f2d45310b938c4e742f6b57c8e01de04dec46fd37aac2771b5f78",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/55/fc/55fcd2c9eceb21bbe0bb5ec6f6b53ecfc4c55d10e62fc8e29749b855cf099d25",
+      "digest": "sha256:55fcd2c9eceb21bbe0bb5ec6f6b53ecfc4c55d10e62fc8e29749b855cf099d25",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/56/0b/560bc66c59ebacef04c80263a1a5b69e1376759b239d53383123be497ca8f8d7",
+      "digest": "sha256:560bc66c59ebacef04c80263a1a5b69e1376759b239d53383123be497ca8f8d7",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/57/4e/574e30b51f59186fd91b1370cb57d3afcc4d237a03e27f78eca093368ef6574d",
+      "digest": "sha256:574e30b51f59186fd91b1370cb57d3afcc4d237a03e27f78eca093368ef6574d",
+      "size": 804
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/57/66/5766f20d430f04bfa096c9abaaf55ac18d3bfb23b78ec29c28eb4470b4224c5b",
+      "digest": "sha256:5766f20d430f04bfa096c9abaaf55ac18d3bfb23b78ec29c28eb4470b4224c5b",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/58/ee/58ee161bc073fdc8221eecb15aa750fc5ef974bdaeda71077eaf8bd94c2fad0c",
+      "digest": "sha256:58ee161bc073fdc8221eecb15aa750fc5ef974bdaeda71077eaf8bd94c2fad0c",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/59/d2/59d2b47997fb0adf3e442c9b9ab4db6fb1657a2ebbf321d6074aaec5ed1074eb",
+      "digest": "sha256:59d2b47997fb0adf3e442c9b9ab4db6fb1657a2ebbf321d6074aaec5ed1074eb",
+      "size": 787
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/59/dd/59dde26e1eb13fcc37703e6b4fef4e621b3638f3a2abb8cbf8b869a98c2d0c36",
+      "digest": "sha256:59dde26e1eb13fcc37703e6b4fef4e621b3638f3a2abb8cbf8b869a98c2d0c36",
+      "size": 804
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/59/f7/59f7558eef85adbf14f83b50248331b906e4b0a1905e5a5c29d01502333609a9",
+      "digest": "sha256:59f7558eef85adbf14f83b50248331b906e4b0a1905e5a5c29d01502333609a9",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/5a/f4/5af4acb2ffce95756ab65dcc0b7a357a644032cd15a072c63fd2887d46643d28",
+      "digest": "sha256:5af4acb2ffce95756ab65dcc0b7a357a644032cd15a072c63fd2887d46643d28",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/5b/10/5b10d783defed376bebacfb559a7db02c141552c83ca554b148123f8f1f2d2e8",
+      "digest": "sha256:5b10d783defed376bebacfb559a7db02c141552c83ca554b148123f8f1f2d2e8",
+      "size": 274
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/5c/b5/5cb585033533988b3223b8cb2ee5c28b040bb402cc61b972213c9f5ccdcbdf3d",
+      "digest": "sha256:5cb585033533988b3223b8cb2ee5c28b040bb402cc61b972213c9f5ccdcbdf3d",
+      "size": 1273
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/5e/5c/5e5c3a4a8fbfe9f063145cfa811bbb22dbf395c4c5270d7ea4631d3535193a51",
+      "digest": "sha256:5e5c3a4a8fbfe9f063145cfa811bbb22dbf395c4c5270d7ea4631d3535193a51",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/5f/19/5f19d2e161e44d799ad1c7831cc7168bbd1ebc57eeda33e08fe345de534b53fb",
+      "digest": "sha256:5f19d2e161e44d799ad1c7831cc7168bbd1ebc57eeda33e08fe345de534b53fb",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/5f/c4/5fc47d8cf2056652a2fdf67fde077611a3104aa266da7e9c494d8c62fcff94ef",
+      "digest": "sha256:5fc47d8cf2056652a2fdf67fde077611a3104aa266da7e9c494d8c62fcff94ef",
+      "size": 772
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/60/09/60091e7bbc8af0abf18a49c47e52f71d218a4b9b3a0ab4980b3d2a1a23fba381",
+      "digest": "sha256:60091e7bbc8af0abf18a49c47e52f71d218a4b9b3a0ab4980b3d2a1a23fba381",
+      "size": 814
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/60/27/6027222c61053f19b7d6078a7478520b8c74054f8c3ee878701d8edc4988ede1",
+      "digest": "sha256:6027222c61053f19b7d6078a7478520b8c74054f8c3ee878701d8edc4988ede1",
+      "size": 766
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/60/c8/60c891152ffe5e4aeacc85b53466ed1f3de88161b7443fdb48475cff6915a422",
+      "digest": "sha256:60c891152ffe5e4aeacc85b53466ed1f3de88161b7443fdb48475cff6915a422",
+      "size": 772
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/60/f5/60f5089700564ba68ceb97dd7f5323faa0758a6825c7cbdad23b3c639e040e11",
+      "digest": "sha256:60f5089700564ba68ceb97dd7f5323faa0758a6825c7cbdad23b3c639e040e11",
+      "size": 812
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/61/8f/618f76ff356d3833a2584a7ba34a13ebf92701484bc8c60ca4e384686afbda30",
+      "digest": "sha256:618f76ff356d3833a2584a7ba34a13ebf92701484bc8c60ca4e384686afbda30",
+      "size": 794
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/62/3a/623a8d8880447f7cebf48da7651aab4aa95f295297e7cc7695526429dcc3faa9",
+      "digest": "sha256:623a8d8880447f7cebf48da7651aab4aa95f295297e7cc7695526429dcc3faa9",
+      "size": 1288
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/63/e7/63e7640c7025c84a707c2c99c6e9cd62cc4ec43a8b29e05be8c301be6d6b3940",
+      "digest": "sha256:63e7640c7025c84a707c2c99c6e9cd62cc4ec43a8b29e05be8c301be6d6b3940",
+      "size": 787
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/64/f5/64f52db56c4a7becdcf542274c0c5535f1ce5e9fa663a68450cae1d765054b52",
+      "digest": "sha256:64f52db56c4a7becdcf542274c0c5535f1ce5e9fa663a68450cae1d765054b52",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/67/92/6792642513afcb01171a34ddd8e7ba32fc7562814830b9edea30ae904ab33e50",
+      "digest": "sha256:6792642513afcb01171a34ddd8e7ba32fc7562814830b9edea30ae904ab33e50",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/67/d4/67d4e6f6abfb5c32b98a1bfa1f96d3184072b2fd45cf2436bc48d454d9ecea08",
+      "digest": "sha256:67d4e6f6abfb5c32b98a1bfa1f96d3184072b2fd45cf2436bc48d454d9ecea08",
+      "size": 717
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/69/ab/69ab1bb96ded0fa21aa7ce7ba1a27cd88b684ca8f9e2eb847320a737e3e49f23",
+      "digest": "sha256:69ab1bb96ded0fa21aa7ce7ba1a27cd88b684ca8f9e2eb847320a737e3e49f23",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/6a/11/6a112b3560096e7506bf8e6f4eb062041493e7801cf67d90fcb8c04e32cde2d6",
+      "digest": "sha256:6a112b3560096e7506bf8e6f4eb062041493e7801cf67d90fcb8c04e32cde2d6",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/6c/47/6c476ffe97191c6d14c685511d73009a2e10d36a8da110cfaef8c8e564698f45",
+      "digest": "sha256:6c476ffe97191c6d14c685511d73009a2e10d36a8da110cfaef8c8e564698f45",
+      "size": 766
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/6c/a1/6ca14c43602884fb4728d54f125abf96c4430a4f0cff6e4f7c559f8ad971c6d2",
+      "digest": "sha256:6ca14c43602884fb4728d54f125abf96c4430a4f0cff6e4f7c559f8ad971c6d2",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/6c/c2/6cc2d1890acb0a5dc341884fcf27d526d1ce4b1ac3221fe88e050e8e7925463e",
+      "digest": "sha256:6cc2d1890acb0a5dc341884fcf27d526d1ce4b1ac3221fe88e050e8e7925463e",
+      "size": 794
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/6d/06/6d06221e472fd6bf9dfa93f6cbea139bf0b4bcffd977776401f718af8a42a845",
+      "digest": "sha256:6d06221e472fd6bf9dfa93f6cbea139bf0b4bcffd977776401f718af8a42a845",
+      "size": 238
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/6d/68/6d68391ba6c531a3d7747ac247f0f23446b0737cfd97ba51ea09554449984dff",
+      "digest": "sha256:6d68391ba6c531a3d7747ac247f0f23446b0737cfd97ba51ea09554449984dff",
+      "size": 1274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/6e/6a/6e6aac0e110afd44cf024baabe908eba5582baac4fd89a04518965af7214dac9",
+      "digest": "sha256:6e6aac0e110afd44cf024baabe908eba5582baac4fd89a04518965af7214dac9",
+      "size": 812
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/6f/6c/6f6c64ff821fb8d47c5fdb268ca7614246088d90b8e9efb584d89ca529b9373c",
+      "digest": "sha256:6f6c64ff821fb8d47c5fdb268ca7614246088d90b8e9efb584d89ca529b9373c",
+      "size": 775
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/6f/9b/6f9b82c0d3cb2debf4b436b413384dd3f14500a3c9484396e271992123da038b",
+      "digest": "sha256:6f9b82c0d3cb2debf4b436b413384dd3f14500a3c9484396e271992123da038b",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/6f/9c/6f9cfd2584125cdb91fe9611e2e7381175edc18c1090ad455dfade0c7a9d160e",
+      "digest": "sha256:6f9cfd2584125cdb91fe9611e2e7381175edc18c1090ad455dfade0c7a9d160e",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/70/31/7031f2107462187daca0bfd1c2c7ce9ab98d8dde2229097e9cc445324178d07d",
+      "digest": "sha256:7031f2107462187daca0bfd1c2c7ce9ab98d8dde2229097e9cc445324178d07d",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/70/99/7099cfe107c0318d4cad8547a581f3c3d2b6c9496a60450df3df4169890d9ea4",
+      "digest": "sha256:7099cfe107c0318d4cad8547a581f3c3d2b6c9496a60450df3df4169890d9ea4",
+      "size": 772
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/71/25/712585ddd96e02350b3a54dbeb2e5b4bde48c380ded1d63f06c97bbdd39144bb",
+      "digest": "sha256:712585ddd96e02350b3a54dbeb2e5b4bde48c380ded1d63f06c97bbdd39144bb",
+      "size": 766
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/71/c3/71c340ad0252db5e15dafe6a8e64560d9555efe65ccf6ab3e8b7527095864072",
+      "digest": "sha256:71c340ad0252db5e15dafe6a8e64560d9555efe65ccf6ab3e8b7527095864072",
+      "size": 1274
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/71/e4/71e4ebf2370a5a817061b2ea930f29ddf50c36df7e5e365395785f1a8546cfdf",
+      "digest": "sha256:71e4ebf2370a5a817061b2ea930f29ddf50c36df7e5e365395785f1a8546cfdf",
+      "size": 1288
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/72/72/72724fe9ac4177256a5e870cc8037a753c9b4959da75d4978de75920d695d86b",
+      "digest": "sha256:72724fe9ac4177256a5e870cc8037a753c9b4959da75d4978de75920d695d86b",
+      "size": 796
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/72/92/7292c6d6f269495ad850b94b6417072e0ba93def556b7d3b38c83f569a0e4062",
+      "digest": "sha256:7292c6d6f269495ad850b94b6417072e0ba93def556b7d3b38c83f569a0e4062",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/73/34/7334427b828a96164af5eba8a4dcc8743b7dae4032e90e60f5b3b4b7559f85fa",
+      "digest": "sha256:7334427b828a96164af5eba8a4dcc8743b7dae4032e90e60f5b3b4b7559f85fa",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/73/f3/73f362326c2a2b80b3653561fe68aea558aa9b7576f6fae3df8ec793692dd094",
+      "digest": "sha256:73f362326c2a2b80b3653561fe68aea558aa9b7576f6fae3df8ec793692dd094",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/74/77/747748faa2cf883e021d5b839cb2f9db2896dfe1c3a1ce7d31e505b63baf4459",
+      "digest": "sha256:747748faa2cf883e021d5b839cb2f9db2896dfe1c3a1ce7d31e505b63baf4459",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/75/4b/754b388f21945026e8235b3c6b2b7a48bdc7c3fefad270700b2a35938f7b9a48",
+      "digest": "sha256:754b388f21945026e8235b3c6b2b7a48bdc7c3fefad270700b2a35938f7b9a48",
+      "size": 787
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/76/5c/765c09c6246816e6fab258098b218d73f9bfa6ff0be15108cc5e20ab033771a3",
+      "digest": "sha256:765c09c6246816e6fab258098b218d73f9bfa6ff0be15108cc5e20ab033771a3",
+      "size": 717
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/76/77/76771ef36c90e97b264f3b57f46eabf62c61e75be701848970c41a71ca03e4c4",
+      "digest": "sha256:76771ef36c90e97b264f3b57f46eabf62c61e75be701848970c41a71ca03e4c4",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/77/88/778839a4bab200699b8885e389031ed76e18d4bb48e740de20cc6afd5aeaf75e",
+      "digest": "sha256:778839a4bab200699b8885e389031ed76e18d4bb48e740de20cc6afd5aeaf75e",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/77/92/7792d2f94cd9ac47679306f2ccfa3d79977d4aa9eb5fcb113eacd3ec890a1b78",
+      "digest": "sha256:7792d2f94cd9ac47679306f2ccfa3d79977d4aa9eb5fcb113eacd3ec890a1b78",
+      "size": 775
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/78/bf/78bf1d62bb91107dc29787507e0d75343eda840aae49387a5767cfd14fe93c3e",
+      "digest": "sha256:78bf1d62bb91107dc29787507e0d75343eda840aae49387a5767cfd14fe93c3e",
+      "size": 787
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/79/31/7931f3f298e5f4136077cd7be264854e0cb6675d40f477ce314b7a3a740f6609",
+      "digest": "sha256:7931f3f298e5f4136077cd7be264854e0cb6675d40f477ce314b7a3a740f6609",
+      "size": 723
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/79/a5/79a53feee62e7d5fa9e9f6aebfdac12d30ff0aefea37ce59a56be7eeb248cf7c",
+      "digest": "sha256:79a53feee62e7d5fa9e9f6aebfdac12d30ff0aefea37ce59a56be7eeb248cf7c",
+      "size": 1274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/7b/0a/7b0ad1f294ad0b467723ddddb7a50a31e844c0b1fd2bf8e30828e6806903248d",
+      "digest": "sha256:7b0ad1f294ad0b467723ddddb7a50a31e844c0b1fd2bf8e30828e6806903248d",
+      "size": 772
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/7b/6a/7b6a629706cf2e45f09708b1c4cd16fcd1c25d9b09fa13a9af31a066e177d07f",
+      "digest": "sha256:7b6a629706cf2e45f09708b1c4cd16fcd1c25d9b09fa13a9af31a066e177d07f",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/7d/88/7d88aef7e41ed1105d032112354b3301e443961a6816cea5caa3e9233e18a96a",
+      "digest": "sha256:7d88aef7e41ed1105d032112354b3301e443961a6816cea5caa3e9233e18a96a",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/7d/b8/7db8326f1086e2324cc8c702cb8ba5e6b947200c0cdc1c5969780c9fa7650898",
+      "digest": "sha256:7db8326f1086e2324cc8c702cb8ba5e6b947200c0cdc1c5969780c9fa7650898",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/7d/fb/7dfba0b2606bfa63db567a7ffaccaf4b9c13dc6362ab448a073ff533caa68271",
+      "digest": "sha256:7dfba0b2606bfa63db567a7ffaccaf4b9c13dc6362ab448a073ff533caa68271",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/7e/87/7e87c712a29aae94b5a1216fee52db0c8bca0cb066cb30f15326ec4d3bdc3885",
+      "digest": "sha256:7e87c712a29aae94b5a1216fee52db0c8bca0cb066cb30f15326ec4d3bdc3885",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/80/05/8005e56c6b1e2e56a4b3b81a6a47e86dc0ffa85acd484658f447546618fb8031",
+      "digest": "sha256:8005e56c6b1e2e56a4b3b81a6a47e86dc0ffa85acd484658f447546618fb8031",
+      "size": 723
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/80/9e/809e0bececd004d9ba99b06c80ffa28767ad1a18f2b4e38b640b1fcb02ae5133",
+      "digest": "sha256:809e0bececd004d9ba99b06c80ffa28767ad1a18f2b4e38b640b1fcb02ae5133",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/82/ce/82ceff6fc0df9c70e435474d5f5f6604e2038375385ad52639ae2f3b0dba52a2",
+      "digest": "sha256:82ceff6fc0df9c70e435474d5f5f6604e2038375385ad52639ae2f3b0dba52a2",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/83/77/83778cae82fa27fda428cfea9d5e9a047ed729b6d5b5a6e498f297777a904e06",
+      "digest": "sha256:83778cae82fa27fda428cfea9d5e9a047ed729b6d5b5a6e498f297777a904e06",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/83/af/83af8b8f26c88257ff318feceea0ad0ad015ac3e8c6570a27815cc05be701d9e",
+      "digest": "sha256:83af8b8f26c88257ff318feceea0ad0ad015ac3e8c6570a27815cc05be701d9e",
+      "size": 766
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/84/03/8403da70b0f6aee64aefa8ebbcc40033c6a482ebc8612442191c764a5894db55",
+      "digest": "sha256:8403da70b0f6aee64aefa8ebbcc40033c6a482ebc8612442191c764a5894db55",
+      "size": 766
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/84/32/8432e9e4a28ed0d34611b51c2a0dd2c948b1b35213fd6c5b143a7dfb96970049",
+      "digest": "sha256:8432e9e4a28ed0d34611b51c2a0dd2c948b1b35213fd6c5b143a7dfb96970049",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/84/b6/84b6b53afb9a7c1e0a74eb510a8220148633815e3449a12432e8b369c58a7ec9",
+      "digest": "sha256:84b6b53afb9a7c1e0a74eb510a8220148633815e3449a12432e8b369c58a7ec9",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/86/da/86da620893a8cdace366aea48cdb37d221ab2d7a502c76de3c8613c960658d8e",
+      "digest": "sha256:86da620893a8cdace366aea48cdb37d221ab2d7a502c76de3c8613c960658d8e",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/87/da/87da71208474c993e6d60daca62800a5d74f0a76b9fe03e003ec984ee75dea7c",
+      "digest": "sha256:87da71208474c993e6d60daca62800a5d74f0a76b9fe03e003ec984ee75dea7c",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/88/61/88617c41e11b0778c3aec70a46837954a03cc8970b51451065559733f23b1906",
+      "digest": "sha256:88617c41e11b0778c3aec70a46837954a03cc8970b51451065559733f23b1906",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/88/ea/88ea37490582e687a89ed041ce03bad7ca860037e02b530b6ec7bf0279b6334b",
+      "digest": "sha256:88ea37490582e687a89ed041ce03bad7ca860037e02b530b6ec7bf0279b6334b",
+      "size": 814
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/89/c5/89c5d70d1e56ab0d0a6c4ba74a36ffab6020d13ebf855531495e93cde07bbece",
+      "digest": "sha256:89c5d70d1e56ab0d0a6c4ba74a36ffab6020d13ebf855531495e93cde07bbece",
+      "size": 772
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/8a/96/8a962f03874ac6b4915fcca1140d17d52a165f94bca620fb8286bcfb0fcffad1",
+      "digest": "sha256:8a962f03874ac6b4915fcca1140d17d52a165f94bca620fb8286bcfb0fcffad1",
+      "size": 723
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/8b/43/8b4385b80c12b65c079642fc704b93779432506c87f138b5aad7e7f512c6bd0f",
+      "digest": "sha256:8b4385b80c12b65c079642fc704b93779432506c87f138b5aad7e7f512c6bd0f",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/8b/fc/8bfc05f400bf350670d7ffc4bb396e4356b7c1b073c57f32e91de27c7dea5d3c",
+      "digest": "sha256:8bfc05f400bf350670d7ffc4bb396e4356b7c1b073c57f32e91de27c7dea5d3c",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/8c/18/8c183ad454c616cfdd98597e045ad7f629a5b705f27800511ce572c71321cb0e",
+      "digest": "sha256:8c183ad454c616cfdd98597e045ad7f629a5b705f27800511ce572c71321cb0e",
+      "size": 717
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/8c/d6/8cd62934bd696fd5b9b26f520c0dfdbb32b02ca1aa0f007f131ad6edb8f63d24",
+      "digest": "sha256:8cd62934bd696fd5b9b26f520c0dfdbb32b02ca1aa0f007f131ad6edb8f63d24",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/8e/2f/8e2f825159c88f4cbbd40689656220a2dc1eebb49b579a5463eca24af0923f51",
+      "digest": "sha256:8e2f825159c88f4cbbd40689656220a2dc1eebb49b579a5463eca24af0923f51",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/8e/fb/8efbdc5d3d326ea6b338385780e1fb9cd51c9023d324ee8f91e1738894beabba",
+      "digest": "sha256:8efbdc5d3d326ea6b338385780e1fb9cd51c9023d324ee8f91e1738894beabba",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/8f/6c/8f6c3d6e6a98b5197093ad0ff723a21b85dd0c3fc39ecfa8aa6d7f501063fe2d",
+      "digest": "sha256:8f6c3d6e6a98b5197093ad0ff723a21b85dd0c3fc39ecfa8aa6d7f501063fe2d",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/8f/9e/8f9ebade5e197ace0d0ab95ad6efc418f258efae94af9842f8d63c4d3822c488",
+      "digest": "sha256:8f9ebade5e197ace0d0ab95ad6efc418f258efae94af9842f8d63c4d3822c488",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/8f/fb/8ffbf44cca74fe108200586bee91d72540d3bd843ddb834144cf259cac6cb39f",
+      "digest": "sha256:8ffbf44cca74fe108200586bee91d72540d3bd843ddb834144cf259cac6cb39f",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/93/41/93416a9b4a1efdf849ab2ea2f6949f10690e23c720cb59185486de32259eb517",
+      "digest": "sha256:93416a9b4a1efdf849ab2ea2f6949f10690e23c720cb59185486de32259eb517",
+      "size": 775
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/93/a2/93a2cd7d23dc67fb83969763a29496ded59cf0447c075fee69d48e70a52378a5",
+      "digest": "sha256:93a2cd7d23dc67fb83969763a29496ded59cf0447c075fee69d48e70a52378a5",
+      "size": 723
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/93/c9/93c9af677aad9a3be6b3d68f68d03d7f66d58ba8c27c5eafa176552707f9c72d",
+      "digest": "sha256:93c9af677aad9a3be6b3d68f68d03d7f66d58ba8c27c5eafa176552707f9c72d",
+      "size": 766
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/94/84/9484b512f438845125c4ddcb77fedd90968890fbccf933580df1d114ca5c63b8",
+      "digest": "sha256:9484b512f438845125c4ddcb77fedd90968890fbccf933580df1d114ca5c63b8",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/94/8d/948d5c6c571b8adca7a6c171a85f3c227adc8735603e3f3484a842cc87ab4e18",
+      "digest": "sha256:948d5c6c571b8adca7a6c171a85f3c227adc8735603e3f3484a842cc87ab4e18",
+      "size": 253
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/94/e8/94e87b1c4c411655c13dcff4eb52e503dcb2ff67d3bed4f617ab2a73cae2bf13",
+      "digest": "sha256:94e87b1c4c411655c13dcff4eb52e503dcb2ff67d3bed4f617ab2a73cae2bf13",
+      "size": 1288
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/94/f0/94f0c8f36095c943643ae4c17adca485c285166fa9901010dfb5a91ff7a87195",
+      "digest": "sha256:94f0c8f36095c943643ae4c17adca485c285166fa9901010dfb5a91ff7a87195",
+      "size": 766
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/95/f1/95f1a496ce4fac9c572d3de4c4a747b36a71eaf3192f60b2a1da886b80bbaa27",
+      "digest": "sha256:95f1a496ce4fac9c572d3de4c4a747b36a71eaf3192f60b2a1da886b80bbaa27",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/96/78/96780a8c9a423630b0835c49ecd8cda2e0a92c6e9fdb39ee14a67f0372a6c6c9",
+      "digest": "sha256:96780a8c9a423630b0835c49ecd8cda2e0a92c6e9fdb39ee14a67f0372a6c6c9",
+      "size": 723
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/97/ab/97ab2ad6f66530d13133a9c8d1a45bf3e6221b5be3b86bc59cd9573f599595c1",
+      "digest": "sha256:97ab2ad6f66530d13133a9c8d1a45bf3e6221b5be3b86bc59cd9573f599595c1",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/97/c6/97c602636c31f84d9e5aee13500059b093b2c9194a06d1ca9cfe15a8e591076c",
+      "digest": "sha256:97c602636c31f84d9e5aee13500059b093b2c9194a06d1ca9cfe15a8e591076c",
+      "size": 274
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/98/5b/985be9bdb4bef9cd572f5d4bfcaf60c0413a9005cf72119d18b01dfaa56a9ba5",
+      "digest": "sha256:985be9bdb4bef9cd572f5d4bfcaf60c0413a9005cf72119d18b01dfaa56a9ba5",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/98/a0/98a0cb5bf5220a369d669fd64e24317107d6c3ce03ef8d0b0932f08be1970332",
+      "digest": "sha256:98a0cb5bf5220a369d669fd64e24317107d6c3ce03ef8d0b0932f08be1970332",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/9a/72/9a72a0ffc85f818d0f808255b700ef21daac5154725db47f262b3b9549b03a6c",
+      "digest": "sha256:9a72a0ffc85f818d0f808255b700ef21daac5154725db47f262b3b9549b03a6c",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/9a/87/9a877e17b79c54925cfe5d305402d223a91e33bad79de6fc9909653ee6d0654a",
+      "digest": "sha256:9a877e17b79c54925cfe5d305402d223a91e33bad79de6fc9909653ee6d0654a",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/9a/98/9a98465a1ea8ae60c850a273cb8c973f740bb2ebe02a63c39f6b50bbfaa584c7",
+      "digest": "sha256:9a98465a1ea8ae60c850a273cb8c973f740bb2ebe02a63c39f6b50bbfaa584c7",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/9d/fc/9dfcc275737e9e34a6276128430d027aad6d9a85c7e76f39c660ded9f6a568fa",
+      "digest": "sha256:9dfcc275737e9e34a6276128430d027aad6d9a85c7e76f39c660ded9f6a568fa",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/9e/e2/9ee2a2e4634ca8b3008299b8e31084961ee9b4fa1c678923d295e15fd240d4b4",
+      "digest": "sha256:9ee2a2e4634ca8b3008299b8e31084961ee9b4fa1c678923d295e15fd240d4b4",
+      "size": 253
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/9f/2f/9f2f1ef37d8500b9f1c4f06b7809fb537dcb3df0ca8fe5d3ba442ae5391b407b",
+      "digest": "sha256:9f2f1ef37d8500b9f1c4f06b7809fb537dcb3df0ca8fe5d3ba442ae5391b407b",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/9f/38/9f38770bb35cb52cc13a0924596c5df457fddc5292b9e59a232c50cda2c72994",
+      "digest": "sha256:9f38770bb35cb52cc13a0924596c5df457fddc5292b9e59a232c50cda2c72994",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/9f/70/9f700c2fb8de4ee9d7b7c63a75a47e7b820fc73e0bb7e2ed71b44480162e6c54",
+      "digest": "sha256:9f700c2fb8de4ee9d7b7c63a75a47e7b820fc73e0bb7e2ed71b44480162e6c54",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/9f/ec/9fec96a0168b3e80438c958b70789a656e7103cbb10896afe98a466c5ed0c98d",
+      "digest": "sha256:9fec96a0168b3e80438c958b70789a656e7103cbb10896afe98a466c5ed0c98d",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/a0/1b/a01bb137f21857a64f7aa22f563f3f4e62d21b13bed25f1a81b1a598a48ac896",
+      "digest": "sha256:a01bb137f21857a64f7aa22f563f3f4e62d21b13bed25f1a81b1a598a48ac896",
+      "size": 787
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/a0/74/a074b3ca777f63cbce65fd1664a148695928540b136d2bc48b469caf435a881b",
+      "digest": "sha256:a074b3ca777f63cbce65fd1664a148695928540b136d2bc48b469caf435a881b",
+      "size": 787
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/a1/c8/a1c87b0c3855ead27caff987038b1df287af3e627f8c625c3dedba2d641ed276",
+      "digest": "sha256:a1c87b0c3855ead27caff987038b1df287af3e627f8c625c3dedba2d641ed276",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/a2/32/a2321d90b74f840e19cf9d2ae93cbaed3d8467536f92e60b34680899d22a5aaa",
+      "digest": "sha256:a2321d90b74f840e19cf9d2ae93cbaed3d8467536f92e60b34680899d22a5aaa",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/a2/ed/a2ed4c0eef81ae31a66e942d43e82854b093e88b1744f0947e80a1cb4d3c8a47",
+      "digest": "sha256:a2ed4c0eef81ae31a66e942d43e82854b093e88b1744f0947e80a1cb4d3c8a47",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/a3/79/a379af30ba5368baa61870c0ba363f0b9119d28acc47cf3bcdc81893cb697ec5",
+      "digest": "sha256:a379af30ba5368baa61870c0ba363f0b9119d28acc47cf3bcdc81893cb697ec5",
+      "size": 274
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/a4/40/a440e58b52e39c5395267011c3fd5129e3fdcb4fd266e45a654e859466f7d89e",
+      "digest": "sha256:a440e58b52e39c5395267011c3fd5129e3fdcb4fd266e45a654e859466f7d89e",
+      "size": 1273
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/a6/0d/a60d0d996a6a4cea66aa14fb8d3be4804da7f704c1f27e59372c420a12005d65",
+      "digest": "sha256:a60d0d996a6a4cea66aa14fb8d3be4804da7f704c1f27e59372c420a12005d65",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/a6/3b/a63bd0c0416309a671361802d8684f6bf5f7e5b50693b4f6ebddc7c90a6ebb49",
+      "digest": "sha256:a63bd0c0416309a671361802d8684f6bf5f7e5b50693b4f6ebddc7c90a6ebb49",
+      "size": 775
+    },
+    {
+      "kind": "compact_frame_segment",
+      "path": "segments/world-state.twux",
+      "digest": "sha256:a86b857c2118586352c5f72b2c36932e5fcc2c774c60b6ecf3d554a62d61c6e8",
+      "size": 52773
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/a8/86/a886a3cb6a5e700bc44c6962020620e8204eb4c7ee31588e360725063e75558a",
+      "digest": "sha256:a886a3cb6a5e700bc44c6962020620e8204eb4c7ee31588e360725063e75558a",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/a8/c6/a8c6f326635b8ec5fef9e10166c8b3e76e5bec72dd6a216a7f347c485af838b8",
+      "digest": "sha256:a8c6f326635b8ec5fef9e10166c8b3e76e5bec72dd6a216a7f347c485af838b8",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/a9/65/a9653c3fd53235d7444735be5275f64e0dbeae786b8e11fa8d8dac88ab9910e5",
+      "digest": "sha256:a9653c3fd53235d7444735be5275f64e0dbeae786b8e11fa8d8dac88ab9910e5",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/aa/95/aa95bb47f3bd24abfbb26f831c30a6e3c2b59b07a6e51b3a4e4562deb07dec9d",
+      "digest": "sha256:aa95bb47f3bd24abfbb26f831c30a6e3c2b59b07a6e51b3a4e4562deb07dec9d",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/ab/50/ab50455db6ca2d250c6fd79df4cfdcea35099ab610805d8db4cfb963681015cb",
+      "digest": "sha256:ab50455db6ca2d250c6fd79df4cfdcea35099ab610805d8db4cfb963681015cb",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/ad/61/ad615355a48e2450d89593eaad857f5c4839c71dd54dde4c5558998806ad17ec",
+      "digest": "sha256:ad615355a48e2450d89593eaad857f5c4839c71dd54dde4c5558998806ad17ec",
+      "size": 804
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/ae/c3/aec3678c2c8c66d98b23a319cffcd049e953a8196c92d63ed0127bc55a6778f0",
+      "digest": "sha256:aec3678c2c8c66d98b23a319cffcd049e953a8196c92d63ed0127bc55a6778f0",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/ae/fe/aefe4c69be72f80ffbe50e5c20f92ff79a1d90ed148058c03ddeb1a492cd1cb6",
+      "digest": "sha256:aefe4c69be72f80ffbe50e5c20f92ff79a1d90ed148058c03ddeb1a492cd1cb6",
+      "size": 766
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/af/41/af41d3c61d7e70520fdb5195ab43843b970e878ce0727931b76e00c48af3618a",
+      "digest": "sha256:af41d3c61d7e70520fdb5195ab43843b970e878ce0727931b76e00c48af3618a",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/af/c5/afc536b320f93a16edd0afd6f60f79b3f82910d9a77debd08bb19416045283b4",
+      "digest": "sha256:afc536b320f93a16edd0afd6f60f79b3f82910d9a77debd08bb19416045283b4",
+      "size": 812
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/af/ef/afefca69278c4d3417a4f3d608dc1dc9609bf4590ea371b870ab19499882d2ef",
+      "digest": "sha256:afefca69278c4d3417a4f3d608dc1dc9609bf4590ea371b870ab19499882d2ef",
+      "size": 775
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/b1/2b/b12b6e2905586202cd0291e48e249d4fe3e33b30d3e0d2e514bd2264f9ca644e",
+      "digest": "sha256:b12b6e2905586202cd0291e48e249d4fe3e33b30d3e0d2e514bd2264f9ca644e",
+      "size": 812
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/b1/49/b14980ad9d183cedbf509608d284d533836db600c57c1c3240e05a167c37185b",
+      "digest": "sha256:b14980ad9d183cedbf509608d284d533836db600c57c1c3240e05a167c37185b",
+      "size": 723
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/b1/b8/b1b84e0814de979cda49f4e551ae534f81e7a4e0f81664930ab48881e3b337e4",
+      "digest": "sha256:b1b84e0814de979cda49f4e551ae534f81e7a4e0f81664930ab48881e3b337e4",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/b2/17/b217ae9fe178d5fa3dddb3d0de41a7a77305a544c01626e0f97d11d39177abf5",
+      "digest": "sha256:b217ae9fe178d5fa3dddb3d0de41a7a77305a544c01626e0f97d11d39177abf5",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/b2/a7/b2a78ce613bb5889ab5fafdb4cd04c6519a6df4646b055e763e0dd916cc845b1",
+      "digest": "sha256:b2a78ce613bb5889ab5fafdb4cd04c6519a6df4646b055e763e0dd916cc845b1",
+      "size": 723
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/b2/b3/b2b33ce1f62910c096ae0e9df25b99d059f29093a308879d7d7f3755ba273304",
+      "digest": "sha256:b2b33ce1f62910c096ae0e9df25b99d059f29093a308879d7d7f3755ba273304",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/b2/ce/b2ceac8b6c74dabda25c76142203cfb9ccaacd6c43ec9a125e000528b2fede9b",
+      "digest": "sha256:b2ceac8b6c74dabda25c76142203cfb9ccaacd6c43ec9a125e000528b2fede9b",
+      "size": 766
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/b3/7b/b37b654d882cf4bc6f1714fb4aa8fbeba2712b3627f8e75579ebaf4c22388a92",
+      "digest": "sha256:b37b654d882cf4bc6f1714fb4aa8fbeba2712b3627f8e75579ebaf4c22388a92",
+      "size": 814
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/b5/1b/b51b96aff9526d65e65201e0b2efbc269676c702d54011fe63a98f2e07cbf566",
+      "digest": "sha256:b51b96aff9526d65e65201e0b2efbc269676c702d54011fe63a98f2e07cbf566",
+      "size": 787
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/b5/b5/b5b55be867eaa909bf5e39b1f859334a513f6f14961ffe6f69487aa959904491",
+      "digest": "sha256:b5b55be867eaa909bf5e39b1f859334a513f6f14961ffe6f69487aa959904491",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/b5/ba/b5bae732934471ff380266b6875a7e77f5329326b466f58f6fd4f9dfda09d4ef",
+      "digest": "sha256:b5bae732934471ff380266b6875a7e77f5329326b466f58f6fd4f9dfda09d4ef",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/b7/10/b71025a3a4ec8ba47a22f11451420be848031dea2bd5ad956a2c16968ea62fcf",
+      "digest": "sha256:b71025a3a4ec8ba47a22f11451420be848031dea2bd5ad956a2c16968ea62fcf",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/b7/d2/b7d247565c04868c83b6a0afcda6fa8e618a36799181a719e475d88c8cbb7f67",
+      "digest": "sha256:b7d247565c04868c83b6a0afcda6fa8e618a36799181a719e475d88c8cbb7f67",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/b8/27/b82746529476368306e3bedc538d7720c2a3fc91e180eed77dacd3f108dc0333",
+      "digest": "sha256:b82746529476368306e3bedc538d7720c2a3fc91e180eed77dacd3f108dc0333",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/b8/2e/b82ed3b75b034e02c461782f963fde6ce20380f436199b3ce7145afabba9d7ac",
+      "digest": "sha256:b82ed3b75b034e02c461782f963fde6ce20380f436199b3ce7145afabba9d7ac",
+      "size": 766
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/b8/3a/b83acc2d689417f4570ab3a7cec3f9aacd81ab2355c65772291cf9e8e49445f7",
+      "digest": "sha256:b83acc2d689417f4570ab3a7cec3f9aacd81ab2355c65772291cf9e8e49445f7",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/b8/bf/b8bffec8ed0c8ec41fc96cd38e44f2bde6481f4c51aa775e9b8e14374803a9d9",
+      "digest": "sha256:b8bffec8ed0c8ec41fc96cd38e44f2bde6481f4c51aa775e9b8e14374803a9d9",
+      "size": 804
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/b8/f3/b8f32a5b1799867840c2a82b9c19134f4b8940aa17d7007e64da6f38bf8834c1",
+      "digest": "sha256:b8f32a5b1799867840c2a82b9c19134f4b8940aa17d7007e64da6f38bf8834c1",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/ba/81/ba812cbd580c36940147bda905062af46f364057242cef242771ceeb8733533d",
+      "digest": "sha256:ba812cbd580c36940147bda905062af46f364057242cef242771ceeb8733533d",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/bb/ea/bbeacdc5c8abeb153991ba2e5000601e352e1af5eb086ed44b283450ad1912a9",
+      "digest": "sha256:bbeacdc5c8abeb153991ba2e5000601e352e1af5eb086ed44b283450ad1912a9",
+      "size": 810
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/bd/b6/bdb66d74192550045185ac185ad9eb7e45ce20a3353a0995246f67a7f9699e8a",
+      "digest": "sha256:bdb66d74192550045185ac185ad9eb7e45ce20a3353a0995246f67a7f9699e8a",
+      "size": 766
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/bf/59/bf59e69ea10f3dd34f6393e4dd7df9a0bc10be769f1062fea6ce8c0dba7510a4",
+      "digest": "sha256:bf59e69ea10f3dd34f6393e4dd7df9a0bc10be769f1062fea6ce8c0dba7510a4",
+      "size": 787
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/c0/47/c04726e6b6d78c36de3b91afd5b61be1589cc4da9477225a25ba6fce419c9d85",
+      "digest": "sha256:c04726e6b6d78c36de3b91afd5b61be1589cc4da9477225a25ba6fce419c9d85",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/c1/21/c121305238e58adb2c85e74351a1f467707612032b7331e532cfc54c319cb379",
+      "digest": "sha256:c121305238e58adb2c85e74351a1f467707612032b7331e532cfc54c319cb379",
+      "size": 717
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/c2/00/c20079fa417a9b8a75f40055a5e8f9eb727b0593c72d8f2c4e15cc9c0d7cbaf3",
+      "digest": "sha256:c20079fa417a9b8a75f40055a5e8f9eb727b0593c72d8f2c4e15cc9c0d7cbaf3",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/c2/05/c20507cc0a0249c94667a88db7f6794456dbb82b86a9d2849d285e6b7a09ba9e",
+      "digest": "sha256:c20507cc0a0249c94667a88db7f6794456dbb82b86a9d2849d285e6b7a09ba9e",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/c2/66/c2668a96214502e6722e1d9a4fc91116554adbd98cd18428dc3bf665a86bc228",
+      "digest": "sha256:c2668a96214502e6722e1d9a4fc91116554adbd98cd18428dc3bf665a86bc228",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/c2/c0/c2c0ac8b165f5a445e825553534c02706301da183112e994a5bb72c5d210b7f3",
+      "digest": "sha256:c2c0ac8b165f5a445e825553534c02706301da183112e994a5bb72c5d210b7f3",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/c3/92/c392a3357183145bbb67ec986f46355facd8aebbeb9bc8816c9899d912c5885a",
+      "digest": "sha256:c392a3357183145bbb67ec986f46355facd8aebbeb9bc8816c9899d912c5885a",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/c3/f9/c3f939eff2fbea8880d47dbb999c1eb464533b0284b899cc8bff91788856f68a",
+      "digest": "sha256:c3f939eff2fbea8880d47dbb999c1eb464533b0284b899cc8bff91788856f68a",
+      "size": 238
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/c4/17/c4176156d132156ac7064c60052e281f68f4ef85df0736fc10a4bcedfeb5ee50",
+      "digest": "sha256:c4176156d132156ac7064c60052e281f68f4ef85df0736fc10a4bcedfeb5ee50",
+      "size": 1274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/c4/ae/c4aeab86d2fc94d06c22e1c52bc2e23c86109a4ff288336244c5973e013424f8",
+      "digest": "sha256:c4aeab86d2fc94d06c22e1c52bc2e23c86109a4ff288336244c5973e013424f8",
+      "size": 766
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/c8/a5/c8a53ec2d24d46ec59bdea007ee80a303a7a847adcb65af5512d1ba983915bdc",
+      "digest": "sha256:c8a53ec2d24d46ec59bdea007ee80a303a7a847adcb65af5512d1ba983915bdc",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/c9/41/c941035513545ea8efcf975001dc90e44094af045ef37e1d29331c3cfb2c9b34",
+      "digest": "sha256:c941035513545ea8efcf975001dc90e44094af045ef37e1d29331c3cfb2c9b34",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/c9/ff/c9ffd110854a72a5045e3e8d39363b0fe1a5eb09ed32c56a6c1aebe29172c7b9",
+      "digest": "sha256:c9ffd110854a72a5045e3e8d39363b0fe1a5eb09ed32c56a6c1aebe29172c7b9",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/ca/ff/caff468675e56f988c81705e0aa6403136f16b866e192ec257da918eff2369f8",
+      "digest": "sha256:caff468675e56f988c81705e0aa6403136f16b866e192ec257da918eff2369f8",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/cc/36/cc368aadd2e2538a4451afbadaba121d468bd54cde763fd0f76eaabb86e831e5",
+      "digest": "sha256:cc368aadd2e2538a4451afbadaba121d468bd54cde763fd0f76eaabb86e831e5",
+      "size": 804
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/cc/fc/ccfc2af055e1d157283cfc3ba92853638de601f11471e67a199696b3c3ffb732",
+      "digest": "sha256:ccfc2af055e1d157283cfc3ba92853638de601f11471e67a199696b3c3ffb732",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/cd/1c/cd1c22434d5fb92d9069409a448bd4ad43deae428ca2fbe368eb8f25881c4ae1",
+      "digest": "sha256:cd1c22434d5fb92d9069409a448bd4ad43deae428ca2fbe368eb8f25881c4ae1",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/cd/2f/cd2f00d377e2dad93e473d92d0c4b8072dd4a47aba69cee3f8beae6514f5c4e0",
+      "digest": "sha256:cd2f00d377e2dad93e473d92d0c4b8072dd4a47aba69cee3f8beae6514f5c4e0",
+      "size": 766
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/cd/52/cd52f18d93cf67869c414d09a6e8bf04c352f125c6231f97479f33121b46c0a3",
+      "digest": "sha256:cd52f18d93cf67869c414d09a6e8bf04c352f125c6231f97479f33121b46c0a3",
+      "size": 772
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/cd/7c/cd7cecc91925477cb8ee31e14518bc7c4623bf9f0a55962a3ddf945876959a7e",
+      "digest": "sha256:cd7cecc91925477cb8ee31e14518bc7c4623bf9f0a55962a3ddf945876959a7e",
+      "size": 812
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/ce/c8/cec8216309afc0b8c12e7ebd67aff080a7166bbe650a8af8f25b4c6739423419",
+      "digest": "sha256:cec8216309afc0b8c12e7ebd67aff080a7166bbe650a8af8f25b4c6739423419",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/cf/2a/cf2a121b2150b6b95a211e73f2a4eea0bf399d564090f56134e0ec391ed1f51e",
+      "digest": "sha256:cf2a121b2150b6b95a211e73f2a4eea0bf399d564090f56134e0ec391ed1f51e",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/cf/59/cf59b6e870199fb3300a415f41294bd50f3108b8d74fcaff7d8bda1894c336e6",
+      "digest": "sha256:cf59b6e870199fb3300a415f41294bd50f3108b8d74fcaff7d8bda1894c336e6",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/cf/79/cf794d6f2e366f9eeb8a6244f2f8d005d5abd736bbdd62e598de230ff6d94bae",
+      "digest": "sha256:cf794d6f2e366f9eeb8a6244f2f8d005d5abd736bbdd62e598de230ff6d94bae",
+      "size": 814
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/d1/54/d15435a20ffef9dc4f6ca9af3955fbfd613451f51d961b8c94c4cc529738284a",
+      "digest": "sha256:d15435a20ffef9dc4f6ca9af3955fbfd613451f51d961b8c94c4cc529738284a",
+      "size": 1288
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/d2/31/d2318d546bfd6611111e310316e4ee9f7de12c43127af31564ba368e7eaf87c1",
+      "digest": "sha256:d2318d546bfd6611111e310316e4ee9f7de12c43127af31564ba368e7eaf87c1",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/d3/9a/d39ac573edfc9423638d92c676c113a013f12e2ee982598377ce7782ec320e8f",
+      "digest": "sha256:d39ac573edfc9423638d92c676c113a013f12e2ee982598377ce7782ec320e8f",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/d3/ba/d3ba1625836a17ce56abd4c18524ef571cae373eacb4e187b68022277ff967fa",
+      "digest": "sha256:d3ba1625836a17ce56abd4c18524ef571cae373eacb4e187b68022277ff967fa",
+      "size": 796
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/d4/3e/d43e8631afa188b516339cbf8e7eaaca91a09b55cff897df36ee7e04fa6c3f87",
+      "digest": "sha256:d43e8631afa188b516339cbf8e7eaaca91a09b55cff897df36ee7e04fa6c3f87",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/d4/73/d4734b73e42b65d3527d912a8ccba7702ee4c013f45f3e3aaf24fc7148b420f2",
+      "digest": "sha256:d4734b73e42b65d3527d912a8ccba7702ee4c013f45f3e3aaf24fc7148b420f2",
+      "size": 812
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/d5/15/d515150e11fdc2b07a1c6442f6c5a2f5d5ebe387fad3bcd08687bb9a7d066a84",
+      "digest": "sha256:d515150e11fdc2b07a1c6442f6c5a2f5d5ebe387fad3bcd08687bb9a7d066a84",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/d5/59/d559dce82afae204f7a2d30e21510d42422c057a8d4fbc15ce730a95a05546d0",
+      "digest": "sha256:d559dce82afae204f7a2d30e21510d42422c057a8d4fbc15ce730a95a05546d0",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/d5/7a/d57af06ee9f78ecee17b4061306ffda1dfdc6bac85e4eb100901826835efce10",
+      "digest": "sha256:d57af06ee9f78ecee17b4061306ffda1dfdc6bac85e4eb100901826835efce10",
+      "size": 775
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/d6/34/d6342fa6bbbe6d9a3ef3873c2d7dab825ec3917a7c858a0e8850edf705738a42",
+      "digest": "sha256:d6342fa6bbbe6d9a3ef3873c2d7dab825ec3917a7c858a0e8850edf705738a42",
+      "size": 814
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/d6/d8/d6d8808bfa4034bb9f659ed4647396317e33f675aee3155f4b33c3a377556530",
+      "digest": "sha256:d6d8808bfa4034bb9f659ed4647396317e33f675aee3155f4b33c3a377556530",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/d7/40/d740cc7468be2afdf00522ca9794c64b47dd6e28ea4ec03cf7a1223aa66c590a",
+      "digest": "sha256:d740cc7468be2afdf00522ca9794c64b47dd6e28ea4ec03cf7a1223aa66c590a",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2025",
+      "path": "cas/sha256/d7/5b/d75b0e5960e345e118d52a0785d60a5dd7c9886fea128fc75ec4c11f84262d97",
+      "digest": "sha256:d75b0e5960e345e118d52a0785d60a5dd7c9886fea128fc75ec4c11f84262d97",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2024",
+      "path": "cas/sha256/d7/5b/d75bdc79632f20a004767fca850ffcffb0a0eaa9511de4cc86a30f842d47fbe2",
+      "digest": "sha256:d75bdc79632f20a004767fca850ffcffb0a0eaa9511de4cc86a30f842d47fbe2",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/d7/d8/d7d843ebe6510eda75264303daec994c4babde8d804ca76abbe6f00865ae0235",
+      "digest": "sha256:d7d843ebe6510eda75264303daec994c4babde8d804ca76abbe6f00865ae0235",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/d8/43/d843225c3f9ac332a7a8dfc0c14779ff6a70136941e7f6006a2118b07093fb14",
+      "digest": "sha256:d843225c3f9ac332a7a8dfc0c14779ff6a70136941e7f6006a2118b07093fb14",
+      "size": 238
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/d8/49/d8490b12fc78da4aa8c6541601066775f942648bb00f5f49daa72b53845228b0",
+      "digest": "sha256:d8490b12fc78da4aa8c6541601066775f942648bb00f5f49daa72b53845228b0",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/d8/90/d8906a762546ea3d872e75ad5db5cbdf0290eaed61d2fc6d44e96ac714faf44f",
+      "digest": "sha256:d8906a762546ea3d872e75ad5db5cbdf0290eaed61d2fc6d44e96ac714faf44f",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/d8/cc/d8cc8595370c30ba4bb1e188e3ed0847204670805710ccf9da4db177ab766cc1",
+      "digest": "sha256:d8cc8595370c30ba4bb1e188e3ed0847204670805710ccf9da4db177ab766cc1",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/d9/02/d902f0880e85dcb76647174658081f30300f1273ebf093c8d65193a70f726914",
+      "digest": "sha256:d902f0880e85dcb76647174658081f30300f1273ebf093c8d65193a70f726914",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/d9/a2/d9a2f8366ed13f3c97cced9008cc4637df6984dd84c8902a0030d3691da2ac0d",
+      "digest": "sha256:d9a2f8366ed13f3c97cced9008cc4637df6984dd84c8902a0030d3691da2ac0d",
+      "size": 240
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2020",
+      "path": "cas/sha256/d9/ba/d9ba0871c3a2e6581f4b28a58ebaf59e5bea476076266b42f63f31c7385d6d1d",
+      "digest": "sha256:d9ba0871c3a2e6581f4b28a58ebaf59e5bea476076266b42f63f31c7385d6d1d",
+      "size": 1274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/d9/ef/d9eff56222e0dda00a3ef988e9efc196b5cc62a1f674cc17046e29e3568660dc",
+      "digest": "sha256:d9eff56222e0dda00a3ef988e9efc196b5cc62a1f674cc17046e29e3568660dc",
+      "size": 723
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/da/5b/da5b01d827edf530a3cda3125d0701180c8ef1044dc77311a486e7d58b8ed5b8",
+      "digest": "sha256:da5b01d827edf530a3cda3125d0701180c8ef1044dc77311a486e7d58b8ed5b8",
+      "size": 723
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/da/c7/dac7845cdf8fc9ee5f674eb6618aea7cedc972cdda69c150fca3e220fdb39d24",
+      "digest": "sha256:dac7845cdf8fc9ee5f674eb6618aea7cedc972cdda69c150fca3e220fdb39d24",
+      "size": 814
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/db/c6/dbc658dec5fa11eb2927e921f4a3639f9e6159c6e1a46e160dc4ff9957203f9a",
+      "digest": "sha256:dbc658dec5fa11eb2927e921f4a3639f9e6159c6e1a46e160dc4ff9957203f9a",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/dc/61/dc61db990a643200a441048f71b0f2f2ef253b709c30287f27b2a8d208a96eab",
+      "digest": "sha256:dc61db990a643200a441048f71b0f2f2ef253b709c30287f27b2a8d208a96eab",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/dc/7c/dc7ce8a7b2384d70d84eaf858721252bed1c325f8b0a3757617e14bfb4e44e48",
+      "digest": "sha256:dc7ce8a7b2384d70d84eaf858721252bed1c325f8b0a3757617e14bfb4e44e48",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/dd/3f/dd3f0d8257807fc65d1bdf614bb44ac27f99d43740ae636332a7004b093fbefd",
+      "digest": "sha256:dd3f0d8257807fc65d1bdf614bb44ac27f99d43740ae636332a7004b093fbefd",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2022",
+      "path": "cas/sha256/de/14/de1496fbc532d3e7766a53d2bfccbcccee907ef076675a3452cb27ba5c8590a5",
+      "digest": "sha256:de1496fbc532d3e7766a53d2bfccbcccee907ef076675a3452cb27ba5c8590a5",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/de/f1/def1102d3e8d06c762f1a68513b77223e75e6c8047eed2ae55be45cce6136ae8",
+      "digest": "sha256:def1102d3e8d06c762f1a68513b77223e75e6c8047eed2ae55be45cce6136ae8",
+      "size": 810
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/e0/7a/e07afb807b9bb936d46aa875c56d3dea41a06f9efc68d996cb728264e776ced6",
+      "digest": "sha256:e07afb807b9bb936d46aa875c56d3dea41a06f9efc68d996cb728264e776ced6",
+      "size": 723
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2024",
+      "path": "cas/sha256/e0/c0/e0c0861fc4737a36e1fc5dc7523fa7e233783b474e17a3a6e340e0af1e8f4e6a",
+      "digest": "sha256:e0c0861fc4737a36e1fc5dc7523fa7e233783b474e17a3a6e340e0af1e8f4e6a",
+      "size": 1274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/e0/e2/e0e29f549d77f62f8515d1c1a61804ec06b18a233e6ee289bf8ce563a8f9f7c8",
+      "digest": "sha256:e0e29f549d77f62f8515d1c1a61804ec06b18a233e6ee289bf8ce563a8f9f7c8",
+      "size": 238
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/e1/40/e140067ea95ababbc01e99347ca5791bb777e4d2a2ac7a830f27c76a639f09c6",
+      "digest": "sha256:e140067ea95ababbc01e99347ca5791bb777e4d2a2ac7a830f27c76a639f09c6",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/e1/82/e1822149d231966c0ba07849e9ff0305594b0a577916745904a7930fffddb33b",
+      "digest": "sha256:e1822149d231966c0ba07849e9ff0305594b0a577916745904a7930fffddb33b",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/e2/7a/e27a71a3fcb5ad8263c6688050c9c61d544f21bd890944d394082aed0ca76c62",
+      "digest": "sha256:e27a71a3fcb5ad8263c6688050c9c61d544f21bd890944d394082aed0ca76c62",
+      "size": 723
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/e3/95/e395df1651a4e5736010be71e2e78a2de3448b54923ab6acd4270de2f22090e2",
+      "digest": "sha256:e395df1651a4e5736010be71e2e78a2de3448b54923ab6acd4270de2f22090e2",
+      "size": 269
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/e4/1e/e41e2071fc67a392ed0d79e07f97807f6a8700449933f316d25a22cdb84b4c16",
+      "digest": "sha256:e41e2071fc67a392ed0d79e07f97807f6a8700449933f316d25a22cdb84b4c16",
+      "size": 1274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2022",
+      "path": "cas/sha256/e5/28/e5282a84c74aa8e40c9fa9e143d92243d673ddcfd695d065aaf1ffd24eb68da2",
+      "digest": "sha256:e5282a84c74aa8e40c9fa9e143d92243d673ddcfd695d065aaf1ffd24eb68da2",
+      "size": 794
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/e5/34/e5348ad97adc404d1cac73e82b514a6d14a9afa96743a51d8af470faa8038987",
+      "digest": "sha256:e5348ad97adc404d1cac73e82b514a6d14a9afa96743a51d8af470faa8038987",
+      "size": 787
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/e5/56/e55695b79eb5128871a65be1262ed2fc328f11ad84f99bcf7ec88a1eedfdda57",
+      "digest": "sha256:e55695b79eb5128871a65be1262ed2fc328f11ad84f99bcf7ec88a1eedfdda57",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/e6/d6/e6d62467287055dae5d1e2a1a2632b66549c6d7de6cb1f4c6103fc64e9b5a33e",
+      "digest": "sha256:e6d62467287055dae5d1e2a1a2632b66549c6d7de6cb1f4c6103fc64e9b5a33e",
+      "size": 238
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/e7/1e/e71e7ea4aed29a0d21b077277f415f4708a7f437c5af52d8424377ee63168cd2",
+      "digest": "sha256:e71e7ea4aed29a0d21b077277f415f4708a7f437c5af52d8424377ee63168cd2",
+      "size": 1288
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/e7/6e/e76e313643742b54d5f2baa552c3d5a5887834648156c8056ff2168c6865b3a5",
+      "digest": "sha256:e76e313643742b54d5f2baa552c3d5a5887834648156c8056ff2168c6865b3a5",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/e7/77/e777aea98dee25f4994d636550a16af8ea601df0d1b0c34622a21fee2f20a91b",
+      "digest": "sha256:e777aea98dee25f4994d636550a16af8ea601df0d1b0c34622a21fee2f20a91b",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/e8/2a/e82a4877aa143f37d213ca78036155920af207d7856d8d6e0b46cb8e6db19cfc",
+      "digest": "sha256:e82a4877aa143f37d213ca78036155920af207d7856d8d6e0b46cb8e6db19cfc",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2022",
+      "path": "cas/sha256/e8/51/e851e9c1f525e7dec496a6f2685a1783b834d21a0b2c0533b1d6b24d4ff8f75a",
+      "digest": "sha256:e851e9c1f525e7dec496a6f2685a1783b834d21a0b2c0533b1d6b24d4ff8f75a",
+      "size": 766
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/e8/d7/e8d7afcb5743c370009432cfe5f5215e63472f8e3c137866f13c904b12ce78e3",
+      "digest": "sha256:e8d7afcb5743c370009432cfe5f5215e63472f8e3c137866f13c904b12ce78e3",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/e8/f7/e8f790055a3f0f83b21c53c00ead363a2e8491688a54919ff35444fbed8566a6",
+      "digest": "sha256:e8f790055a3f0f83b21c53c00ead363a2e8491688a54919ff35444fbed8566a6",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/e9/34/e934d13dced5a5832c07e9cad34aeff89b61ca6ba44c05f9124d5f0bcea6e32e",
+      "digest": "sha256:e934d13dced5a5832c07e9cad34aeff89b61ca6ba44c05f9124d5f0bcea6e32e",
+      "size": 787
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/e9/f9/e9f9266e31f121905007b721fbc2af8dfff654c90c29d25f0f70f33dd789629a",
+      "digest": "sha256:e9f9266e31f121905007b721fbc2af8dfff654c90c29d25f0f70f33dd789629a",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/ea/ed/eaed1c06dad036ebbc495ef3bb36f58939df8bdfbe46f9aa3f22654ecdbd8f8c",
+      "digest": "sha256:eaed1c06dad036ebbc495ef3bb36f58939df8bdfbe46f9aa3f22654ecdbd8f8c",
+      "size": 796
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/ec/37/ec3789b8e949583c4f3359de804d177742a4dd01fb4e094764ebd0eeaac6d290",
+      "digest": "sha256:ec3789b8e949583c4f3359de804d177742a4dd01fb4e094764ebd0eeaac6d290",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/ec/fb/ecfb92e5b8c3747efbe8599c80560a8ba54ca64e9def6812edecfc2af9119cb4",
+      "digest": "sha256:ecfb92e5b8c3747efbe8599c80560a8ba54ca64e9def6812edecfc2af9119cb4",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/ed/89/ed890273379923d63095b4c8a32ebe015abedf80859e81078eeec740f44ba0eb",
+      "digest": "sha256:ed890273379923d63095b4c8a32ebe015abedf80859e81078eeec740f44ba0eb",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2021",
+      "path": "cas/sha256/ed/b0/edb010333127d57ab70add2bd97a11919d706ef36c2e6145766fedc47d4f2aba",
+      "digest": "sha256:edb010333127d57ab70add2bd97a11919d706ef36c2e6145766fedc47d4f2aba",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2025",
+      "path": "cas/sha256/ee/1d/ee1dfe8f2302691fffd8698682990f2df61e877d08b76ab036f0ca1d76515f7f",
+      "digest": "sha256:ee1dfe8f2302691fffd8698682990f2df61e877d08b76ab036f0ca1d76515f7f",
+      "size": 787
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/ef/21/ef210d8973c3c419ee679c3e0914f423f71e7382b1d54a167c6e59fb03671713",
+      "digest": "sha256:ef210d8973c3c419ee679c3e0914f423f71e7382b1d54a167c6e59fb03671713",
+      "size": 1288
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/ef/37/ef3754c57794fd72f2d728a5c0c640afc07d1b3ac5cfb81118c4e72d32b55559",
+      "digest": "sha256:ef3754c57794fd72f2d728a5c0c640afc07d1b3ac5cfb81118c4e72d32b55559",
+      "size": 723
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/f2/a2/f2a25f5c4b475b55e2ffd77de2fc0289a98fc08e0c6e605578612a200bed1ab9",
+      "digest": "sha256:f2a25f5c4b475b55e2ffd77de2fc0289a98fc08e0c6e605578612a200bed1ab9",
+      "size": 810
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/f2/a8/f2a8209876e7e63b2b5f7f505932e964f0ef25431b0c2a35545f2b89bf379ed8",
+      "digest": "sha256:f2a8209876e7e63b2b5f7f505932e964f0ef25431b0c2a35545f2b89bf379ed8",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2023",
+      "path": "cas/sha256/f3/b2/f3b2fe9f07ab9b56611a4c83404d844a7cbe0e05abf5c8dcfce5b25679c359c6",
+      "digest": "sha256:f3b2fe9f07ab9b56611a4c83404d844a7cbe0e05abf5c8dcfce5b25679c359c6",
+      "size": 766
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/f4/f3/f4f32a694ac8341a32c1d098c7d983c1bfdc9200c2d0f2318dd4da07c3dd8a14",
+      "digest": "sha256:f4f32a694ac8341a32c1d098c7d983c1bfdc9200c2d0f2318dd4da07c3dd8a14",
+      "size": 804
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/f5/7a/f57af0b08424f2d183d9bbdaa79a5b2eefe2dd07e2fbf26c2975b1d0afb53900",
+      "digest": "sha256:f57af0b08424f2d183d9bbdaa79a5b2eefe2dd07e2fbf26c2975b1d0afb53900",
+      "size": 717
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2025",
+      "path": "cas/sha256/f5/f1/f5f1b75bdf578326bcc65e6967ecd27a56383270580bef8829fb306483757efa",
+      "digest": "sha256:f5f1b75bdf578326bcc65e6967ecd27a56383270580bef8829fb306483757efa",
+      "size": 766
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/f6/25/f62588305fbb5343424b0827e4de4677882fa33f3553c1b5370c2c1f86a40ec1",
+      "digest": "sha256:f62588305fbb5343424b0827e4de4677882fa33f3553c1b5370c2c1f86a40ec1",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/f6/86/f686ef738c51fb88a11ea7da2f6bcf4c1d693874bed9a2fa312a5fb19d72257c",
+      "digest": "sha256:f686ef738c51fb88a11ea7da2f6bcf4c1d693874bed9a2fa312a5fb19d72257c",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2020",
+      "path": "cas/sha256/f6/dc/f6dc8dabc270a2dab049ec0f695f82f557070013fdc205cae2b631fd57eb291e",
+      "digest": "sha256:f6dc8dabc270a2dab049ec0f695f82f557070013fdc205cae2b631fd57eb291e",
+      "size": 269
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:VNM/SP.POP.TOTL/2023",
+      "path": "cas/sha256/f7/d8/f7d868c2392bdab35a54293a4931d92bcc9e289751c2cac6fd291de864e8c484",
+      "digest": "sha256:f7d868c2392bdab35a54293a4931d92bcc9e289751c2cac6fd291de864e8c484",
+      "size": 796
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/f7/f3/f7f3712e488b64651199589e477efa44871aaf2011e7eb7ddeeba37b63db2167",
+      "digest": "sha256:f7f3712e488b64651199589e477efa44871aaf2011e7eb7ddeeba37b63db2167",
+      "size": 787
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/f8/7d/f87d38999af4e844a85ccd383bb592899568aae26c29c44e7a339ce1c8c5321e",
+      "digest": "sha256:f87d38999af4e844a85ccd383bb592899568aae26c29c44e7a339ce1c8c5321e",
+      "size": 269
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2024",
+      "path": "cas/sha256/f8/85/f8853fbbe4ffd628c1e9790d6c6f712a4ae60eea9e15eeaea2102e37bce79dc2",
+      "digest": "sha256:f8853fbbe4ffd628c1e9790d6c6f712a4ae60eea9e15eeaea2102e37bce79dc2",
+      "size": 238
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/f9/da/f9da709595cce60efcad2a6a5dc64553c1b3c79328ded67cae5fb505e964db6c",
+      "digest": "sha256:f9da709595cce60efcad2a6a5dc64553c1b3c79328ded67cae5fb505e964db6c",
+      "size": 772
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2023",
+      "path": "cas/sha256/fb/37/fb37e60fd7674fde67acd2b326c3d8a95586cec14c158821797753f6768de01b",
+      "digest": "sha256:fb37e60fd7674fde67acd2b326c3d8a95586cec14c158821797753f6768de01b",
+      "size": 240
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/fb/d8/fbd8c8e69713786cc4774fcf953701f181cc79db570b3d10dc412c9ed6198360",
+      "digest": "sha256:fbd8c8e69713786cc4774fcf953701f181cc79db570b3d10dc412c9ed6198360",
+      "size": 253
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/fb/ef/fbef96f5338cba94534cbc0c85fad950996d0dad56c0e51b21fa0cccff1df186",
+      "digest": "sha256:fbef96f5338cba94534cbc0c85fad950996d0dad56c0e51b21fa0cccff1df186",
+      "size": 240
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2022",
+      "path": "cas/sha256/fd/4b/fd4b62851687931ed175f428fbfc5ce467dd4a92e8236043cd26acfd7f4822dc",
+      "digest": "sha256:fd4b62851687931ed175f428fbfc5ce467dd4a92e8236043cd26acfd7f4822dc",
+      "size": 772
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/NY.GDP.MKTP.CD/2024",
+      "path": "cas/sha256/fd/7a/fd7ad0330bff084796fa4b6648e0814c4848ca516d53084a2ed928ce5e3fab75",
+      "digest": "sha256:fd7ad0330bff084796fa4b6648e0814c4848ca516d53084a2ed928ce5e3fab75",
+      "size": 772
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2021",
+      "path": "cas/sha256/fd/f0/fdf0f1fa39c73126c52a21e5e87c8e0d089e9b5f565d6dec50b06f4b2240a70e",
+      "digest": "sha256:fdf0f1fa39c73126c52a21e5e87c8e0d089e9b5f565d6dec50b06f4b2240a70e",
+      "size": 787
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/fd/f8/fdf83eef6736494e1204d2bfab98e7c8cfe0d8262b5c2415e50f229cb585a3c9",
+      "digest": "sha256:fdf83eef6736494e1204d2bfab98e7c8cfe0d8262b5c2415e50f229cb585a3c9",
+      "size": 274
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:USA/SP.POP.TOTL/2021",
+      "path": "cas/sha256/fd/f9/fdf9cc88449479daed6f69e31b01d5ab4cc8b84c3ee2ea9e6147e35de07decbd",
+      "digest": "sha256:fdf9cc88449479daed6f69e31b01d5ab4cc8b84c3ee2ea9e6147e35de07decbd",
+      "size": 796
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/fe/9f/fe9f06d3f52472e2abd7c0634e6c71fefd4799c1fae5364327056bd63ec5f2ef",
+      "digest": "sha256:fe9f06d3f52472e2abd7c0634e6c71fefd4799c1fae5364327056bd63ec5f2ef",
+      "size": 253
+    },
+    {
+      "kind": "packet",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2025",
+      "path": "cas/sha256/fe/a6/fea6e679ef2d39d13793ce2f79c51ce452e138da3ad0386c7a6d52fdeee561d3",
+      "digest": "sha256:fea6e679ef2d39d13793ce2f79c51ce452e138da3ad0386c7a6d52fdeee561d3",
+      "size": 775
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:VNM/NY.GDP.MKTP.CD/2020",
+      "path": "cas/sha256/fe/d0/fed0f135405aa087b5c247bd6c09a35e8dae823123196f018b9d64cbbed08bd0",
+      "digest": "sha256:fed0f135405aa087b5c247bd6c09a35e8dae823123196f018b9d64cbbed08bd0",
+      "size": 274
+    },
+    {
+      "kind": "mapping_claim",
+      "native_key": "world-bank:CHL/SP.POP.TOTL/2020",
+      "path": "cas/sha256/ff/70/ff709f2e2dad7923e936dc56209303124d1445be3226093a0073d611c26546dd",
+      "digest": "sha256:ff709f2e2dad7923e936dc56209303124d1445be3226093a0073d611c26546dd",
+      "size": 238
+    },
+    {
+      "kind": "frame",
+      "native_key": "world-bank:CHL/NY.GDP.MKTP.CD/2023",
+      "path": "cas/sha256/ff/94/ff94a8385ca0004ad94ad7cf57888399e40c561514add6250d8eaa1307a7c02e",
+      "digest": "sha256:ff94a8385ca0004ad94ad7cf57888399e40c561514add6250d8eaa1307a7c02e",
+      "size": 1287
+    }
+  ],
+  "rejections": [
+    {
+      "order_id": "e4-wb-chl-sp-pop-totl-2021",
+      "code": "response_not_200_json",
+      "http_status": 400,
+      "media_type": "text/html",
+      "observation_digest": "sha256:5e31e524941a26235c6ccab476ef100abd99cd05787f4350268531dc528f6ddc",
+      "representation_digest": "sha256:0d41cf6a8bf98174b592374f2acd981947f42847cc2e50b3774822ea84a5cada"
+    }
+  ]
+}

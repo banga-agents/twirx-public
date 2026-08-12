@@ -1,0 +1,34 @@
+{
+  "format": "tw.ontology-module-source/0.1",
+  "module_id": "tw:opportunity",
+  "version": "0.1.0",
+  "status": "draft",
+  "imports": ["tw:kernel@0.1.0"],
+  "concepts": [
+    {"id":"opportunity:ApplicantClass","kind":"eligibility","labels":[{"language":"en","value":"Applicant class"}],"broader":[]},
+    {"id":"opportunity:ApplicationRoute","kind":"capability","labels":[{"language":"en","value":"Application route"}],"broader":["tw:Operation"]},
+    {"id":"opportunity:EligibilityRule","kind":"policy","labels":[{"language":"en","value":"Eligibility rule"}],"broader":["tw:Policy"]},
+    {"id":"opportunity:Funder","kind":"agent","labels":[{"language":"en","value":"Funder"}],"broader":["tw:Organization"]},
+    {"id":"opportunity:FundingProgram","kind":"program","labels":[{"language":"en","value":"Funding program"}],"broader":[]},
+    {"id":"opportunity:GrantOpportunity","kind":"opportunity","labels":[{"language":"en","value":"Grant opportunity"}],"broader":["tw:Offer"]}
+  ],
+  "roles": [
+    {"id":"opportunity:applicantClass","value_type":"identifier","required":false,"max_values":32},
+    {"id":"opportunity:applicationRoute","value_type":"uri","required":false,"max_values":1},
+    {"id":"opportunity:deadline","value_type":"datetime","required":false,"max_values":1},
+    {"id":"opportunity:eligibilityText","value_type":"text","required":false,"max_values":8},
+    {"id":"opportunity:funder","value_type":"identifier","required":true,"max_values":1},
+    {"id":"opportunity:identifier","value_type":"identifier","required":true,"max_values":1},
+    {"id":"opportunity:maximumAmount","value_type":"decimal","required":false,"max_values":1},
+    {"id":"opportunity:minimumAmount","value_type":"decimal","required":false,"max_values":1},
+    {"id":"opportunity:title","value_type":"text","required":true,"max_values":1},
+    {"id":"opportunity:topic","value_type":"identifier","required":false,"max_values":32}
+  ],
+  "frames": [
+    {"id":"opportunity:GrantOpportunity","roles":["opportunity:applicantClass","opportunity:applicationRoute","opportunity:deadline","opportunity:eligibilityText","opportunity:funder","opportunity:identifier","opportunity:maximumAmount","opportunity:minimumAmount","opportunity:title","opportunity:topic"],"required_roles":["opportunity:funder","opportunity:identifier","opportunity:title"],"key_roles":["opportunity:funder","opportunity:identifier"]}
+  ],
+  "mapping_claim_digests": [],
+  "query_template_ids": ["query:opportunity/deadline-window@0.1","query:opportunity/find-funding@0.1","query:opportunity/unresolved-eligibility@0.1"],
+  "visualization_ids": ["view:opportunity/deadline-timeline@0.1","view:opportunity/eligibility-tree@0.1","view:opportunity/funder-network@0.1"],
+  "review_decision_digest": null
+}

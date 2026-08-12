@@ -54,6 +54,13 @@ show those identifiers but cannot change the identified object.
 - `schemas/cddl/semantic-data-plane.cddl` defines the canonical array layouts
   and bounds.
 
+E4 adds the Ontology Fabric contracts in `spec/ontology/`. Semantic Frames
+compose packets but never replace their native statements; Mapping Claims,
+Ontology Module manifests and Semantic Universe manifests have independent
+canonical identities and explicit human-review boundaries. The E4 snapshot
+and agent prototype documents are explanatory until their separate release
+gate passes.
+
 The prose and schema must agree. A contradiction blocks conformance rather
 than allowing an implementation to choose the more convenient interpretation.
 

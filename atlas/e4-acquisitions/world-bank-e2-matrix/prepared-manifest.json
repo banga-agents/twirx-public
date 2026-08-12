@@ -1,0 +1,376 @@
+{
+  "format": "tw.e4-world-state-prepared/0.1",
+  "plan_id": "world-bank-e2-matrix-2026-08",
+  "operation_id": "development.getIndicator",
+  "origin_id": "api-worldbank-org",
+  "execution_alias": "world-bank-indicators",
+  "decision_digest": "sha256:751f417e96ffda179c5b0b4b4fba4e0a0d926a2d01f00ceae1c7353d08e6772c",
+  "policy_evidence_digest": "sha256:20b0772f39e23dda77a90e7120c71218e8de837cdb23086f46765a26cfa33e25",
+  "contract_digest": "sha256:d7514d3a86b00c00e9d8c92050966bf53df0cfb5b0d5d6bd5e8f122833a9d814",
+  "catalog_digest": "sha256:364b5ea01ea8949620d32f077bc82a26e4a92bf22a0a61933360e44270e2f513",
+  "request_interval_ms": 5000,
+  "maximum_total_bytes": 9437184,
+  "scheduler_enabled": false,
+  "orders": [
+    {
+      "id": "e4-wb-chl-ny-gdp-mktp-cd-2020",
+      "digest": "sha256:02a63ae8fedd54cb873018aab94f8f8b1e1b7fa806671163e96b432c86ddc627",
+      "input": {
+        "country": "CHL",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2020"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2020\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-ny-gdp-mktp-cd-2021",
+      "digest": "sha256:751788e3c30503ce6cfc28d54e9f7e0f87d780a1ed0022e17a0d540613681b0b",
+      "input": {
+        "country": "CHL",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2021"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2021\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-ny-gdp-mktp-cd-2022",
+      "digest": "sha256:477f3c74145f7ead3f055b493bca91968f87d8493a9422c1a47f925e0ff5ffd2",
+      "input": {
+        "country": "CHL",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2022"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2022\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-ny-gdp-mktp-cd-2023",
+      "digest": "sha256:efad15fb3601e8f437c681edb8d4194d49e78ae4d3309b42ae6b62b6418471ec",
+      "input": {
+        "country": "CHL",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2023"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2023\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-ny-gdp-mktp-cd-2024",
+      "digest": "sha256:a62117f449867a3a5b043141825a565ecba4bd3e280d438c6f8b3f5b6c22eded",
+      "input": {
+        "country": "CHL",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2024"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2024\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-ny-gdp-mktp-cd-2025",
+      "digest": "sha256:e3ba3cb1e2a5eeedc0c0bff4f7418bfbe19a20c50a73ed6a7e0c11ee5bcf7861",
+      "input": {
+        "country": "CHL",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2025"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2025\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-sp-pop-totl-2020",
+      "digest": "sha256:56d1af6e0f3acc0de8fc76505421016364f83fff3c78980107cc875a42fb4a54",
+      "input": {
+        "country": "CHL",
+        "indicator": "SP.POP.TOTL",
+        "year": "2020"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?date=2020\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-sp-pop-totl-2021",
+      "digest": "sha256:2f78d247520a39fdb2b552f525d786ae8f3131667ad4bd76e4ffde81ae471e68",
+      "input": {
+        "country": "CHL",
+        "indicator": "SP.POP.TOTL",
+        "year": "2021"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?date=2021\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-sp-pop-totl-2022",
+      "digest": "sha256:a66ebfe49ca31be1e18834025f999dc02971195698601abce494595b7427e993",
+      "input": {
+        "country": "CHL",
+        "indicator": "SP.POP.TOTL",
+        "year": "2022"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?date=2022\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-sp-pop-totl-2023",
+      "digest": "sha256:33fbf6ef51165acebb35e4d3f548e791049c410bb94a7918599dd131395d3af0",
+      "input": {
+        "country": "CHL",
+        "indicator": "SP.POP.TOTL",
+        "year": "2023"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?date=2023\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-sp-pop-totl-2024",
+      "digest": "sha256:3b981707958dc26ef99483f20f6b0bc18f7d804fc7228aa4204be660e53cb44b",
+      "input": {
+        "country": "CHL",
+        "indicator": "SP.POP.TOTL",
+        "year": "2024"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?date=2024\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-chl-sp-pop-totl-2025",
+      "digest": "sha256:a31ccd9b552a6b49cddacfd24f0d6ca8f54411f6af982486e8ad120e4bb593d2",
+      "input": {
+        "country": "CHL",
+        "indicator": "SP.POP.TOTL",
+        "year": "2025"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?date=2025\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-ny-gdp-mktp-cd-2020",
+      "digest": "sha256:5a8830df25d54c5e33e598e5b4747648fcae84e123db08ccee551ee3627c216c",
+      "input": {
+        "country": "USA",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2020"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2020\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-ny-gdp-mktp-cd-2021",
+      "digest": "sha256:db21982f4c51968cabae2c7c3a8b2b8dce0129795fe7230aa1d100065d607083",
+      "input": {
+        "country": "USA",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2021"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2021\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-ny-gdp-mktp-cd-2022",
+      "digest": "sha256:e8b984ff479cf46c7d2be355bdd078171a7cb96857f08ad36d3772badf4ae817",
+      "input": {
+        "country": "USA",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2022"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2022\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-ny-gdp-mktp-cd-2023",
+      "digest": "sha256:00e846ef441c873578788a4341ba004acdf3720614bb619e3a03d7e5e17dacc3",
+      "input": {
+        "country": "USA",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2023"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2023\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-ny-gdp-mktp-cd-2024",
+      "digest": "sha256:8c1d42277de3f1675adf61ab27e634344a9544f4c664e297cc953101d3823bf9",
+      "input": {
+        "country": "USA",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2024"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2024\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-ny-gdp-mktp-cd-2025",
+      "digest": "sha256:a3a5f04a57cd3578d3536d9b2827cb2bb559466516d23ad94b859f0192e03756",
+      "input": {
+        "country": "USA",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2025"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2025\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-sp-pop-totl-2020",
+      "digest": "sha256:0488700c47625d07807cee1251809181a5c18fd8eb19381f78100592442ab25e",
+      "input": {
+        "country": "USA",
+        "indicator": "SP.POP.TOTL",
+        "year": "2020"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2020\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-sp-pop-totl-2021",
+      "digest": "sha256:474f855a94e3384f071fc2ec56d8cc3092a76315cb4757808bb1ea1fda4a58ba",
+      "input": {
+        "country": "USA",
+        "indicator": "SP.POP.TOTL",
+        "year": "2021"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2021\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-sp-pop-totl-2022",
+      "digest": "sha256:3b13ff4412fb7a0948e684899dbabbe81cddf55170430639c198d2eea72cf8f2",
+      "input": {
+        "country": "USA",
+        "indicator": "SP.POP.TOTL",
+        "year": "2022"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2022\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-sp-pop-totl-2023",
+      "digest": "sha256:401ceb8e0453754eb96aed1a6ad9bee916b98962957809fb831805220eb94832",
+      "input": {
+        "country": "USA",
+        "indicator": "SP.POP.TOTL",
+        "year": "2023"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2023\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-sp-pop-totl-2024",
+      "digest": "sha256:22749b587853e0f88cc208d33d630a1ba336e11e8c1da822b8ad0e5ac158187d",
+      "input": {
+        "country": "USA",
+        "indicator": "SP.POP.TOTL",
+        "year": "2024"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2024\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-usa-sp-pop-totl-2025",
+      "digest": "sha256:df40dc0b3c56e3a1f41febe1bd8e74cb5d0b410695b10de8245fd5b91bd70e14",
+      "input": {
+        "country": "USA",
+        "indicator": "SP.POP.TOTL",
+        "year": "2025"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2025\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-ny-gdp-mktp-cd-2020",
+      "digest": "sha256:e9f39ba9b9f8974ec6110fee71bfa8281c684d2586d186d77d75a406e66305f5",
+      "input": {
+        "country": "VNM",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2020"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/NY.GDP.MKTP.CD?date=2020\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-ny-gdp-mktp-cd-2021",
+      "digest": "sha256:44f64ee08d4dfa08d4e137cc9ef6eaf5974705a5138f9a15ddff4515460704b9",
+      "input": {
+        "country": "VNM",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2021"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/NY.GDP.MKTP.CD?date=2021\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-ny-gdp-mktp-cd-2022",
+      "digest": "sha256:578aad090574df3340334a477cae9ecee636e38fa346c975cc70f97a719f10c7",
+      "input": {
+        "country": "VNM",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2022"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/NY.GDP.MKTP.CD?date=2022\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-ny-gdp-mktp-cd-2023",
+      "digest": "sha256:d9dd9191194e9572de148d540cf908a21bb39e2a6bcd1a5a98696852e84df4ca",
+      "input": {
+        "country": "VNM",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2023"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/NY.GDP.MKTP.CD?date=2023\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-ny-gdp-mktp-cd-2024",
+      "digest": "sha256:0ff16660851dd6f8d8414795e22476051eff39ba06dbdac2914db992b4b889f4",
+      "input": {
+        "country": "VNM",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2024"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/NY.GDP.MKTP.CD?date=2024\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-ny-gdp-mktp-cd-2025",
+      "digest": "sha256:7068af574473c8a6fd553ae1ec4bf67aa68132726118fc714e1ade0750cef0f3",
+      "input": {
+        "country": "VNM",
+        "indicator": "NY.GDP.MKTP.CD",
+        "year": "2025"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/NY.GDP.MKTP.CD?date=2025\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-sp-pop-totl-2020",
+      "digest": "sha256:e6956e84621f2d3806c66b5cee64937db9c131f7cc08151b893965eda5db0fee",
+      "input": {
+        "country": "VNM",
+        "indicator": "SP.POP.TOTL",
+        "year": "2020"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/SP.POP.TOTL?date=2020\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-sp-pop-totl-2021",
+      "digest": "sha256:18507a091c4a086efe662c0aa6cdc1ed96eb1d843cfc4ccdcf5ee7bf13be420f",
+      "input": {
+        "country": "VNM",
+        "indicator": "SP.POP.TOTL",
+        "year": "2021"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/SP.POP.TOTL?date=2021\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-sp-pop-totl-2022",
+      "digest": "sha256:8b30ed93a0694f791f83e829594f92a6e0dd7754376d108fa6b646c031eb6f48",
+      "input": {
+        "country": "VNM",
+        "indicator": "SP.POP.TOTL",
+        "year": "2022"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/SP.POP.TOTL?date=2022\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-sp-pop-totl-2023",
+      "digest": "sha256:9b1c7ef27f51c67611bf230ea4aac5453e1a8954893a8079e9d3a809c0dfa3d4",
+      "input": {
+        "country": "VNM",
+        "indicator": "SP.POP.TOTL",
+        "year": "2023"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/SP.POP.TOTL?date=2023\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-sp-pop-totl-2024",
+      "digest": "sha256:6f80800b32530bf23b78faa9b9089620176994b8c7769970f1427e55b9a9cc3a",
+      "input": {
+        "country": "VNM",
+        "indicator": "SP.POP.TOTL",
+        "year": "2024"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/SP.POP.TOTL?date=2024\u0026format=json\u0026per_page=1"
+    },
+    {
+      "id": "e4-wb-vnm-sp-pop-totl-2025",
+      "digest": "sha256:30c1175867b293918f9e72d65dc4cf747454e6169fc25655a3c71b674a4c9b57",
+      "input": {
+        "country": "VNM",
+        "indicator": "SP.POP.TOTL",
+        "year": "2025"
+      },
+      "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/SP.POP.TOTL?date=2025\u0026format=json\u0026per_page=1"
+    }
+  ]
+}

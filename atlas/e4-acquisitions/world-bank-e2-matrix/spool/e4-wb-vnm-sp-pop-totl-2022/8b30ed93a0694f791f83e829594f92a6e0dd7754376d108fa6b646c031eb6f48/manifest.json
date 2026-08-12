@@ -1,0 +1,31 @@
+{
+  "format": "tw.egress-manifest/0.1",
+  "work_order_id": "e4-wb-vnm-sp-pop-totl-2022",
+  "work_order_digest": "sha256:8b30ed93a0694f791f83e829594f92a6e0dd7754376d108fa6b646c031eb6f48",
+  "artifacts": [
+    {
+      "path": "cas/sha256/70/3a/703ac00d55fbc33ac578312b7b8368b947d4edcc5a5658bfc64acfaa48440156",
+      "digest": "sha256:703ac00d55fbc33ac578312b7b8368b947d4edcc5a5658bfc64acfaa48440156"
+    },
+    {
+      "path": "evidence/body.ref",
+      "digest": "sha256:63e8d29c5cd2580790b8870fc5aa75c45f8960bcbc9d180b6f76a4aa22af4886"
+    },
+    {
+      "path": "evidence/observation.cbor",
+      "digest": "sha256:f4cef5bf2de462abe49f519f39994382fce18e08da66bce92d278d3b64202d4d"
+    },
+    {
+      "path": "evidence/observation.json",
+      "digest": "sha256:87148ad16baecffff252885337f045eb1d4f3cfef848f5bbc9692e7488860059"
+    },
+    {
+      "path": "result.json",
+      "digest": "sha256:384d7e18a44ca8068a5ecab87da1949f9f92ea6efc464841d1b900def3ba1638"
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:8b30ed93a0694f791f83e829594f92a6e0dd7754376d108fa6b646c031eb6f48"
+    }
+  ]
+}

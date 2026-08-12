@@ -43,9 +43,9 @@ Box archive has passed full data checking and a byte-identical restore. The
 remaining conditions do not erase the public mechanism or local evidence; they
 must be disclosed and resolved as operational follow-up work.
 
-The existing `meridianv2raw` bucket and `quantlab-archive-bx41` Storage Box
-contents were deliberately left untouched. Reusing unrelated infrastructure
-would violate the approved isolation boundary.
+Pre-existing unrelated Object Storage and Storage Box contents were
+deliberately left untouched. Reusing unrelated infrastructure would violate
+the approved isolation boundary.
 
 GitHub-hosted CI is a separately disclosed limitation: GitHub rejected the
 public workflow before assigning a runner because the account is locked for a
@@ -66,7 +66,7 @@ execution is not claimed.
 | Atlas-500 explorer | **PASS PUBLIC** | All 500 selected origin identities are searchable and inspectable; exact packet-bearing state is displayed separately. |
 | `lab.twirx.org` HTTPS and read-only Lab | **PASS** | Both authoritative nameservers resolve the host; TLS, API, browser, headers, input/method rejection, raw-proof denial and zero-origin-call behavior pass. Runtime remains literal loopback. |
 | Independent encrypted restore | **PASS** | A new isolated Borg repository on the Storage Box passed `--verify-data`, byte-identical 85-file restore and exact snapshot verification. Existing archive content was neither listed nor touched. |
-| Versioned Object Storage release | **CONDITION OPEN** | The existing `meridianv2raw` bucket and credentials remain untouched; a dedicated TWIRX bucket and least-privilege identity are still required. |
+| Versioned Object Storage release | **CONDITION OPEN** | The existing unrelated bucket and credentials remain untouched; a dedicated TWIRX bucket and least-privilege identity are still required. |
 | Website source and reviewer path | **PASS DEPLOYED** | Sixteen generated pages pass all checks and are active in immutable release `20260811T163300Z-c0ab594`; all routes and public safety denials pass. |
 | Mintlify documentation | **CONDITION OPEN** | Release documentation exists in source; `https://docs.twirx.org/start/futo-release` currently returns `404`, so external synchronization is not claimed. |
 | Real versus fixture counters separated | **PASS** | Fifteen public packets and five controlled fixture packets are separate; fixtures are excluded by default. |
@@ -252,7 +252,7 @@ runner assignment before workflow execution.
 ## Deviations
 
 - The planned Object Storage replica is deferred because the only identified
-  bucket is unrelated `meridianv2raw`; it remains untouched. The separate
+  bucket is unrelated to TWIRX; it remains untouched. The separate
   encrypted Storage Box restore is complete.
 - Mintlify source is synchronized, but the external production deployment has
   not published the release-specific route.

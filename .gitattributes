@@ -2,3 +2,11 @@
 # Never normalize line endings or generate misleading content diffs for them.
 atlas/archive-acquisitions/**/representation.body -diff -text
 atlas/archive-acquisitions/**/*.warc.gz binary
+
+# E4 CAS objects are exact source or canonical-CBOR bytes. Preserve them
+# byte-for-byte and never present opaque payloads as reviewable source text.
+atlas/e4-acquisitions/**/cas/sha256/** -diff -text
+generated/e4/releases/**/cas/sha256/** -diff -text
+generated/e4/releases/**/*.twux binary
+generated/e4/releases/**/*.cbor binary
+generated/e4/ontology/**/*.cbor binary

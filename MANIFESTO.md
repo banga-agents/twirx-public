@@ -1,5 +1,7 @@
 # The Typed Web Manifesto
 
+**Version:** 0.2
+
 ## Preamble
 
 The Web was created so knowledge and capability could cross boundaries.
@@ -19,6 +21,8 @@ We are building the missing semantic and evidentiary layer through which the Web
 ---
 
 ## I. The purpose
+
+The Web should not be reinterpreted from zero by every agent on every request. For known sources, TWIRX compiles structure and meaning once, maintains that state as sources change, and makes it reusable through typed queries and semantic deltas. Search engines and browsers remain valuable for discovery, compilation, human presentation, and exceptional compatibility; they should not remain the permanent computational tax on every machine interaction.
 
 Typed Web exists to make public web resources directly usable by agents while preserving accountability to people, publishers, and evidence.
 
@@ -269,6 +273,18 @@ A local, read-only, evidence-native compiler spine. One origin. One immutable ob
 ### Commons
 
 Multiple source classes, conformance, trust states, adapter health, drift detection, public registry, and self-hosted runtime.
+
+### Semantic Data Plane
+
+Source-bound packets, frames, materialized state, and change streams.
+
+### Agent Utility Universes
+
+Coherent public domains that agents can query and visualize.
+
+### Learning system
+
+Specialized models propose semantic correspondences and abstain under uncertainty.
 
 ### Publisher participation
 

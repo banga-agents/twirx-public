@@ -1,0 +1,30 @@
+{
+  "format": "tw.ontology-module-source/0.1",
+  "module_id": "tw:world-state",
+  "version": "0.1.0",
+  "status": "draft",
+  "imports": ["tw:kernel@0.1.0"],
+  "concepts": [
+    {"id":"world:Economy","kind":"entity","labels":[{"language":"en","value":"Economy"}],"broader":["tw:Place"]},
+    {"id":"world:Indicator","kind":"measure","labels":[{"language":"en","value":"Indicator"}],"broader":[]},
+    {"id":"world:IndicatorObservation","kind":"measurement","labels":[{"language":"en","value":"Indicator observation"}],"broader":["tw:Observation"]},
+    {"id":"world:Measure","kind":"measure","labels":[{"language":"en","value":"Measure"}],"broader":[]},
+    {"id":"world:Methodology","kind":"evidence","labels":[{"language":"en","value":"Methodology"}],"broader":["tw:Document"]},
+    {"id":"world:Unit","kind":"quantity","labels":[{"language":"en","value":"Unit"}],"broader":[]}
+  ],
+  "roles": [
+    {"id":"world:country","value_type":"identifier","required":true,"max_values":1},
+    {"id":"world:indicator","value_type":"identifier","required":true,"max_values":1},
+    {"id":"world:methodology","value_type":"text","required":false,"max_values":1},
+    {"id":"world:observedValue","value_type":"decimal","required":true,"max_values":1},
+    {"id":"world:period","value_type":"date","required":true,"max_values":1},
+    {"id":"world:unit","value_type":"identifier","required":false,"max_values":1}
+  ],
+  "frames": [
+    {"id":"world:IndicatorObservation","roles":["world:country","world:indicator","world:methodology","world:observedValue","world:period","world:unit"],"required_roles":["world:country","world:indicator","world:observedValue","world:period"],"key_roles":["world:country","world:indicator","world:period"]}
+  ],
+  "mapping_claim_digests": [],
+  "query_template_ids": ["query:world-state/compare-indicators@0.1","query:world-state/rank-change@0.1"],
+  "visualization_ids": ["view:world-state/map@0.1","view:world-state/scatter@0.1","view:world-state/time-series@0.1"],
+  "review_decision_digest": null
+}

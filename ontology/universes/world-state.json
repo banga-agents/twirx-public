@@ -1,0 +1,16 @@
+{
+  "format": "tw.semantic-universe-source/0.1",
+  "universe_id": "tw:world-state",
+  "version": "0.1.0",
+  "title": "World State",
+  "module_ids": ["tw:kernel@0.1.0","tw:world-state@0.1.0"],
+  "frame_type_ids": ["world:IndicatorObservation"],
+  "source_origin_ids": ["api-worldbank-org"],
+  "mapping_claim_digests": [],
+  "materialized_view_ids": [],
+  "query_template_ids": ["query:world-state/compare-indicators@0.1","query:world-state/rank-change@0.1"],
+  "visualization_ids": ["view:world-state/map@0.1","view:world-state/scatter@0.1","view:world-state/time-series@0.1"],
+  "update_policy_id": "policy:world-state/disabled@0.1",
+  "evaluation_suite_id": "eval:world-state@0.1",
+  "compiled_at": "2026-08-12T00:00:00Z"
+}

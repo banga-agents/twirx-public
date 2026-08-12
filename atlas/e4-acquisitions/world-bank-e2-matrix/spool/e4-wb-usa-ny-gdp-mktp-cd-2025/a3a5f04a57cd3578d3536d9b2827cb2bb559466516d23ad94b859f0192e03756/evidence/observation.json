@@ -1,0 +1,15 @@
+{
+  "format": "tw.observation/0.1",
+  "version": 1,
+  "request_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2025\u0026format=json\u0026per_page=1",
+  "final_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2025\u0026format=json\u0026per_page=1",
+  "method": "GET",
+  "status": 200,
+  "media_type": "application/json",
+  "retrieved_at": "2026-08-12T03:08:34.451556149Z",
+  "body_digest": "sha256:6427f60b57895e0af97a2635ad47908640fb6e4c9a950ec7710cea922d31fe2f",
+  "body_size": 300,
+  "policy_id": "tw.egress.public-origin-v0",
+  "observer_id": "typed-web-go/0.1",
+  "envelope_hash": "sha256:802d300ac36d33d890ba309157658a37508f104ade3000265ac9fc9ccda900ba"
+}

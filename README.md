@@ -1,26 +1,27 @@
-# Typed Web Commons
+# TWIRX
 
-**Continuously compile public web representations into reusable, typed and proof-bearing semantic state for agents.**
+**An open, self-hostable semantic data plane for the Web.**
 
-Typed Web Commons is an open protocol project for making the public web legible
-to software agents without making browser automation or repeated model
-interpretation the permanent interface. It preserves what an origin
-represented, records the exact derivation from evidence to typed value, and is
-designed to maintain reusable semantic packets, current state and change
-streams behind deterministic read interfaces.
+TWIRX continuously compiles public sources into reusable, typed, proof-bearing
+semantic state and capabilities so agents can query, compare and monitor the
+Web without repeatedly browsing and reinterpreting the same interfaces. It
+preserves what an origin represented and the exact derivation from evidence to
+every typed value.
 
-This repository contains the verified E1 evidentiary kernel, the E2 Live
-Provenance Lab candidate, and the E3.2 Genesis Atlas admission and sealed
-egress-worker candidates. It remains deliberately bounded.
+**TWIRX is the reference implementation and public service of the Typed Web Commons.**
+The Typed Web Commons is the protocol commons and stewardship
+structure. The Semantic Data Plane is the core architecture. Agent Utility
+Universes are the public product built on that plane.
 
-ADR 008 now freezes the next architecture: E3.3 will build a semantic data
-plane on top of that trust spine. Public representations will compile into
-immutable packets; classified origin, semantic and canon deltas will maintain
-proof-linked state; and agents will query or subscribe through one compact
-typed fabric. This is a reviewed design direction, not a claim that the packet
-corpus, PostgreSQL state store, 100,000-packet corpus or public stream already
-exists. A small local-only snapshot compiler and read-only runtime now exercise
-the packet/query path over admitted E2 replay evidence.
+This repository contains the verified E1 evidence kernel, E2 typed operation
+and proof path, the Atlas admission controls, an immutable read-only Query Lab,
+and the E4.5 Opportunity Utility release candidate. E4.5 compiles 83,087 real
+Grants.gov records into 1,037,679 source-derived packets and 83,087 provisional
+frames. Its mappings remain candidates, privacy-sensitive eligibility text is
+withheld, and the larger runtime is not deployed on the shared demonstration
+host. See [`reports/e4-5-opportunity-admission.md`](reports/e4-5-opportunity-admission.md).
+The versioned public evidence release is
+[`v0.4.5-rc.1`](https://github.com/banga-agents/twirx-public/releases/tag/v0.4.5-rc.1).
 
 ```text
 controlled origin
@@ -62,29 +63,21 @@ payments, or blockchain anchoring.
 
 E3 freezes exactly 500 public-knowledge origin candidates and reports catalog,
 policy, technical, publisher, health, adapter-trust, and mapping-trust state
-as separate dimensions. The canonical registry imports the two qualifying E2
-real origins with exact evidence and classifies the controlled origin as a
-`test_fixture`, excluded from all Genesis-500 public counters. Generated
-metrics currently report 500 selected candidates, two cataloged public
-origins, zero completed policy reviews, two semantically linked E2 technical
-records, and zero live origins. Both public policies remain pending and
-uncertain, with zero budgets and a disabled frontier. The Atlas control-plane
-process has no HTTP client. A separate worker proof can retrieve only a
-literal-loopback fixture and cannot contact a selected origin. E3.2 adds a
-deterministic 25-dossier admission factory and a disabled sealed-egress worker
-candidate; no agent-prepared decision promotes itself into canonical state.
-The origin model can now record evidence-bound interface declarations,
-capability candidates, effect classes, access/economic metadata, provisional
-offers, and publisher-readiness signals. Five commercial/access candidates are
-included for human review, but none is a canonical offer or executable route.
-Only the four existing public-read E2 operations are marked admitted.
+as separate dimensions. Three human policy decisions are complete for TWIRX,
+World Bank and the exact RFC Editor archive profile; 497 candidates remain
+pending. The controlled origin is a `test_fixture` and is excluded from public
+counters. The Atlas control-plane process has no HTTP client. Its deterministic
+admission factory and sealed-egress candidate cannot turn agent-prepared
+metadata into policy, semantic or execution authority. Five commercial/access
+candidates remain descriptive review inputs, not canonical offers or
+executable routes.
 
 The Atlas-500 runtime gate derives one explicit admission work item and one
-dry-run frontier outcome for every selected origin. It currently reports 25
-prepared dossiers, 475 unprepared dossiers, 500 pending policy reviews, and
-zero retrieval jobs. Its loopback workload traverses all 500 identities and
-performs 50,000 concurrent lookups without turning catalog-scale execution
-into a claim that 500 origins are policy-approved or live.
+dry-run frontier outcome for every selected origin. Its loopback workload
+traverses all 500 identities and performs 50,000 concurrent lookups without
+turning catalog-scale execution into a claim that 500 origins are
+policy-approved, compiled or live. Schedulers remain disabled unless exact
+separate authority admits an execution.
 
 The immutable snapshot demonstration compiles admitted E2 replay operations
 and the approved RFC Editor archive profile into canonical semantic packets,

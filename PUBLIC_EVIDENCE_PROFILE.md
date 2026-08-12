@@ -21,11 +21,15 @@ It excludes:
 - compressed WARC records and byte-range responses containing those bodies;
 - raw Common Crawl index responses;
 - failed-attempt raw acquisition artifacts.
+- the exact off-host operations report containing unrelated infrastructure
+  identifiers, archive paths, and local recovery-material locations.
 
-The excluded artifacts remain available only in the private evidence store.
-Their digests and provenance references remain public so an independently
-authorized reviewer can reacquire and compare them. Public Query Lab routes
-deny raw proof-artifact downloads.
+The excluded source artifacts and operational details remain available only
+in the private evidence store. Artifact digests and provenance references
+remain public so an independently authorized reviewer can reacquire and
+compare source evidence. Public reports retain the restore result without
+publishing unrelated operator infrastructure. Public Query Lab routes deny raw
+proof-artifact downloads.
 
 Two integration tests that rebuild the real archive-derived packet and delta
 run normally whenever the private evidence is present. In the sanitized public

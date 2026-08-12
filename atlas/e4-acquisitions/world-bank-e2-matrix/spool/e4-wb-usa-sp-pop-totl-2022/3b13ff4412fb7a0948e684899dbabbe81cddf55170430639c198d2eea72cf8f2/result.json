@@ -1,0 +1,17 @@
+{
+  "format": "tw.egress-result/0.1",
+  "work_order_id": "e4-wb-usa-sp-pop-totl-2022",
+  "work_order_digest": "sha256:3b13ff4412fb7a0948e684899dbabbe81cddf55170430639c198d2eea72cf8f2",
+  "origin_id": "api-worldbank-org",
+  "purpose": "observation",
+  "request_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2022\u0026format=json\u0026per_page=1",
+  "final_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2022\u0026format=json\u0026per_page=1",
+  "retrieved_at": "2026-08-12T03:08:55.834162017Z",
+  "http_status": 200,
+  "media_type": "application/json",
+  "redirect_count": 0,
+  "observation_digest": "sha256:bba1364e8152db17f611fa7d9a52a1df5b300b40a6c6ea49770db10c25794c09",
+  "body_digest": "sha256:362645d400210ac0a3e4e95a3f0927aa7e53c76b936346271cf6ef99aeefd745",
+  "body_size": 292,
+  "duration_ms": 2265
+}

@@ -1,0 +1,1 @@
+I approve the exact E4 Opportunity policy proposal in reports/e4-opportunity-policy-decision-proposal.md. Use the current UTC time as reviewed_at. No route, file, field, retention class or execution beyond that proposal is authorized

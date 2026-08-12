@@ -1,5 +1,6 @@
 {{define "content"}}
 {{$r := .Data.futo_release}}
+{{$u := .Data.e4_utility_release}}
 <div class="page">
   {{template "pagehead" .}}
   <div class="shell">
@@ -19,10 +20,11 @@
       <section aria-labelledby="now">
         <h2 id="now">Current release</h2>
         <p class="lede">
-          TWIRX has moved from an evidence kernel to a small end-to-end Semantic Snapshot:
-          approved public-source evidence is compiled into packets, materialized views, a
-          cross-origin query and a genuine historical delta. The public Lab is the next release
-          step, not a capability already claimed.
+          The protected public baseline remains live. Separately, E4.5 now has a published
+          Opportunity Utility engineering candidate containing more than one million real
+          source-derived packets, 83,087 grant frames and a combined two-universe query segment.
+          Its code, report and manifest are approved for public engineering evidence; the
+          large runtime remains undeployed pending target-host admission.
         </p>
         <div class="tablewrap wide">
           <table>
@@ -32,6 +34,8 @@
               <tr><th scope="row">Snapshot source</th><td><code>{{$r.release.snapshot_source_revision}}</code></td></tr>
               <tr><th scope="row">Complete validation</th><td><code>{{$r.release.validation_revision}}</code></td></tr>
               <tr><th scope="row">Public Lab</th><td><a href="https://lab.twirx.org/">Live, read-only, immutable snapshot</a></td></tr>
+              <tr><th scope="row">Opportunity release candidate</th><td><code class="digest">{{$u.release.manifest_digest}}</code></td></tr>
+              <tr><th scope="row">Opportunity deployment</th><td>{{$u.deployment_status}}</td></tr>
             </tbody>
           </table>
         </div>
@@ -46,13 +50,15 @@
           <li><b>Sealed archive importer</b><span>Restricted Common Crawl index and byte-range acquisition with immutable evidence before parsing.</span></li>
           <li><b>Semantic Snapshot</b><span>Packets, proof artifacts, views, queries and deltas compiled into a read-only immutable release.</span></li>
           <li><b>Runtime</b><span>Snapshot-only queries with no origin network access and bounded local stress evidence.</span></li>
+          <li><b>Opportunity Utility Universe</b><span>{{commas $u.release.source_records_accepted}} source records compiled into {{commas $u.release.real_source_derived_packets}} packets and {{commas $u.release.opportunity_frames}} proof-linked frames, with privacy-sensitive text withheld.</span></li>
+          <li><b>Manifest-pinned Atlas Agent</b><span>A bounded NSF query and a two-universe investigation execute over immutable state with zero origin, browser, live-source or model-authority calls.</span></li>
         </ol>
       </section>
 
       <section aria-labelledby="release">
-        <h2 id="release">What remains after public Lab activation</h2>
+        <h2 id="release">What remains after E4.5 evidence publication</h2>
         <ul>
-          <li>Maintain the fresh sanitized public repository and exact source-export manifest.</li>
+          <li>Maintain the fresh sanitized public repository, versioned E4.5 tag and exact source-export manifest.</li>
           <li>Keep the HTTPS immutable Query Lab bound to exact snapshot and release evidence.</li>
           <li>Maintain the passing encrypted Storage Box restore path and add a separate versioned Object Storage release.</li>
           <li>Publish only redistribution-safe archive evidence or an independently reproducible acquisition manifest.</li>
@@ -63,11 +69,11 @@
       <section aria-labelledby="next">
         <h2 id="next">The funded 90-day gate</h2>
         <div class="cards wide">
-          <div class="card"><h3>Days 1–30</h3><p>Public repository, Query Lab, all 500 selected identities explorable, immutable artifact release and reviewer-ready proof.</p></div>
-          <div class="card"><h3>Days 31–60</h3><p>Complete deterministic dossiers and human policy outcomes across Atlas-500; attempt bounded profiling for every eligible origin.</p></div>
-          <div class="card"><h3>Days 61–90</h3><p>Operate the Public Alpha continuously and expand evidence, packets, schemas, adapters, live origins and publisher tooling without an artificial ceiling.</p></div>
+          <div class="card"><h3>Days 1–30</h3><p>Ontology Fabric 0.1, expanded Opportunity and World State universes, 1.5 million real packets, 120,000 frames and a ten-investigation Visual Atlas Agent alpha.</p></div>
+          <div class="card"><h3>Days 31–60</h3><p>Five universes, eight source families, 2.5 million real packets, 250,000 frames, four change streams and twenty investigations.</p></div>
+          <div class="card"><h3>Days 61–90</h3><p>WSIM Seed, publisher and federation alphas, five change streams, 3 million real packets and 300,000 proof-linked frames.</p></div>
         </div>
-        <p class="note">Processing all 500 is a commitment. It does not predetermine that every origin will be permitted, retrievable or compilable; those outcomes remain separately published.</p>
+        <p class="note">Corpus counts do not substitute for useful frames, source diversity, query coverage, proof completeness or honest uncertainty.</p>
         <p><a class="btn" href="/roadmap/">Detailed roadmap</a> <a class="btn" href="/funding/">Funding request</a></p>
       </section>
 

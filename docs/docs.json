@@ -62,6 +62,7 @@
               "protocol/twir-core-result",
               "protocol/live-lab-api",
               "protocol/semantic-snapshot-runtime",
+              "protocol/opportunity-utility-universe",
               "protocol/atlas-control-plane"
             ]
           },

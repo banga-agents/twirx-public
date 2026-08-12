@@ -1,0 +1,17 @@
+{
+  "format": "tw.egress-result/0.1",
+  "work_order_id": "e4-wb-vnm-sp-pop-totl-2020",
+  "work_order_digest": "sha256:e6956e84621f2d3806c66b5cee64937db9c131f7cc08151b893965eda5db0fee",
+  "origin_id": "api-worldbank-org",
+  "purpose": "observation",
+  "request_url": "https://api.worldbank.org/v2/country/VNM/indicator/SP.POP.TOTL?date=2020\u0026format=json\u0026per_page=1",
+  "final_url": "https://api.worldbank.org/v2/country/VNM/indicator/SP.POP.TOTL?date=2020\u0026format=json\u0026per_page=1",
+  "retrieved_at": "2026-08-12T03:10:08.593659598Z",
+  "http_status": 200,
+  "media_type": "application/json",
+  "redirect_count": 0,
+  "observation_digest": "sha256:2450c700710faea5eed091831b57d2cc136b659640398ae45c3fd79e412b5948",
+  "body_digest": "sha256:e933ca1474c1ed7bc155245edb5f190d78c58f8da14784d6c20951c2ef9f08ca",
+  "body_size": 286,
+  "duration_ms": 2868
+}

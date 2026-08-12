@@ -1,0 +1,39 @@
+{
+  "format": "tw.e4-source-dossier/0.1",
+  "id": "crossref-rest-e4",
+  "universe_id": "tw:research",
+  "canonical_origin": "https://api.crossref.org",
+  "atlas_origin_id": null,
+  "source_class": "public_api",
+  "access_class": "unauthenticated_public",
+  "network_execution_state": "disabled",
+  "policy": {
+    "existing_decision_ref": "",
+    "existing_scope": [],
+    "e4_review_state": "pending",
+    "e4_decision": "none",
+    "reviewed_at": null,
+    "reviewer": null
+  },
+  "proposed_routes": [
+    "https://api.crossref.org/works?cursor={cursor}&filter={filter}&mailto={contact}&rows={rows}"
+  ],
+  "proposed_budget": {
+    "maximum_requests": 2000,
+    "maximum_response_bytes": 16777216,
+    "maximum_total_bytes": 1073741824,
+    "maximum_records": 150000,
+    "timeout_seconds": 60,
+    "concurrency": 1
+  },
+  "authentication": "No signup is required; proposed requests identify TWIRX through the documented polite-pool contact parameter.",
+  "attribution": "Preserve DOI, depositor or publisher provenance, source update fields, licenses, funders and contributor roles.",
+  "retention": "Retain bounded metadata; exclude abstracts and full text until copyright and source policy are explicitly resolved.",
+  "personal_data_treatment": "Store publisher-deposited public contributor metadata only under reviewed policy; do not enrich personal profiles.",
+  "license_notes": "Crossref states most metadata is reusable but warns that some abstracts may carry publisher or author copyright.",
+  "emergency_disable": "No network work order or cursor scheduler exists; future polite-pool jobs remain source-revocable.",
+  "initial_scope": "Proposed recent and topic-relevant works with selected fields and origin-bounded cursor pagination.",
+  "documentation": [
+    "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+  ]
+}

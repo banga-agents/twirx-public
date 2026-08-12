@@ -1,0 +1,17 @@
+{
+  "format": "tw.egress-result/0.1",
+  "work_order_id": "e4-wb-usa-ny-gdp-mktp-cd-2025",
+  "work_order_digest": "sha256:a3a5f04a57cd3578d3536d9b2827cb2bb559466516d23ad94b859f0192e03756",
+  "origin_id": "api-worldbank-org",
+  "purpose": "observation",
+  "request_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2025\u0026format=json\u0026per_page=1",
+  "final_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?date=2025\u0026format=json\u0026per_page=1",
+  "retrieved_at": "2026-08-12T03:08:34.451556149Z",
+  "http_status": 200,
+  "media_type": "application/json",
+  "redirect_count": 0,
+  "observation_digest": "sha256:802d300ac36d33d890ba309157658a37508f104ade3000265ac9fc9ccda900ba",
+  "body_digest": "sha256:6427f60b57895e0af97a2635ad47908640fb6e4c9a950ec7710cea922d31fe2f",
+  "body_size": 300,
+  "duration_ms": 1798
+}

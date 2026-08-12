@@ -1,0 +1,17 @@
+{
+  "format": "tw.egress-result/0.1",
+  "work_order_id": "e4-wb-chl-ny-gdp-mktp-cd-2024",
+  "work_order_digest": "sha256:a62117f449867a3a5b043141825a565ecba4bd3e280d438c6f8b3f5b6c22eded",
+  "origin_id": "api-worldbank-org",
+  "purpose": "observation",
+  "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2024\u0026format=json\u0026per_page=1",
+  "final_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2024\u0026format=json\u0026per_page=1",
+  "retrieved_at": "2026-08-12T03:06:02.54423416Z",
+  "http_status": 200,
+  "media_type": "application/json",
+  "redirect_count": 0,
+  "observation_digest": "sha256:abbb288442fd0b8ef095d12641c6b02155fdc18f658d1e3309f5185615663448",
+  "body_digest": "sha256:e7d6c2de1f231b2835b4e824ad5be5ddbe604efbdece5d30932b154ebf4c4304",
+  "body_size": 294,
+  "duration_ms": 1258
+}

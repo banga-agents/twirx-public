@@ -1,0 +1,46 @@
+{
+  "format": "tw.ontology-compile-index/0.1",
+  "items": [
+    {
+      "kind": "ontology_module",
+      "id": "tw:kernel",
+      "version": "0.1.0",
+      "digest": "sha256:0c65831afffc7b034f44745cc092641316fc8c807565c0dc657b7c7c546c2625",
+      "cbor_path": "modules/tw-kernel-0.1.0.cbor",
+      "source": "ontology/modules/tw-kernel/module.json"
+    },
+    {
+      "kind": "ontology_module",
+      "id": "tw:opportunity",
+      "version": "0.1.0",
+      "digest": "sha256:8361ea385ebb3fca2fef13f751790053f3d362d4cbc9419c493117e80ede4e12",
+      "cbor_path": "modules/tw-opportunity-0.1.0.cbor",
+      "source": "ontology/modules/tw-opportunity/module.json"
+    },
+    {
+      "kind": "ontology_module",
+      "id": "tw:world-state",
+      "version": "0.1.0",
+      "digest": "sha256:ba4d9ab1d3f406a808013a42fb8dd0204ecd8968da7294f9aca1fab68cc032ac",
+      "cbor_path": "modules/tw-world-state-0.1.0.cbor",
+      "source": "ontology/modules/tw-world-state/module.json"
+    },
+    {
+      "kind": "semantic_universe",
+      "id": "tw:opportunity",
+      "version": "0.1.0",
+      "digest": "sha256:6911eb1ee062794fcfaf0859c3f8fccd0ae292905e1badf043aa5bf9553d7bd9",
+      "cbor_path": "universes/tw-opportunity-0.1.0.cbor",
+      "source": "ontology/universes/opportunity.json"
+    },
+    {
+      "kind": "semantic_universe",
+      "id": "tw:world-state",
+      "version": "0.1.0",
+      "digest": "sha256:2c8129724077cfe9ffafc7ef02ee8aa8c49cb2720344ac9046bf8b4bbb4affe0",
+      "cbor_path": "universes/tw-world-state-0.1.0.cbor",
+      "source": "ontology/universes/world-state.json"
+    }
+  ],
+  "status": "draft_implementation_candidate"
+}

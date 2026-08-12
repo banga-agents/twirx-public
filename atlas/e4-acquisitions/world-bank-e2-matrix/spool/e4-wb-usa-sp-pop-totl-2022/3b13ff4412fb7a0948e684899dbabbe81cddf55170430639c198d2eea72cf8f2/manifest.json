@@ -1,0 +1,31 @@
+{
+  "format": "tw.egress-manifest/0.1",
+  "work_order_id": "e4-wb-usa-sp-pop-totl-2022",
+  "work_order_digest": "sha256:3b13ff4412fb7a0948e684899dbabbe81cddf55170430639c198d2eea72cf8f2",
+  "artifacts": [
+    {
+      "path": "cas/sha256/36/26/362645d400210ac0a3e4e95a3f0927aa7e53c76b936346271cf6ef99aeefd745",
+      "digest": "sha256:362645d400210ac0a3e4e95a3f0927aa7e53c76b936346271cf6ef99aeefd745"
+    },
+    {
+      "path": "evidence/body.ref",
+      "digest": "sha256:4d6555dd5e1e2e2696338b342a3908d272274a84f19f88b3f344cf7c41de776e"
+    },
+    {
+      "path": "evidence/observation.cbor",
+      "digest": "sha256:bba1364e8152db17f611fa7d9a52a1df5b300b40a6c6ea49770db10c25794c09"
+    },
+    {
+      "path": "evidence/observation.json",
+      "digest": "sha256:14026bf5cd6150be94e8e3f55d40ea8bafb6b6803b3d60435f4210402f1e36ce"
+    },
+    {
+      "path": "result.json",
+      "digest": "sha256:f3e05fc6344e5ae5be68e2aa68970d9b7e7e8157e08c3f840711f63cd2fd9fe9"
+    },
+    {
+      "path": "work-order.json",
+      "digest": "sha256:3b13ff4412fb7a0948e684899dbabbe81cddf55170430639c198d2eea72cf8f2"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": "tw.e4-controlled-capacity-report/0.1",
+  "mode": "controlled_test_fixture",
+  "operation": "build",
+  "frame_count": 100000,
+  "segment_digest": "sha256:d588ec7a4d54b9e90d9752f1a553b7c6bdb214f699fa00b86d771dbd5614b08c",
+  "segment_bytes": 130417488,
+  "generation_nanoseconds": 1668413073,
+  "build_nanoseconds": 3767707174,
+  "resident_bytes": 1200214016,
+  "resident_high_water_bytes": 1200214016,
+  "swap_bytes": 0,
+  "network_requests": 0,
+  "real_source_records": 0,
+  "real_source_derived_packets": 0,
+  "evidence_class": "test_fixture",
+  "statement": "Controlled invented frames measure capacity only; they are not source records, packets, observations, or public corpus evidence."
+}

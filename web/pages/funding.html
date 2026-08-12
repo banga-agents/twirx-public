@@ -1,6 +1,7 @@
 {{define "content"}}
 {{$r := .Data.futo_release}}
 {{$f := .Data.funding_status}}
+{{$u := .Data.e4_utility_release}}
 <div class="page">
   {{template "pagehead" .}}
   <div class="shell">
@@ -35,7 +36,7 @@
       </section>
 
       <section aria-labelledby="first">
-        <h2 id="first">First milestone — Atlas-500 processing and full-time execution</h2>
+        <h2 id="first">First milestone — focused engineering and public Utility Universe delivery</h2>
         <p>{{$r.grant.first_milestone}}</p>
         <div class="tablewrap wide">
           <table>
@@ -51,16 +52,38 @@
           This allocation purchases a defined month of focused engineering capacity, tied to
           the published milestone, source repository, release evidence and reviewer demo.
         </p>
+        <div class="callout callout--key">
+          <p class="callout__title">Substantial milestone progress already exists</p>
+          <p>
+            Before funding, TWIRX has locally admitted {{commas $u.release.real_source_derived_packets}}
+            real source-derived packets and {{commas $u.release.opportunity_frames}} Opportunity
+            frames under one exact human-approved policy decision. Funding turns this verified
+            release candidate into durable public operation and expands the executable ontology,
+            useful universes, source families, queries, change intelligence and publisher path.
+          </p>
+        </div>
       </section>
 
       <section aria-labelledby="ninety">
         <h2 id="ninety">What 90 days produces</h2>
         <div class="cards wide">
           <div class="card"><h3>Public proof</h3><p>A clean public repository, read-only Query Lab, reproducible snapshots, downloadable proof and exact performance labels.</p></div>
-          <div class="card"><h3>Real semantic corpus</h3><p>Policy-reviewed observations, native schemas, semantic packets, materialized cross-origin views and a genuine change stream.</p></div>
+          <div class="card"><h3>Agent Utility Universes</h3><p>Policy-reviewed World State, Opportunity, Research, Security and Agent Economy frames connected by an executable ontology and source-level proof.</p></div>
           <div class="card"><h3>Publisher path</h3><p>Tools and documentation for publishers to declare vocabulary, capabilities, access policy, correction and revocation.</p></div>
           <div class="card"><h3>Durable operation</h3><p>Independent infrastructure, restore-tested evidence, security work, public metrics and a credible path to ongoing services.</p></div>
         </div>
+        <div class="tablewrap wide">
+          <table>
+            <caption>Agent Utility Universe milestones</caption>
+            <thead><tr><th scope="col">Period</th><th scope="col">Budget</th><th scope="col">Minimum public outcome</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Days 1–30</th><td>$6,000</td><td>Ontology Fabric 0.1; Opportunity and World State; 1.5 million real packets; 120,000 proof-linked frames; ten Visual Atlas Agent investigations.</td></tr>
+              <tr><th scope="row">Days 31–60</th><td>$10,000</td><td>Five universes; eight source families; 2.5 million real packets; 250,000 frames; four genuine change streams; twenty investigations.</td></tr>
+              <tr><th scope="row">Days 61–90</th><td>$14,000</td><td>WSIM Seed; publisher and federation alphas; five change streams; 3 million real packets and 300,000 proof-linked frames.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">The stretch target is 5 million real packets and 500,000 frames. Counts remain subordinate to source diversity, useful queries, proof completeness and honest uncertainty.</p>
         <p><a class="btn" href="/roadmap/">Review the milestone plan</a> <a class="btn" href="/futo/">Open the FUTO reviewer path</a></p>
       </section>
 

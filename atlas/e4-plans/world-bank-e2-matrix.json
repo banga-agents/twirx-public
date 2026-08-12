@@ -1,0 +1,16 @@
+{
+  "format": "tw.e4-world-state-pilot/0.1",
+  "id": "world-bank-e2-matrix-2026-08",
+  "operation_id": "development.getIndicator",
+  "execution_mode": "manual_once",
+  "countries": ["CHL", "USA", "VNM"],
+  "indicators": ["NY.GDP.MKTP.CD", "SP.POP.TOTL"],
+  "years": ["2020", "2021", "2022", "2023", "2024", "2025"],
+  "not_before": "2026-08-12T03:00:00Z",
+  "expires_at": "2026-08-13T03:00:00Z",
+  "request_interval_ms": 5000,
+  "maximum_requests": 36,
+  "maximum_total_bytes": 9437184,
+  "retention": "public_versioned_immutable_evidence",
+  "scheduler_enabled": false
+}

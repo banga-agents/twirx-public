@@ -3,6 +3,7 @@
 {{$v := $s.validation}}
 {{$e2 := .Data.e2_lab}}
 {{$r := .Data.futo_release}}
+{{$u := .Data.e4_utility_release}}
 
 <div class="page">
   {{template "pagehead" .}}
@@ -25,6 +26,7 @@
           <li><a href="#risks">E1 unresolved risks</a></li>
           <li><a href="#e2">E2 — Live Provenance Lab</a></li>
           <li><a href="#e3">E3 — Semantic Snapshot</a></li>
+          <li><a href="#e4">E4 — Opportunity Utility release</a></li>
         </ol>
       </div>
     </aside>
@@ -36,9 +38,10 @@
         <p>
           E1 establishes the evidence spine. Later local gates add typed operations, Atlas
           admission, semantic packets, immutable views, queries and deltas. The released
-          snapshot is implemented and validated locally; the public Query Lab is not yet
-          deployed. None of this authorizes arbitrary URLs, production write actions or a
-          mutable semantic database on the current shared host.
+          baseline snapshot is implemented, validated and served by the public read-only Query
+          Lab. The larger E4 Opportunity candidate remains local. None of this authorizes
+          arbitrary URLs, production write actions or a mutable semantic database on the
+          current shared host.
         </p>
       </div>
 
@@ -101,7 +104,7 @@ cd TWIRX
 make clean &amp;&amp; make build &amp;&amp; make test &amp;&amp; make demo</code></pre>
 
         <p>
-          <code>make test</code> runs the normal Go tests, all four Go fuzz targets, the Clang
+          <code>make test</code> runs the normal Go tests, every configured Go fuzz target, the Clang
           ASan/UBSan C corpus, 5,000 libFuzzer executions, the offline end-to-end test, and the
           documentation navigation check. <code>make demo</code> observes the local fixture,
           verifies it in Go and C, stops the origin, and completes extraction from evidence.
@@ -524,13 +527,73 @@ bin/tw extract --observation var/demo/observation.cbor --cas var/cas \
           <li>The sanitized source repository is public; retained raw archive bodies remain private by policy.</li>
           <li>An encrypted Storage Box restore passes; a second versioned Object Storage release remains to be completed.</li>
           <li>Raw archive evidence contains third-party page material; public redistribution requires an explicit treatment.</li>
-          <li>The real corpus is intentionally small and does not establish broad semantic coverage.</li>
+          <li>The protected deployed corpus is intentionally small. The larger Opportunity candidate demonstrates depth from one source family, not broad multi-source semantic coverage.</li>
         </ul>
 
         <p class="note">
           Reports: <a href="{{repo .Site "reports/futo-f3-real-archive-evidence.md"}}">real archive evidence<span class="ext" aria-hidden="true">↗</span></a>
           and <a href="{{repo .Site "reports/futo-grant-readiness.md"}}">FUTO readiness<span class="ext" aria-hidden="true">↗</span></a>.
           Machine-readable: <a href="/data/futo-release.json">futo-release.json</a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="e4">
+        <h2 id="e4">E4 — Opportunity Utility release candidate {{chip "implemented"}}</h2>
+        <p class="lede">
+          The founder-approved one-shot Grants.gov observation now compiles into a large,
+          privacy-safe, proof-linked Opportunity Universe. This gate demonstrates real
+          source-derived semantic scale and useful typed retrieval; it remains a local release
+          candidate until target-host resource and deployment admission.
+        </p>
+        <dl class="counters wide">
+          <div class="counter"><dt>Records accepted</dt><dd>{{commas $u.release.source_records_accepted}}<small>of {{commas $u.release.source_records_seen}}</small></dd></div>
+          <div class="counter"><dt>Packets</dt><dd>{{commas $u.release.real_source_derived_packets}}<small>real source-derived</small></dd></div>
+          <div class="counter"><dt>Candidate mappings</dt><dd>{{commas $u.release.candidate_mapping_claims}}<small>not canon</small></dd></div>
+          <div class="counter"><dt>Opportunity frames</dt><dd>{{commas $u.release.opportunity_frames}}<small>proof-linked</small></dd></div>
+          <div class="counter"><dt>Combined frames</dt><dd>{{commas $u.release.combined_frames}}<small>two universes</small></dd></div>
+          <div class="counter"><dt>Runtime origin calls</dt><dd>{{$u.release.runtime_origin_network_calls}}<small>immutable query path</small></dd></div>
+        </dl>
+
+        <h3>Authority and retrieval scope</h3>
+        <p>
+          The policy decision was reviewed at <code>{{$u.policy.reviewed_at}}</code> and binds
+          one exact bulk source, one manual execution and the proposal’s approved fields and
+          limits. The acquisition used {{$u.acquisition.network_requests}} bounded range
+          requests for {{commas $u.acquisition.transferred_bytes}} bytes. The scheduler remained
+          disabled. No additional route, file, retention class or execution was authorized.
+        </p>
+
+        <h3>Privacy boundary</h3>
+        <p>
+          The private projection excluded {{commas $u.privacy.contact_fields_excluded}} contact
+          fields and {{commas $u.privacy.description_fields_excluded}} descriptions. Because
+          allowed eligibility prose contained contact-like material,
+          {{commas $u.privacy.eligibility_fields_withheld}} fields became proof-linked
+          <code>withheld</code> states and the public release contains
+          {{$u.privacy.eligibility_lexical_values_released}} eligibility lexical values.
+          Raw acquisition bytes and the private projection are not public.
+        </p>
+
+        <h3>Verification scope</h3>
+        <ul>
+          <li>{{$u.verification.go_scope}}.</li>
+          <li>Complete Go release verification: {{$u.verification.go_release_verification_seconds}} seconds on the recorded host.</li>
+          <li>Independent restricted-C verification: {{$u.verification.restricted_c_total}} deterministic artifacts — {{$u.verification.restricted_c_packets}} packets, {{$u.verification.restricted_c_mapping_claims}} mappings and {{$u.verification.restricted_c_frames}} frames.</li>
+          <li>No full-C-corpus claim is made; the C evidence is explicitly a deterministic sample while Go verifies the complete release.</li>
+        </ul>
+
+        <h3>Typed query evidence</h3>
+        <p>
+          The recorded NSF query returned {{$u.query.results}} proof-linked frames from
+          {{commas $u.query.frames_available}} available frames with zero network, browser,
+          live-source or model-authority calls. Across {{commas $u.benchmark.iterations}} warm
+          local executions, p95 query-plus-trace-and-decode time was
+          {{$u.benchmark.p95_milliseconds}} ms. {{$u.benchmark.scope}}.
+        </p>
+        <p class="note">
+          Manifest identity: <code class="digest">{{$u.release.manifest_digest}}</code>.
+          Machine-readable status: <a href="/data/e4-utility-release.json">e4-utility-release.json</a>.
+          Independent sample: <a href="{{repo .Site "generated/e4/releases/grants-gov-20260811-c-sample/sample-manifest.json"}}">sample manifest<span class="ext" aria-hidden="true">↗</span></a>.
         </p>
       </section>
 

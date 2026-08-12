@@ -12,18 +12,26 @@ const (
 	KindMaterialization = "materialization"
 	KindEconomicEvent   = "economic-event"
 	KindSnapshot        = "snapshot"
+	KindFrame           = "frame"
+	KindMappingClaim    = "mapping-claim"
+	KindOntologyModule  = "ontology-module"
+	KindUniverse        = "universe"
 )
 
 var DocumentKinds = []string{
 	KindBatch,
 	KindDelta,
 	KindEconomicEvent,
+	KindFrame,
+	KindMappingClaim,
 	KindMaterialization,
+	KindOntologyModule,
 	KindPacket,
 	KindQuery,
 	KindQueryResult,
 	KindSnapshot,
 	KindSubscription,
+	KindUniverse,
 }
 
 // ValidateDocument dispatches to one exact bounded parser. A caller cannot
@@ -56,6 +64,18 @@ func ValidateDocument(kind string, data []byte) error {
 		return err
 	case KindSnapshot:
 		_, err := UnmarshalSnapshotManifest(data)
+		return err
+	case KindFrame:
+		_, err := UnmarshalFrame(data)
+		return err
+	case KindMappingClaim:
+		_, err := UnmarshalMappingClaim(data)
+		return err
+	case KindOntologyModule:
+		_, err := UnmarshalOntologyModule(data)
+		return err
+	case KindUniverse:
+		_, err := UnmarshalSemanticUniverse(data)
 		return err
 	default:
 		return fmt.Errorf("%w: unsupported document kind %q", ErrInvalid, kind)

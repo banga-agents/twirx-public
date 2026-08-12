@@ -1,5 +1,6 @@
 {{define "content"}}
 {{$r := .Data.futo_release}}
+{{$u := .Data.e4_utility_release}}
 <div class="page">
   {{template "pagehead" .}}
 
@@ -8,7 +9,8 @@
       <div class="rail__inner">
         {{template "railhead"}}
         <ol>
-          <li><a href="#query">Cross-origin query</a></li>
+          <li><a href="#utility">Opportunity Utility query</a></li>
+          <li><a href="#query">Protected baseline query</a></li>
           <li><a href="#delta">Real source change</a></li>
           <li><a href="#trace">Proof trace</a></li>
           <li><a href="#performance">Measured runtime</a></li>
@@ -27,6 +29,59 @@
           API exposes only the admitted immutable snapshot and performs zero origin calls.
         </p>
       </div>
+
+      <section aria-labelledby="utility">
+        <h2 id="utility">Query 83,087 real Opportunity frames {{chip "implemented"}}</h2>
+        <p class="lede">
+          The latest published engineering candidate compiles one exact, founder-approved Grants.gov
+          bulk representation into {{commas $u.release.real_source_derived_packets}}
+          source-derived packets and {{commas $u.release.opportunity_frames}} useful frames.
+          The query below is typed, bounded to 20 results and executes only against the
+          manifest-identified immutable segment.
+        </p>
+<pre><code>{
+  "universe_id": "tw:opportunity",
+  "frame_type": "opportunity:GrantOpportunity",
+  "slot_role": "opportunity:funder",
+  "slot_value": {
+    "type": "identifier",
+    "lexical": "grants-gov:agency/NSF"
+  },
+  "limit": 20
+}</code></pre>
+        <dl class="counters wide">
+          <div class="counter"><dt>Frames available</dt><dd>{{commas $u.query.frames_available}}<small>two admitted universes</small></dd></div>
+          <div class="counter"><dt>Results</dt><dd>{{$u.query.results}}<small>all proof-linked</small></dd></div>
+          <div class="counter"><dt>p95</dt><dd>{{$u.benchmark.p95_milliseconds}} ms<small>{{commas $u.benchmark.iterations}} local runs</small></dd></div>
+          <div class="counter"><dt>Origin calls</dt><dd>{{$u.query.network_requests}}<small>browser and model authority also zero</small></dd></div>
+        </dl>
+        <div class="tablewrap wide">
+          <table>
+            <caption>First canonical-digest result from the recorded bounded query</caption>
+            <tbody>
+              <tr><th scope="row">Source-native key</th><td><code>{{$u.query.first_native_key}}</code></td></tr>
+              <tr><th scope="row">Source-stated title</th><td>{{$u.query.first_source_title}}</td></tr>
+              <tr><th scope="row">Frame digest</th><td><code class="digest">{{$u.query.first_frame_digest}}</code></td></tr>
+              <tr><th scope="row">Eligibility prose</th><td><code>{{$u.query.eligibility_status}}</code> — no lexical value released</td></tr>
+              <tr><th scope="row">Mapping state</th><td><code>{{$u.release.mapping_status}}</code>, not canon</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          Query identity: <code class="digest">{{$u.query.query_digest}}</code>. Release identity:
+          <code class="digest">{{$u.release.manifest_digest}}</code>.
+        </p>
+        <div class="callout callout--limit">
+          <p class="callout__title">Exact claim</p>
+          <p>
+            These are records represented in the Grants.gov bulk extract acquired on
+            {{$u.acquisition.completed_at}}. A result is not a claim that an opportunity is
+            still open or that any applicant is eligible. {{$u.privacy.notice}}
+            This release is published as validated engineering evidence and is not yet served by the
+            public Lab.
+          </p>
+        </div>
+      </section>
 
       <section aria-labelledby="query">
         <h2 id="query">One interface across origins {{chip "implemented"}}</h2>
@@ -132,9 +187,10 @@
         <h2 id="scope">Current boundary</h2>
         <p class="lede">{{$r.current_scope}}</p>
         <p>
-          The next public step is deployment of this same immutable read-only runtime behind
-          bounded HTTPS. It is not permission to add arbitrary retrieval or a mutable database
-          to the current shared host.
+          The protected immutable runtime is already served behind bounded HTTPS. The next
+          release step is target-host admission of the larger Opportunity snapshot;
+          this is not permission to add arbitrary retrieval or a mutable database to the
+          current shared host.
         </p>
       </section>
     </article>

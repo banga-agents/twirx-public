@@ -1,0 +1,17 @@
+{
+  "format": "tw.egress-result/0.1",
+  "work_order_id": "e4-wb-chl-ny-gdp-mktp-cd-2023",
+  "work_order_digest": "sha256:efad15fb3601e8f437c681edb8d4194d49e78ae4d3309b42ae6b62b6418471ec",
+  "origin_id": "api-worldbank-org",
+  "purpose": "observation",
+  "request_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2023\u0026format=json\u0026per_page=1",
+  "final_url": "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?date=2023\u0026format=json\u0026per_page=1",
+  "retrieved_at": "2026-08-12T03:05:56.24934411Z",
+  "http_status": 200,
+  "media_type": "application/json",
+  "redirect_count": 0,
+  "observation_digest": "sha256:4b20909a11ed0e422500a140dae2a7452db2aefa7e4dac355aa56d491fe10ba6",
+  "body_digest": "sha256:b8be84c54413c5c633f08e091d768ad070d6c4209ac916acdd892e30411fe2ff",
+  "body_size": 293,
+  "duration_ms": 1860
+}

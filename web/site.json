@@ -1,14 +1,14 @@
 {
   "name": "TWIRX",
-  "mission": "Typed Web Commons",
+  "mission": "Reference implementation and public service of the Typed Web Commons",
   "base_url": "https://twirx.org",
   "canonical_host": "twirx.org",
   "repo_url": "https://github.com/banga-agents/twirx-public",
   "docs_url": "https://docs.twirx.org",
   "scripts_allowed_on": ["proof/explorer"],
   "script_budget_gzip_bytes": 8192,
-  "status_note": "Live read-only Genesis Preview. Immutable approved evidence only; no arbitrary URLs.",
-  "footer_lead": "TWIRX is the Genesis implementation of the Typed Web Commons. Open protocol work for a verifiable, plural, and secure agentic web. No token. No protocol ownership sold.",
+  "status_note": "Live read-only Genesis baseline plus a published Opportunity Utility engineering release candidate. The large candidate runtime is not deployed; no arbitrary URLs.",
+  "footer_lead": "TWIRX is the reference implementation and public service of the Typed Web Commons. Open protocol work for a verifiable, plural, and secure agentic Web. No token. No protocol ownership sold.",
   "pages": [
     {
       "slug": "",
@@ -23,7 +23,7 @@
       "nav": "Demo",
       "kicker": "Working proof",
       "heading": "Query source-derived state. Trace every result.",
-      "standfirst": "This reviewer demonstration uses the first real two-period archive observation and the immutable Semantic Snapshot. It shows exactly what is implemented locally and makes no claim that the public Lab is already deployed.",
+      "standfirst": "Inspect the protected live baseline, a real historical delta, and the published million-packet Opportunity Utility engineering release candidate. Published evidence and deployed runtime state remain explicitly separate.",
       "title": "Demo — query and trace the TWIRX Semantic Snapshot",
       "description": "Inspect TWIRX's real RFC Editor archive delta, cross-origin materialized query, proof identities, and bounded local performance evidence."
     },
@@ -32,10 +32,10 @@
       "file": "proof.html",
       "nav": "Proof",
       "kicker": "Evidence record",
-      "heading": "From source bytes to a reusable, proof-bearing query result.",
-      "standfirst": "E1 establishes the evidence kernel. Later gates add typed operations, Atlas admission, immutable semantic packets, a real historical delta, materialized views, and a read-only query runtime. Every figure remains tied to a report or snapshot.",
-      "title": "Proof — E1, E2, and E3 evidence | TWIRX",
-      "description": "The complete TWIRX evidence record: the E1 source-statement spine, typed operations, Atlas admission, immutable semantic packets, a real archive delta, materialized views, and a read-only local query runtime."
+      "heading": "From source bytes to a million-packet, proof-bearing Utility Universe.",
+      "standfirst": "E1 establishes the evidence kernel. Later gates add typed operations, Atlas admission, immutable semantic packets, a real historical delta, materialized views, and now a privacy-safe Opportunity release candidate. Every figure remains tied to a report or manifest.",
+      "title": "Proof — E1 through E4 evidence | TWIRX",
+      "description": "The complete TWIRX evidence record: source-statement fidelity, typed operations, Atlas admission, immutable packets and deltas, and the million-packet Opportunity Utility release candidate."
     },
     {
       "slug": "atlas",
@@ -93,9 +93,9 @@
       "nav": "Roadmap",
       "kicker": "90-day plan",
       "heading": "Convert the verified kernel into a public, useful Semantic Highway.",
-      "standfirst": "The requested 90-day grant funds the public proof, complete Atlas-500 dossier and policy processing, bounded profiling across every eligible origin, and a continuously expanding Semantic Highway Alpha.",
+      "standfirst": "The requested 90-day grant funds an executable ontology fabric, five useful semantic universes, a visual Atlas Agent, real change streams, publisher tooling, and a candidate-only semantic learning system.",
       "title": "Roadmap — TWIRX's 90-day FUTO milestone plan",
-      "description": "The milestone-bound 90-day TWIRX plan: public proof, complete Atlas-500 processing, a growing real corpus, and a continuously operating Semantic Highway Alpha."
+      "description": "The milestone-bound 90-day TWIRX plan: five Agent Utility Universes, an executable ontology, a visual agent, source-derived change streams, and a growing proof-linked corpus."
     },
     {
       "slug": "semantics",
@@ -132,8 +132,8 @@
       "file": "funding.html",
       "nav": "Funding",
       "kicker": "Funding",
-      "heading": "$30,000 for a 90-day Public Alpha.",
-      "standfirst": "The first $6,000 milestone funds 30 days of focused, full-time engineering across the complete Atlas-500 universe. The 90-day program deepens every admitted layer as far as policy, evidence quality and measured capacity allow.",
+      "heading": "$30,000 for a 90-day Agent Utility Universe Alpha.",
+      "standfirst": "The first $6,000 milestone funds 30 days of focused engineering and public release work. The 90-day program expands the executable ontology, useful semantic universes, real source corpus, agent experience, change intelligence and publisher path.",
       "title": "Funding — the TWIRX $30,000 FUTO milestone request",
       "description": "TWIRX is requesting $30,000 for 90 days, beginning with a $6,000 public-release and full-time engineering milestone."
     },
@@ -143,7 +143,7 @@
       "nav": "",
       "kicker": "Progress",
       "heading": "Progress is admitted through gates, not declared through ambition",
-      "standfirst": "The current release connects the verified evidence kernel to a small immutable Semantic Snapshot, real archive evidence, a cross-origin query and one genuine origin delta. The remaining public-release blockers are stated explicitly.",
+      "standfirst": "The protected public baseline is live. A separate local E4 release candidate now adds 83,087 real Opportunity frames, more than one million source-derived packets and a bounded two-universe agent query; its remaining admission conditions are stated explicitly.",
       "title": "Progress — the gate sequence and current state | TWIRX",
       "description": "The TWIRX gate sequence from the founding architecture through the Semantic Data Plane Alpha, with the current state, evidence links, and admission condition for each gate."
     },
@@ -163,7 +163,7 @@
       "nav": "",
       "kicker": "FUTO reviewer path",
       "heading": "TWIRX is an open Semantic Data Plane for the Web.",
-      "standfirst": "This page is the shortest path through the working proof, exact current scope, grant milestones, source, documentation and contact information.",
+      "standfirst": "This page is the shortest path through the live protected baseline, the locally admitted Opportunity Utility release, exact scope, grant milestones, source, documentation and contact information.",
       "title": "TWIRX for FUTO — working proof and grant request",
       "description": "A concise FUTO reviewer path through TWIRX's working Semantic Snapshot proof, real archive delta, grant milestones, source, documentation and contact."
     }

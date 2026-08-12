@@ -1,0 +1,15 @@
+{
+  "format": "tw.observation/0.1",
+  "version": 1,
+  "request_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2023\u0026format=json\u0026per_page=1",
+  "final_url": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?date=2023\u0026format=json\u0026per_page=1",
+  "method": "GET",
+  "status": 200,
+  "media_type": "application/json",
+  "retrieved_at": "2026-08-12T03:09:03.171776958Z",
+  "body_digest": "sha256:ead9dffb8c233d6da954e28056e5fe7614adbcc255605eb2f0945ab4d67d28bb",
+  "body_size": 292,
+  "policy_id": "tw.egress.public-origin-v0",
+  "observer_id": "typed-web-go/0.1",
+  "envelope_hash": "sha256:64a24e8240ce6d414e924e14367837bd7d029a5d2432f3336b974a113cbd1bc6"
+}

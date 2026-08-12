@@ -1,0 +1,7 @@
+{
+  "format": "tw.egress-control/0.1",
+  "enabled": true,
+  "emergency_stop": false,
+  "revoked_origins": [],
+  "revoked_orders": []
+}

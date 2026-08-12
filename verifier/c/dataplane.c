@@ -1246,6 +1246,339 @@ static bool snapshot(cursor *c) {
   return c->offset == c->length;
 }
 
+static bool semver(slice value) {
+  size_t component = 0U;
+  size_t digits = 0U;
+  for (size_t i = 0U; i < value.length; i++) {
+    const uint8_t b = value.data[i];
+    if (b == '.') {
+      if (digits == 0U || component >= 2U)
+        return false;
+      component++;
+      digits = 0U;
+      continue;
+    }
+    if (b < '0' || b > '9')
+      return false;
+    if (digits == 0U && b == '0' && i + 1U < value.length &&
+        value.data[i + 1U] != '.')
+      return false;
+    digits++;
+  }
+  return component == 2U && digits > 0U;
+}
+
+static bool digest_set_capture(cursor *c, uint64_t minimum, uint64_t maximum,
+                               uint8_t values[][32U], size_t capacity,
+                               size_t *actual) {
+  uint64_t count = 0U;
+  if (!array(c, minimum, maximum, &count) || count > capacity)
+    return false;
+  for (uint64_t i = 0U; i < count; i++) {
+    if (!digest(c, values[i]) ||
+        (i > 0U && memcmp(values[i - 1U], values[i], 32U) >= 0))
+      return false;
+  }
+  *actual = (size_t)count;
+  return true;
+}
+
+static bool text_set_capture(cursor *c, uint64_t minimum, uint64_t maximum,
+                             slice *values, size_t capacity, size_t *actual,
+                             bool require_language) {
+  uint64_t count = 0U;
+  if (!array(c, minimum, maximum, &count) || count > capacity)
+    return false;
+  for (uint64_t i = 0U; i < count; i++) {
+    if (!text(c, 1U, 512U, &values[i]) ||
+        (i > 0U && slice_cmp(values[i - 1U], values[i]) >= 0) ||
+        (require_language && !language_tag(values[i])))
+      return false;
+  }
+  *actual = (size_t)count;
+  return true;
+}
+
+static size_t find_digest(const uint8_t values[][32U], size_t count,
+                          const uint8_t target[32U]) {
+  size_t low = 0U;
+  size_t high = count;
+  while (low < high) {
+    const size_t middle = low + (high - low) / 2U;
+    const int comparison = memcmp(values[middle], target, 32U);
+    if (comparison < 0)
+      low = middle + 1U;
+    else
+      high = middle;
+  }
+  if (low < count && memcmp(values[low], target, 32U) == 0)
+    return low;
+  return count;
+}
+
+static bool contains_slice(const slice *values, size_t count, slice target) {
+  size_t low = 0U;
+  size_t high = count;
+  while (low < high) {
+    const size_t middle = low + (high - low) / 2U;
+    const int comparison = slice_cmp(values[middle], target);
+    if (comparison < 0)
+      low = middle + 1U;
+    else
+      high = middle;
+  }
+  return low < count && slice_cmp(values[low], target) == 0;
+}
+
+static bool frame(cursor *c) {
+  static const char *const statuses[] = {
+      "resolved",       "unknown",  "not_observed",    "not_provided",
+      "not_applicable", "withheld", "redacted",        "unresolved",
+      "contradictory",  "invalid",  "confirmed_absent"};
+  static const char *const cardinalities[] = {"one", "many"};
+  static const char *const conflicts[] = {"none", "preserved",
+                                           "unresolved"};
+  static const char *const lanes[] = {"observed_native", "provisional_semantic",
+                                      "attested_semantic"};
+  static const char *const lifecycle[] = {"current", "superseded", "withdrawn",
+                                          "stale",   "retracted",  "invalid"};
+  if (!exact_array(c, 12U) || !text_literal(c, "tw.semantic-frame/0.1"))
+    return false;
+  slice ignored = {0};
+  if (!text(c, 1U, 512U, &ignored) || !text(c, 1U, 512U, &ignored) ||
+      !text(c, 1U, 512U, &ignored) ||
+      !text_set(c, 0U, 32U, NULL, 0U) || !exact_array(c, 5U))
+    return false;
+
+  uint8_t packets[4096U][32U];
+  bool packet_used[4096U];
+  memset(packet_used, 0, sizeof(packet_used));
+  size_t packet_count = 0U;
+  if (!digest_set_capture(c, 1U, 4096U, packets, 4096U, &packet_count) ||
+      !digest(c, NULL))
+    return false;
+  slice mappings[256U];
+  size_t mapping_count = 0U;
+  if (!text_set_capture(c, 0U, 256U, mappings, 256U, &mapping_count, false) ||
+      !digest(c, NULL) || !text(c, 1U, 512U, &ignored))
+    return false;
+
+  uint64_t slot_count = 0U;
+  if (!array(c, 1U, 256U, &slot_count))
+    return false;
+  slice prior_role = {0};
+  for (uint64_t i = 0U; i < slot_count; i++) {
+    if (!exact_array(c, 7U))
+      return false;
+    slice role = {0}, status = {0}, cardinality = {0};
+    if (!text(c, 1U, 512U, &role) ||
+        (i > 0U && slice_cmp(prior_role, role) >= 0) ||
+        !enum_text(c, statuses, 11U, &status) ||
+        !enum_text(c, cardinalities, 2U, &cardinality))
+      return false;
+    prior_role = role;
+    uint64_t value_count = 0U;
+    if (!array(c, 0U, 64U, &value_count) ||
+        (slice_eq(status, "resolved") && value_count == 0U) ||
+        (!slice_eq(status, "resolved") && value_count != 0U) ||
+        (slice_eq(cardinality, "one") && value_count > 1U))
+      return false;
+    slice previous_value = {0};
+    size_t previous_start = 0U;
+    for (uint64_t j = 0U; j < value_count; j++) {
+      const size_t start = c->offset;
+      if (!typed_value(c))
+        return false;
+      const slice current_value = {c->data + start, c->offset - start};
+      if (j > 0U && slice_cmp(previous_value, current_value) >= 0)
+        return false;
+      previous_value = current_value;
+      previous_start = start;
+      (void)previous_start;
+    }
+    uint64_t slot_packets = 0U;
+    if (!array(c, 1U, 256U, &slot_packets))
+      return false;
+    uint8_t previous_packet[32U] = {0};
+    for (uint64_t j = 0U; j < slot_packets; j++) {
+      uint8_t current[32U];
+      if (!digest(c, current) ||
+          (j > 0U && memcmp(previous_packet, current, 32U) >= 0))
+        return false;
+      const size_t found = find_digest(packets, packet_count, current);
+      if (found == packet_count)
+        return false;
+      packet_used[found] = true;
+      memcpy(previous_packet, current, 32U);
+    }
+    uint64_t slot_mappings = 0U;
+    if (!array(c, 0U, 32U, &slot_mappings))
+      return false;
+    slice previous_mapping = {0};
+    for (uint64_t j = 0U; j < slot_mappings; j++) {
+      slice current = {0};
+      if (!text(c, 1U, 512U, &current) ||
+          (j > 0U && slice_cmp(previous_mapping, current) >= 0) ||
+          !contains_slice(mappings, mapping_count, current))
+        return false;
+      previous_mapping = current;
+    }
+    slice conflict = {0};
+    if (!enum_text(c, conflicts, 3U, &conflict) ||
+        (slice_eq(status, "contradictory") && slice_eq(conflict, "none")))
+      return false;
+  }
+  for (size_t i = 0U; i < packet_count; i++)
+    if (!packet_used[i])
+      return false;
+
+  if (!exact_array(c, 4U))
+    return false;
+  uint64_t dimensions = 0U;
+  if (!array(c, 0U, 32U, &dimensions))
+    return false;
+  slice prior_dimension = {0};
+  for (uint64_t i = 0U; i < dimensions; i++) {
+    slice key = {0};
+    if (!exact_array(c, 2U) || !text(c, 1U, 512U, &key) ||
+        (i > 0U && slice_cmp(prior_dimension, key) >= 0) || !typed_value(c))
+      return false;
+    prior_dimension = key;
+  }
+  bool present = false;
+  slice optional = {0};
+  if (!optional_text(c, 512U, &present, &optional))
+    return false;
+  bool has_language = false;
+  if (!optional_text(c, 63U, &has_language, &optional) ||
+      (has_language && !language_tag(optional)) ||
+      !optional_text(c, 512U, &present, &optional))
+    return false;
+
+  if (!exact_array(c, 3U))
+    return false;
+  slice composed = {0}, from = {0}, until = {0};
+  bool has_from = false, has_until = false;
+  if (!timestamp_text(c, &composed) ||
+      !optional_timestamp(c, &has_from, &from) ||
+      !optional_timestamp(c, &has_until, &until) ||
+      (has_from && has_until && slice_cmp(from, until) > 0))
+    return false;
+
+  if (!exact_array(c, 3U))
+    return false;
+  slice lane = {0};
+  uint64_t completeness = 0U;
+  if (!enum_text(c, lanes, 3U, &lane) ||
+      !uint_value(c, 1000000U, &completeness) ||
+      !enum_text(c, conflicts, 3U, NULL) ||
+      (slice_eq(lane, "observed_native") && mapping_count != 0U) ||
+      (!slice_eq(lane, "observed_native") && mapping_count == 0U))
+    return false;
+  (void)completeness;
+
+  if (!exact_array(c, 2U))
+    return false;
+  slice state = {0};
+  bool prior_present = false;
+  if (!enum_text(c, lifecycle, 6U, &state) ||
+      !optional_digest(c, &prior_present, NULL) ||
+      (slice_eq(state, "superseded") && !prior_present) ||
+      (slice_eq(state, "current") && prior_present) || !empty_extensions(c))
+    return false;
+  return c->offset == c->length;
+}
+
+static bool mapping_claim(cursor *c) {
+  static const char *const relations[] = {"exact", "close", "broad",
+                                           "narrow", "contextual", "candidate"};
+  static const char *const statuses[] = {"candidate", "reviewed", "disputed",
+                                          "revoked"};
+  if (!exact_array(c, 12U) || !text_literal(c, "tw.mapping-claim/0.1"))
+    return false;
+  slice ignored = {0};
+  if (!text(c, 1U, 512U, &ignored) || !exact_array(c, 4U) ||
+      !text(c, 1U, 512U, &ignored))
+    return false;
+  bool present = false;
+  slice optional = {0};
+  if (!optional_text(c, 512U, &present, &optional) ||
+      !text(c, 1U, 512U, &ignored) ||
+      !optional_text(c, 16384U, &present, &optional) ||
+      !exact_array(c, 2U) || !text(c, 1U, 512U, &ignored) ||
+      !optional_text(c, 512U, &present, &optional))
+    return false;
+  slice relation = {0};
+  if (!enum_text(c, relations, 6U, &relation) || !exact_array(c, 4U) ||
+      !text(c, 1U, 512U, &ignored) ||
+      !text_set(c, 0U, 32U, NULL, 0U))
+    return false;
+  slice languages[32U];
+  size_t language_count = 0U;
+  if (!text_set_capture(c, 0U, 32U, languages, 32U, &language_count, true) ||
+      !text_set(c, 0U, 32U, NULL, 0U))
+    return false;
+  (void)language_count;
+  slice status = {0};
+  if (!enum_text(c, statuses, 4U, &status) ||
+      !digest_set(c, 0U, 256U) || !text(c, 1U, 512U, &ignored))
+    return false;
+  bool review = false, supersedes = false;
+  if (!optional_digest(c, &review, NULL) ||
+      !optional_digest(c, &supersedes, NULL) ||
+      (slice_eq(status, "candidate") && review) ||
+      (!slice_eq(status, "candidate") && !review) ||
+      (slice_eq(relation, "candidate") && !slice_eq(status, "candidate")) ||
+      !empty_extensions(c))
+    return false;
+  (void)supersedes;
+  return c->offset == c->length;
+}
+
+static bool ontology_module(cursor *c) {
+  static const char *const statuses[] = {"draft", "reviewed", "admitted",
+                                          "deprecated", "superseded"};
+  if (!exact_array(c, 14U) || !text_literal(c, "tw.ontology-module/0.1"))
+    return false;
+  slice ignored = {0}, version = {0}, status = {0};
+  if (!text(c, 1U, 512U, &ignored) || !text(c, 1U, 64U, &version) ||
+      !semver(version) || !enum_text(c, statuses, 5U, &status) ||
+      !text_set(c, 0U, 64U, NULL, 0U) ||
+      !text_set(c, 1U, 4096U, NULL, 0U) ||
+      !text_set(c, 0U, 512U, NULL, 0U) ||
+      !text_set(c, 0U, 4096U, NULL, 0U) ||
+      !digest_set(c, 0U, 4096U) ||
+      !text_set(c, 0U, 256U, NULL, 0U) ||
+      !text_set(c, 0U, 256U, NULL, 0U) || !digest(c, NULL))
+    return false;
+  bool review = false;
+  if (!optional_digest(c, &review, NULL) ||
+      (slice_eq(status, "draft") && review) ||
+      (!slice_eq(status, "draft") && !review) || !empty_extensions(c))
+    return false;
+  return c->offset == c->length;
+}
+
+static bool universe(cursor *c) {
+  if (!exact_array(c, 16U) || !text_literal(c, "tw.semantic-universe/0.1"))
+    return false;
+  slice ignored = {0}, version = {0};
+  if (!text(c, 1U, 512U, &ignored) || !text(c, 1U, 64U, &version) ||
+      !semver(version) || !text(c, 1U, 255U, &ignored) ||
+      !text_set(c, 1U, 64U, NULL, 0U) ||
+      !text_set(c, 1U, 512U, NULL, 0U) ||
+      !text_set(c, 0U, 1024U, NULL, 0U) ||
+      !digest_set(c, 0U, 4096U) ||
+      !text_set(c, 0U, 64U, NULL, 0U) ||
+      !text_set(c, 0U, 256U, NULL, 0U) ||
+      !text_set(c, 0U, 256U, NULL, 0U) ||
+      !text(c, 1U, 512U, &ignored) || !text(c, 1U, 512U, &ignored) ||
+      !digest(c, NULL) || !timestamp_text(c, &ignored) ||
+      !empty_extensions(c))
+    return false;
+  return c->offset == c->length;
+}
+
 bool tw_dp_verify(const char *kind, const uint8_t *data, size_t length) {
   if (kind == NULL || data == NULL || length == 0U ||
       length > TW_DP_MAX_DOCUMENT_BYTES)
@@ -1269,5 +1602,13 @@ bool tw_dp_verify(const char *kind, const uint8_t *data, size_t length) {
     return economic(&c);
   if (strcmp(kind, "snapshot") == 0)
     return snapshot(&c);
+  if (strcmp(kind, "frame") == 0)
+    return frame(&c);
+  if (strcmp(kind, "mapping-claim") == 0)
+    return mapping_claim(&c);
+  if (strcmp(kind, "ontology-module") == 0)
+    return ontology_module(&c);
+  if (strcmp(kind, "universe") == 0)
+    return universe(&c);
   return false;
 }

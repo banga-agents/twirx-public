@@ -1,5 +1,6 @@
 {{define "content"}}
 {{$r := .Data.futo_release}}
+{{$u := .Data.e4_utility_release}}
 <div class="page">
   {{template "pagehead" .}}
 
@@ -42,6 +43,7 @@
           <div class="card"><h3>Delta</h3><p>Compare two real RFC Editor archive observations without fabricating semantic or canon changes.</p><p><a href="/demo/#delta">Open the delta</a></p></div>
           <div class="card"><h3>Trace</h3><p>Follow source-native lexical bytes through packet, observation, proof and snapshot identities.</p><p><a href="/demo/#trace">Open the trace</a></p></div>
           <div class="card"><h3>Verify</h3><p>Read the exact commands, conformance results, security findings and residual limitations.</p><p><a href="/proof/">Open the evidence record</a></p></div>
+          <div class="card"><h3>Utility Universe</h3><p>Inspect the published million-packet Opportunity engineering candidate, privacy boundary and typed NSF query.</p><p><a href="/demo/#utility">Open the utility proof</a></p></div>
         </div>
       </section>
 
@@ -52,6 +54,20 @@
           <div class="counter"><dt>Public packets</dt><dd>{{$r.actual.public_packets}}<small>across {{$r.actual.public_origins_with_packets}} origins</small></dd></div>
           <div class="counter"><dt>Real deltas</dt><dd>{{$r.actual.deltas}}<small>historical origin change</small></dd></div>
         </dl>
+        <h3>Latest validated engineering release candidate</h3>
+        <dl class="counters wide">
+          <div class="counter"><dt>Real source packets</dt><dd>{{commas $u.release.real_source_derived_packets}}<small>Grants.gov observation</small></dd></div>
+          <div class="counter"><dt>Opportunity frames</dt><dd>{{commas $u.release.opportunity_frames}}<small>proof-linked</small></dd></div>
+          <div class="counter"><dt>Typed-query p95</dt><dd>{{$u.benchmark.p95_milliseconds}} ms<small>local, {{commas $u.benchmark.iterations}} iterations</small></dd></div>
+        </dl>
+        <p class="note">
+          The counters above are validated engineering evidence, not a claim that the public
+          Lab already serves this larger snapshot. They cover one substantial Opportunity
+          source family. Eligibility prose is withheld, mappings remain candidates, frames
+          remain provisional, and no “currently open,” applicant-eligibility, currency,
+          relevance or ranking conclusion is inferred. The one-shot acquisition cannot
+          refresh without a new policy decision.
+        </p>
         <div class="tablewrap wide">
           <table>
             <caption>Released local snapshot</caption>
@@ -63,9 +79,13 @@
               <tr><th scope="row">Public repository</th><td><a href="{{$r.release.public_repository}}"><code>{{$r.release.public_repository_commit}}</code><span class="ext" aria-hidden="true">↗</span></a></td></tr>
               <tr><th scope="row">Public Lab</th><td><a href="https://lab.twirx.org/">Live read-only immutable snapshot<span class="ext" aria-hidden="true">↗</span></a></td></tr>
               <tr><th scope="row">Current scope</th><td>{{$r.current_scope}}</td></tr>
+              <tr><th scope="row">E4 utility manifest</th><td><code class="digest">{{$u.release.manifest_digest}}</code></td></tr>
+              <tr><th scope="row">E4 utility deployment</th><td>{{$u.deployment_status}} — published engineering evidence, not the live Lab runtime</td></tr>
+              <tr><th scope="row">E4 public evidence</th><td><a href="{{$u.publication.release_url}}"><code>{{$u.publication.tag}}</code><span class="ext" aria-hidden="true">↗</span></a></td></tr>
             </tbody>
           </table>
         </div>
+        <p class="actions"><a class="btn" href="{{$u.publication.report_url}}">Read the E4.5 report</a> <a class="btn" href="{{$u.publication.manifest_url}}">Download the release manifest</a> <a class="btn" href="{{$u.publication.application_url}}">Download the grant application</a></p>
       </section>
 
       <section aria-labelledby="alignment">
@@ -89,8 +109,9 @@
         <p class="lede">
           <strong>${{commas $r.grant.request_usd}} for {{$r.grant.term_days}} days.</strong>
           The first <strong>${{commas $r.grant.first_milestone_usd}}</strong> milestone
-          funds {{$r.grant.first_milestone_days}} days of focused, full-time engineering
-          across the complete Atlas-500 processing program.
+          funds {{$r.grant.first_milestone_days}} days of focused, full-time engineering to
+          publish E4.5, deliver Ontology Fabric 0.1, expand Opportunity and World State, and
+          ship the Visual Atlas Agent alpha.
         </p>
         <p><a class="btn btn--primary" href="/funding/">Review budget</a> <a class="btn" href="/roadmap/">Review milestones</a></p>
       </section>
@@ -100,6 +121,7 @@
         <ul class="register register--plain">
           <li><a href="https://lab.twirx.org/">Live Query Lab<span class="ext" aria-hidden="true">↗</span></a></li>
           <li><a href="/demo/">Working Query and Delta evidence</a></li>
+          <li><a href="/demo/#utility">Opportunity Utility query and privacy evidence</a></li>
           <li><a href="/proof/">Technical proof and unresolved risks</a></li>
           <li><a href="/atlas/">Atlas selection and admission state</a></li>
           <li><a href="/architecture/">Architecture and trust boundaries</a></li>

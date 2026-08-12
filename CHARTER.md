@@ -5,7 +5,7 @@
 
 ## Mission
 
-Create an open, interoperable, provenance-preserving protocol that transforms web representations into typed interfaces for software agents while protecting human sovereignty, publisher agency, semantic plurality, and independent implementation.
+TWIRX builds an open, self-hostable semantic data plane for the Web. It continuously compiles public sources into reusable, typed, proof-bearing semantic state and capabilities so agents can query, compare, monitor, and eventually act without repeatedly browsing and reinterpreting the same interfaces.
 
 ## Public assets
 

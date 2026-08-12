@@ -1,0 +1,41 @@
+{
+  "format": "tw.e4-source-dossier/0.1",
+  "id": "grants-gov-api-e4",
+  "universe_id": "tw:opportunity",
+  "canonical_origin": "https://prod-grants-gov-chatbot.s3.amazonaws.com",
+  "atlas_origin_id": null,
+  "source_class": "public_bulk",
+  "access_class": "public_file",
+  "network_execution_state": "disabled",
+  "policy": {
+    "existing_decision_ref": "",
+    "existing_scope": [],
+    "e4_review_state": "completed",
+    "e4_decision": "permit_with_constraints",
+    "reviewed_at": "2026-08-12T04:33:44Z",
+    "reviewer": "Genesis steward"
+  },
+  "proposed_routes": [
+    "https://prod-grants-gov-chatbot.s3.amazonaws.com/extracts/GrantsDBExtract20260811v2.zip"
+  ],
+  "proposed_budget": {
+    "maximum_requests": 96,
+    "maximum_response_bytes": 1048576,
+    "maximum_total_bytes": 100663296,
+    "maximum_records": 250000,
+    "timeout_seconds": 30,
+    "concurrency": 1
+  },
+  "authentication": "The exact publisher-linked public bulk-extract object requires no authentication.",
+  "attribution": "Preserve Grants.gov opportunity number, agency, source links and source-native eligibility wording.",
+  "retention": "Retain the exact immutable bulk archive in private evidence storage and publish only a deterministic approved-field projection plus proof digests; exclude descriptions, attachments and contact fields unless separately reviewed.",
+  "personal_data_treatment": "The bulk XML contains public grantor contact fields. They must remain in private source evidence only and must not enter packets, frames, public snapshots, logs, fixtures or repository history. Applicant accounts, submissions and authenticated data are forbidden.",
+  "license_notes": "Public endpoint availability does not settle retention or downstream reuse; policy review remains required.",
+  "emergency_disable": "No network work order or scheduler exists; any future API job must be individually revocable.",
+  "initial_scope": "One exact 2026-08-11 v2 daily XML archive, acquired through bounded identity-encoded byte ranges. Compile only the approved opportunity identity, agency, classification, eligibility-code, amount and date fields. No API POST, attachment, contact, description or later daily file is included.",
+  "documentation": [
+    "https://www.grants.gov/help/xml-extract/",
+    "https://www.grants.gov/system-to-system/grantor-system-to-system/schemas/opportunity-detail",
+    "https://www.grants.gov/xml-extract"
+  ]
+}
